@@ -1,0 +1,8 @@
+tmp/*.*
+game/cache/*.*
+game/saves/*.*
+log.txt
+errors.txt
+*.bak
+*.rpyc
+
