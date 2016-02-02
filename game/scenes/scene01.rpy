@@ -215,6 +215,7 @@ label __speech:
                 jump __not_quite
         "No! I would like to leave this village now.":
             if postermm_points >= 5:
+                $ village_dead = True
                 jump __end
             else:
                 froggy "Have it your way then! Don't say I didn't give you a chance though."
@@ -254,5 +255,7 @@ label __dragon_eat:
 
 
 label __end:
+    #If village dead then hear dragon in distance
+
     "I left the village to continue my journey..."
     jump scene02
