@@ -203,6 +203,8 @@ label __postermm_show:
     $ renpy.rollback(force=True, checkpoints=2)
 
 label __speech:
+    froggy "Bla bla bla. Recycling and whatnot."
+
     froggy "Would you like to stay with me in my mansion and help me with my campaign?"
     menu:
         "Stay with Mayor Froggy?"
