@@ -5,3 +5,5 @@ log.txt
 errors.txt
 *.bak
 *.rpyc
+debuglog.txt
+traceback.txt
