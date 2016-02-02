@@ -2,7 +2,7 @@ init python:
     if persistent.disclaimer_seen is None:
         persistent.disclaimer_seen = False
 
-label nosplashscreen: #TODO: REMOVE no
+label splashscreen: #TODO: REMOVE no
     scene black
     $ renpy.pause(0.5, hard=True)
 
