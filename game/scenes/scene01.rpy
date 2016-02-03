@@ -19,7 +19,7 @@ label scene01:
 
     froggy "It's everyone's favourite mayor, Froggy!"
 
-    "Hello (name of main char), I need your help."
+    froggy talking "Hello (name of main char), I need your help."
 
     menu:
         "Help Mayor Froggy?"
@@ -38,7 +38,7 @@ label __postermm_start:
 
     show overlay shitty_poster
 
-    "Here is a poster.{w}\nDo you see anything wrong with it?"
+    froggy "Here is a poster.{w}\nDo you see anything wrong with it?"
 
     hide overlay
 
@@ -47,7 +47,7 @@ label __postermm_start:
         "The poster looks fine to me :)":
             jump __postermm_fine
         "Yeah, it's not quite right.":
-            "What would you say is wrong?"
+            froggy talking "What would you say is wrong?"
             jump __postermm_wrong
         "It's absolute shit":
             jump __postermm_shit
@@ -56,7 +56,7 @@ label __postermm_start:
 
 
 label __postermm_fine:
-    "You will now die :/"
+    froggy "You will now die :/"
 
     return
 
@@ -86,7 +86,7 @@ label __postermm_wrong:
 
 
 label __postermm_shit:
-    "You will now die :/"
+    froggy "You will now die :/"
 
     return
 
@@ -95,7 +95,7 @@ label __postermm_heading:
     menu:
         "What's wrong with the heading?"
         "It's too big":
-            froggy "Nah, it certainly shouldn't be smaller. Then people couldn't see it!"
+            froggy talking "Nah, it certainly shouldn't be smaller. Then people couldn't see it!"
             $ postermm_points -= 1
         "It's too small":
             froggy "Yes, it could be a bit bigger, I guess."
