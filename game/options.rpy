@@ -16,6 +16,8 @@ init -1 python hide:
     config.developer = True
     config.log = "log.txt"
 
+    config.use_cpickle = False
+
     ## These control the width and height of the screen.
 
     config.screen_width = 1280
@@ -264,7 +266,6 @@ init -1 python hide:
     ## is run, so the persistent information can be found by the init code.)
 python early:
     config.save_directory = "repetition-1454397815"
-    config.log = "repetition/repetition/debuglog.txt"
 
 init -1 python hide:
     #########################################

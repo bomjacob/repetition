@@ -6,20 +6,18 @@ init:
     define magenta = Character(name='Magenta', who_color="#D747D0")
 
 init python:
+    import random
+    
     def die(stages=[1,2,3,4]):
         for i in stages:
             renpy.show('overlay dead_' + str(i))
             if len(stages) != 1:
                 renpy.pause((5-i) / 3)
 
-
-
-
 # The game starts here.
 label start:
     scene black
     python:
-        import random
         def random_file_line(afile):
             line = next(afile)
             for num, aline in enumerate(afile):
