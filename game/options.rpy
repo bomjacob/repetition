@@ -300,7 +300,7 @@ init python:
     ## The name that's used for directories and archive files. For example, if
     ## this is 'mygame-1.0', the windows distribution will be in the
     ## directory 'mygame-1.0-win', in the 'mygame-1.0-win.zip' file.
-    build.directory_name = "repetition-1.0"
+    build.directory_name = "repetition-" + config.version
 
     ## The name that's uses for executables - the program that users will run
     ## to start the game. For example, if this is 'mygame', then on Windows,
@@ -344,6 +344,9 @@ init python:
     build.classify('**/.**', None)
     build.classify('**/#**', None)
     build.classify('**/thumbs.db', None)
+    build.classify('**.DS_Store', None)
+    build.classify('**/*log*.txt', None)
+    build.classify('**.psd', None)
 
     ## To archive files, classify them as 'archive'.
 
@@ -353,6 +356,6 @@ init python:
     ## Files matching documentation patterns are duplicated in a mac app
     ## build, so they appear in both the app and the zip file.
 
-    build.documentation('*.html')
-    build.documentation('*.txt')
+    build.documentation('README.html')
+    build.documentation('LICENSE')
     
