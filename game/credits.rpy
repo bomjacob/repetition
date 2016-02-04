@@ -37,7 +37,7 @@ label credits_frommenu:
     call credits(True) from _call_credits_1
 
 init python:
-    credraw = (
+    cred_raw = (
         ('Lead Developer', ('Jacob Bom', 'other person')),
         ('Lead Artist', ('Olivia Hjorth',)),
         ('Lead Handyman', ('Nick Zhu',)),
@@ -49,7 +49,7 @@ init python:
         ('Engine', ("\n".join(str.split(renpy.version())),))
     )
     credits_s = "{color=#fff}{size=80}Credits\n"
-    for c in credraw:
+    for c in cred_raw:
         if c[0] == "Assets":
             credits_s += "\n{size=40}" + c[0]
             for subc in c[1]:
