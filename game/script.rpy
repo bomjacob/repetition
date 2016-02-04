@@ -1,4 +1,3 @@
-
 init:
     define me = Character(name="[name]", who_color="#eeeeee")
     define sensei = Character(name='Sensei', who_color="#ee3342", image="sensei")
@@ -11,12 +10,14 @@ init python:
     def die(stages=[1,2,3,4]):
         for i in stages:
             renpy.show('overlay dead_' + str(i))
+            renpy.with_statement(trans=shake)
             if len(stages) != 1:
                 renpy.pause((5-i) / 3)
 
 # The game starts here.
 label start:
     scene black
+
     python:
         def random_file_line(afile):
             line = next(afile)

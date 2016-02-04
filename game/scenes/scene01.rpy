@@ -7,7 +7,7 @@ label scene01:
 
     show sensei dead with dissolve
 
-    sensei "I'm dead, danmit!"
+    sensei "I'm dead, danmit!" with shake
 
     me "Oh no!"
 
