@@ -1,8 +1,16 @@
 init:
-    define me = Character(name="[name]", who_color="#eeeeee")
-    define sensei = Character(name='Sensei', who_color="#ee3342", image="sensei")
-    define froggy = Character(name='Froggy', who_color="#D6FF95", image="froggy")
-    define magenta = Character(name='Magenta', who_color="#D747D0")
+    image ctc_blink:
+        "ui/ctc.png"
+        block:
+            linear 0.75 alpha 1.0
+            linear 0.75 alpha 0.0
+            repeat
+
+    define me = Character(name="[name]", who_color="#eeeeee", ctc="ctc_blink", ctc_position="nestled")
+    define sensei = Character(name='Sensei', who_color="#ee3342", image="sensei", ctc="ctc_blink", ctc_position="nestled")
+    define froggy = Character(name='Froggy', who_color="#D6FF95", image="froggy", ctc="ctc_blink", ctc_position="nestled")
+    define magenta = Character(name='Magenta', who_color="#D747D0", ctc="ctc_blink", ctc_position="nestled")
+    define narrator = Character(ctc="ctc_blink", ctc_position="nestled")
 
 init python:
     import random
@@ -17,20 +25,26 @@ init python:
 
         renpy.jump('credits')
 
+    def random_file_line(afile):
+        line = next(afile)
+        for num, aline in enumerate(afile):
+          if random.randrange(num + 2): continue
+          line = aline
+        return line
+
 # The game starts here.
 label start:
     scene black
 
-    $ die()
+    menu:
+        "What would you like to do?"
+        "Start game":
+            jump naming
+        "Die":
+            $ die()
 
+label naming:
     python:
-        def random_file_line(afile):
-            line = next(afile)
-            for num, aline in enumerate(afile):
-              if random.randrange(num + 2): continue
-              line = aline
-            return line
-
         with renpy.file("names.txt") as f:
             namenotok = True
             while namenotok:
