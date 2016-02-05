@@ -11,7 +11,7 @@ init python:
     def die(stages=[1,2,3,4]):
         for i in stages:
             renpy.show('overlay dead_' + str(i))
-            renpy.music.play('sound/fx/blood_drip.ogg', channel='sound')
+            renpy.sound.play('sound/fx/blood_drip.ogg')
             renpy.with_statement(trans=shake)
             if len(stages) != 1:
                 renpy.pause((5-i) / 3)

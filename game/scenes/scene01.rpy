@@ -30,6 +30,20 @@ label scene01:
 
     "This was weird... Sensei would usually have woken me by now."
 
+    "I looked around in confusion. The room was exactly like I had left it, when I had gone to bed.{w} But sensei was nowhere in sight."
+
+    "I found the kettle that we usually use for boiling water.{w} It was completely cold."
+
+    "I was about to walk away when I noticed a small slip of paper."
+
+    me "Wait, is that..?"
+
+    "I picked it up{nw}"
+    show overlay sensei_paper with dissolve
+    extend ", reading over each word carefully."
+
+    "As I read over the words, I could not help but despair."
+    
     show sensei dead with dissolve
 
     sensei "I'm dead, danmit!" with shake
