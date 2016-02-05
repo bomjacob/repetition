@@ -1,9 +1,34 @@
 # Code for scene 1, including the code for the poster minigame at the beginning of the game
 
 label scene01:
-    "*door to house opens*"
+    centered "{size=+10}Let me tell you a story.{/size}"
+    centered "{size=+10}{cps=*0.25}Ah...{/cps} But where do I start?{/size}"
+    centered "{size=+10}I suppose I should start with my name.{/size}"
+    centered "{size=+10}I am [name] SURNAME.{/size}"
+
+    show book sensei_and_me
+    $ renpy.pause(5)
+    "I have been living with my sensei for as long as I remember.{w} While he might not be family, he is the only person I have left."
+
+    show book flames
+    $ renpy.pause(5)
+    "I barely remember my parents. They went away when I was little...{w} Sensei never wanted to tell me about them, other than that they were supposedly heroes.{w} I believe him."
+
+    show book home
+    $ renpy.pause(5)
+    "And in their absence, he has cared for me in his mountaintop home. He has taught me everything I know.{w} While his house might seem out of the way at first, it is actually a technological heaven.{w} He specialises in a subject known as \“Communication and IT\”."
+
+    "He really is an amazing person!{cps=1}...{/cps} Or should I say “was”.."
+
+    hide book with dissolve
+    centered "{size=+10}This is where my story begins.{/size}"
+    
+    "I opened my eyes slowly. Sunlight streamed in from the windows."
 
     scene sensei_room with dissolve
+    show me with dissolve
+
+    "This was weird... Sensei would usually have woken me by now."
 
     show sensei dead with dissolve
 
