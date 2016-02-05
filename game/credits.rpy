@@ -42,7 +42,7 @@ init python:
         ('Lead Artist', ('Olivia Hjorth',)),
         ('Lead Handyman', ('Nick Zhu',)),
         ('Assets', (
-            ('Background', ('',)),
+            ('Background', ('mugenjohncel on lemmesoft.renai.us',)),
             ('Music', ('',)),
             ('Sound', ('http://www.freesfx.co.uk',))
         )),
