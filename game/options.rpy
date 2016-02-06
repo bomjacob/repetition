@@ -14,7 +14,7 @@ init -1 python hide:
     ## cheat using developer tools.
 
     config.developer = True
-    config.log = "log.txt"
+    config.log = "debuglog.txt"
 
     ## These control the width and height of the screen.
 
