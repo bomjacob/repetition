@@ -16,8 +16,6 @@ init -1 python hide:
     config.developer = True
     config.log = "log.txt"
 
-    config.use_cpickle = False
-
     ## These control the width and height of the screen.
 
     config.screen_width = 1280
@@ -31,7 +29,7 @@ init -1 python hide:
     ## This controls the title of the window, when Ren'Py is
     ## running in a window.
 
-    config.window_title = u"Comm/IT Repetition v." + config.version
+    config.window_title = u"Communication/IT Repetition v." + config.version
 
     #########################################
     # Themes
