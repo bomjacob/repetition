@@ -2,17 +2,26 @@ init python:
     if persistent.disclaimer_seen is None:
         persistent.disclaimer_seen = False
 
-label splashscreen: #TODO: REMOVE no
-    scene black
-    $ renpy.pause(0.5, hard=True)
-
+init:
     image disclaimer:
-        Text("""\n{color=#fff}{size=80}Disclaimer{/size}\n\n{size=25}This game is shit. Like really... This is a shitty school project. Why would you even download this?!?{/size}{/color}""", text_align=0.5, xmaximum=740)
+        Text("""\n{color=#fff}{size=80}Disclaimer{/size}\n{size=25}This game contains mild cartoon violence and strong language. Additionally it contains slightly mad and overly attached cubes. Player discretion is advised.\nThis project has been released under an MIT license at {a=https://github.com/bomjacob/repetition}github.com/bomjacob/repetition{/a}{vspace=330}{size=20}
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.{/size}
+{/color}""", text_align=0.5, xmaximum=900)
     image ctc:
         linear 0.75 alpha 1.0
         Text("""{color=#fff}{size=20}Press any key to continue{/size}{/color}\n""", text_align=0.5, xmaximum=740)
         linear 0.75 alpha 0.25
         repeat
+
+label splashscreen:
+    scene black
+    $ renpy.pause(0.5)
 
     show disclaimer at top with dissolve
     if not persistent.disclaimer_seen:
@@ -21,7 +30,7 @@ label splashscreen: #TODO: REMOVE no
         $ renpy.pause()
     else:
         show ctc at center with dissolve
-        $ renpy.pause(3)
+        $ renpy.pause(5)
     hide disclaimer
     hide ctc
     with dissolve

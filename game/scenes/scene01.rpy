@@ -60,7 +60,7 @@ label scene01:
             jump __adventure
     
         "Yeah... No place is better than home.":
-            jump __home
+            jump __back_home
 
 label __back_home:
     "With a sigh of resignation, I turned back towards the house.\n"
