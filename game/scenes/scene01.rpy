@@ -36,10 +36,12 @@ label scene01:
     me "Wait, is that..?"
 
     "I picked it up{nw}"
-    show overlay sensei_letter with dissolve
+    show overlay sensei_letter at top with dissolve
     extend ", reading over each word carefully."
 
-    "As I read over the words, I could not help but despair.{w} The outside world sounded like a dangerous place, filled with mystery and horror. But then,{w} I thought back to my sensei’s words.."
+    "As I read over the words, I could not help but despair.{w} The outside world sounded like a dangerous place, filled with mystery and horror. But then,{w} I thought back to my sensei's words.."
+
+    hide overlay
 
     "Flashback!"
     show sensei
@@ -123,9 +125,7 @@ label __adventure:
     menu:
         "Help Mayor Froggy?"
         "No":
-            froggy "I really thought I could count on you for help."
-            "Die by wolves :/"
-            return
+            jump __no_help
         "Yes":
             jump __postermm_start
 
