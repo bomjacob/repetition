@@ -72,6 +72,8 @@ label __back_home:
     me "I suppose... I couldn't do it after all."
 
     "I looked at the companion cube on the floor."
+
+    me "But you still love me... Right?"
     show cubey cubey at left with dissolve:
         yoffset -50
         zoom 0.3
