@@ -9,7 +9,7 @@ init:
 init python:
     import random
     
-    def die(last_words=None, stages=[1,2,3,4]):
+    def die(last_words=None, last_words_person=None, stages=[1,2,3,4]):
         for i in stages:
             renpy.show('overlay dead_' + str(i))
             renpy.sound.play('sound/fx/blood_drip.ogg')
@@ -18,7 +18,7 @@ init python:
                 renpy.pause((5-i) / 3)
 
         if last_words is not None:
-            renpy.say(None, last_words)
+            renpy.say(last_words_person, last_words)
 
         renpy.jump('credits')
 

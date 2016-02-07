@@ -93,8 +93,8 @@ label __back_home:
 label __adventure:
     "With a sigh, I slammed the door shut behind me, and looked towards the horizon.{w} The journey before me would be long and arduous, but I knew that I had no choice. It was my fate."
 
-    scene ?
-    scene ?
+    scene black
+    #scene 
 
     me "Oh, wow... It feels like I've been walking for days!"
     "I looked at the city rising up before me, my entire body aching from a long and tiring walk.{w} At least, that was what my body told me. My map told a different story."
@@ -104,15 +104,21 @@ label __adventure:
     me "I wonder where all the people are?"
     "Walking a bit further down the road revealed a pompous-looking house with the sign “Mayor” above the entrance. {w}A confused-looking frog was standing by the entrance, looking at a piece of paper on the wall while mumbling to himself. {w}The frog suddenly seemed to notice me, and waved me over."
 
-    
-
-    scene town_square_with_people with fade
-
     show froggy hi with dissolve
 
-    froggy "It's everyone's favourite mayor, Froggy!"
+    show froggy hi_talking with dissolve
 
-    froggy talking "Hello (name of main char), I need your help."
+    froggy "Greetings!{w} Salutations!{w} Might I ask who you are, and what you are doing here?"
+
+    show me at right
+    show froggy hi_talking at left with move
+
+    me "Uh... Yeah... Hi. My name is [name]! I'm really just passing by, though I would like to know if you have any places to stay?"
+    froggy "I am glad to make your acquaintance, [name]!"
+    froggy talking "I am called Froggy! I am the mayor of this small town." #this one?
+    froggy "Being a small town as this is, I can't say that we have any hotels or the likes. Sorry to disappoint you."
+    me "No, it's okay. I suppose I should be on my way, then?"
+    froggy "W-wait a second! Actually, there is something I could use a second opinion on. Would you mind staying for a bit, helping out a mayor in need?"
 
     menu:
         "Help Mayor Froggy?"
@@ -121,28 +127,54 @@ label __adventure:
             "Die by wolves :/"
             return
         "Yes":
-            froggy "Thank you so much! I knew i could count on you."
             jump __postermm_start
 
+label __no_help:
+    me "Actually, I'm... Rather busy at the moment! If you wouldn't mind, I need to be on my way."
+    froggy confused "That's a shame. I hope nothing bad happens to you on your journey, though." #By displeased do you mean confused?
+    "I turned my back towards the mayor, and started walking out of the small town. Since it was a small town, the walk wasn't very far."
+
+    #scene ?
+    "At the edge of the city, a large forest stretched out before me. The thick crowns cast solid shadows on the ground, making it harder to see, but not impossible. A small forest path twisted its way between the trees."
+    "I started walking along the forest path, enjoying the gentle breeze that whistled through the trees.{w} The path slowly grew more unclear, until it dwindled down into several smaller animal paths."
+
+    #scene ?
+    "As I got further into the woods, I finally had to admit that I was lost. The large canopy had grown thicker, letting even less light come through the countless leaves. The wind that had earlier been nice and refreshing, suddenly felt harsh and prickly on my skin."
+    "My ears suddenly picked up on a very low sound. Something that sounded almost like... A growl?..."
+    "Looking around in confusion, I searched for the source of the sound. Surely it couldn't have been my imagination?"
+
+    "As the leaves of a bush rustled to my right, I whipped my head in that direction. *show wolves* Out of the bush appeared five large, black wolves, snarling menacingly, with their teeth bared, and their eyes fixed on me."
+    me "E-... Easy now... I'm sure we can work this out, yes...?"
+    "My plea was answered by a sharp bark from the foremost wolf, followed up by barks from the four others behind it. I was about to turn around and make a run for it, when the wolves finally decided to jump at me."
+    me "B-... Blood?... Is this... My blood?..."
+    me "AAARRGGGHHHHH"
+    $ die(last_words="The woods were finally filled with silence.")
+    
 
 label __postermm_start:
     $ postermm_points = 0
     $ __postermm_done = {}
 
+    froggy "I am glad to hear it, [name]."
+    froggy "See, I have been working on a campaign to reduce the number of bottles and cans lying about. Sadly, the people in this village don't seem to care much about their mayor! Or the environment, for that matter."
+    me "So what do you want me to do?"
+    froggy "Well, I was thinking of making a promotional poster, to raise awareness about the impending doom, that comes from littering bottles everywhere!"
+    "I raised an eyebrow at the Mayor, but didn't feel the need to inquire further about the matter. He took the poster from the wall, and raised it in front of me."
+
     show overlay shitty_poster
 
-    froggy "Here is a poster.{w}\nDo you see anything wrong with it?"
+    froggy "So what do you think?"
 
     hide overlay
 
     menu:
-        "Anything wrong with the poster?"
-        "The poster looks fine to me :)":
+        "How does the poster look?"
+        "It looks amazing!":
             jump __postermm_fine
-        "Yeah, it's not quite right.":
+        "It needs some work...":
             froggy talking "What would you say is wrong?"
             jump __postermm_wrong
-        "It's absolute shit":
+        "It's fucking terrible!":
             jump __postermm_shit
         "Let me see the poster again please.":
             jump __postermm_show
@@ -179,9 +211,16 @@ label __postermm_wrong:
 
 
 label __postermm_shit:
-    froggy "You will now die :/"
+    froggy "The mayor's eye spasmed a bit, as he stared at me with malice."
+    froggy murderous "You... What? How dare you say that to me, the mighty mayor?!"
 
-    return
+    "I quickly backed off, as a red aura started to envelop the mayor."
+    froggy "We don't... Use swear words here... It's against the law!"
+    "As those deep red eyes caught mine, I found that I could no longer move a muscle. As I stood there, helpless, he walked towards me."
+    froggy "Do you know what happens to lawbreakers in town, hmm?"
+    "The mayor was now close enough, that I could feel the stinging red aura, slowly peeling away my skin."
+    froggy "You may never utter a swearword again."
+    $ die(last_words="Have you never heard of constructive criticism?", last_words_person=froggy)
 
 
 label __postermm_heading:
