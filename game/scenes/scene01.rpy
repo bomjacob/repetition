@@ -95,8 +95,11 @@ label __back_home:
 label __adventure:
     "With a sigh, I slammed the door shut behind me, and looked towards the horizon.{w} The journey before me would be long and arduous, but I knew that I had no choice. It was my fate."
 
-    scene black
+    scene meadows
     #scene 
+    $ renpy.pause(5)
+
+    scene town
 
     me "Oh, wow... It feels like I've been walking for days!"
     "I looked at the city rising up before me, my entire body aching from a long and tiring walk.{w} At least, that was what my body told me. My map told a different story."
@@ -104,16 +107,19 @@ label __adventure:
     "I looked around at the houses gathered. Many of them had lights on behind the windows, though most of them had their curtains down. The streets were entirely empty, except for a few bottles lying about, and a stray cat every once in a while. A tumbleweed would not be misplaced."
 
     me "I wonder where all the people are?"
-    "Walking a bit further down the road revealed a pompous-looking house with the sign “Mayor” above the entrance. {w}A confused-looking frog was standing by the entrance, looking at a piece of paper on the wall while mumbling to himself. {w}The frog suddenly seemed to notice me, and waved me over."
+    "Walking a bit further down the road{nw}"
+    scene mayor_mansion
+    extend ", revealed a pompous-looking house with the sign “Mayor” above the entrance. {w}A confused-looking frog was standing by the entrance, looking at a piece of paper on the wall while mumbling to himself. {nw}"
 
     show froggy hi with dissolve
+    extend "The frog suddenly seemed to notice me, and waved me over."
 
     show froggy hi_talking with dissolve
 
     froggy "Greetings!{w} Salutations!{w} Might I ask who you are, and what you are doing here?"
 
-    show me at right
-    show froggy hi_talking at left with move
+    show me at left
+    show froggy hi_talking at right with move
 
     me "Uh... Yeah... Hi. My name is [name]! I'm really just passing by, though I would like to know if you have any places to stay?"
     froggy "I am glad to make your acquaintance, [name]!"
@@ -131,21 +137,25 @@ label __adventure:
 
 label __no_help:
     me "Actually, I'm... Rather busy at the moment! If you wouldn't mind, I need to be on my way."
-    froggy confused "That's a shame. I hope nothing bad happens to you on your journey, though." #By displeased do you mean confused?
+    froggy confused "That's a shame. I hope nothing bad happens to you on your journey, though." #By displeased do you mean confused? - Not really, more like a d'aww, why does noone want to help me?
+    scene town_walk
     "I turned my back towards the mayor, and started walking out of the small town. Since it was a small town, the walk wasn't very far."
 
-    #scene ?
+    scene forest_start
     "At the edge of the city, a large forest stretched out before me. The thick crowns cast solid shadows on the ground, making it harder to see, but not impossible. A small forest path twisted its way between the trees."
     "I started walking along the forest path, enjoying the gentle breeze that whistled through the trees.{w} The path slowly grew more unclear, until it dwindled down into several smaller animal paths."
 
-    #scene ?
+    scene forest_dark
     "As I got further into the woods, I finally had to admit that I was lost. The large canopy had grown thicker, letting even less light come through the countless leaves. The wind that had earlier been nice and refreshing, suddenly felt harsh and prickly on my skin."
     "My ears suddenly picked up on a very low sound. Something that sounded almost like... A growl?..."
     "Looking around in confusion, I searched for the source of the sound. Surely it couldn't have been my imagination?"
 
-    "As the leaves of a bush rustled to my right, I whipped my head in that direction. *show wolves* Out of the bush appeared five large, black wolves, snarling menacingly, with their teeth bared, and their eyes fixed on me."
+    "As the leaves of a bush rustled to my right, I whipped my head in that direction. {nw}"
+    show wolves at right with dissolve
+    "Out of the bush appeared five large, black wolves, snarling menacingly, with their teeth bared, and their eyes fixed on me."
+    show me at left with dissolve
     me "E-... Easy now... I'm sure we can work this out, yes...?"
-    "My plea was answered by a sharp bark from the foremost wolf, followed up by barks from the four others behind it. I was about to turn around and make a run for it, when the wolves finally decided to jump at me."
+    "My plea was answered by a sharp bark from the foremost wolf, followed up by barks from the four others behind it. {w}I was about to turn around and make a run for it, when the wolves finally decided to jump at me."
     me "B-... Blood?... Is this... My blood?..."
     me "AAARRGGGHHHHH"
     $ die(last_words="The woods were finally filled with silence.")
