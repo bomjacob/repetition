@@ -29,28 +29,82 @@ label scene01:
     show me with dissolve
 
     "This was weird... Sensei would usually have woken me by now."
-
     "I looked around in confusion. The room was exactly like I had left it, when I had gone to bed.{w} But sensei was nowhere in sight."
-
     "I found the kettle that we usually use for boiling water.{w} It was completely cold."
-
     "I was about to walk away when I noticed a small slip of paper."
 
     me "Wait, is that..?"
 
     "I picked it up{nw}"
-    show overlay sensei_paper with dissolve
+    show overlay sensei_letter with dissolve
     extend ", reading over each word carefully."
 
-    "As I read over the words, I could not help but despair."
+    "As I read over the words, I could not help but despair.{w} The outside world sounded like a dangerous place, filled with mystery and horror. But then,{w} I thought back to my sensei’s words.."
+
+    "Flashback!"
+    show sensei
+    sensei "With the power of communication/IT we can do {i}everything!{/i}"
+    hide sensei
+    "End flashback"
+
+    "With a look of determination in my eyes, I grabbed my bag and packed only the things of utmost necessity."
+
+    scene mountains
+
+    "As I opened the door and looked at the mountains stretching out before me, I felt an ounce of regret."
+
+    menu:
+        "Go back and stay?"
     
-    show sensei dead with dissolve
+        "No! Go on an adventure!":
+            jump __adventure
+    
+        "Yeah... No place is better than home.":
+            jump __home
 
-    sensei "I'm dead, danmit!" with shake
+label __back_home:
+    "With a sigh of resignation, I turned back towards the house.\n"
+    scene sensei_room
+    extend "Walking back inside, I slammed the door behind me."
+    #$ renpy.sound.play("sound/fx/door_slam.ogg")
+    me "I suppose... I couldn't do it after all."
 
-    me "Oh no!"
+    "I looked at the companion cube on the floor."
+    show cubey cubey at left with dissolve:
+        yoffset -50
+        zoom 0.3
+    cubey "I will love you forever! So now, don't go running off again... Don't... {w}Be... {w}Naughty."
+    "I gave the companion cube worried glances, as I slowly backed away."
+    show cubey cubey at left:
+        yoffset -50
+        zoom 0.3
+        1.0
+        linear 0.3 zoom 0.35
+        1.0
+        linear 0.3 zoom 0.40
+        1.0
+        linear 0.3 zoom 0.45
+    "The cube seemed to move towards me, getting ever so slightly closer, every time I blinked."
 
-    me "Well... no time to dwell on the bad things. The mayor needs my help."
+    "The companion cube was getting awfully close now. A hollow noise resounded as my back hit the wall."
+    cubey "Nowhere to go, nowhere to go, nowhere to go..."
+    $ die(last_words="No one was close enough to hear my screams.")
+
+label __adventure:
+    "With a sigh, I slammed the door shut behind me, and looked towards the horizon.{w} The journey before me would be long and arduous, but I knew that I had no choice. It was my fate."
+
+    scene ?
+    scene ?
+
+    me "Oh, wow... It feels like I've been walking for days!"
+    "I looked at the city rising up before me, my entire body aching from a long and tiring walk.{w} At least, that was what my body told me. My map told a different story."
+    me "I should find a place to rest..."
+    "I looked around at the houses gathered. Many of them had lights on behind the windows, though most of them had their curtains down. The streets were entirely empty, except for a few bottles lying about, and a stray cat every once in a while. A tumbleweed would not be misplaced."
+
+    me "I wonder where all the people are?"
+    "Walking a bit further down the road revealed a pompous-looking house with the sign “Mayor” above the entrance. {w}A confused-looking frog was standing by the entrance, looking at a piece of paper on the wall while mumbling to himself. {w}The frog suddenly seemed to notice me, and waved me over."
+
+    
 
     scene town_square_with_people with fade
 

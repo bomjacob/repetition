@@ -3,18 +3,22 @@ init:
     define sensei = Character(name='Sensei', who_color="#ee3342", image="sensei", ctc="ctc_blink", ctc_position="fixed")
     define froggy = Character(name='Froggy', who_color="#D6FF95", image="froggy", ctc="ctc_blink", ctc_position="fixed")
     define magenta = Character(name='Magenta', who_color="#D747D0", ctc="ctc_blink", ctc_position="fixed")
+    define cubey = Character(name='Cubey', who_color="#955273", image="cubey", ctc="ctc_blink", ctc_position="fixed")
     define narrator = Character(ctc="ctc_blink", ctc_position="fixed")
 
 init python:
     import random
     
-    def die(stages=[1,2,3,4]):
+    def die(last_words=None, stages=[1,2,3,4]):
         for i in stages:
             renpy.show('overlay dead_' + str(i))
             renpy.sound.play('sound/fx/blood_drip.ogg')
             renpy.with_statement(trans=shake)
             if len(stages) != 1:
                 renpy.pause((5-i) / 3)
+
+        if last_words is not None:
+            renpy.say(None, last_words)
 
         renpy.jump('credits')
 

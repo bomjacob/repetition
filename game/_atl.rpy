@@ -1,6 +1,6 @@
 init:
     image ctc_blink:
-        "ui/ctc2.png"
+        "ui/ctc.png"
         xpos 1230
         ypos 740
         linear 0.75 alpha 0.0
