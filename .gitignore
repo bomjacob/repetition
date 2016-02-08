@@ -10,3 +10,4 @@ errors.txt
 *.rpyc
 debuglog.txt
 traceback.txt
+**/Thumbs.db
