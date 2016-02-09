@@ -106,11 +106,11 @@ label __adventure:
     $ renpy.sound.play("sound/fx/door_close.ogg")
     "With a sigh, I slammed the door shut behind me, and looked towards the horizon.{w} The journey before me would be long and arduous, but I knew that I had no choice. It was my fate."
 
-    scene meadows
-    #scene 
+    scene meadows with fade_scene
+    
     $ renpy.pause(5)
 
-    scene town
+    scene town with fade_scene
 
     me "Oh, wow... It feels like I've been walking for days!"
     "I looked at the city rising up before me, my entire body aching from a long and tiring walk.{w} At least, that was what my body told me. My map told a different story."
@@ -118,9 +118,9 @@ label __adventure:
     "I looked around at the houses gathered. Many of them had lights on behind the windows, though most of them had their curtains down. The streets were entirely empty, except for a few bottles lying about, and a stray cat every once in a while. A tumbleweed would not be misplaced."
 
     me "I wonder where all the people are?"
-    "Walking a bit further down the road{nw}"
-    scene mayor_mansion
-    extend ", revealed a pompous-looking house with the sign “Mayor” above the entrance. {w}A confused-looking frog was standing by the entrance, looking at a piece of paper on the wall while mumbling to himself. {nw}"
+
+    scene mayor_mansion with fade_scene
+    "Walking a bit further down the road, revealed a pompous-looking house with the sign “Mayor” above the entrance. {w}A confused-looking frog was standing by the entrance, looking at a piece of paper on the wall while mumbling to himself. {nw}"
 
     show froggy hi with dissolve
     extend "The frog suddenly seemed to notice me, and waved me over."
@@ -355,7 +355,7 @@ label __postermm_done:
         return
     elif postermm_points > 2 and postermm_points <= 4:
         froggy "Well I guess it turned out alright. It is definitely better than it was before! {w}This campaign might not turn out to be be a total failure after all."
-        jump __speech
+        jump __beforespeech
     elif postermm_points >= 5:
         froggy "This.. This is much better than I thought it could be! {w}This is sure to attract lots of people. Thank you very much!"
         jump __beforespeech

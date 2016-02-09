@@ -1,6 +1,8 @@
 init:
     $ flash = Fade(.25, 0, .75, color="#fff")
 
+    $ fade_scene = Fade(0.5, 1, 0.5)
+
     image ctc_blink:
         "ui/ctc.png"
         xpos 1230
