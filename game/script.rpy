@@ -9,18 +9,13 @@ init:
 init python:
     import random
     
-    def die(last_words=None, last_words_person=None, stages=[1,2,3,4]):
-        for i in stages:
-            renpy.show('overlay dead_' + str(i))
+    def die(version=0):
+        lengths = [4, 3]
+        for i in range(lengths[version]):
+            renpy.show('overlay dead ' + str(version) + ' ' + str(i))
             renpy.sound.play('sound/fx/blood_drip.ogg')
             renpy.with_statement(trans=shake)
-            if len(stages) != 1:
-                renpy.pause((5-i) / 3)
-
-        if last_words is not None:
-            renpy.say(last_words_person, last_words)
-
-        renpy.jump('credits')
+            renpy.pause((5-i) / 3)
 
     def random_file_line(afile):
         line = next(afile)
@@ -38,7 +33,7 @@ label start:
         "Start game":
             jump naming
         "Die":
-            $ die()
+            $ die(0)
 
 label naming:
     python:

@@ -10,3 +10,5 @@ errors.txt
 *.rpyc
 debuglog.txt
 traceback.txt
+files.txt
+**/Desktop.ini

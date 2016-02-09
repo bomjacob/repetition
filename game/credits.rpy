@@ -44,7 +44,7 @@ init python:
         ('Assets', (
             ('Background', ('mugenjohncel on lemmesoft.renai.us',)),
             ('Music', ('',)),
-            ('Sound', ('http://www.freesfx.co.uk',)),
+            ('Sound', ('https://www.freesound.org/',)),
             ('Other', ('{size=-5}Letter:{/size}\nhttps://www.flickr.com/photos/playingwithpsp/2546732435/in/photostream/',))
         )),
         ('Engine', ("\n".join(str.split(renpy.version())),))
