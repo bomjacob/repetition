@@ -36,6 +36,7 @@ label start:
             $ die(0)
 
 label naming:
+    name = "DEFAULT NAME"
     python:
         with renpy.file("names.txt") as f:
             namenotok = True
