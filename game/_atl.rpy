@@ -1,4 +1,6 @@
 init:
+    $ flash = Fade(.25, 0, .75, color="#fff")
+
     image ctc_blink:
         "ui/ctc.png"
         xpos 1230
@@ -35,3 +37,7 @@ init:
         "img/book/flames/3.jpg"
         pause 0.4
         repeat
+
+    image overlay darker:
+        "ui/overlay/darker_raw.png"
+        zoom 10

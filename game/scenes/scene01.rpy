@@ -47,11 +47,14 @@ label scene01:
 
     hide overlay
 
-    "Flashback!"
+    show overlay darker
+
+    with flash
     show sensei
     sensei "With the power of communication/IT we can do {i}everything!{/i}"
     hide sensei
-    "End flashback"
+    hide overlay
+    with flash
 
     "With a look of determination in my eyes, I grabbed my bag and packed only the things of utmost necessity."
 
@@ -71,6 +74,7 @@ label scene01:
 label __back_home:
     "With a sigh of resignation, I turned back towards the house.\n"
     scene sensei_room
+    $ renpy.sound.play("sound/fx/door_close.ogg")
     extend "Walking back inside, I slammed the door behind me."
     #$ renpy.sound.play("sound/fx/door_slam.ogg")
     me "I suppose... I couldn't do it after all."
@@ -100,6 +104,7 @@ label __back_home:
     "No one was close enough to hear my screams."
 
 label __adventure:
+    $ renpy.sound.play("sound/fx/door_close.ogg")
     "With a sigh, I slammed the door shut behind me, and looked towards the horizon.{w} The journey before me would be long and arduous, but I knew that I had no choice. It was my fate."
 
     scene meadows
