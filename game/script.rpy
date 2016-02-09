@@ -10,6 +10,7 @@ init python:
     import random
     
     def die(version=0):
+        renpy.music.stop(fadeout=2)
         lengths = [4, 3]
         for i in range(lengths[version]):
             renpy.show('overlay dead ' + str(version) + ' ' + str(i))
@@ -38,9 +39,9 @@ label start:
 label naming:
     $ name = "DEFAULT NAME"
     python:
-        with renpy.file("names.txt") as f:
-            namenotok = True
-            while namenotok:
+        namenotok = True
+        while namenotok:
+            with renpy.file("names.txt") as f:
                 name = renpy.input(prompt="Before we begin.\nWould you mind telling us your name?", default=random_file_line(f)[:-2])
 
                 if len(name) > 30:
@@ -55,7 +56,7 @@ label naming:
                     continue
                 else:
                     continue
-
+        
     menu:
         "Would you like to play the tutorial. It's quite quick I assure you."
     

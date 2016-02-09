@@ -76,7 +76,6 @@ label __back_home:
     scene sensei_room
     $ renpy.sound.play("sound/fx/door_close.ogg")
     extend "Walking back inside, I slammed the door behind me."
-    #$ renpy.sound.play("sound/fx/door_slam.ogg")
     me "I suppose... I couldn't do it after all."
 
     "I looked at the companion cube on the floor."
