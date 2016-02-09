@@ -206,7 +206,7 @@ label __postermm_start:
 
 
 label __postermm_fine:
-    froggy "You will now die :/"
+    froggy "Go go wolf squad!"
 
     return
 
@@ -244,22 +244,24 @@ label __postermm_shit:
     "As those deep red eyes caught mine, I found that I could no longer move a muscle. As I stood there, helpless, he walked towards me."
     froggy "Do you know what happens to lawbreakers in town, hmm?"
     "The mayor was now close enough, that I could feel the stinging red aura, slowly peeling away my skin."
+    show overlay red_haze with dissolve
     froggy "You may never utter a swearword again."
-    $ die(0)
+    $ die(1)
     froggy "Have you never heard of constructive criticism?"
+    hide overlay
 
 
 label __postermm_heading:
     menu:
         "What's wrong with the heading?"
         "It's too big":
-            froggy talking "Nah, it certainly shouldn't be smaller. Then people couldn't see it!"
+            froggy talking "Do you think so? I certainly have trouble seeing it as it is, at least without glasses. But I am sure that you're more qualified to say so than I."
             $ postermm_points -= 1
         "It's too small":
-            froggy "Yes, it could be a bit bigger, I guess."
+            froggy "Yes, I suppose it could be a bit larger. We really want the message to stand out, to attract more people!"
             $ postermm_points += 1
         "You should totally use WordArt! It's the professional choice!":
-            froggy "Uhmm.. just no... no."
+            froggy "What did you say? Well.. I suppose I do have word, but are you truly sure about this? It looks like something my grandson would do."
             $ postermm_points -= 1
         "Let me see the poster again please.":
             jump __postermm_show
@@ -270,7 +272,7 @@ label __postermm_typography:
     menu:
         "What's wrong with the typography?"
         "The body text should be always without serifs.":
-            froggy "Are you sure that's quite right?"
+            froggy "Are you sure about that? I think it puts a bit of strain on the eyes, but I suppose you know best."
             $ postermm_points -= 1
         "Let me see the poster again please.":
             jump __postermm_show
@@ -280,14 +282,14 @@ label __postermm_typography:
 label __postermm_colours:
     menu:
         "What's wrong with the colours?"
-        "The colour of the body really shouldn't match the background. It makes it very difficult to distinguish.":
-            froggy "Yeah, i guess you're right. It {i}is{/i} quite hard to read."
+        "The colour of the body shouldn't match the background. It makes it difficult to distinguish.":
+            froggy "Yes, I suppose you're right. It {i}is{/i} quite hard to read. I just really like green."
             $ postermm_points += 1
-        "The white background is a tad boring. How about making it red?":
-            froggy "Uhmm.. are you sure...?"
+        "The white background is a tad bit boring. How about making it red?":
+            froggy "Are you sure? Red seems quite stressing for the eyes, and a bit aggressive. We don't want to scare people away!"
             $ postermm_points -= 1
-        "Black font colour is also boring, try pink!":
-            froggy "Uhmm.. that would make it hard to see."
+        "Black font colour is a bit boring. Try pink!":
+            froggy "While it is a pretty colour and all, wouldn't that be difficult to see?.. Oh, well, I suppose you know best."
             $ postermm_points -= 1
         "Let me see the poster again please.":
             jump __postermm_show
@@ -297,11 +299,11 @@ label __postermm_colours:
 label __postermm_text:
     menu:
         "What's wrong with the text?"
-        "It's full of grammatical and spelling errors.":
-            froggy "Yeah, I didn't go to school. Whoops."
+        "It's full of grammatical errors and spelling errors!":
+            froggy "Oh?.. Well, I wasn't quite sure how to spell a lot of these things, and I didn't bother to look the words up in a dictionary. {w}I'll have my secretary check through this."
             $ postermm_points += 1
         "The First Letter In Every Word Should Be Capitalized.":
-            froggy "Uhmm, that's not what they tought me in school."
+            froggy "What, isn't that what they do in Germany or something?"
             $ postermm_points -= 1
         "Let me see the poster again please.":
             jump __postermm_show
@@ -310,15 +312,19 @@ label __postermm_text:
 
 label __postermm_aida:
     me "Did you use the AIDA model to create this?"
-    froggy "Uhmm. No. What's that?"
+    froggy "Ai-what now? Ai desu?"
+    me "No, no, it's a communication model."
 
     menu:
-        "What is the AIDA model?"
+        "So what is this so-called AIDA model?"
         "Action-Interest-Disire-Action":
             froggy "Action twice? That seems wrong"
             $ postermm_points -= 1
         "Attention-Ideas-Disinterest-Action":
-            froggy "Why would I want someone to be disinterested?!"
+            froggy "Why would I want someone to be disinterested?"
+            $ postermm_points -= 1
+        "Another-Invisible-Dragon-Attack":
+            froggy "Dragon attack? Where?"
             $ postermm_points -= 1
     jump __postermm_back
 
@@ -330,7 +336,7 @@ label __postermm_back:
             froggy "What else is wrong with it then?"
             jump __postermm_wrong
         "No, it's fine now":
-            froggy "Okay, if you say so"
+            froggy "Let's take a look at it, then..."
             jump __postermm_done
         "Let me see the poster again please.":
             jump __postermm_show
@@ -340,14 +346,14 @@ label __postermm_done:
     
     if postermm_points <= 2:
         froggy "I still don't like it very much."
-        "You dead :/"
+        "Time to find a new and creative way to kill you!~"
         return
     elif postermm_points > 2 and postermm_points <= 4:
-        froggy "Well I guess it turned out allright."
+        froggy "Well I guess it turned out alright. It is definitely better than it was before! {w}This campaign might not turn out to be be a total failure after all."
         jump __speech
     elif postermm_points >= 5:
-        froggy "It's perfect! Thank you so much!"
-        jump __speech
+        froggy "This.. This is much better than I thought it could be! {w}This is sure to attract lots of people. Thank you very much!"
+        jump __beforespeech
     
     return
 
@@ -360,18 +366,21 @@ label __postermm_show:
 
     $ renpy.rollback(force=True, checkpoints=2)
 
-label __speech:
-    froggy "Bla bla bla. Recycling and whatnot."
+label __beforespeech:
+    
+    scene town_square
+    "{i}This is where you go to the plaza and hang up posters and stuff{/i}"
 
-    froggy "Would you like to stay with me in my mansion and help me with my campaign?"
+    froggy "So there we have it. The campaign is tomorrow, and you're welcome to stay here a night and help me tomorrow."
+
     menu:
         "Stay with Mayor Froggy?"
-        "Yes! I'd love to live in your mansion!":
+        "Yes! I'd love to stay a night in your mansion!":
             if postermm_points >= 5:
                 jump __too_sucessful
             else:
                 jump __not_quite
-        "No! I would like to leave this village now.":
+        "No, I think I should be on my way.":
             if postermm_points >= 5:
                 $ village_dead = True
                 jump __end
@@ -380,8 +389,9 @@ label __speech:
                 "You dead by the wolf squad of Mayor Froggy"
                 return
 
-
 label __too_sucessful:
+    scene mayor_mansion
+    "Now we go back to the mansion and sleep. Stuff happens!"
     froggy "The campaign is going so incredibly well!"
     froggy "Perhaps even {i}too{/i} well"
     jump __dragon_eat
@@ -403,7 +413,10 @@ label __not_quite:
 
 
 label __dragon_eat:
+
+    scene town_square_with_people
     show magenta mad at right
+    show overlay flames with dissolve
 
     "Oh no! A dragon!"
 
@@ -416,4 +429,5 @@ label __end:
     #If village dead then hear dragon in distance
 
     "I left the village to continue my journey..."
+    "But in reality, J totally misunderstood what I wanted to do with this last part, so I'll have to rewrite it when I write the rest. {w}Yay!"
     jump scene02
