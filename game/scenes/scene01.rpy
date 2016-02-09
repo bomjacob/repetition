@@ -96,7 +96,8 @@ label __back_home:
 
     "The companion cube was getting awfully close now. A hollow noise resounded as my back hit the wall."
     cubey "Nowhere to go, nowhere to go, nowhere to go..."
-    $ die(last_words="No one was close enough to hear my screams.")
+    $ die(0)
+    "No one was close enough to hear my screams."
 
 label __adventure:
     "With a sigh, I slammed the door shut behind me, and looked towards the horizon.{w} The journey before me would be long and arduous, but I knew that I had no choice. It was my fate."
@@ -121,6 +122,8 @@ label __adventure:
     extend "The frog suddenly seemed to notice me, and waved me over."
 
     show froggy hi_talking with dissolve
+
+    $ renpy.sound.play("sound/fx/First Call.ogg")
 
     froggy "Greetings!{w} Salutations!{w} Might I ask who you are, and what you are doing here?"
 
@@ -164,7 +167,8 @@ label __no_help:
     "My plea was answered by a sharp bark from the foremost wolf, followed up by barks from the four others behind it. {w}I was about to turn around and make a run for it, when the wolves finally decided to jump at me."
     me "B-... Blood?... Is this... My blood?..."
     me "AAARRGGGHHHHH"
-    $ die(last_words="The woods were finally filled with silence.")
+    $ die(1)
+    "The woods were finally filled with silence."
     
 
 label __postermm_start:
@@ -236,7 +240,8 @@ label __postermm_shit:
     froggy "Do you know what happens to lawbreakers in town, hmm?"
     "The mayor was now close enough, that I could feel the stinging red aura, slowly peeling away my skin."
     froggy "You may never utter a swearword again."
-    $ die(last_words="Have you never heard of constructive criticism?", last_words_person=froggy)
+    $ die(0)
+    froggy "Have you never heard of constructive criticism?"
 
 
 label __postermm_heading:
