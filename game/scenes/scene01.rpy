@@ -151,11 +151,17 @@ label __adventure:
 
 label __no_help:
     me "Actually, I'm... Rather busy at the moment! If you wouldn't mind, I need to be on my way."
-    froggy confused "That's a shame. I hope nothing bad happens to you on your journey, though." #By displeased do you mean confused? - Not really, more like a d'aww, why does noone want to help me?
+    froggy displeased "That's a shame. I hope nothing bad happens to you on your journey, though."
+
     scene town_walk
+
     "I turned my back towards the mayor, and started walking out of the small town. Since it was a small town, the walk wasn't very far."
 
+    $ renpy.music.stop(fadeout=2)
     scene forest_start
+    with Fade(0.5, 1.0, 0.5)
+    $ renpy.music.play("sound/music/Unity.ogg", loop=True, fadein=1)
+
     "At the edge of the city, a large forest stretched out before me. The thick crowns cast solid shadows on the ground, making it harder to see, but not impossible. A small forest path twisted its way between the trees."
     "I started walking along the forest path, enjoying the gentle breeze that whistled through the trees.{w} The path slowly grew more unclear, until it dwindled down into several smaller animal paths."
 
