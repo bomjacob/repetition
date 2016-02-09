@@ -21,6 +21,9 @@ SOFTWARE.{/size}
 
 label splashscreen:
     scene black
+
+    $ renpy.music.play("sound/music/KK--Love-Song.ogg", loop=True, fadein=1)
+
     $ renpy.pause(0.5)
 
     show disclaimer at top with dissolve

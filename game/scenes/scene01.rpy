@@ -1,7 +1,9 @@
 # Code for scene 1, including the code for the poster minigame at the beginning of the game
 
 label scene01:
-    $ renpy.music.play("sound/music/Serene-Separations-Soundtrack.ogg", loop=True)
+    $ renpy.music.stop(fadeout=2)
+    with Fade(0.5, 1.0, 0.5)
+    $ renpy.music.play("sound/music/Serene-Separations-Soundtrack.ogg", loop=True, fadein=1)
 
     centered "{size=+10}Let me tell you a story.{/size}"
     centered "{size=+10}{cps=*0.25}Ah...{/cps} But where do I start?{/size}"

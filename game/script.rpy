@@ -55,5 +55,29 @@ label naming:
                 else:
                     continue
 
-    me "Hi"
-    jump scene01
+    menu:
+        "Would you like to play the tutorial. It's quite quick I assure you."
+    
+        "Yeah (recommended if you've never played virtual novels before)":
+            jump tutorial
+    
+        "No, I know what I'm doing.":
+            "Okay then, let's jump right in."
+            jump scene01
+
+label tutorial:
+    "Hello welcome to this Virtual Novel. What is a virtual novel you ask?"
+    "Well, acording to wikipedia:\nA visual novel is an interactive game, featuring mostly static graphics, most often using anime-style art or occasionally live-action stills (and sometimes video footage). As the name might suggest, they resemble mixed-media novels.\nRead more: {a=https://en.wikipedia.org/wiki/Visual_novel}en.wikipedia.org/wiki/Visual_novel{/a}"
+
+    "The controls are as follows:\nLEFT CLICK to advance dialogues (this only applies if {image=ctc_small} is shown in the corner of the window, otherwise a LEFT CLICK will cause more text to appear.{w}\nLEFT CLICK is also used to select different options when you're presented with a choice."
+    "RIGHT CLICK or ESC is used to open the menu.\nFrom the menu you can save the game, and also quit it.\nIt is also here you can access the prefrenses, where you can enter fullscreen, change volume levels and much more."
+    "Since this game uses an engine called Ren'Py it has a special mechanic named {i}rollback{/i}.\nRollback allows you to (upon pressing either PGUP or scrolling your scrollwheel) to go back in time! Try it now!"
+
+    menu:
+        "Think you're ready now?"
+    
+        "No! Show me the tutorial again!":
+            jump tutorial
+
+        "Yeah, I'm totally ready!":
+            jump scene01

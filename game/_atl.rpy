@@ -7,6 +7,9 @@ init:
         linear 0.75 alpha 1.0
         repeat
 
+    image ctc_small:
+        "ui/ctc.png"
+        zoom 0.7
 
     image book sensei_and_me:
         "img/book/sensei/0.jpg"
