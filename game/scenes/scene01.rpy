@@ -390,9 +390,13 @@ label __beforespeech:
                 $ village_dead = True
                 jump __end
             else:
-                froggy "Have it your way then! Don't say I didn't give you a chance though."
-                "You dead by the wolf squad of Mayor Froggy"
+                jump __wolfsquad
                 return
+
+label __wolfsquad:
+    froggy "Have it your way then! Don't say I didn't give you a chance though."
+    $ die(1)
+    "You dead by the wolf squad of Mayor Froggy"
 
 label __too_sucessful:
     scene mayor_mansion
@@ -404,17 +408,7 @@ label __too_sucessful:
 label __not_quite:
     froggy "The campaign is not going quite as well as I was hoping."
     froggy "Sure you fixed all the errors with that poster?"
-    menu:
-        "Did you fix {i}all{/i} the errors with the poster?"
-        "Yes, of course I did.":
-            froggy "That dragon sure seems to think otherwise!"
-            jump __dragon_eat
-        "I'm sorry... I might have made a few mistakes.":
-            froggy "Yeah, I think you did."
-            froggy "It's alright though, though you should probably leave my mansion."
-            froggy "Like right now."
-            froggy "Just leave already!"
-            jump __end
+    jump __end
 
 
 label __dragon_eat:

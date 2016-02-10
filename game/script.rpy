@@ -18,6 +18,8 @@ init python:
             renpy.with_statement(trans=shake)
             renpy.pause((5-i) / 3)
 
+        renpy.jump("you_dead")
+
     def random_file_line(afile):
         line = next(afile)
         for num, aline in enumerate(afile):
@@ -83,3 +85,9 @@ label tutorial:
 
         "Yeah, I'm totally ready!":
             jump scene01
+
+label you_dead:
+    centered "Things didn't go quite as well as you had planed.\nYou can now choose to either rollback using PGUP or click {a=back_to_menu}here{/a} to return to the main menu."
+
+label back_to_menu:
+    return
