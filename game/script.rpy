@@ -76,6 +76,7 @@ label tutorial:
     "The controls are as follows:\nLEFT CLICK to advance dialogues (this only applies if {image=ctc_small} is shown in the corner of the window, otherwise a LEFT CLICK will cause more text to appear.{w}\nLEFT CLICK is also used to select different options when you're presented with a choice."
     "RIGHT CLICK or ESC is used to open the menu.\nFrom the menu you can save the game, and also quit it.\nIt is also here you can access the prefrenses, where you can enter fullscreen, change volume levels and much more."
     "Since this game uses an engine called Ren'Py it has a special mechanic named {i}rollback{/i}.\nRollback allows you to (upon pressing either PGUP or scrolling your scrollwheel) to go back in time! Try it now!"
+    "Click {a=show_help}here{/a} to open a webbrowser to display additional controls and help. This can be accessed anytime by going to the menu and clicking \"Help\"."
 
     menu:
         "Think you're ready now?"
@@ -91,3 +92,6 @@ label you_dead:
 
 label back_to_menu:
     return
+
+label show_help:
+    $ _help()
