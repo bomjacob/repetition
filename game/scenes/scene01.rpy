@@ -59,8 +59,10 @@ label scene01:
     "With a look of determination in my eyes, I grabbed my bag and packed only the things of utmost necessity."
 
     scene mountains
+    with door_trans
+    $ renpy.sound.play("sound/fx/door_close.ogg")
 
-    "As I opened the door and looked at the mountains stretching out before me, I felt an ounce of regret."
+    "As I closed the door behind me and looked at the mountains stretching out before me, I felt an ounce of regret."
 
     menu:
         "Go back and stay?"
@@ -74,6 +76,7 @@ label scene01:
 label __back_home:
     "With a sigh of resignation, I turned back towards the house.\n"
     scene sensei_room
+    with door_trans
     $ renpy.sound.play("sound/fx/door_close.ogg")
     extend "Walking back inside, I slammed the door behind me."
     me "I suppose... I couldn't do it after all."
