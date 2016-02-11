@@ -234,6 +234,8 @@ screen navigation():
         textbutton _("Help") action Help()
         textbutton _("Quit") action Quit()
 
+    key "K_ESCAPE" action Return()
+
 init -2:
 
     # Make all game menu navigation buttons the same size.
