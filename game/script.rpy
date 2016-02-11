@@ -42,7 +42,7 @@ label naming:
         namenotok = True
         while namenotok:
             with renpy.file("names.txt") as f:
-                name = renpy.input(prompt="Before we begin.\nWould you mind telling us your name?", default=random_file_line(f)[:-2])
+                name = renpy.input(prompt="{size=+10}Before we begin.\nWould you mind telling us your name?", default=random_file_line(f)[:-2])
 
                 if len(name) > 30:
                     renpy.say(None, "Are you sure? That name seems very long.")
