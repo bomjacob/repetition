@@ -208,10 +208,10 @@ init -1 python hide:
     ## Transitions.
 
     ## Used when entering the game menu from the game.
-    config.enter_transition = None
+    config.enter_transition = Dissolve(0.15)
 
     ## Used when exiting the game menu to the game.
-    config.exit_transition = None
+    config.exit_transition = Dissolve(0.15)
 
     ## Used between screens of the game menu.
     config.intra_transition = None
@@ -220,16 +220,16 @@ init -1 python hide:
     config.main_game_transition = None
 
     ## Used when returning to the main menu from the game.
-    config.game_main_transition = None
+    config.game_main_transition = Dissolve(0.15)
 
     ## Used when entering the main menu from the splashscreen.
-    config.end_splash_transition = None
+    config.end_splash_transition = Dissolve(0.15)
 
     ## Used when entering the main menu after the game has ended.
-    config.end_game_transition = None
+    config.end_game_transition = Dissolve(0.15)
 
     ## Used when a game is loaded.
-    config.after_load_transition = None
+    config.after_load_transition = Dissolve(0.15)
 
     ## Used when the window is shown.
     config.window_show_transition = None
@@ -244,10 +244,10 @@ init -1 python hide:
     config.nvl_adv_transition = dissolve
 
     ## Used when yesno is shown.
-    config.enter_yesno_transition = None
+    config.enter_yesno_transition = Dissolve(0.15)
 
     ## Used when the yesno is hidden.
-    config.exit_yesno_transition = None
+    config.exit_yesno_transition = Dissolve(0.15)
 
     ## Used when entering a replay
     config.enter_replay_transition = None
