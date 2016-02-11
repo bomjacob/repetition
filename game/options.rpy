@@ -258,6 +258,9 @@ init -1 python hide:
     ## Used when the image is changed by a say statement with image attributes.
     config.say_attribute_transition = None
 
+    #More stuff
+    config.keymap['input_enter'].append('mouseup_1')
+
     #########################################
     ## This is the name of the directory where the game's data is
     ## stored. (It needs to be set early, before any other init code
@@ -287,8 +290,6 @@ init -1 python hide:
 
     #########################################
     ## More customizations can go here.
-
-
 
 
 ## This section contains information about how to build your project into
