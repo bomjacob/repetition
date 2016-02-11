@@ -60,6 +60,6 @@ init:
         pause 0.4
         repeat
 
-    image overlay darker:
-        "ui/overlay/darker_raw.png"
-        zoom 10
+    image sensei_room_flashback = im.MatrixColor(
+        "img/bg/sensei_room.jpg",
+        im.matrix.saturation(0.1))

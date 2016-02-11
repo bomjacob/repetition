@@ -47,13 +47,12 @@ label scene01:
 
     hide overlay
 
-    show overlay darker
-
+    scene sensei_room_flashback
     with flash
-    show sensei
+    show sensei with dissolve
     sensei "With the power of communication/IT we can do {i}everything!{/i}"
-    hide sensei
-    hide overlay
+    hide sensei with dissolve
+    scene sensei_room
     with flash
 
     "With a look of determination in my eyes, I grabbed my bag and packed only the things of utmost necessity."
