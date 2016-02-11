@@ -18,8 +18,6 @@ init python:
             renpy.with_statement(trans=shake)
             renpy.pause((5-i) / 3)
 
-        renpy.jump("you_dead")
-
     def random_file_line(afile):
         line = next(afile)
         for num, aline in enumerate(afile):

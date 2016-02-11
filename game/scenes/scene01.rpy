@@ -101,6 +101,7 @@ label __back_home:
     cubey "Nowhere to go, nowhere to go, nowhere to go..."
     $ die(0)
     "No one was close enough to hear my screams."
+    jump you_dead
 
 label __adventure:
     $ renpy.sound.play("sound/fx/door_close.ogg")
@@ -179,6 +180,7 @@ label __no_help:
     me "AAARRGGGHHHHH"
     $ die(1)
     "The woods were finally filled with silence."
+    jump you_dead
     
 
 label __postermm_start:
@@ -200,7 +202,7 @@ label __postermm_start:
     menu:
         "How does the poster look?"
         "It looks amazing!":
-            jump __postermm_fine
+            jump __postermm_amazing
         "It needs some work...":
             froggy talking "What would you say is wrong?"
             jump __postermm_wrong
@@ -210,10 +212,27 @@ label __postermm_start:
             jump __postermm_show
 
 
-label __postermm_fine:
-    froggy "Go go wolf squad!"
+label __postermm_amazing:
+    me "It looks fantastic! That has to be the best promotional poster I've ever seen!"
+    froggy "Really? You think so? I suppose I should print a couple of thousand posters then, and hang them about. Thanks for the help!"
+    me "No problem!"
+    "As I waved to him and walked towards the edge of the village, I felt a bit of doubt. Had I chosen the right thing?"
 
-    return
+    # scene forest_?
+
+    "As I approached the forest, the air felt overwhelmingly humid. Small insects and lizards were scurrying around on the forest floor, as I took a weary step forwards.{w} It didn't feel directly hostile. The forest was simply so full of life that it itself felt alive."
+    "The trees were swaying in the gentle wind that seemed to blow through the crowns, though barely a breeze could be felt on the forest floor. The rustling of leaves almost made it seem like the trees were having a conversation."
+    "While I was following the forest path, looking up at the sky, I suddenly tripped."
+    me "Aa-... Huh?"
+    "I used my hands to soften the blow, as I looked behind me to see what I tripped over. {w}I couldn't see anything large enough to trip over."
+    me "That's... Weird."
+    "While mumbling to myself, I got up again and dusted off my palms and knees. {w}Were.. Those trees always so close?"
+    "Suddenly, something gripped my ankle tightly. {w}Looking back in fright, I found a mossy root protruding from the ground, coiled around my ankle like a snake. {w}I tried kicking out with my leg to shake it off, but the root adamantly held its ground."
+    "As I was distracted by the stubborn root, a second one shot out of the ground and fastened my right wrist. I raised my left hand to try and get it off of me, but the moment I was about to grab it, a third root shot out of the ground and entangled my left wrist too."
+    "Fighting futilely against the roots, I could do nothing but look as large network of roots slowly entangled my entire body. An especially thick one lazily burst out of the ground next to me, wrapping itself around my stomach before going back into the earth. {w}It's grip slowly tightened as it dragged me downwards, forcing the air out of my lungs, as the earth slowly swallowed me whole."
+    $ die(1)
+    "Not even a trace was left."
+    jump you_dead
 
 
 label __postermm_wrong:
@@ -254,6 +273,7 @@ label __postermm_shit:
     $ die(1)
     froggy "Have you never heard of constructive criticism?"
     hide overlay
+    jump you_dead    
 
 
 label __postermm_heading:
@@ -397,6 +417,7 @@ label __wolfsquad:
     froggy "Have it your way then! Don't say I didn't give you a chance though."
     $ die(1)
     "You dead by the wolf squad of Mayor Froggy"
+    jump you_dead
 
 label __too_sucessful:
     scene mayor_mansion
