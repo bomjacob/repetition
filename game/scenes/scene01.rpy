@@ -372,9 +372,7 @@ label __postermm_done:
     "DEBUG: You scored [postermm_points] points :)"
     
     if postermm_points <= 2:
-        froggy "I still don't like it very much."
-        "Time to find a new and creative way to kill you!~"
-        return
+        jump __postermm_lose
     elif postermm_points > 2 and postermm_points <= 4:
         froggy "Well I guess it turned out alright. It is definitely better than it was before! {w}This campaign might not turn out to be be a total failure after all."
         jump __beforespeech
@@ -383,6 +381,33 @@ label __postermm_done:
         jump __beforespeech
     
     return
+
+label _postermm_lose:
+    me "So?.. What do you think?"
+    "Mayor Froggy tilted his head as he stared at the poster with something that might have been disgust."
+    froggy "Well, uhh, I'd say the results are.. Debatable."
+    "I frowned slightly. Had I not done my best to make this campaign a success? Of course I knew the importance of helping the environment. {w}The mayor coughed lightly, bringing my attention back to him."
+    froggy "I think we should call it a day, then. "
+    "I nodded my head, looking at the front door.{w} Just as I was about to exit the room, however.."
+    "Mayor Froggy and I both turned immediately, as a shrill shriek abruptly came from behind us. {w}We both stood there for a while, looking for the source of the ear-piercing sound."
+    "Another shriek echoed, turning both of our attention to the discarded poster. {w}It.. Didn't look like a poster anymore.{w} Instead, what used to be a terrible poster had turned into a terrifying paper monster, with sharp teeth and an even sharper voice."
+    "I covered my ears as what appeared to be a mouth opened to shriek once again."
+    me "What is that even?"
+    froggy "It would seem to be the poster. But hey, what's the worst it can do, give use p-paper cuts?"
+    "The mayor attempted to make a joke, but his unsure voice made it sound more like a failed attempt at seeming brave. In reality, the frog was trembling in place. The poster seemed to glare at us - or at least, that was what it would have done, had it eyes."
+    "Still, what's the worst a single poster can do?"
+    "I instantly regretted that thought, as more prototype posters rose up behind the first one, the next more hideous than the previous, all having terrifying voices to match. They seemed to rip themselves apart, to form new, more spiky versions of themselves."
+    "I ran towards the door in a final attempt at getting away, when I noticed that we had been surrounded. Several poster monsters stood in the way and hissed at me before I could even get close to the door."
+    "All of them slowly move closer in their own bizarre ways, as me and mayor Froggy moved closer together."
+    froggy "I suppose th-this.. Would be a fitting time for last words.."
+    me "......"
+    "No regrets?.. If only things had gone differently.."
+    me "Who knows.. In another universe, we might be happy right now."
+    "The mayor gulped and nodded, as the poster monsters had finally grown bored of waiting. Moving right next to us, they piled on top of each other, until we were covered in sharp paper spikes. I could feel the many paper cuts all over my body, stinging, slowly giving off blood as they were bleeding me dry."
+    $ die(1)
+    "What a mess. Someone would have to clean this up later."
+    jump you_dead
+
 
 label __postermm_show:
     show overlay shitty_poster
