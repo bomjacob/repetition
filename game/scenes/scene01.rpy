@@ -279,6 +279,12 @@ label __postermm_typography:
         "The body text should be always without serifs.":
             froggy "Are you sure about that? I think it puts a bit of strain on the eyes, but I suppose you know best."
             $ postermm_points -= 1
+        "You should use a fancy cursive font!":
+            froggy "Wouldn't that be hard to read? People shouldn't have to strain their eyes to read the message."
+            $ postermm_points -=1
+        "You should use the same font for all of text.":
+            froggy "Yes... I suppose I see what you mean by that. The text by the pricing is definitely a different font."
+            $ postermm_points +=1
         "Let me see the poster again please.":
             jump __postermm_show
     jump __postermm_back
@@ -310,6 +316,9 @@ label __postermm_text:
         "The First Letter In Every Word Should Be Capitalized.":
             froggy "What, isn't that what they do in Germany or something?"
             $ postermm_points -= 1
+        "This text is missing exclamation points!!1!":
+            froggy "What now? What did you add that number for in the middle of everything?"
+            $ postermm_points -=1
         "Let me see the poster again please.":
             jump __postermm_show
     jump __postermm_back
@@ -331,6 +340,9 @@ label __postermm_aida:
         "Another-Invisible-Dragon-Attack":
             froggy "Dragon attack? Where?"
             $ postermm_points -= 1
+        "Attention-Interest-Desire-Action":
+            froggy "Now that you mention it, I do think I've heard of that somewhere before. I could probably ask my secretary to do something with that."
+            $ postermm_points +=1
     jump __postermm_back
 
 label __postermm_back:
