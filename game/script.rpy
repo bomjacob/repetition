@@ -29,12 +29,19 @@ init python:
 label start:
     scene black
 
+    jump tutorial_ask
+
+label tutorial_ask:
     menu:
-        "What would you like to do?"
-        "Start game":
+        "Would you like to play the tutorial. It is very recommeded if you've never played a visual novel before."
+    
+        "Yeah, a tutorial sounds good.":
+            jump tutorial
+    
+        "No, I know what I'm doing.":
+            "Okay then, let's jump right in."
             jump naming
-        "Die":
-            $ die(0)
+
 
 label naming:
     $ name = "DEFAULT NAME"
@@ -56,34 +63,50 @@ label naming:
                     continue
                 else:
                     continue
-        
-    menu:
-        "Would you like to play the tutorial. It's quite quick I assure you."
-    
-        "Yeah (recommended if you've never played virtual novels before)":
-            jump tutorial
-    
-        "No, I know what I'm doing.":
-            "Okay then, let's jump right in."
-            jump scene01
+
+    jump scene01
 
 label tutorial:
     "Hello welcome to this Virtual Novel. What is a virtual novel you ask?"
     "Well, acording to wikipedia:\nA visual novel is an interactive game, featuring mostly static graphics, most often using anime-style art or occasionally live-action stills (and sometimes video footage). As the name might suggest, they resemble mixed-media novels.\nRead more: {a=https://en.wikipedia.org/wiki/Visual_novel}en.wikipedia.org/wiki/Visual_novel{/a}"
 
-    "The controls are as follows:\nLEFT CLICK to advance dialogues (this only applies if {image=ctc_small} is shown in the corner of the window, otherwise a LEFT CLICK will cause more text to appear.{w}\nLEFT CLICK is also used to select different options when you're presented with a choice."
-    "RIGHT CLICK or ESC is used to open the menu.\nFrom the menu you can save/load the game, and also quit it.\nIt is also here you can access the prefrenses, where you can enter fullscreen, change volume levels and much more."
-    "Since this game uses an engine called Ren'Py it has a special mechanic named {i}rollback{/i}.\nRollback allows you to (upon pressing either PGUP or scrolling your scrollwheel) to go back in time! Try it now!"
-    "Click {a=show_help}here{/a} to open a webbrowser to display additional controls and help. This can be accessed anytime by going to the menu and clicking \"Help\"."
+    "Controls are quite simple. LEFT CLICK is used to advance dialouges. If {image=ctc_small} is shown, it will advance to next page and remove all current text, if not, more text will appear on screen. If you're ever in doubt which button to press it's probably LEFT CLICK."
+    "LEFT CLICK is also used to select options in menus.{w} Try it now.{nw}"
+    menu:
+        "LEFT CLICK is also used to select options in menus. Try it now.{fast}\nDo you understand everything so far?"
+
+        "Yeah!":
+            jump tutorial_part_2
+        "Nope! I'm totally lost!":
+            "Sorry to hear that. Hopefully it will help to hear it once again."
+            jump tutorial
+
+label tutorial_part_2:
+    "Then let's promptly continue."
+    "Press RIGHT CLICK or ESC anytime while in-game to acess the game-menu. From here you can save (the default), load, quit, or open the help document."
+    if renpy.in_rollback():
+        jump tutorial_part_3
+    "In the game-menu you will also find the game's prefrences. From there you can switch between fullscreen and windowed mode, change volume levels, change text speed and much much more."
+    if renpy.in_rollback():
+        jump tutorial_part_3
+    "This game uses a powerfull engine known as Ren'Py. Ren'Py comes with a special mechanic called \"{i}rollback{/i}\" which allows to player to go back in time in terms of the game. PGUP or mousewheel up will go back in time, while PGDN or mousewheel down will go forward, if you've already gone backwards. Try it now!"
+    while True:
+        if renpy.in_rollback():
+            jump tutorial_part_3
+        "Please try using rollback at least once. It's sure to come in handy."
+
+label tutorial_part_3:
+    "Well done! Normally that would have taken you back to the previous dialouge block, but for now let's continue with the tutorial."
+    "If at any time you need any help with controls or an explanation of the different prefrences you can access aditional help anytime by going into the game-menu (RIGHT CLICK OR ESC, remember?) and choosing \"Help\". You can also click {a=show_help}here{/a}."
 
     menu:
-        "Think you're ready now?"
+        "That's the end of the tutorial. Do you think you're ready for the game now?"
     
         "No! Show me the tutorial again!":
             jump tutorial
 
         "Yeah, I'm totally ready!":
-            jump scene01
+            jump naming
 
 label you_dead:
     scene black
