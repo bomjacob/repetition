@@ -474,7 +474,7 @@ label __beforespeech:
         "No, I think I should be on my way.":
             if postermm_points >= 5:
                 $ village_dead = True
-                jump __end
+                jump __almost_end
             else:
                 jump __wolfsquad
                 return
@@ -510,6 +510,9 @@ label __dragon_eat:
 
     return
 
+label __almost_end:
+    "This is very important to have in here. Totally. Actually, it's just flavour text. Think of the replayability!"
+    jump __end
 
 label __end:
     #If village dead then hear dragon in distance
