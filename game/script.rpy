@@ -42,9 +42,9 @@ label naming:
         namenotok = True
         while namenotok:
             with renpy.file("names.txt") as f:
-                name = renpy.input(prompt="Before we begin.\nWould you mind telling us your name?", default=random_file_line(f)[:-2])
+                name = renpy.input(prompt="{size=+10}Before we begin.\nWould you mind telling us your name?", default=random_file_line(f)[:-2], length=20)
 
-                if len(name) > 30:
+                if len(name) > 20:
                     renpy.say(None, "Are you sure? That name seems very long.")
                     continue
                 elif len(name) < 2:
@@ -72,8 +72,9 @@ label tutorial:
     "Well, acording to wikipedia:\nA visual novel is an interactive game, featuring mostly static graphics, most often using anime-style art or occasionally live-action stills (and sometimes video footage). As the name might suggest, they resemble mixed-media novels.\nRead more: {a=https://en.wikipedia.org/wiki/Visual_novel}en.wikipedia.org/wiki/Visual_novel{/a}"
 
     "The controls are as follows:\nLEFT CLICK to advance dialogues (this only applies if {image=ctc_small} is shown in the corner of the window, otherwise a LEFT CLICK will cause more text to appear.{w}\nLEFT CLICK is also used to select different options when you're presented with a choice."
-    "RIGHT CLICK or ESC is used to open the menu.\nFrom the menu you can save the game, and also quit it.\nIt is also here you can access the prefrenses, where you can enter fullscreen, change volume levels and much more."
+    "RIGHT CLICK or ESC is used to open the menu.\nFrom the menu you can save/load the game, and also quit it.\nIt is also here you can access the prefrenses, where you can enter fullscreen, change volume levels and much more."
     "Since this game uses an engine called Ren'Py it has a special mechanic named {i}rollback{/i}.\nRollback allows you to (upon pressing either PGUP or scrolling your scrollwheel) to go back in time! Try it now!"
+    "Click {a=show_help}here{/a} to open a webbrowser to display additional controls and help. This can be accessed anytime by going to the menu and clicking \"Help\"."
 
     menu:
         "Think you're ready now?"
@@ -83,3 +84,12 @@ label tutorial:
 
         "Yeah, I'm totally ready!":
             jump scene01
+
+label you_dead:
+    scene black
+    with fade
+    centered "{size=+10}Things didn't go quite as well as you had planed.\nYou can now choose to either rollback using PGUP\n or click anywhere to return to the main menu.{/size}"
+    return
+
+label show_help:
+    $ _help()

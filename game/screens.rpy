@@ -109,13 +109,17 @@ init -2:
 
 screen input(prompt):
 
-    window style "input_window":
-        has vbox
+    window style "nvl_window":
+        #has vbox
 
-        text prompt style "input_prompt"
-        input id "input" style "input_text"
+        text prompt style "input_prompt" xalign 0.5 yalign 0.4 text_align 0.5
+        input id "input" style "input_text_new" xalign 0.5 yalign 0.5 text_align 0.5
 
     use quick_menu
+
+init -2:
+    style input_text_new is input_text:
+        size 40
 
 ##############################################################################
 # Nvl
@@ -233,6 +237,8 @@ screen navigation():
         textbutton _("Main Menu") action MainMenu()
         textbutton _("Help") action Help()
         textbutton _("Quit") action Quit()
+
+    key "K_ESCAPE" action Return()
 
 init -2:
 

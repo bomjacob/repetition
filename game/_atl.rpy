@@ -3,13 +3,33 @@ init:
 
     $ fade_scene = Fade(0.5, 1, 0.5)
 
+    transform door_trans(new_widget, old_widget):
+        delay 1.5
+   
+        contains:
+            new_widget
+        
+        contains:
+            old_widget
+            pause 0.75
+            alpha 0.0
+
+        contains:
+            "black"
+            alpha 0.0
+            ease 0.75 alpha 1.0
+            pause 0.25
+            xzoom 1.0
+            easeout_circ 0.5 xzoom 0.0
+
     image ctc_blink:
         "ui/ctc.png"
         xpos 1230
         ypos 740
-        linear 0.75 alpha 0.0
-        linear 0.75 alpha 1.0
-        repeat
+        block:
+            easeout 0.75 alpha 0.0
+            easein 0.75 alpha 1.0
+            repeat
 
     image ctc_small:
         "ui/ctc.png"
@@ -40,6 +60,6 @@ init:
         pause 0.4
         repeat
 
-    image overlay darker:
-        "ui/overlay/darker_raw.png"
-        zoom 10
+    image sensei_room_flashback = im.MatrixColor(
+        "img/bg/sensei_room.jpg",
+        im.matrix.saturation(0.1))

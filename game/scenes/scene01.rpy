@@ -1,9 +1,9 @@
 # Code for scene 1, including the code for the poster minigame at the beginning of the game
 
 label scene01:
-    $ renpy.music.stop(fadeout=2)
+    $ renpy.music.stop(fadeout=1)
+    $ renpy.music.queue("sound/music/Serene-Separations-Soundtrack.ogg", loop=True, fadein=1)
     with Fade(0.5, 1.0, 0.5)
-    $ renpy.music.play("sound/music/Serene-Separations-Soundtrack.ogg", loop=True, fadein=1)
 
     centered "{size=+10}Let me tell you a story.{/size}"
     centered "{size=+10}{cps=*0.25}Ah...{/cps} But where do I start?{/size}"
@@ -47,20 +47,21 @@ label scene01:
 
     hide overlay
 
-    show overlay darker
-
+    scene sensei_room_flashback
     with flash
-    show sensei
+    show sensei with dissolve
     sensei "With the power of communication/IT we can do {i}everything!{/i}"
-    hide sensei
-    hide overlay
+    hide sensei with dissolve
+    scene sensei_room
     with flash
 
     "With a look of determination in my eyes, I grabbed my bag and packed only the things of utmost necessity."
 
     scene mountains
+    with door_trans
+    $ renpy.sound.play("sound/fx/door_close.ogg")
 
-    "As I opened the door and looked at the mountains stretching out before me, I felt an ounce of regret."
+    "As I closed the door behind me and looked at the mountains stretching out before me, I felt an ounce of regret."
 
     menu:
         "Go back and stay?"
@@ -74,6 +75,7 @@ label scene01:
 label __back_home:
     "With a sigh of resignation, I turned back towards the house.\n"
     scene sensei_room
+    with door_trans
     $ renpy.sound.play("sound/fx/door_close.ogg")
     extend "Walking back inside, I slammed the door behind me."
     me "I suppose... I couldn't do it after all."
@@ -101,6 +103,7 @@ label __back_home:
     cubey "Nowhere to go, nowhere to go, nowhere to go..."
     $ die(0)
     "No one was close enough to hear my screams."
+    jump you_dead
 
 label __adventure:
     $ renpy.sound.play("sound/fx/door_close.ogg")
@@ -156,10 +159,10 @@ label __no_help:
 
     "I turned my back towards the mayor, and started walking out of the small town. Since it was a small town, the walk wasn't very far."
 
-    $ renpy.music.stop(fadeout=2)
+    $ renpy.music.stop(fadeout=1)
+    $ renpy.music.queue("sound/music/Unity.ogg", loop=True, fadein=1)
     scene forest_start
     with Fade(0.5, 1.0, 0.5)
-    $ renpy.music.play("sound/music/Unity.ogg", loop=True, fadein=1)
 
     "At the edge of the city, a large forest stretched out before me. The thick crowns cast solid shadows on the ground, making it harder to see, but not impossible. A small forest path twisted its way between the trees."
     "I started walking along the forest path, enjoying the gentle breeze that whistled through the trees.{w} The path slowly grew more unclear, until it dwindled down into several smaller animal paths."
@@ -179,6 +182,7 @@ label __no_help:
     me "AAARRGGGHHHHH"
     $ die(1)
     "The woods were finally filled with silence."
+    jump you_dead
     
 
 label __postermm_start:
@@ -193,6 +197,9 @@ label __postermm_start:
 
     show overlay shitty_poster
 
+    $ renpy.music.stop(fadeout=5)
+    $ renpy.music.queue("sound/music/Freddys-Menagerie.ogg", loop=True, fadein=5)
+
     froggy "So what do you think?"
 
     hide overlay
@@ -200,7 +207,7 @@ label __postermm_start:
     menu:
         "How does the poster look?"
         "It looks amazing!":
-            jump __postermm_fine
+            jump __postermm_amazing
         "It needs some work...":
             froggy talking "What would you say is wrong?"
             jump __postermm_wrong
@@ -210,10 +217,29 @@ label __postermm_start:
             jump __postermm_show
 
 
-label __postermm_fine:
-    froggy "Go go wolf squad!"
+label __postermm_amazing:
+    me "It looks fantastic! That has to be the best promotional poster I've ever seen!"
+    froggy "Really? You think so? I suppose I should print a couple of thousand posters then, and hang them about. Thanks for the help!"
+    me "No problem!"
+    "As I waved to him and walked towards the edge of the village, I felt a bit of doubt. Had I chosen the right thing?"
+    $ renpy.music.stop(fadeout=1)
+    $ renpy.music.queue("sound/music/Not-As-It-Seems.ogg", loop=True, fadein=1)
+    scene forest_dark
+    with Fade(0.5, 1.0, 0.5)
 
-    return
+    "As I approached the forest, the air felt overwhelmingly humid. Small insects and lizards were scurrying around on the forest floor, as I took a weary step forwards.{w} It didn't feel directly hostile. The forest was simply so full of life that it itself felt alive."
+    "The trees were swaying in the gentle wind that seemed to blow through the crowns, though barely a breeze could be felt on the forest floor. The rustling of leaves almost made it seem like the trees were having a conversation."
+    "While I was following the forest path, looking up at the sky, I suddenly tripped."
+    me "Aa-... Huh?"
+    "I used my hands to soften the blow, as I looked behind me to see what I tripped over. {w}I couldn't see anything large enough to trip over."
+    me "That's... Weird."
+    "While mumbling to myself, I got up again and dusted off my palms and knees. {w}Were.. Those trees always so close?"
+    "Suddenly, something gripped my ankle tightly. {w}Looking back in fright, I found a mossy root protruding from the ground, coiled around my ankle like a snake. {w}I tried kicking out with my leg to shake it off, but the root adamantly held its ground."
+    "As I was distracted by the stubborn root, a second one shot out of the ground and fastened my right wrist. I raised my left hand to try and get it off of me, but the moment I was about to grab it, a third root shot out of the ground and entangled my left wrist too."
+    "Fighting futilely against the roots, I could do nothing but look as large network of roots slowly entangled my entire body. An especially thick one lazily burst out of the ground next to me, wrapping itself around my stomach before going back into the earth. {w}It's grip slowly tightened as it dragged me downwards, forcing the air out of my lungs, as the earth slowly swallowed me whole."
+    $ die(1)
+    "Not even a trace was left."
+    jump you_dead
 
 
 label __postermm_wrong:
@@ -254,6 +280,7 @@ label __postermm_shit:
     $ die(1)
     froggy "Have you never heard of constructive criticism?"
     hide overlay
+    jump you_dead    
 
 
 label __postermm_heading:
@@ -362,9 +389,7 @@ label __postermm_done:
     "DEBUG: You scored [postermm_points] points :)"
     
     if postermm_points <= 2:
-        froggy "I still don't like it very much."
-        "Time to find a new and creative way to kill you!~"
-        return
+        jump __postermm_lose
     elif postermm_points > 2 and postermm_points <= 4:
         froggy "Well I guess it turned out alright. It is definitely better than it was before! {w}This campaign might not turn out to be be a total failure after all."
         jump __beforespeech
@@ -373,6 +398,37 @@ label __postermm_done:
         jump __beforespeech
     
     return
+
+label __postermm_lose:
+    me "So?.. What do you think?"
+    "Mayor Froggy tilted his head as he stared at the poster with something that might have been disgust."
+    froggy "Well, uhh, I'd say the results are.. Debatable."
+    "I frowned slightly. Had I not done my best to make this campaign a success? Of course I knew the importance of helping the environment. {w}The mayor coughed lightly, bringing my attention back to him."
+    froggy "I think we should call it a day, then. "
+    "I nodded my head, looking at the front door.{w} Just as I was about to exit the room, however.."
+
+    $ renpy.music.stop(fadeout=5)
+    $ renpy.music.queue("sound/music/Volatile-Reaction.ogg", loop=True, fadein=5)
+
+    "Mayor Froggy and I both turned immediately, as a shrill shriek abruptly came from behind us. {w}We both stood there for a while, looking for the source of the ear-piercing sound."
+    "Another shriek echoed, turning both of our attention to the discarded poster. {w}It.. Didn't look like a poster anymore.{w} Instead, what used to be a terrible poster had turned into a terrifying paper monster, with sharp teeth and an even sharper voice."
+    "I covered my ears as what appeared to be a mouth opened to shriek once again."
+    me "What is that even?"
+    froggy "It would seem to be the poster. But hey, what's the worst it can do, give us p-paper cuts?"
+    "The mayor attempted to make a joke, but his unsure voice made it sound more like a failed attempt at seeming brave. In reality, the frog was trembling in place. The poster seemed to glare at us - or at least, that was what it would have done, had it eyes."
+    "Still, what's the worst a single poster can do?"
+    "I instantly regretted that thought, as more prototype posters rose up behind the first one, the next more hideous than the previous, all having terrifying voices to match. They seemed to rip themselves apart, to form new, more spiky versions of themselves."
+    "I ran towards the door in a final attempt at getting away, when I noticed that we had been surrounded. Several poster monsters stood in the way and hissed at me before I could even get close to the door."
+    "All of them slowly move closer in their own bizarre ways, as me and mayor Froggy moved closer together."
+    froggy "I suppose th-this.. Would be a fitting time for last words.."
+    me "......"
+    "No regrets?.. If only things had gone differently.."
+    me "Who knows.. In another universe, we might be happy right now."
+    "The mayor gulped and nodded, as the poster monsters had finally grown bored of waiting. Moving right next to us, they piled on top of each other, until we were covered in sharp paper spikes. I could feel the many paper cuts all over my body, stinging, slowly giving off blood as they were bleeding me dry."
+    $ die(1)
+    "What a mess. Someone would have to clean this up later."
+    jump you_dead
+
 
 label __postermm_show:
     show overlay shitty_poster
@@ -402,9 +458,14 @@ label __beforespeech:
                 $ village_dead = True
                 jump __end
             else:
-                froggy "Have it your way then! Don't say I didn't give you a chance though."
-                "You dead by the wolf squad of Mayor Froggy"
+                jump __wolfsquad
                 return
+
+label __wolfsquad:
+    froggy "Have it your way then! Don't say I didn't give you a chance though."
+    $ die(1)
+    "You dead by the wolf squad of Mayor Froggy"
+    jump you_dead
 
 label __too_sucessful:
     scene mayor_mansion
@@ -416,17 +477,7 @@ label __too_sucessful:
 label __not_quite:
     froggy "The campaign is not going quite as well as I was hoping."
     froggy "Sure you fixed all the errors with that poster?"
-    menu:
-        "Did you fix {i}all{/i} the errors with the poster?"
-        "Yes, of course I did.":
-            froggy "That dragon sure seems to think otherwise!"
-            jump __dragon_eat
-        "I'm sorry... I might have made a few mistakes.":
-            froggy "Yeah, I think you did."
-            froggy "It's alright though, though you should probably leave my mansion."
-            froggy "Like right now."
-            froggy "Just leave already!"
-            jump __end
+    jump __end
 
 
 label __dragon_eat:
@@ -444,7 +495,7 @@ label __dragon_eat:
 
 label __end:
     #If village dead then hear dragon in distance
-
+    # The music "Take a chance could maybe work here? or maybe the travelling scene earlier?"
     "I left the village to continue my journey..."
     "But in reality, J totally misunderstood what I wanted to do with this last part, so I'll have to rewrite it when I write the rest. {w}Yay!"
     jump scene02
