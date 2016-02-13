@@ -1,9 +1,9 @@
 # Code for scene 1, including the code for the poster minigame at the beginning of the game
 
 label scene01:
-    $ renpy.music.stop(fadeout=2)
+    $ renpy.music.stop(fadeout=1)
+    $ renpy.music.queue("sound/music/Serene-Separations-Soundtrack.ogg", loop=True, fadein=1)
     with Fade(0.5, 1.0, 0.5)
-    $ renpy.music.play("sound/music/Serene-Separations-Soundtrack.ogg", loop=True, fadein=1)
 
     centered "{size=+10}Let me tell you a story.{/size}"
     centered "{size=+10}{cps=*0.25}Ah...{/cps} But where do I start?{/size}"
@@ -159,10 +159,10 @@ label __no_help:
 
     "I turned my back towards the mayor, and started walking out of the small town. Since it was a small town, the walk wasn't very far."
 
-    $ renpy.music.stop(fadeout=2)
+    $ renpy.music.stop(fadeout=1)
+    $ renpy.music.queue("sound/music/Unity.ogg", loop=True, fadein=1)
     scene forest_start
     with Fade(0.5, 1.0, 0.5)
-    $ renpy.music.play("sound/music/Unity.ogg", loop=True, fadein=1)
 
     "At the edge of the city, a large forest stretched out before me. The thick crowns cast solid shadows on the ground, making it harder to see, but not impossible. A small forest path twisted its way between the trees."
     "I started walking along the forest path, enjoying the gentle breeze that whistled through the trees.{w} The path slowly grew more unclear, until it dwindled down into several smaller animal paths."
@@ -197,6 +197,9 @@ label __postermm_start:
 
     show overlay shitty_poster
 
+    $ renpy.music.stop(fadeout=5)
+    $ renpy.music.queue("sound/music/Freddys-Menagerie.ogg", loop=True, fadein=5)
+
     froggy "So what do you think?"
 
     hide overlay
@@ -219,8 +222,10 @@ label __postermm_amazing:
     froggy "Really? You think so? I suppose I should print a couple of thousand posters then, and hang them about. Thanks for the help!"
     me "No problem!"
     "As I waved to him and walked towards the edge of the village, I felt a bit of doubt. Had I chosen the right thing?"
-
-    # scene forest_?
+    $ renpy.music.stop(fadeout=1)
+    $ renpy.music.queue("sound/music/Not-As-It-Seems.ogg", loop=True, fadein=1)
+    scene forest_dark
+    with Fade(0.5, 1.0, 0.5)
 
     "As I approached the forest, the air felt overwhelmingly humid. Small insects and lizards were scurrying around on the forest floor, as I took a weary step forwards.{w} It didn't feel directly hostile. The forest was simply so full of life that it itself felt alive."
     "The trees were swaying in the gentle wind that seemed to blow through the crowns, though barely a breeze could be felt on the forest floor. The rustling of leaves almost made it seem like the trees were having a conversation."
@@ -382,18 +387,22 @@ label __postermm_done:
     
     return
 
-label _postermm_lose:
+label __postermm_lose:
     me "So?.. What do you think?"
     "Mayor Froggy tilted his head as he stared at the poster with something that might have been disgust."
     froggy "Well, uhh, I'd say the results are.. Debatable."
     "I frowned slightly. Had I not done my best to make this campaign a success? Of course I knew the importance of helping the environment. {w}The mayor coughed lightly, bringing my attention back to him."
     froggy "I think we should call it a day, then. "
     "I nodded my head, looking at the front door.{w} Just as I was about to exit the room, however.."
+
+    $ renpy.music.stop(fadeout=5)
+    $ renpy.music.queue("sound/music/Volatile-Reaction.ogg", loop=True, fadein=5)
+
     "Mayor Froggy and I both turned immediately, as a shrill shriek abruptly came from behind us. {w}We both stood there for a while, looking for the source of the ear-piercing sound."
     "Another shriek echoed, turning both of our attention to the discarded poster. {w}It.. Didn't look like a poster anymore.{w} Instead, what used to be a terrible poster had turned into a terrifying paper monster, with sharp teeth and an even sharper voice."
     "I covered my ears as what appeared to be a mouth opened to shriek once again."
     me "What is that even?"
-    froggy "It would seem to be the poster. But hey, what's the worst it can do, give use p-paper cuts?"
+    froggy "It would seem to be the poster. But hey, what's the worst it can do, give us p-paper cuts?"
     "The mayor attempted to make a joke, but his unsure voice made it sound more like a failed attempt at seeming brave. In reality, the frog was trembling in place. The poster seemed to glare at us - or at least, that was what it would have done, had it eyes."
     "Still, what's the worst a single poster can do?"
     "I instantly regretted that thought, as more prototype posters rose up behind the first one, the next more hideous than the previous, all having terrifying voices to match. They seemed to rip themselves apart, to form new, more spiky versions of themselves."
@@ -474,7 +483,7 @@ label __dragon_eat:
 
 label __end:
     #If village dead then hear dragon in distance
-
+    # The music "Take a chance could maybe work here? or maybe the travelling scene earlier?"
     "I left the village to continue my journey..."
     "But in reality, J totally misunderstood what I wanted to do with this last part, so I'll have to rewrite it when I write the rest. {w}Yay!"
     jump scene02
