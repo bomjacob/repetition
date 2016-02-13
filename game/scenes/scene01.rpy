@@ -440,24 +440,29 @@ label __postermm_show:
     $ renpy.rollback(force=True, checkpoints=2)
 
 label __beforespeech:
-    froggy "​Now that that has been sorted out.. Phew, that really was a day's work or two! You've really saved me, [name]."
-    me "​No, no, it's okay. Like I said, my sensei taught me to always help those in need."
-    froggy ​"Sounds like you have a very wise sensei!"
-    "​I winced slightly at the mayor's words, though I didn't correct his assumption. It wasn't relevant for the mayor to know. {w}Barely noticing my hesitation, the mayor continued."
-    froggy "​Now we just need to print a couple of thousands of these! I can feel the success already!"
-    "​I raised an eyebrow at the mayor, that suddenly seemed very self-absorbed, as he ranted on."
-    froggy "​Come, my minion! Advance! You shall help me hang up the posters!"
-    me "​But we don't even have the posters yet! We only just figured out what to change about them!"
-    "​The frog tilted his head, pondering for a while, before a light bulb suddenly went off in his head."
-    froggy "​Oh, but how could I forget? Hurry, to my secretary!"
+    froggy "Now that that has been sorted out.. Phew, that really was a day's work or two! You've really saved me, [name]."
+    me "No, no, it's okay. Like I said, my sensei taught me to always help those in need."
+    "Sounds like you have a very wise sensei!"
+    "I winced slightly at the mayor's words, though I didn't correct his assumption. It wasn't relevant for the mayor to know. {w}Barely noticing my hesitation, the mayor continued."
+    froggy "Now we just need to print a couple of thousands of these! I can feel the success already!"
+    "I raised an eyebrow at the mayor, that suddenly seemed very self-absorbed, as he ranted on."
+    froggy "Come, my minion! Advance! You shall help me hang up the posters!"
+    me "But we don't even have the posters yet! We only just figured out what to change about them!"
+    "The frog tilted his head, pondering for a while, before a light bulb suddenly went off in his head."
+    froggy "Oh, but how could I forget? Hurry, to my secretary!"
+
+    scene black
+    with fade
     centered "{size=+10}Two hours later...{/size}"
-    #I have no idea if this even works, also I'd like to have some sort of fade? Anyways, it's just there to show that time passes.
-    "​I stood outside an office door a while later, looking out at the streets through an open window. There were still as few people on the streets as there had been when I arrived, but the sun was dangerously close to the horizon. If I didn't get out of the town soon, I would have to go through the thick woods on the north side of the town in almost complete darkness."
-    "​As the door creaked, I turned my head to see the mayor walk out of his secretary's office with a large stack of posters."
-    froggy "​Minion! Take half, and follow me!"
-    "​As he loaded half the stack of posters onto me, I watched him kick the door open and walk off. I wanted to facepalm, had I not been holding a large stack of posters. Also, when did he decide that I'm his minion?! You can't just decide that on your own!"
-    me "​Oh, well... Doesn't look like I have a say in the matter."
-    "​I hurried after the mayor, that didn't even look back to check whether I was following or not."
+    scene mayor_mansion
+    with fade
+    
+    "I stood outside an office door a while later, looking out at the streets through an open window. There were still as few people on the streets as there had been when I arrived, but the sun was dangerously close to the horizon. If I didn't get out of the town soon, I would have to go through the thick woods on the north side of the town in almost complete darkness."
+    "As the door creaked, I turned my head to see the mayor walk out of his secretary's office with a large stack of posters."
+    froggy "Minion! Take half, and follow me!"
+    "As he loaded half the stack of posters onto me, I watched him kick the door open and walk off. I wanted to facepalm, had I not been holding a large stack of posters. Also, when did he decide that I'm his minion?! You can't just decide that on your own!"
+    me "Oh, well... Doesn't look like I have a say in the matter."
+    "I hurried after the mayor, that didn't even look back to check whether I was following or not."
 
     scene town_square
     "{i}This is where you go to the plaza and hang up posters and stuff{/i}"
