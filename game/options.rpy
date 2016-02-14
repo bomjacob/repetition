@@ -110,8 +110,8 @@ init -1 python hide:
     ## Padding is space inside the window, where the background is
     ## drawn.
 
-    style.window.left_padding = 12
-    style.window.right_padding = 12
+    style.window.left_padding = 16
+    style.window.right_padding = 16
     style.window.top_padding = 3
     style.window.bottom_padding = 3
 
@@ -184,7 +184,7 @@ init -1 python hide:
 
     ## A sample sound that can be played to check the sound volume.
 
-    # config.sample_sound = "click.wav"
+    config.sample_sound = "sound/fx/click.ogg"
 
     ## Music that is played while the user is at the main menu.
 
@@ -208,10 +208,10 @@ init -1 python hide:
     ## Transitions.
 
     ## Used when entering the game menu from the game.
-    config.enter_transition = Dissolve(0.15)
+    config.enter_transition = Dissolve(0.10)
 
     ## Used when exiting the game menu to the game.
-    config.exit_transition = Dissolve(0.15)
+    config.exit_transition = Dissolve(0.10)
 
     ## Used between screens of the game menu.
     config.intra_transition = None
@@ -346,6 +346,8 @@ init python:
     build.classify('**.DS_Store', None)
     build.classify('**/*log*.txt', None)
     build.classify('**.psd', None)
+    build.classify('game/saves/**', None)
+    build.classify('**/desktop.ini', None)
 
     ## To archive files, classify them as 'archive'.
 
