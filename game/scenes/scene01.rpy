@@ -522,9 +522,30 @@ label __beforespeech:
                 return
 
 label __wolfsquad:
-    froggy "Have it your way then! Don't say I didn't give you a chance though."
-    $ die(1)
-    "You dead by the wolf squad of Mayor Froggy"
+    me "No, I think I should get going."
+    froggy "Really? What a shame. I would have liked to have you stay for another day. But if you insist... I suppose I have to let you go."
+    "I nodded, and went out the front door. The street lights were on, making it easier to navigate. It wouldn't be that easy once I got to the forest though. But I had stayed in one place long enough, and it was time to move on."
+    scene forest_night
+    with fade_scene
+    "The chilly forest didn't seem directly hostile. The low moonlight was just enough for me to see where I was going."
+    "The light liked to play tricks on my imagination. Sometimes I had to stop and stare at a thing to make sure it wasn't a dangerous monster out to eat me."
+    "The rustling leaves and chilly wind didn't help my imagination, as the forest that was actually quite peaceful quickly turned into a hellish swamp out to imprison me and kill me. The trees seemed to grow thorns, and I thought I could see yellow eyes between the bushes, observing me intently."
+    "A deep growl interrupted my thoughts, as I froze in place."
+    me "Was that my imagination?..."
+    "One of the bushes seemed to glow a faint red colour. I rubbed my eyes, still not sure whether this was all something I had imagined."
+    "A glowing red shape crept out of the bushes, snarling at me menacingly."
+    me "I don't think this is my imagination anymore..."
+    "The shape resembled that of a wolf, but it was coated in a malicious, red aura. It wore a collar with the nametag \"fluffy\" on it. A couple of wolves bearing the same red aura followed behind it, all of them glaring at me."
+    me "Oh no! It's the mayor's wolf squad! It looks like he really didn't like me leaving..."
+    "The foremost wolf barked at me, staring me in the eyes. I gulped, as I stepped slowly backwards. Rationally, I knew that it was impossible to get away from the mayor's wolf squad. Instinctally, however, there was nothing I'd rather do than run."
+    "So I ran."
+    "I turned my back to the wolves, and ran as fast as I could. {w}I could hear their shallow panting as they chased after me, only a few steps behind."
+    "As I turned my head to see how far behind me they were, my foot was caught under a root."
+    "My panicked breathing intensified as I crawled away, too much in a hurry to even think about standing up. The wolves had slowed down to walking tempo. They knew that it was game over for me. I knew it too."
+    me "Please!.."
+    "I knew it was useless, but I couldn't help but beg. The wolves finally decided that they had grown tired of me, though, and pounced. Teeth tore into skin. Claws ripped at flesh."
+    $ die(0)
+    "My sorry remains were never found."
     jump you_dead
 
 label __too_sucessful:
