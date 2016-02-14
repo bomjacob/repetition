@@ -525,8 +525,12 @@ label __wolfsquad:
     me "No, I think I should get going."
     froggy "Really? What a shame. I would have liked to have you stay for another day. But if you insist... I suppose I have to let you go."
     "I nodded, and went out the front door. The street lights were on, making it easier to navigate. It wouldn't be that easy once I got to the forest though. But I had stayed in one place long enough, and it was time to move on."
+
+    $ renpy.music.stop(fadeout=1)
+    $ renpy.music.queue("sound/music/Unity.ogg", loop=True, fadein=1)
     scene forest_night
     with fade_scene
+    
     "The chilly forest didn't seem directly hostile. The low moonlight was just enough for me to see where I was going."
     "The light liked to play tricks on my imagination. Sometimes I had to stop and stare at a thing to make sure it wasn't a dangerous monster out to eat me."
     "The rustling leaves and chilly wind didn't help my imagination, as the forest that was actually quite peaceful quickly turned into a hellish swamp out to imprison me and kill me. The trees seemed to grow thorns, and I thought I could see yellow eyes between the bushes, observing me intently."
