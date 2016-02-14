@@ -67,8 +67,8 @@ label naming:
     jump scene01
 
 label tutorial:
-    "Hello welcome to this Virtual Novel. What is a virtual novel you ask?"
-    "Well, acording to wikipedia:\nA visual novel is an interactive game, featuring mostly static graphics, most often using anime-style art or occasionally live-action stills (and sometimes video footage). As the name might suggest, they resemble mixed-media novels.\nRead more: {a=https://en.wikipedia.org/wiki/Visual_novel}en.wikipedia.org/wiki/Visual_novel{/a}"
+    "Hello welcome to this Virtual Novel. What is a virtual novel you ask?\n{image=tutorial_ctc}"
+    "Well, acording to wikipedia:\nA visual novel is an interactive game, featuring mostly static graphics, most often using anime-style art or occasionally live-action stills (and sometimes video footage). As the name might suggest, they resemble mixed-media novels.\nRead more: {a=https://en.wikipedia.org/wiki/Visual_novel}en.wikipedia.org/wiki/Visual_novel{/a}\n{image=tutorial_ctc}"
 
     "Controls are quite simple. LEFT CLICK is used to advance dialouges. If {image=ctc_small} is shown, it will advance to next page and remove all current text, if not, more text will appear on screen. If you're ever in doubt which button to press it's probably LEFT CLICK."
     "LEFT CLICK is also used to select options in menus.{w} Try it now.{nw}"

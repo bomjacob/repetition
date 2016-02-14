@@ -63,3 +63,7 @@ init:
     image sensei_room_flashback = im.MatrixColor(
         "img/bg/sensei_room.jpg",
         im.matrix.saturation(0.1))
+
+    image tutorial_ctc:
+        pause 5.0
+        Text("Left Click to continue.")
