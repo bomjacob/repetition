@@ -465,9 +465,46 @@ label __beforespeech:
     "I hurried after the mayor, that didn't even look back to check whether I was following or not."
 
     scene town_square
-    "{i}This is where you go to the plaza and hang up posters and stuff{/i}"
+    with fade_scene
 
-    froggy "So there we have it. The campaign is tomorrow, and you're welcome to stay here a night and help me tomorrow."
+    "I finally caught up to the mayor, who was standing in the middle of an open plaza, looking expectantly at me. The street lights were still off, even though it was getting dark, but the remaining sunlight was bright enough that I could still properly see my surroundings."
+    froggy "Finally, you come. Now, let's hang up posters everywhere. I don't want anyone to miss them."
+    "I nodded meekly at the mayor. He then pulled a tape dispenser from his pocket, somehow balancing the stack of posters on only one of his arms, and handed it to me."
+    froggy "If you take the north part of city, I'll take the south part."
+    me "Alright. I'm not sure I can find my way around here, though..."
+    froggy "I'm sure you'll manage! Let's meet up here again when we're done."
+    "I nodded at the mayor, and looked around the plaza."
+    me "If the sun is over there, then that must mean... This is north"
+
+    scene streets_evening
+    with fade_scene
+
+    "I chose a direction, and walked along the road, taping the posters to the street lamps every time I came across one."
+    "As I walked along the many houses, I couldn't help but feel slightly creeped out by the emptiness of the streets, coupled with the diminishing sunlight."
+    "The sound of a trash can falling over suddenly startled me, as I froze in place, looking for the perpetrator.{w}.....{w}\nFew moments later, a black cat ran across the streets. I breathed out in relief. For a moment, I had been afraid of something unfortunate happening to me. Deciding that I didn't want to spend longer than absolutely necessary in these empty streets, I finished hanging up posters as fast as possible.
+    "
+
+    scene black
+    with fade
+    centered "{size=+10}A thousand posters, and bit of running, later...{/size}"
+    scene town_square_dark
+    with fade
+
+    me "*pant* *pant*"
+    "The mayor looked at me with a confused glance."
+    froggy "You look like you ran from something. Are you feeling alright?"
+    "I raised a hand, signaling for him to wait a moment, my chest heaving heavily. I really wasn't used to running."
+    "A couple of minutes later, having finally regained my breath, I raised my head."
+    me "Are we... Done now?"
+    froggy "Indeed we are! Now, let us go back to my mansion and have a cup of tea, doesn't that sound nice?"
+    "I looked down at my weary feet and sighed."
+    me "I suppose sitting down for a moment would be nice..."
+    froggy "Then it's decided! Hop along, now. No time for dallying."
+    "I slumped my shoulders, and walked after the mayor, back to his mansion."
+    scene mayor_mansion_indoor
+    with fade_scene
+    "As we were sipping tea, the mayor suddenly spoke."
+    froggy "So, [name], it has been a long day. Seeing as I have taken so much of your time, you would be welcome to stay a night in my mansion. And then you can also help me with the competition tomorrow. What do you say?"
 
     menu:
         "Stay with Mayor Froggy?"
