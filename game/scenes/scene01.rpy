@@ -509,10 +509,7 @@ label __beforespeech:
     menu:
         "Stay with Mayor Froggy?"
         "Yes! I'd love to stay a night in your mansion!":
-            if postermm_points >= 5:
-                jump __too_sucessful
-            else:
-                jump __not_quite
+            jump __stay
         "No, I think I should be on my way.":
             if postermm_points >= 5:
                 $ village_dead = True
@@ -520,9 +517,18 @@ label __beforespeech:
             else:
                 jump __wolfsquad
                 return
+label __stay:
+    
+    
+    
+    "Next morning comes after this."
+    if postermm_points >= 5:
+                jump __too_sucessful
+            else:
+                jump __not_quite
 
 label __wolfsquad:
-    me "No, I think I should get going."
+    #me "No, I think I should get going." -- I just realised that the button says this and that it probably shouldn't be said twice.
     froggy "Really? What a shame. I would have liked to have you stay for another day. But if you insist... I suppose I have to let you go."
     "I nodded, and went out the front door. The street lights were on, making it easier to navigate. It wouldn't be that easy once I got to the forest though. But I had stayed in one place long enough, and it was time to move on."
 
