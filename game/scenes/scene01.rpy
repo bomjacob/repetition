@@ -113,7 +113,7 @@ label __adventure:
     
     $ renpy.pause(5)
 
-    scene town with fade_scene
+    scene town town with fade_scene
 
     me "Oh, wow... It feels like I've been walking for days!"
     "I looked at the city rising up before me, my entire body aching from a long and tiring walk.{w} At least, that was what my body told me. My map told a different story."
@@ -122,7 +122,7 @@ label __adventure:
 
     me "I wonder where all the people are?"
 
-    scene mayor_mansion with fade_scene
+    scene mansion ext with fade_scene
     "Walking a bit further down the road, revealed a pompous-looking house with the sign “Mayor” above the entrance. {w}A confused-looking frog was standing by the entrance, looking at a piece of paper on the wall while mumbling to himself. {nw}"
 
     show froggy hi with dissolve
@@ -155,19 +155,19 @@ label __no_help:
     me "Actually, I'm... Rather busy at the moment! If you wouldn't mind, I need to be on my way."
     froggy displeased "That's a shame. I hope nothing bad happens to you on your journey, though."
 
-    scene town_walk
+    scene town walk
 
     "I turned my back towards the mayor, and started walking out of the town. Since it was a small town, the walk wasn't very far."
 
     $ renpy.music.stop(fadeout=1)
     $ renpy.music.queue("sound/music/Unity.ogg", loop=True, fadein=1)
-    scene forest_start
+    scene forest start
     with Fade(0.5, 1.0, 0.5)
 
     "At the edge of the city, a large forest stretched out before me. The thick crowns cast solid shadows on the ground, making it harder to see, but not impossible. A small forest path twisted its way between the trees."
     "I started walking along the forest path, enjoying the gentle breeze that whistled through the trees.{w} The path slowly grew more unclear, until it dwindled down into several smaller animal paths."
 
-    scene forest_dark
+    scene forest dark
     "As I got further into the woods, I finally had to admit that I was lost. The large canopy had grown thicker, letting even less light come through the countless leaves. The wind that had earlier been nice and refreshing, suddenly felt harsh and prickly on my skin."
     "My ears suddenly picked up on a very low sound. Something that sounded almost like... A growl?..."
     "Looking around in confusion, I searched for the source of the sound. Surely it couldn't have been my imagination?"
@@ -224,7 +224,7 @@ label __postermm_amazing:
     "As I waved to him and walked towards the edge of the village, I felt a bit of doubt. Had I chosen the right thing?"
     $ renpy.music.stop(fadeout=1)
     $ renpy.music.queue("sound/music/Not-As-It-Seems.ogg", loop=True, fadein=1)
-    scene forest_dark
+    scene forest dark
     with Fade(0.5, 1.0, 0.5)
 
     "As I approached the forest, the air felt overwhelmingly humid. Small insects and lizards were scurrying around on the forest floor, as I took a weary step forwards.{w} It didn't feel directly hostile. The forest was simply so full of life that it itself felt alive."
@@ -454,7 +454,7 @@ label __beforespeech:
     scene black
     with fade
     centered "{size=+10}Two hours later...{/size}"
-    scene mayor_mansion
+    scene mansion ext
     with fade
     
     "I stood outside an office door a while later, looking out at the streets through an open window. There were still as few people on the streets as there had been when I arrived, but the sun was dangerously close to the horizon. If I didn't get out of the town soon, I would have to go through the thick woods on the north side of the town in almost complete darkness."
@@ -464,7 +464,7 @@ label __beforespeech:
     me "Oh, well... Doesn't look like I have a say in the matter."
     "I hurried after the mayor, that didn't even look back to check whether I was following or not."
 
-    scene town_square
+    scene town square
     with fade_scene
 
     "I finally caught up to the mayor, who was standing in the middle of an open plaza, looking expectantly at me. The street lights were still off, even though it was getting dark, but the remaining sunlight was bright enough that I could still properly see my surroundings."
@@ -476,7 +476,7 @@ label __beforespeech:
     "I nodded at the mayor, and looked around the plaza."
     me "If the sun is over there, then that must mean... This is north"
 
-    scene streets_evening
+    scene town streets evening
     with fade_scene
 
     "I chose a direction, and walked along the road, taping the posters to the street lamps every time I came across one."
@@ -487,7 +487,7 @@ label __beforespeech:
     scene black
     with fade
     centered "{size=+10}A thousand posters, and bit of running, later...{/size}"
-    scene town_square_dark
+    scene town square dark
     with fade
 
     me "*pant* *pant*"
@@ -501,7 +501,7 @@ label __beforespeech:
     me "I suppose sitting down for a moment would be nice..."
     froggy "Then it's decided! Hop along, now. No time for dallying."
     "I slumped my shoulders, and walked after the mayor, back to his mansion."
-    scene mayor_mansion_indoor
+    scene mansion livingroom
     with fade_scene
     "As we were sipping tea, the mayor suddenly spoke."
     froggy "So, [name], it has been a long day. Seeing as I have taken so much of your time, you would be welcome to stay a night in my mansion. And then you can also help me with the competition tomorrow. What do you say?"
@@ -518,14 +518,11 @@ label __beforespeech:
                 jump __wolfsquad
                 return
 label __stay:
-    
-    
-    
     "Next morning comes after this."
     if postermm_points >= 5:
-                jump __too_sucessful
-            else:
-                jump __not_quite
+        jump __too_sucessful
+    else:
+        jump __not_quite
 
 label __wolfsquad:
     #me "No, I think I should get going." -- I just realised that the button says this and that it probably shouldn't be said twice.
@@ -534,7 +531,7 @@ label __wolfsquad:
 
     $ renpy.music.stop(fadeout=1)
     $ renpy.music.queue("sound/music/Unity.ogg", loop=True, fadein=1)
-    scene forest_night
+    scene forest dark
     with fade_scene
 
     "The chilly forest didn't seem directly hostile. The low moonlight was just enough for me to see where I was going."
@@ -559,7 +556,7 @@ label __wolfsquad:
     jump you_dead
 
 label __too_sucessful:
-    scene mayor_mansion
+    scene mansion ext
     "Now we go back to the mansion and sleep. Stuff happens!"
     froggy "The campaign is going so incredibly well!"
     froggy "Perhaps even {i}too{/i} well"
@@ -572,8 +569,7 @@ label __not_quite:
 
 
 label __dragon_eat:
-
-    scene town_square_with_people
+    scene town square people
     show magenta mad at right
     show overlay flames with dissolve
 
