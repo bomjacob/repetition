@@ -42,13 +42,19 @@ init python:
         ('Lead Artist', ('Olivia Hjorth',)),
         ('Lead Handyman', ('Nick Zhu',)),
         ('Assets', (
-            ('Background', ('mugenjohncel on lemmesoft.renai.us',)),
+            ('Background', (
+                'mugenjohncel on lemmesoft.renai.us',
+                'http://hellohello.dousetsu.com/free_material.html'
+            )),
             ('Sound and Music', (
                 '{a=https://www.freesound.org/}www.freesound.org{/a}',
                 '{a=http://www.newgrounds.com/audio/listen/665861}www.newgrounds.com/audio/listen/665861{/a}',
                 '{a=http://www.newgrounds.com/audio/listen/668009}www.newgrounds.com/audio/listen/668009{/a}',
-                '\nImpending Boom, First Call, Unity, Not As It Seems, Freddys Menager,\n Take a Chance, Volatile Reaction and Looping String, Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 3.0 License\nhttp://creativecommons.org/licenses/by/3.0/')),
-            ('Other', ('{size=-5}Letter:{/size}\n{a=https://www.flickr.com/photos/playingwithpsp/2546732435}www.flickr.com/photos/playingwithpsp/2546732435{/a}',))
+                '\nImpending Boom, First Call, Unity, Not As It Seems, Freddys Menager,\n Take a Chance, Volatile Reaction and Looping String, Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 3.0 License\nhttp://creativecommons.org/licenses/by/3.0/'
+            )),
+            ('Other', (
+                '{size=-5}Letter:{/size}\n{a=https://www.flickr.com/photos/playingwithpsp/2546732435}www.flickr.com/photos/playingwithpsp/2546732435{/a}',
+            ))
         )),
         ('Engine', ("\n".join(str.split(renpy.version())),))
     )
