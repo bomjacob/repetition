@@ -109,7 +109,7 @@ label __adventure:
     $ renpy.sound.play("sound/fx/door_close.ogg")
     "With a sigh, I slammed the door shut behind me, and looked towards the horizon.{w} The journey before me would be long and arduous, but I knew that I had no choice. It was my fate."
 
-    scene meadows with fade_scene
+    scene cliffs with fade_scene
     
     $ renpy.pause(5)
 
