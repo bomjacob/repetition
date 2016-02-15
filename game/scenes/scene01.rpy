@@ -265,15 +265,17 @@ label __postermm_wrong:
 
 label __postermm_shit:
     froggy "The mayor's eye spasmed a bit, as he stared at me with malice."
-    froggy murderous "You... What? How dare you say that to me, the mighty mayor?!"
-
+    froggy murderous talking "You... What? How dare you say that to me, the mighty mayor?!"
+    show froggy murderous
     "I quickly backed off, as a red aura started to envelop the mayor."
-    froggy "We don't... Use swear words here... It's against the law!"
+    froggy murderous talking "We don't... Use swear words here... It's against the law!"
+    show froggy murderous
     "As those deep red eyes caught mine, I found that I could no longer move a muscle. As I stood there, helpless, he walked towards me."
-    froggy "Do you know what happens to lawbreakers in town, hmm?"
+    froggy murderous talking "Do you know what happens to lawbreakers in town, hmm?"
+    show froggy murderous
     "The mayor was now close enough, that I could feel the stinging red aura, slowly peeling away my skin."
     show overlay red_haze with dissolve
-    froggy "You may never utter a swearword again."
+    froggy murderous talking"You may never utter a swearword again."
     $ die(1)
     froggy "Have you never heard of constructive criticism?"
     hide overlay
@@ -388,7 +390,7 @@ label __postermm_done:
     if postermm_points <= 2:
         jump __postermm_lose
     elif postermm_points > 2 and postermm_points <= 4:
-        froggy "Well I guess it turned out alright. It is definitely better than it was before! {w}This campaign might not turn out to be be a total failure after all."
+        froggy neutral talking "Well I guess it turned out alright. It is definitely better than it was before! {w}This campaign might not turn out to be be a total failure after all."
         jump __beforespeech
     elif postermm_points >= 5:
         froggy "This.. This is much better than I thought it could be! {w}This is sure to attract lots of people. Thank you very much!"
@@ -399,9 +401,10 @@ label __postermm_done:
 label __postermm_lose:
     me "So?.. What do you think?"
     "Mayor Froggy tilted his head as he stared at the poster with something that might have been disgust."
-    froggy "Well, uhh, I'd say the results are.. Debatable."
+    froggy confused "Well, uhh, I'd say the results are.. Debatable."
+    show froggy neutral
     "I frowned slightly. Had I not done my best to make this campaign a success? Of course I knew the importance of helping the environment. {w}The mayor coughed lightly, bringing my attention back to him."
-    froggy "I think we should call it a day, then. "
+    froggy neutral talking "I think we should call it a day, then. "
     "I nodded my head, looking at the front door.{w} Just as I was about to exit the room, however.."
 
     $ renpy.music.stop(fadeout=5)
@@ -430,14 +433,14 @@ label __postermm_lose:
 label __postermm_show:
     show overlay shitty_poster
 
-    froggy "Here you go."
+    froggy neutral talking "Here you go."
 
     hide overlay
 
     $ renpy.rollback(force=True, checkpoints=2)
 
 label __beforespeech:
-    froggy "Now that that has been sorted out.. Phew, that really was a day's work or two! You've really saved me, [name]."
+    froggy talking "Now that that has been sorted out.. Phew, that really was a day's work or two! You've really saved me, [name]."
     me "No, no, it's okay. Like I said, my sensei taught me to always help those in need."
     "Sounds like you have a very wise sensei!"
     "I winced slightly at the mayor's words, though I didn't correct his assumption. It wasn't relevant for the mayor to know. {w}Barely noticing my hesitation, the mayor continued."
@@ -456,7 +459,7 @@ label __beforespeech:
     
     "I stood outside an office door a while later, looking out at the streets through an open window. There were still as few people on the streets as there had been when I arrived, but the sun was dangerously close to the horizon. If I didn't get out of the town soon, I would have to go through the thick woods on the north side of the town in almost complete darkness."
     "As the door creaked, I turned my head to see the mayor walk out of his secretary's office with a large stack of posters."
-    froggy "Minion! Take half, and follow me!"
+    froggy talking "Minion! Take half, and follow me!"
     "As he loaded half the stack of posters onto me, I watched him kick the door open and walk off. I wanted to facepalm, had I not been holding a large stack of posters. Also, when did he decide that I'm his minion?! You can't just decide that on your own!"
     me "Oh, well... Doesn't look like I have a say in the matter."
     "I hurried after the mayor, that didn't even look back to check whether I was following or not."
@@ -465,11 +468,14 @@ label __beforespeech:
     with fade_scene
 
     "I finally caught up to the mayor, who was standing in the middle of an open plaza, looking expectantly at me. The street lights were still off, even though it was getting dark, but the remaining sunlight was bright enough that I could still properly see my surroundings."
-    froggy "Finally, you come. Now, let's hang up posters everywhere. I don't want anyone to miss them."
+    froggy hi_talking "Finally, you come. Now, let's hang up posters everywhere. I don't want anyone to miss them."
+    show froggy hi
     "I nodded meekly at the mayor. He then pulled a tape dispenser from his pocket, somehow balancing the stack of posters on only one of his arms, and handed it to me."
-    froggy "If you take the north part of city, I'll take the south part."
+    froggy neutral talking "If you take the north part of city, I'll take the south part."
+    show froggy neutral
     me "Alright. I'm not sure I can find my way around here, though..."
     froggy "I'm sure you'll manage! Let's meet up here again when we're done."
+    show froggy neutral
     "I nodded at the mayor, and looked around the plaza."
     me "If the sun is over there, then that must mean... This is north"
 
@@ -489,11 +495,11 @@ label __beforespeech:
 
     me "*pant* *pant*"
     "The mayor looked at me with a confused glance."
-    froggy "You look like you ran from something. Are you feeling alright?"
+    froggy confused "You look like you ran from something. Are you feeling alright?"
     "I raised a hand, signaling for him to wait a moment, my chest heaving heavily. I really wasn't used to running."
     "A couple of minutes later, having finally regained my breath, I raised my head."
     me "Are we... Done now?"
-    froggy "Indeed we are! Now, let us go back to my mansion and have a cup of tea, doesn't that sound nice?"
+    froggy talking "Indeed we are! Now, let us go back to my mansion and have a cup of tea, doesn't that sound nice?"
     "I looked down at my weary feet and sighed."
     me "I suppose sitting down for a moment would be nice..."
     froggy "Then it's decided! Hop along, now. No time for dallying."
@@ -502,7 +508,7 @@ label __beforespeech:
     with fade_scene
     show froggy neutral
     "As we were sipping tea, the mayor suddenly spoke."
-    froggy "So, [name], it has been a long day. Seeing as I have taken so much of your time, you would be welcome to stay a night in my mansion. And then you can also help me with the competition tomorrow. What do you say?"
+    froggy neutral talking "So, [name], it has been a long day. Seeing as I have taken so much of your time, you would be welcome to stay a night in my mansion. And then you can also help me with the competition tomorrow. What do you say?"
 
     menu:
         "Stay with Mayor Froggy?"
@@ -523,7 +529,7 @@ label __stay:
         jump __not_quite
 
 label __wolfsquad:
-    froggy "Really? What a shame. I would have liked to have you stay for another day. But if you insist... I suppose I have to let you go."
+    froggy neutral talking "Really? What a shame. I would have liked to have you stay for another day. But if you insist... I suppose I have to let you go."
     "I nodded, and went out the front door. The street lights were on, making it easier to navigate. It wouldn't be that easy once I got to the forest though. But I had stayed in one place long enough, and it was time to move on."
 
     $ renpy.music.stop(fadeout=1)
@@ -562,21 +568,23 @@ label __too_sucessful:
 
 label __not_quite:
     "A small crowd was gathered in the town square. Fewer than I would have liked, but still better than none. In fact, I should have been surprised that any turned up at all, since we only just hung up posters the day before. The mayor cleared his throat, and started his speech."
-    froggy "Greetings! I am glad to see you, dedicated citizens, that care about our environment."
+    froggy talking "Greetings! I am glad to see you, dedicated citizens, that care about our environment."
+    hide froggy
     "The mayor received little to no response from the crowd."
-    froggy "First of all, I am sorry to announce that the competition will be postponed. This is due to the late announcement. Second of all..."
+    froggy talking "First of all, I am sorry to announce that the competition will be postponed. This is due to the late announcement. Second of all..."
     "The mayor continued talking, as I blocked him out. Listening to his one-sided speech quickly became dull. I quickly dozed off under the shade of a tree, as I waited for the mayor to finish his speech."
 
     scene black
     with fade
-    centered "{size=+10}A thousand posters, and bit of running, later...{/size}"
+    centered "{size=+10}One hour later...{/size}"
     scene town square dark
     with fade
     show froggy with dissolve
 
-    froggy "... And that, my dear citizens, was all I had to say. Are there any questions?"
+    froggy talking "... And that, my dear citizens, was all I had to say. Are there any questions?"
+    hide froggy
     "No one replied."
-    froggy "Very well. This speech is over; thank you all for attending."
+    froggy talking "Very well. This speech is over; thank you all for attending."
     "I walked up to the mayor, who was in the process of packing together his cue cards."
     me "Was that it, then?"
     froggy "Indeed it was! I thank you for your help. While there weren't that many people that showed up, there were definitely more than there would have been, had you not helped me."
@@ -620,8 +628,9 @@ label __almost_end:
     with dissolve
 
     me "Do you have any advice for me, when going through the woods?"
-    froggy "Advice? I've got lots! First of all, avoid the forest entrance to the north-north-east. The trees there are a bit suspicious.{w} You should also stay away from the northern entrance, as wolves like to roam around there. {w}I would suggest going to the entrance to the west of town, and following the path north from there."
+    froggy neutral talking "Advice? I've got lots! First of all, avoid the forest entrance to the north-north-east. The trees there are a bit suspicious.{w} You should also stay away from the northern entrance, as wolves like to roam around there. {w}I would suggest going to the entrance to the west of town, and following the path north from there."
     me "Thank you for the advice! I'll keep that in mind."
+    show froggy hi
     "I waved goodbye to the mayor as I exited through the front door."
 
     scene town streets night
@@ -668,5 +677,6 @@ label __almost_end:
 label __end:
     #If village dead then hear dragon in distance
     # The music "Take a chance could maybe work here? or maybe the travelling scene earlier?"
+    #these notes are basically pointless now :P
     centered "End of chapter 1."
     jump scene02
