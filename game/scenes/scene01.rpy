@@ -22,7 +22,7 @@ label scene01:
     $ renpy.pause(5)
     "And in their absence, he has cared for me in his mountaintop home. He has taught me everything I know.{w} While his house might seem out of the way at first, it is actually a technological heaven.{w} He specialises in a subject known as \“Communication and IT\”."
 
-    "He really is an amazing person!{cps=1}...{/cps} Or should I say “was”.."
+    "He really is an amazing person!{cps=1}...{/cps} Or should I say \“was\”.."
 
     hide book with dissolve
     centered "{size=+10}This is where my story begins.{/size}"
@@ -157,7 +157,7 @@ label __no_help:
 
     scene town_walk
 
-    "I turned my back towards the mayor, and started walking out of the small town. Since it was a small town, the walk wasn't very far."
+    "I turned my back towards the mayor, and started walking out of the town. Since it was a small town, the walk wasn't very far."
 
     $ renpy.music.stop(fadeout=1)
     $ renpy.music.queue("sound/music/Unity.ogg", loop=True, fadein=1)
@@ -174,7 +174,7 @@ label __no_help:
 
     "As the leaves of a bush rustled to my right, I whipped my head in that direction. {nw}"
     show wolves at right with dissolve
-    "Out of the bush appeared five large, black wolves, snarling menacingly, with their teeth bared, and their eyes fixed on me."
+    extend "Out of the bush appeared five large, black wolves, snarling menacingly, with their teeth bared, and their eyes fixed on me."
     show me at left with dissolve
     me "E-... Easy now... I'm sure we can work this out, yes...?"
     "My plea was answered by a sharp bark from the foremost wolf, followed up by barks from the four others behind it. {w}I was about to turn around and make a run for it, when the wolves finally decided to jump at me."
@@ -530,7 +530,7 @@ label __wolfsquad:
     $ renpy.music.queue("sound/music/Unity.ogg", loop=True, fadein=1)
     scene forest_night
     with fade_scene
-    
+
     "The chilly forest didn't seem directly hostile. The low moonlight was just enough for me to see where I was going."
     "The light liked to play tricks on my imagination. Sometimes I had to stop and stare at a thing to make sure it wasn't a dangerous monster out to eat me."
     "The rustling leaves and chilly wind didn't help my imagination, as the forest that was actually quite peaceful quickly turned into a hellish swamp out to imprison me and kill me. The trees seemed to grow thorns, and I thought I could see yellow eyes between the bushes, observing me intently."
