@@ -30,7 +30,6 @@ label scene01:
     "I opened my eyes slowly. Sunlight streamed in from the windows."
 
     scene sensei_room with dissolve
-    show me with dissolve
 
     "This was weird... Sensei would usually have woken me by now."
     "I looked around in confusion. The room was exactly like I had left it, when I had gone to bed.{w} But sensei was nowhere in sight."
@@ -134,9 +133,6 @@ label __adventure:
 
     froggy "Greetings!{w} Salutations!{w} Might I ask who you are, and what you are doing here?"
 
-    show me at left
-    show froggy hi_talking at right with move
-
     me "Uh... Yeah... Hi. My name is [name]! I'm really just passing by, though I would like to know if you have any places to stay?"
     froggy "I am glad to make your acquaintance, [name]!"
     froggy talking "I am called Froggy! I am the mayor of this small town." #this one?
@@ -173,9 +169,10 @@ label __no_help:
     "Looking around in confusion, I searched for the source of the sound. Surely it couldn't have been my imagination?"
 
     "As the leaves of a bush rustled to my right, I whipped my head in that direction. {nw}"
-    show wolves at right with dissolve
+
+    show wolves normal at right with dissolve
+
     extend "Out of the bush appeared five large, black wolves, snarling menacingly, with their teeth bared, and their eyes fixed on me."
-    show me at left with dissolve
     me "E-... Easy now... I'm sure we can work this out, yes...?"
     "My plea was answered by a sharp bark from the foremost wolf, followed up by barks from the four others behind it. {w}I was about to turn around and make a run for it, when the wolves finally decided to jump at me."
     me "B-... Blood?... Is this... My blood?..."
@@ -503,6 +500,7 @@ label __beforespeech:
     "I slumped my shoulders, and walked after the mayor, back to his mansion."
     scene mansion livingroom
     with fade_scene
+    show froggy neutral
     "As we were sipping tea, the mayor suddenly spoke."
     froggy "So, [name], it has been a long day. Seeing as I have taken so much of your time, you would be welcome to stay a night in my mansion. And then you can also help me with the competition tomorrow. What do you say?"
 
@@ -525,7 +523,6 @@ label __stay:
         jump __not_quite
 
 label __wolfsquad:
-    #me "No, I think I should get going." -- I just realised that the button says this and that it probably shouldn't be said twice.
     froggy "Really? What a shame. I would have liked to have you stay for another day. But if you insist... I suppose I have to let you go."
     "I nodded, and went out the front door. The street lights were on, making it easier to navigate. It wouldn't be that easy once I got to the forest though. But I had stayed in one place long enough, and it was time to move on."
 
@@ -542,6 +539,7 @@ label __wolfsquad:
     "One of the bushes seemed to glow a faint red colour. I rubbed my eyes, still not sure whether this was all something I had imagined."
     "A glowing red shape crept out of the bushes, snarling at me menacingly."
     me "I don't think this is my imagination anymore..."
+    show wolves mad at right with dissolve
     "The shape resembled that of a wolf, but it was coated in a malicious, red aura. It wore a collar with the nametag \"fluffy\" on it. A couple of wolves bearing the same red aura followed behind it, all of them glaring at me."
     me "Oh no! It's the mayor's wolf squad! It looks like he really didn't like me leaving..."
     "The foremost wolf barked at me, staring me in the eyes. I gulped, as I stepped slowly backwards. Rationally, I knew that it was impossible to get away from the mayor's wolf squad. Instinctally, however, there was nothing I'd rather do than run."
@@ -563,8 +561,43 @@ label __too_sucessful:
     jump __dragon_eat
 
 label __not_quite:
-    froggy "The campaign is not going quite as well as I was hoping."
-    froggy "Sure you fixed all the errors with that poster?"
+    "A small crowd was gathered in the town square. Fewer than I would have liked, but still better than none. In fact, I should have been surprised that any turned up at all, since we only just hung up posters the day before. The mayor cleared his throat, and started his speech."
+    froggy "Greetings! I am glad to see you, dedicated citizens, that care about our environment."
+    "The mayor received little to no response from the crowd."
+    froggy "First of all, I am sorry to announce that the competition will be postponed. This is due to the late announcement. Second of all..."
+    "The mayor continued talking, as I blocked him out. Listening to his one-sided speech quickly became dull. I quickly dozed off under the shade of a tree, as I waited for the mayor to finish his speech."
+
+    scene black
+    with fade
+    centered "{size=+10}A thousand posters, and bit of running, later...{/size}"
+    scene town square dark
+    with fade
+    show froggy with dissolve
+
+    froggy "... And that, my dear citizens, was all I had to say. Are there any questions?"
+    "No one replied."
+    froggy "Very well. This speech is over; thank you all for attending."
+    "I walked up to the mayor, who was in the process of packing together his cue cards."
+    me "Was that it, then?"
+    froggy "Indeed it was! I thank you for your help. While there weren't that many people that showed up, there were definitely more than there would have been, had you not helped me."
+    me "No problem!.. But I think I should be on my way now. What is the quickest way to the capital?"
+    "The mayor seemed to ponder for a moment."
+    froggy "Well, the fastest way would be to the north. There are wolves in the forest, but they only come out at night, so you should be fine."
+    me "Okay. Good luck with your campaign!"
+    "I waved goodbye to the mayor, and to the small town."
+
+    scene walk with fade_scene
+    $ renpy.pause(5)
+    scene forest start with fade_scene
+
+    "As I approached the forest, I was surprised by how calm and tranquil it seemed. Sunlight streamed through the leaves, and birds were tweeting. Finding my way through the bright forest wasn't difficult at all."
+
+    scene meadows with fade_scene
+
+    "As the woods thinned out, I was greeted by the sight of a bright meadows. Along these meadows was a clear path. This would take me to the capital eventually, though I might pass by a couple of cities first."
+    "As I walked along, I thought about how glad I was to be alive. The outside world was definitely a dangerous place, filled with horrors... But on a sunny day like this, being alive wasn't so bad after all."
+    "But I still had a long way to go."
+
     jump __end
 
 
@@ -580,12 +613,60 @@ label __dragon_eat:
     return
 
 label __almost_end:
-    "This is very important to have in here. Totally. Actually, it's just flavour text. Think of the replayability!"
+    "The mayor sighed, but nodded at me."
+    froggy "Very well. If that is what you wish, I shan't hold you back. I would have wished that you stayed, but I suppose that is too much to ask after all you've done for me. I wish you a merry journey though! And don't get lost in the woods."
+
+    show froggy neutral at right
+    with dissolve
+
+    me "Do you have any advice for me, when going through the woods?"
+    froggy "Advice? I've got lots! First of all, avoid the forest entrance to the north-north-east. The trees there are a bit suspicious.{w} You should also stay away from the northern entrance, as wolves like to roam around there. {w}I would suggest going to the entrance to the west of town, and following the path north from there."
+    me "Thank you for the advice! I'll keep that in mind."
+    "I waved goodbye to the mayor as I exited through the front door."
+
+    scene town streets night
+    with fade_scene
+
+    scene forest start night
+    with fade_scene
+
+    "The forest seemed relatively quiet. A few fireflies fluttered around, giving off a small amount of light. It wasn't enough to see properly, but it made it easier to see where the trees were. Pale moonlight shone through the leaves, vaguely illuminating the forest path."
+
+    scene forest three
+    with fade_scene
+
+    "Getting deeper into the forest, it suddenly seemed brighter. Almost... Like there was something magical about it. The path spread out and faded out, leaving me next to a forest lake."
+    "Small lights were flickering around the edges of the treeline, but it was no longer fireflies. {w}A very large, light blue light flew out from between the trees, and towards me. It's presence seemed calming."
+    '???' "It... is rare that we see strangers like you in these woods... You do not belong here... We shall show you the way you seek..."
+    me "Who are you?"
+    '???' "We... Are..."
+
+    show willo willo at right
+    with dissolve
+
+    willo "Often referred to as being the Will o' the Wisp... Others prefer to call us... Fairies..."
+    me "Fairies?!"
+    "The glowing light seemed to disregard me, hovering silently in front of me."
+    willo "We... Are many...\nYou... Are not us...\nSpeak... And we shall lead you to your destination..."
+    "The many lights spread around the forest seemed to draw closer."
+    me "I would like to go to the north of the forest. I heard that the capital is that way."
+    "The Will o' the Wisp didn't reply, though it seemed to convey some sort of silent understanding. {w}Suddenly, all of the lights dissapeared."
+    me "Wh-where did you go?"
+    "As if replying to my question, a light blinked into existence a short way away. I walked towards the light. Just before I reached it, the light dissapeared, replaced by a new one even further away."
+    "This continued until the edge of the forest was in sight. As the last light dissapeared, I knew that the Will o' the Wisp had lead me as far as they could."
+    "Silently thanking the strange beings, I decided that this was a good place to rest for a while. And thus, I drifted into an event-less sleep."
+
+    scene meadows
+    with fade
+
+    "Yawning loudly, I rubbed my eyes open and looked around. I hadn't slep amazingly, but I was also unharmed, which could be seen as a miracle. I looked up at the lazy clouds. Packing together my stuff, I got up and walked along the path. This would take me to the capital eventually, though I might pass by a couple of cities first."
+    "As I walked along, I thought about how glad I was to be alive. The outside world was definitely a dangerous place, filled with horrors... But on a sunny day like this, being alive wasn't so bad after all."
+    "As I walked towards my future, a deep roar could be heard in the distance."
+
     jump __end
 
 label __end:
     #If village dead then hear dragon in distance
     # The music "Take a chance could maybe work here? or maybe the travelling scene earlier?"
-    "I left the village to continue my journey..."
-    "But in reality, J totally misunderstood what I wanted to do with this last part, so I'll have to rewrite it when I write the rest. {w}Yay!"
+    centered "End of chapter 1."
     jump scene02

@@ -6,6 +6,7 @@ init:
     define cubey = Character(name='Cubey', who_color="#955273", image="cubey", ctc="ctc_blink", ctc_position="fixed")
     define narrator = Character(ctc="ctc_blink", ctc_position="fixed")
     define centered = Character(None, what_style="centered_text", window_style="centered_window", ctc="ctc_blink", ctc_position="fixed")
+    define willo = Character(name="Will o' the Wisp", image="willo", who_color="#7EDEFF", ctc="ctc_blink", ctc_position="fixed")
 
 init python:
     import random
