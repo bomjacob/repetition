@@ -622,14 +622,53 @@ label __not_quite:
 
 label __dragon_eat:
     scene town square people
-    show magenta mad at right
-    show overlay flames with dissolve
-
-    "Oh no! A dragon!"
-
-    "You dead :/"
-
-    return
+    with fade_scene
+    "A large crowd had gathered at the square. Smalltalk filled the air, as people were conversing with eachother."
+    "I was very surprised by the number of people that showed up, considering that we had only just hung up the posters the day before."
+    "Everyone suddenly grew silent, as the mayor walked op the stairs, looking over everyone."
+    show froggy hi with dissolve
+    froggy hi_talking "Greetings, my citizens! First, a little announcement. I realise that this competition was issued very late, so we will hold it next Tuesday instead. Second of.."
+    "The mayor continued talking, as I blocked him out. Listening to his one-sided speech quickly became dull."
+    "I looked up at the gentle clouds and clear skies. The horizon to the south was lined with much darker clouds."
+    "Something sounding like a roar could be heard in the distance. Or maybe it was thunder. No one seemed to notice it."
+    with shake
+    "A second roar followed the first one this one much closer. A few of the villagers sent concerned glances at the black clouds, hushed whispers slowly rising from the crowd. The mayor, who had finally noticed that his peers seemed distracted, paused to look at the black clouds to the south."
+    with shake
+    "A dark shape large enough to block out the sun approached. Some people started screaming, running away from the town square. Others were frozen in place, either by fear or wonder."
+    "The distinct smell of smoke filled everyone's nostrils, as some buildings in the south part of town burst into flames."
+    unknown "MWAAAHAHAHAH!"
+    "An evil cackle startled everyone, as the shape landed on the ground with an earth-shattering thump,"
+    with shake
+    extend " blocking the sun so that we could only see a shadow."
+    unknown "PUNY MORTALS! I shall enjoy TEARING YOU APART!"
+    "The large shape folded together the two bat-like wings that were blocking the sun, finally revealing its shape."
+    froggy "D-d-dra-dragon!"
+    "The large dragon seemed to smirk amusedly. Apparently it relished in the horror and misery of others."
+    show magenta mad at right with dissolve
+    show froggy confused at left with move #Should be scared or something
+    magenta "I AM MAGENTA! FEAR MY NAME!"
+    "The dragon cackled, releasing a bout of flame from its jaws, setting fire to the large building by the town square."
+    froggy "P-please! Spare u-"
+    hide froggy with dissolve
+    show magenta glee with dissolve
+    "The mayor didn't get to say anymore, as Magenta's jaws closed around his small form. She shook her head a few times, burying her teeth deeper into the limp mayor, before she carelessly threw him away, his discarded body ragdolling to the floor."
+    "The few people that had not fled yet, started running around the square like ants. Magenta stomped on the few unlucky ones that came too close, ending their lives in a second."
+    magenta annoyed_talking "I GROW BORED OF YOU. Now DIE like the MIDGETS you are!"
+    "Magenta took a deep breath before covering the entire square in molten flames. They had somehow miraculously avoided me. I considered getting up and running away. Then Magenta stared me down, her furious eyes filled with glee."
+    magenta talking "YOU! I have been searching for you."
+    "Her voice changed from bottomless rage to coy smugness in an instant. She suddenly seemed like a completely different person. Her evil grin was more than slightly unnerving."
+    magenta "And here I thought it would be more difficult to find you. What a stroke of luck!\nI would consider this... Cleaning up."
+    me "Do I... Know you?"
+    "Magenta let out an evil cackle."
+    magenta "That matters not, puny mortal. What matters is that I know you. And now you... Are at my mercy."
+    "Magenta raised a clawed hand, effortlessly picking me up from the ground. My attempts in getting out of her grasp only resulted in her tightening her grip. She then raised her other hand, now resting on her hind legs, and placed her thumb and forefinger on each side of my head."
+    magenta "Goodnight. Ant."
+    "The enourmous pressure on my head was overwhelming, as it felt like my eyes would pop out. She slowly pressed harder. I didn't even realise that I was screaming."
+    $ die(0)
+    "Magenta licked the remaining blood of her fingers, as she threw my headless body to the side."
+    magenta annoyed_talking "I had expected more excitement from chasing this one. Oh, well. Time to find some other place to wreak carnage."
+    "Magenta spread her wings and took off, leaving behind the charred village."
+    jump you_dead
 
 label __almost_end:
     "The mayor sighed, but nodded at me."
@@ -657,9 +696,9 @@ label __almost_end:
 
     "Getting deeper into the forest, it suddenly seemed brighter. Almost... Like there was something magical about it. The path spread out and faded out, leaving me next to a forest lake."
     "Small lights were flickering around the edges of the treeline, but it was no longer fireflies. {w}A very large, light blue light flew out from between the trees, and towards me. It's presence seemed calming."
-    '???' "It... is rare that we see strangers like you in these woods... You do not belong here... We shall show you the way you seek..."
+    unknown "It... is rare that we see strangers like you in these woods... You do not belong here... We shall show you the way you seek..."
     me "Who are you?"
-    '???' "We... Are..."
+    unknown "We... Are..."
 
     show willo willo at right
     with dissolve

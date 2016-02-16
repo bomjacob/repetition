@@ -2,11 +2,12 @@ init:
     define me = Character(name="[name]", who_color="#eeeeee", ctc="ctc_blink", ctc_position="fixed")
     define sensei = Character(name='Sensei', who_color="#ee3342", image="sensei", ctc="ctc_blink", ctc_position="fixed")
     define froggy = Character(name='Froggy', who_color="#D6FF95", image="froggy", ctc="ctc_blink", ctc_position="fixed")
-    define magenta = Character(name='Magenta', who_color="#D747D0", ctc="ctc_blink", ctc_position="fixed")
+    define magenta = Character(name='Magenta', who_color="#D747D0", image="magenta", ctc="ctc_blink", ctc_position="fixed")
     define cubey = Character(name='Cubey', who_color="#955273", image="cubey", ctc="ctc_blink", ctc_position="fixed")
     define narrator = Character(ctc="ctc_blink", ctc_position="fixed")
     define centered = Character(None, what_style="centered_text", window_style="centered_window", ctc="ctc_blink", ctc_position="fixed")
     define willo = Character(name="Will o' the Wisp", image="willo", who_color="#7EDEFF", ctc="ctc_blink", ctc_position="fixed")
+    define unknown = Character(name="???", who_color="#EEEEEE", ctc="ctc_blink", ctc_position="fixed")
 
 init python:
     import random
@@ -30,6 +31,7 @@ init python:
 # The game starts here.
 label start:
     scene black
+    $ name = "DEFAULT NAME"
 
     jump tutorial_ask
 
@@ -46,7 +48,6 @@ label tutorial_ask:
 
 
 label naming:
-    $ name = "DEFAULT NAME"
     python:
         namenotok = True
         while namenotok:
