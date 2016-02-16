@@ -38,9 +38,9 @@ label scene01:
 
     me "Wait, is that..?"
 
-    "I picked it up{nw}"
+    "I picked it up,{w}"
     show overlay sensei_letter at top with dissolve
-    extend ", reading over each word carefully."
+    extend " reading over each word carefully."
 
     "As I read over the words, I could not help but despair.{w} The outside world sounded like a dangerous place, filled with mystery and horror. But then,{w} I thought back to my sensei's words.."
 
@@ -85,7 +85,7 @@ label __back_home:
     show cubey cubey at left with dissolve:
         yoffset -50
         zoom 0.3
-    cubey "I will love you forever! So now, don't go running off again... Don't... {w}Be... {w}Naughty."
+    cubey "I will love you forever! So now, don't go running off again... {w}Don't... {w}Be... {w}Naughty."
     "I gave the companion cube worried glances, as I slowly backed away."
     show cubey cubey at left:
         yoffset -50
@@ -121,7 +121,7 @@ label __adventure:
     me "I wonder where all the people are?"
 
     scene mansion ext with fade_scene
-    "Walking a bit further down the road, revealed a pompous-looking house with the sign “Mayor” above the entrance. {w}A confused-looking frog was standing by the entrance, looking at a piece of paper on the wall while mumbling to himself. {nw}"
+    "Walking a bit further down the road, revealed a pompous-looking house with the sign “Mayor” above the entrance. {w}A confused-looking frog was standing by the entrance, looking at a piece of paper on the wall while mumbling to himself. {w}"
 
     show froggy hi with dissolve
     extend "The frog suddenly seemed to notice me, and waved me over."
@@ -421,14 +421,17 @@ label __postermm_lose:
     "I covered my ears as what appeared to be a mouth opened to shriek once again."
     me "What is that even?"
     froggy scared talking "It would seem to be the poster. But hey, what's the worst it can do, give us p-paper cuts?"
+    show froggy scared
     "The mayor attempted to make a joke, but his unsure voice made it sound more like a failed attempt at seeming brave. In reality, the frog was trembling in place. The poster seemed to glare at us - or at least, that was what it would have done, had it eyes."
     "Still, what's the worst a single poster can do?"
     "I instantly regretted that thought, as more prototype posters rose up behind the first one, the next more hideous than the previous, all having terrifying voices to match. They seemed to rip themselves apart, to form new, more spiky versions of themselves."
     "I ran towards the door in a final attempt at getting away, when I noticed that we had been surrounded. Several poster monsters stood in the way and hissed at me before I could even get close to the door."
-    "All of them slowly move closer in their own bizarre ways, as me and mayor Froggy moved closer together."
-    froggy "I suppose th-this.. Would be a fitting time for last words.."
+    "All of them slowly moved closer in their own bizarre ways, as mayor Froggy and I moved closer together."
+    froggy scared talking "I suppose th-this.. Would be a fitting time for last words.."
+    show froggy scared
     me "......"
-    "No regrets?.. If only things had gone differently.."
+    froggy scared talking "No regrets?.. If only things had gone differently.."
+    show froggy scared
     me "Who knows.. In another universe, we might be happy right now."
     "The mayor gulped and nodded, as the poster monsters had finally grown bored of waiting. Moving right next to us, they piled on top of each other, until we were covered in sharp paper spikes. I could feel the many paper cuts all over my body, stinging, slowly giving off blood as they were bleeding me dry."
     $ die(1)
@@ -469,6 +472,7 @@ label __beforespeech:
     "I stood outside an office door a while later, looking out at the streets through an open window. There were still as few people on the streets as there had been when I arrived, but the sun was dangerously close to the horizon. If I didn't get out of the town soon, I would have to go through the thick woods on the north side of the town in almost complete darkness."
     "As the door creaked, I turned my head to see the mayor walk out of his secretary's office with a large stack of posters."
     froggy talking "Minion! Take half, and follow me!"
+    hide froggy with dissolve
     "As he loaded half the stack of posters onto me, I watched him kick the door open and walk off. I wanted to facepalm, had I not been holding a large stack of posters. Also, when did he decide that I'm his minion?! You can't just decide that on your own!"
     me "Oh, well... Doesn't look like I have a say in the matter."
     "I hurried after the mayor, that didn't even look back to check whether I was following or not."
@@ -486,7 +490,7 @@ label __beforespeech:
     froggy neutral talking "I'm sure you'll manage! Let's meet up here again when we're done."
     show froggy neutral
     "I nodded at the mayor, and looked around the plaza."
-    me "If the sun is over there, then that must mean... This is north"
+    me "If the sun is over there, then that must mean... This is north."
 
     scene town streets evening
     with fade_scene
@@ -501,6 +505,7 @@ label __beforespeech:
     centered "{size=+10}A thousand posters, and bit of running, later...{/size}"
     scene town square dark
     with fade
+    show froggy neutral
 
     me "*pant* *pant*"
     "The mayor looked at me with a confused glance."
@@ -509,15 +514,17 @@ label __beforespeech:
     "A couple of minutes later, having finally regained my breath, I raised my head."
     me "Are we... Done now?"
     froggy talking "Indeed we are! Now, let us go back to my mansion and have a cup of tea, doesn't that sound nice?"
+    show froggy not_talking
     "I looked down at my weary feet and sighed."
     me "I suppose sitting down for a moment would be nice..."
-    froggy "Then it's decided! Hop along, now. No time for dallying."
+    froggy talking "Then it's decided! Hop along, now. No time for dallying."
+    hide froggy with dissolve
     "I slumped my shoulders, and walked after the mayor, back to his mansion."
     scene mansion livingroom
     with fade_scene
     show froggy neutral
     "As we were sipping tea, the mayor suddenly spoke."
-    froggy neutral talking "So, [name], it has been a long day. Seeing as I have taken so much of your time, you would be welcome to stay a night in my mansion. And then you can also help me with the competition tomorrow. What do you say?"
+    froggy neutral talking "So, [name], it has been a long day. Seeing as I have taken so much of your time, you would be welcome to stay a night in my mansion. And then you can also help me with the contest tomorrow. What do you say?"
 
     menu:
         "Stay with Mayor Froggy?"
@@ -532,9 +539,10 @@ label __beforespeech:
                 return
 label __stay:
     "The mayor nodded, seeming pleased with himself."
-    froggy "Very well! We have a spare room or two. I will ask my secretary to prepare one of them."
+    froggy neutral talking "Very well! We have a spare room or two. I will ask my secretary to prepare one of them."
+    show froggy neutral
     "The mayor stood up from his chair, pushing it back in place."
-    froggy "If you would excuse me for a moment."
+    froggy neutral talking "If you would excuse me for a moment."
     hide froggy with dissolve
     "I nodded at the mayor who was heading towards his secretary's office. The room quickly became oddly silent. For the lack of better things to do, I looked around, examining the room."
     "A large grandfather clock was standing on the far end of the room, ticking away in the otherways silent room. It was nearing 8 o'clock."
@@ -543,12 +551,16 @@ label __stay:
     "Footsteps in the hallway were telling me that the mayor was on his way back."
     show froggy neutral with dissolve
     froggy talking "A room should be ready for you now. Follow me!"
+    hide froggy with dissolve
     "I wordlessly followed the mayor as we walked up some winding stairs, and unto the second floor. Walking past several closed doors, he finally stopped."
-    froggy "This will be your room. If you need anything, my secretary is at the end of the hallway."
+    show froggy not_talking with dissolve
+    froggy talking "This will be your room. If you need anything, my secretary is at the end of the hallway."
+    show froggy not_talking
     me "Okay. Thank you for your hospitality."
-    froggy "It is my pleasure."
+    froggy talking "It is my pleasure."
     froggy "Oh, and... One last thing. Don't try to sneak around here."
     "The mayor's words seemed slightly eerie. Or maybe they seemed like a challenge."
+    hide froggy with dissolve
     "The mayor went out the door, closing it behind him. As I heard his footsteps dissapear in the distance, I let out a breath I didn't know I had been holding."
 
     menu:
@@ -558,7 +570,7 @@ label __stay:
             "Yawning, I decided to brush my teeth and go to bed."
 
         "Yes!":
-            "I clenched my first, looking at the door resolutely. Don't try to sneak around? I wondered what secrets the mayor could be hiding."
+            "I clenched my fist, looking at the door resolutely. Don't try to sneak around? I wondered what secrets the mayor could be hiding."
             "Approaching the door carefully, I turned the doorknob and pushed the door ajar, just enough to stick my head out. The lights in the hallway were still on."
             "Seeing as there was no one around, I opened the door a bit more, and sneaked my way across the hallway. Standing in front of the door across from mine, I tried to turn the doorknob. {w}The door was locked."
             "Walking along to the next door, I tried my luck here too. {w}This one was locked as well."
@@ -567,7 +579,7 @@ label __stay:
             "I wearily turned my head towards the speaker."
             me "Uhm... I was just looking for the restroom."
             "A crane came into view."
-            show lilly
+            show lilly sad
             unknown "Oh, really? I suppose you wouldn't mind me showing you back to your room?"
             "I sighed dejectedly. I couldn't really refuse and still play innocent."
             "The crane opened the door to my room, and I reluctantly stepped inside."
@@ -576,7 +588,9 @@ label __stay:
             "I wanted to ask her about the locked rooms and the weird smell, but something told me that it would be best not to."
             me "Okay. It won't happen again."
             "Lilly's face brightened."
+            show lilly happy
             lilly "Oh, I am glad you understand."
+            hide lilly with dissolve
             "The crane went out the door and closed it behind her, leaving me in the empty room. Deciding that it would be futile to attempt sneaking out again, I decided to go to sleep."
 
     scene black
@@ -594,13 +608,16 @@ label __stay:
     scene mansion livingroom with fade_scene
     show froggy neutral
     "The mayor was sitting in the living room, sipping a bit of tea. Noticing me, he raised a hand in greeting."
-    froggy talking "Greetings, [name]! Are you ready for my great speech today?"
+    froggy hi_talking "Greetings, [name]! Are you ready for my great speech today?"
+    show froggy hi
     "I nodded, taking a seat next to the mayor. A second cup of tea had been prepared for me."
     me "So what do you expect me to do?"
-    froggy "Not much, to be honest. You can just stand around, looking pretty."
+    froggy neutral talking "Not much, to be honest. You can just stand around, looking pretty."
+    show froggy neutral
     me "That's it?"
-    froggy "Pretty much! Ready to go then?"
+    froggy neutral talking "Pretty much! Ready to go then?"
     me "I suppose."
+    hide froggy with dissolve
     "The frog nonchalantly strolled out the door, with me trotting a few metres behind him."
 
     if postermm_points >= 5:
@@ -647,9 +664,9 @@ label __not_quite:
     scene town square people
     "A small crowd was gathered in the town square. Fewer than I would have liked, but still better than none. In fact, I should have been surprised that any turned up at all, since we only just hung up posters the day before. The mayor cleared his throat, and started his speech."
     froggy talking "Greetings! I am glad to see you, dedicated citizens, that care about our environment."
-    hide froggy
+    hide froggy with dissolve
     "The mayor received little to no response from the crowd."
-    froggy talking "First of all, I am sorry to announce that the competition will be postponed. This is due to the late announcement. Second of all..."
+    froggy talking with dissolve "First of all, I am sorry to announce that the contest will be postponed. This is due to the late announcement. Second of all..."
     "The mayor continued talking, as I blocked him out. Listening to his one-sided speech quickly became dull. I quickly dozed off under the shade of a tree, as I waited for the mayor to finish his speech."
 
     scene black
@@ -682,7 +699,7 @@ label __not_quite:
 
     scene meadows with fade_scene
 
-    "As the woods thinned out, I was greeted by the sight of a bright meadows. Along these meadows was a clear path. This would take me to the capital eventually, though I might pass by a couple of cities first."
+    "As the woods thinned out, I was greeted by the sight of a bright meadows. Across the meadows was a clear path. This would take me to the capital eventually, though I might pass by a couple of cities first."
     "As I walked along, I thought about how glad I was to be alive. The outside world was definitely a dangerous place, filled with horrors... But on a sunny day like this, being alive wasn't so bad after all."
     "But I still had a long way to go."
 
@@ -694,14 +711,14 @@ label __dragon_eat:
     with fade_scene
     "A large crowd had gathered at the square. Smalltalk filled the air, as people were conversing with eachother."
     "I was very surprised by the number of people that showed up, considering that we had only just hung up the posters the day before."
-    "Everyone suddenly grew silent, as the mayor walked op the stairs, looking over everyone."
+    "Everyone suddenly grew silent, as the mayor walked up the stairs, looking over everyone."
     show froggy hi with dissolve
-    froggy hi_talking "Greetings, my citizens! First, a little announcement. I realise that this competition was issued very late, so we will hold it next Tuesday instead. Second of.."
+    froggy hi_talking "Greetings, my citizens! First, a little announcement. I realise that this contest was issued very late, so we will hold it next Tuesday instead. Second of.."
     "The mayor continued talking, as I blocked him out. Listening to his one-sided speech quickly became dull."
     "I looked up at the gentle clouds and clear skies. The horizon to the south was lined with much darker clouds."
     "Something sounding like a roar could be heard in the distance. Or maybe it was thunder. No one seemed to notice it."
     with shake
-    "A second roar followed the first one this one much closer. A few of the villagers sent concerned glances at the black clouds, hushed whispers slowly rising from the crowd. The mayor, who had finally noticed that his peers seemed distracted, paused to look at the black clouds to the south."
+    "A second roar followed the first one, this one much closer. A few of the villagers sent concerned glances at the black clouds, hushed whispers slowly rising from the crowd. The mayor, who had finally noticed that his peers seemed distracted, paused to look at the black clouds to the south."
     with shake
     "A dark shape large enough to block out the sun approached. Some people started screaming, running away from the town square. Others were frozen in place, either by fear or wonder."
     "The distinct smell of smoke filled everyone's nostrils, as some buildings in the south part of town burst into flames."
@@ -713,29 +730,36 @@ label __dragon_eat:
     "The large shape folded together the two bat-like wings that were blocking the sun, finally revealing its shape."
     froggy "D-d-dra-dragon!"
     "The large dragon seemed to smirk amusedly. Apparently it relished in the horror and misery of others."
-    show magenta mad at right with dissolve
-    show froggy confused at left with move #Should be scared or something
-    magenta "I AM MAGENTA! FEAR MY NAME!"
+    show magenta annoyed at right with dissolve
+    show froggy scared at left with move #Should be scared or something
+    magenta mad "I AM MAGENTA! FEAR MY NAME!"
+    show magenta glee
     "The dragon cackled, releasing a bout of flame from its jaws, setting fire to the large building by the town square."
-    froggy "P-please! Spare u-"
+    froggy scared talking "P-please! Spare u-"
     hide froggy with dissolve
     show magenta glee with dissolve
     "The mayor didn't get to say anymore, as Magenta's jaws closed around his small form. She shook her head a few times, burying her teeth deeper into the limp mayor, before she carelessly threw him away, his discarded body ragdolling to the floor."
     "The few people that had not fled yet, started running around the square like ants. Magenta stomped on the few unlucky ones that came too close, ending their lives in a second."
     magenta annoyed_talking "I GROW BORED OF YOU. Now DIE like the MIDGETS you are!"
+    show magenta mad
     "Magenta took a deep breath before covering the entire square in molten flames. They had somehow miraculously avoided me. I considered getting up and running away. Then Magenta stared me down, her furious eyes filled with glee."
-    magenta talking "YOU! I have been searching for you."
+    magenta annoyed_talking "YOU! {w}"
+    show magenta talking
+    extend "I have been searching for you."
+    show magenta neutral
     "Her voice changed from bottomless rage to coy smugness in an instant. She suddenly seemed like a completely different person. Her evil grin was more than slightly unnerving."
-    magenta "And here I thought it would be more difficult to find you. What a stroke of luck!\nI would consider this... Cleaning up."
+    magenta talking"And here I thought it would be more difficult to find you. What a stroke of luck!\nI would consider this... Cleaning up."
     me "Do I... Know you?"
     "Magenta let out an evil cackle."
-    magenta "That matters not, puny mortal. What matters is that I know you. And now you... Are at my mercy."
+    magenta glee "That matters not, puny mortal. What matters is that I know you. And now you... Are at my mercy."
     "Magenta raised a clawed hand, effortlessly picking me up from the ground. My attempts in getting out of her grasp only resulted in her tightening her grip. She then raised her other hand, now resting on her hind legs, and placed her thumb and forefinger on each side of my head."
-    magenta "Goodnight. Ant."
+    magenta annoyed_talking "Goodnight. Ant."
+    show magenta annoyed
     "The enourmous pressure on my head was overwhelming, as it felt like my eyes would pop out. She slowly pressed harder. I didn't even realise that I was screaming."
     $ die(0)
     "Magenta licked the remaining blood of her fingers, as she threw my headless body to the side."
-    magenta annoyed_talking "I had expected more excitement from chasing this one. Oh, well. Time to find some other place to wreak carnage."
+    magenta annoyed_talking "I had expected more excitement from chasing this one. Oh, well. Time to find some other place to wreak havoc."
+    show magenta neutral
     "Magenta spread her wings and took off, leaving behind the charred village."
     jump you_dead
 
@@ -747,7 +771,8 @@ label __almost_end:
     with dissolve
 
     me "Do you have any advice for me, when going through the woods?"
-    froggy neutral talking "Advice? I've got lots! First of all, avoid the forest entrance to the north-north-east. The trees there are a bit suspicious.{w} You should also stay away from the northern entrance, as wolves like to roam around there. {w}I would suggest going to the entrance to the west of town, and following the path north from there."
+    froggy neutral talking "Advice? I've got lots! First of all, avoid the forest entrance to the north by northeast. The trees there are a bit suspicious.{w} You should also stay away from the northern entrance, as wolves like to roam around there. {w}I would suggest going to the entrance to the west of town, and following the path north from there."
+    show froggy neutral
     me "Thank you for the advice! I'll keep that in mind."
     show froggy hi
     "I waved goodbye to the mayor as I exited through the front door."
@@ -764,25 +789,25 @@ label __almost_end:
     with fade_scene
 
     "Getting deeper into the forest, it suddenly seemed brighter. Almost... Like there was something magical about it. The path spread out and faded out, leaving me next to a forest lake."
-    "Small lights were flickering around the edges of the treeline, but it was no longer fireflies. {w}A very large, light blue light flew out from between the trees, and towards me. It's presence seemed calming."
-    unknown "It... is rare that we see strangers like you in these woods... You do not belong here... We shall show you the way you seek..."
-    me "Who are you?"
-    unknown "We... Are..."
-
+    "Small lights were flickering around the edges of the treeline, but it was no longer fireflies. {w}A large, blue light flickered towards me from between the trees, and towards me. Its presence seemed calming."
+    
     show willo willo at right
     with dissolve
 
+    unknown "It... is rare that we see strangers like you in these woods... You do not belong here... We shall show you the way you seek..."
+    me "Who are you?"
+    unknown "We... Are..."
     willo "Often referred to as being the Will o' the Wisp... Others prefer to call us... Fairies..."
     me "Fairies?!"
     "The glowing light seemed to disregard me, hovering silently in front of me."
     willo "We... Are many...\nYou... Are not us...\nSpeak... And we shall lead you to your destination..."
     "The many lights spread around the forest seemed to draw closer."
     me "I would like to go to the north of the forest. I heard that the capital is that way."
-    "The Will o' the Wisp didn't reply, though it seemed to convey some sort of silent understanding. {w}Suddenly, all of the lights dissapeared."
+    "The Will o' the Wisp didn't reply, though it seemed to convey some sort of silent understanding. {w}Suddenly, all of the lights disappeared."
     me "Wh-where did you go?"
-    "As if replying to my question, a light blinked into existence a short way away. I walked towards the light. Just before I reached it, the light dissapeared, replaced by a new one even further away."
-    "This continued until the edge of the forest was in sight. As the last light dissapeared, I knew that the Will o' the Wisp had lead me as far as they could."
-    "Silently thanking the strange beings, I decided that this was a good place to rest for a while. And thus, I drifted into an event-less sleep."
+    "As if replying to my question, a light blinked into existence a short way away. I walked towards the light. Just before I reached it, the light disappeared, replaced by a new one even farther away."
+    "This continued until the edge of the forest was in sight. As the last light disappeared, I knew that the Will o' the Wisp had lead me as far as they could."
+    "Silently thanking the strange beings, I decided that this was a good place to rest for a while. And thus, I drifted into an eventless sleep."
 
     scene meadows
     with fade
@@ -797,5 +822,6 @@ label __end:
     #If village dead then hear dragon in distance
     # The music "Take a chance could maybe work here? or maybe the travelling scene earlier?"
     #these notes are basically pointless now :P
+    scene black with fade_scene
     centered "End of chapter 1."
     jump scene02
