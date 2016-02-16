@@ -728,6 +728,9 @@ label __dragon_eat:
     with shake
     "A dark shape large enough to block out the sun approached. Some people started screaming, running away from the town square. Others were frozen in place, either by fear or wonder."
     "The distinct smell of smoke filled everyone's nostrils, as some buildings in the south part of town burst into flames."
+    show magenta annoyed_shadow at right with dissolve
+    show froggy hi_talking at left with move:
+        xzoom -1.0
     unknown "MWAAAHAHAHAH!"
     "An evil cackle startled everyone, as the shape landed on the ground with an earth-shattering thump,"
     with shake
