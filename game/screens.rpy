@@ -196,18 +196,16 @@ screen main_menu():
         has vbox
 
         textbutton _("Start Game") action Start()
-        textbutton _("Load Game") action ShowMenu("load")
-        textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("Load Game") action ShowMenu("load", from_mm=True)
+        textbutton _("Preferences") action ShowMenu("preferences", from_mm=True)
         textbutton _("Help") action Help()
         textbutton _("Credits") action Start('credits_frommenu')
         textbutton _("Quit") action Quit(confirm=False)
 
 init -2:
-
     # Make all the main menu buttons be the same size.
     style mm_button:
         size_group "mm"
-
 
 
 ##############################################################################
@@ -218,9 +216,7 @@ init -2:
 # http://www.renpy.org/doc/html/screen_special.html#navigation
 screen navigation():
 
-    # The background of the game menu.
-    window:
-        style "gm_root"
+    add "#00000055"
 
     # The various buttons.
     frame:
@@ -238,7 +234,8 @@ screen navigation():
         textbutton _("Help") action Help()
         textbutton _("Quit") action Quit()
 
-    key "K_ESCAPE" action Return()
+    # Right-click and escape
+    key "game_menu" action Return()
 
 init -2:
 
@@ -279,7 +276,7 @@ screen file_picker():
             textbutton _("Quick"):
                 action FilePage("quick")
 
-            for i in range(1, 9):
+            for i in range(1, 22):
                 textbutton str(i):
                     action FilePage(i)
 
@@ -312,7 +309,7 @@ screen file_picker():
                     $ file_time = FileTime(i, empty=_("Empty Slot."))
                     $ save_name = FileSaveName(i)
 
-                    text "[file_name]. [file_time!t]\n[save_name!t]"
+                    text " [file_name]. [file_time!t]\n[save_name!t]"
 
                     key "save_delete" action FileDelete(i)
 
@@ -325,7 +322,10 @@ screen save():
     use navigation
     use file_picker
 
-screen load():
+screen load(from_mm=False):
+
+    if from_mm:
+        add "main_menu_image"
 
     # This ensures that any other menu screen is replaced.
     tag menu
@@ -347,9 +347,13 @@ init -2:
 # Screen that allows the user to change the preferences.
 # http://www.renpy.org/doc/html/screen_special.html#prefereces
 
-screen preferences():
+screen preferences(from_mm=False):
 
     tag menu
+
+    if from_mm:
+        add "main_menu_image"
+    add "#00000055"
 
     # Include the navigation.
     use navigation
@@ -489,8 +493,8 @@ screen yesno_prompt(message, yes_action, no_action):
 
     modal True
 
-    window:
-        style "gm_root"
+    add "main_menu_image"
+    add "#00000055"
 
     frame:
         style_group "yesno"

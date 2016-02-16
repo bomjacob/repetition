@@ -72,7 +72,7 @@ init -1 python hide:
         ## The background of the main menu. This can be a color
         ## beginning with '#', or an image filename. The latter
         ## should take up the full height and width of the screen.
-        mm_root = "#dcebff",
+        mm_root = "main_menu_image",
 
         ## The background of the game menu. This can be a color
         ## beginning with '#', or an image filename. The latter
@@ -261,6 +261,17 @@ init -1 python hide:
     #More stuff
     config.keymap['input_enter'].append('mouseup_1')
 
+    style.menu_choice.size = 24
+
+    style.mm_button_text.size = 26
+    style.gm_nav_button_text.size = 26
+
+    style.large_button_text.size = 26
+    style.small_button_text.size = 26
+
+    config.thumbnail_height = 60
+    config.thumbnail_width = 96
+
     #########################################
     ## This is the name of the directory where the game's data is
     ## stored. (It needs to be set early, before any other init code
@@ -282,7 +293,7 @@ init -1 python hide:
 
     ## The default text speed in characters per second. 0 is infinite.
 
-    config.default_text_cps = 30
+    config.default_text_cps = 50
 
     ## The default auto-forward time setting.
 

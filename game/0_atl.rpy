@@ -67,3 +67,17 @@ init:
     image tutorial_ctc:
         pause 5.0
         Text("Left Click to continue.")
+
+    image main_menu_image:
+        choice:
+            "forest start" with dissolve
+        choice:
+            "forest three" with dissolve
+        choice:
+            "mansion ext" with dissolve
+        choice:
+            "town square" with dissolve
+        choice:
+            "sensei_room" with dissolve
+        pause 5.0
+        repeat
