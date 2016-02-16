@@ -531,7 +531,78 @@ label __beforespeech:
                 jump __wolfsquad
                 return
 label __stay:
-    "Next morning comes after this."
+    "The mayor nodded, seeming pleased with himself."
+    froggy "Very well! We have a spare room or two. I will ask my secretary to prepare one of them."
+    "The mayor stood up from his chair, pushing it back in place."
+    froggy "If you would excuse me for a moment."
+    hide froggy with dissolve
+    "I nodded at the mayor who was heading towards his secretary's office. The room quickly became oddly silent. For the lack of better things to do, I looked around, examining the room."
+    "A large grandfather clock was standing on the far end of the room, ticking away in the otherways silent room. It was nearing 8 o'clock."
+    "A few minutes slipped by, as I listened to the dull \"tick tock\" of the antique clock."
+    "Several large vases with different patterns were standing on shelves on the far wall. A few family pictures of the mayor as a child were standing on the table."
+    "Footsteps in the hallway were telling me that the mayor was on his way back."
+    show froggy neutral with dissolve
+    froggy talking "A room should be ready for you now. Follow me!"
+    "I wordlessly followed the mayor as we walked up some winding stairs, and unto the second floor. Walking past several closed doors, he finally stopped."
+    froggy "This will be your room. If you need anything, my secretary is at the end of the hallway."
+    me "Okay. Thank you for your hospitality."
+    froggy "It is my pleasure."
+    froggy "Oh, and... One last thing. Don't try to sneak around here."
+    "The mayor's words seemed slightly eerie. Or maybe they seemed like a challenge."
+    "The mayor went out the door, closing it behind him. As I heard his footsteps dissapear in the distance, I let out a breath I didn't know I had been holding."
+
+    menu:
+        "Go explore the mayor's mansion?"
+        "Nah.":
+            "I decided that it probably wouldn't be worth it. If I got caught, I could get into a lot of trouble; and I wasn't even sure I wanted to know what happened behind those closed doors. Something about the mayor seemed off, but I would be gone by the next day, so I decided not to worry about it."
+            "Yawning, I decided to brush my teeth and go to bed."
+
+        "Yes!":
+            "I clenched my first, looking at the door resolutely. Don't try to sneak around? I wondered what secrets the mayor could be hiding."
+            "Approaching the door carefully, I turned the doorknob and pushed the door ajar, just enough to stick my head out. The lights in the hallway were still on."
+            "Seeing as there was no one around, I opened the door a bit more, and sneaked my way across the hallway. Standing in front of the door across from mine, I tried to turn the doorknob. {w}The door was locked."
+            "Walking along to the next door, I tried my luck here too. {w}This one was locked as well."
+            "As I reached the third door, I noticed a peculiar smell. Almost like... Something rotten. I reached for the door when a sharp cough startled me."
+            unknown "What do you think you're doing?"
+            "I wearily turned my head towards the speaker."
+            me "Uhm... I was just looking for the restroom."
+            "A crane came into view."
+            show lilly
+            unknown "Oh, really? I suppose you wouldn't mind me showing you back to your room?"
+            "I sighed dejectedly. I couldn't really refuse and still play innocent."
+            "The crane opened the door to my room, and I reluctantly stepped inside."
+            unknown "I believe I haven't introduced myself..."
+            lilly "You may refer to me as Lilly. I excuse for the rules my master has imposed on you, but I must ask that you comply. These rules exist for a reason. Can I assume that you will refrain from such actions in the future?"
+            "I wanted to ask her about the locked rooms and the weird smell, but something told me that it would be best not to."
+            me "Okay. It won't happen again."
+            "Lilly's face brightened."
+            lilly "Oh, I am glad you understand."
+            "The crane went out the door and closed it behind her, leaving me in the empty room. Deciding that it would be futile to attempt sneaking out again, I decided to go to sleep."
+
+    scene black
+    with fade
+    centered "{size=+10}Next morning{/size}"
+    scene mansion bedroom
+    with fade
+
+    "I opened my eyes to see sunlight streaming through the windows."
+    me "Sensei?..."
+    "Opening my eyes, I saw an unfamiliar ceiling."
+    me "Oh... That's right... I'm at the mayor's place."
+    "Feeling a bit dissapointed, I closed my eyes again, wishing myself back to just a few days ago. How certain the future had been back then. Now, nothing was certain."
+    "Deciding to mull over this topic no longer, I got up from my bed and went downstairs."
+    scene mansion livingroom with fade_scene
+    show froggy neutral
+    "The mayor was sitting in the living room, sipping a bit of tea. Noticing me, he raised a hand in greeting."
+    froggy talking "Greetings, [name]! Are you ready for my great speech today?"
+    "I nodded, taking a seat next to the mayor. A second cup of tea had been prepared for me."
+    me "So what do you expect me to do?"
+    froggy "Not much, to be honest. You can just stand around, looking pretty."
+    me "That's it?"
+    froggy "Pretty much! Ready to go then?"
+    me "I suppose."
+    "The frog nonchalantly strolled out the door, with me trotting a few metres behind him."
+
     if postermm_points >= 5:
         jump __too_sucessful
     else:
@@ -569,13 +640,11 @@ label __wolfsquad:
     jump you_dead
 
 label __too_sucessful:
-    scene mansion ext
-    "Now we go back to the mansion and sleep. Stuff happens!"
-    froggy "The campaign is going so incredibly well!"
-    froggy "Perhaps even {i}too{/i} well"
+    #Is this correct?
     jump __dragon_eat
 
 label __not_quite:
+    scene town square people
     "A small crowd was gathered in the town square. Fewer than I would have liked, but still better than none. In fact, I should have been surprised that any turned up at all, since we only just hung up posters the day before. The mayor cleared his throat, and started his speech."
     froggy talking "Greetings! I am glad to see you, dedicated citizens, that care about our environment."
     hide froggy
