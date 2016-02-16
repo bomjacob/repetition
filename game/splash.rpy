@@ -4,7 +4,7 @@ init python:
 
 init:
     image disclaimer:
-        Text("""\n{color=#fff}{size=80}Disclaimer{/size}\n{size=25}This game contains mild cartoon violence and strong language. Additionally it contains slightly mad and overly attached cubes. Player discretion is advised.\nThis project has been released under an MIT license at {a=https://github.com/bomjacob/repetition}github.com/bomjacob/repetition{/a}{vspace=330}{size=20}
+        Text("""\n{color=#fff}{size=80}Disclaimer{/size}\n{size=25}This game contains mild cartoon violence and strong language. Additionally it contains slightly mad and overly attached cubes. Player discretion is advised.\nThis is a school project with the purpose of repeating everything we've learned so far in the subject Communication/IT. We've tried to include as much as possible, however, the game would be way to long if we were to repeat everything we've been through. This project has been released under an MIT license at {a=https://github.com/bomjacob/repetition}github.com/bomjacob/repetition{/a}{vspace=215}{size=20}
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE

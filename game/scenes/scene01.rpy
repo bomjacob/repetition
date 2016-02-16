@@ -134,7 +134,7 @@ label __adventure:
 
     me "Uh... Yeah... Hi. My name is [name]! I'm really just passing by, though I would like to know if you have any places to stay?"
     froggy "I am glad to make your acquaintance, [name]!"
-    froggy talking "I am called Froggy! I am the mayor of this small town." #this one?
+    froggy talking "I am called Froggy! I am the mayor of this small town."
     froggy "Being a small town as this is, I can't say that we have any hotels or the likes. Sorry to disappoint you."
     me "No, it's okay. I suppose I should be on my way, then?"
     froggy "W-wait a second! Actually, there is something I could use a second opinion on. Would you mind staying for a bit, helping out a mayor in need?"
@@ -185,21 +185,21 @@ label __postermm_start:
     $ postermm_points = 0
     $ __postermm_done = {}
 
-    froggy neutral talking "I am glad to hear it, [name]."
+    froggy neutral_talking "I am glad to hear it, [name]."
     "The mayor showed me inside his house, and we sat down in the living room."
 
     scene mansion livingroom with fade_scene
-    show froggy neutral talking with dissolve
+    show froggy neutral_talking with dissolve
     froggy "See, I have been working on a campaign to reduce the number of bottles and cans lying about. Sadly, the people in this village don't seem to care much about their mayor! Or the environment, for that matter."
     show froggy neutral
     me "So what do you want me to do?"
-    froggy neutral talking "Well, I was thinking of making a promotional poster, to raise awareness about the impending doom, that comes from littering bottles everywhere!"
+    froggy neutral_talking "Well, I was thinking of making a promotional poster, to raise awareness about the impending doom, that comes from littering bottles everywhere!"
     "I raised an eyebrow at the Mayor, but didn't feel the need to inquire further about the matter. He took the poster from the wall, and raised it in front of me."
 
     show overlay shitty_poster
 
-    $ renpy.music.stop(fadeout=5)
-    $ renpy.music.queue("sound/music/Freddys-Menagerie.ogg", loop=True, fadein=5)
+    $ renpy.music.stop(fadeout=2)
+    $ renpy.music.queue(["sound/music/ASOBEAT-BGM9-2.ogg", "sound/music/ASOBEAT-BGM9-10.ogg"], loop=True, fadein=1)
 
     froggy "So what do you think?"
 
@@ -220,7 +220,7 @@ label __postermm_start:
 
 label __postermm_amazing:
     me "It looks fantastic! That has to be the best promotional poster I've ever seen!"
-    froggy neutral talking "Really? You think so? I suppose I should print a couple of thousand posters then, and hang them about. Thanks for the help!"
+    froggy neutral_talking "Really? You think so? I suppose I should print a couple of thousand posters then, and hang them about. Thanks for the help!"
     show froggy neutral
     me "No problem!"
     hide froggy with fade
@@ -271,17 +271,17 @@ label __postermm_wrong:
 
 label __postermm_shit:
     froggy "The mayor's eye spasmed a bit, as he stared at me with malice."
-    froggy murderous talking "You... What? How dare you say that to me, the mighty mayor?!"
-    show froggy murderous
+    froggy murderous_talking "You... What? How dare you say that to me, the mighty mayor?!"
+    show froggy_murderous
     "I quickly backed off, as a red aura started to envelop the mayor."
-    froggy murderous talking "We don't... Use swear words here... It's against the law!"
+    froggy murderous_talking "We don't... Use swear words here... It's against the law!"
     show froggy murderous
     "As those deep red eyes caught mine, I found that I could no longer move a muscle. As I stood there, helpless, he walked towards me."
-    froggy murderous talking "Do you know what happens to lawbreakers in town, hmm?"
+    froggy murderous_talking "Do you know what happens to lawbreakers in town, hmm?"
     show froggy murderous
     "The mayor was now close enough, that I could feel the stinging red aura, slowly peeling away my skin."
     show overlay red_haze with dissolve
-    froggy murderous talking"You may never utter a swearword again."
+    froggy murderous_talking"You may never utter a swearword again."
     $ die(1)
     froggy "Have you never heard of constructive criticism?"
     hide overlay
@@ -396,7 +396,7 @@ label __postermm_done:
     if postermm_points <= 2:
         jump __postermm_lose
     elif postermm_points > 2 and postermm_points <= 4:
-        froggy neutral talking "Well I guess it turned out alright. It is definitely better than it was before! {w}This campaign might not turn out to be be a total failure after all."
+        froggy neutral_talking "Well I guess it turned out alright. It is definitely better than it was before! {w}This campaign might not turn out to be be a total failure after all."
         jump __beforespeech
     elif postermm_points >= 5:
         froggy "This.. This is much better than I thought it could be! {w}This is sure to attract lots of people. Thank you very much!"
@@ -410,7 +410,7 @@ label __postermm_lose:
     froggy confused "Well, uhh, I'd say the results are.. Debatable."
     show froggy neutral
     "I frowned slightly. Had I not done my best to make this campaign a success? Of course I knew the importance of helping the environment. {w}The mayor coughed lightly, bringing my attention back to him."
-    froggy neutral talking "I think we should call it a day, then. "
+    froggy neutral_talking "I think we should call it a day, then. "
     "I nodded my head, looking at the front door.{w} Just as I was about to exit the room, however.."
 
     $ renpy.music.stop(fadeout=5)
@@ -420,17 +420,17 @@ label __postermm_lose:
     "Another shriek echoed, turning both of our attention to the discarded poster. {w}It.. Didn't look like a poster anymore.{w} Instead, what used to be a terrible poster had turned into a terrifying paper monster, with sharp teeth and an even sharper voice."
     "I covered my ears as what appeared to be a mouth opened to shriek once again."
     me "What is that even?"
-    froggy scared talking "It would seem to be the poster. But hey, what's the worst it can do, give us p-paper cuts?"
+    froggy scared_talking "It would seem to be the poster. But hey, what's the worst it can do, give us p-paper cuts?"
     show froggy scared
     "The mayor attempted to make a joke, but his unsure voice made it sound more like a failed attempt at seeming brave. In reality, the frog was trembling in place. The poster seemed to glare at us - or at least, that was what it would have done, had it eyes."
     "Still, what's the worst a single poster can do?"
     "I instantly regretted that thought, as more prototype posters rose up behind the first one, the next more hideous than the previous, all having terrifying voices to match. They seemed to rip themselves apart, to form new, more spiky versions of themselves."
     "I ran towards the door in a final attempt at getting away, when I noticed that we had been surrounded. Several poster monsters stood in the way and hissed at me before I could even get close to the door."
     "All of them slowly moved closer in their own bizarre ways, as mayor Froggy and I moved closer together."
-    froggy scared talking "I suppose th-this.. Would be a fitting time for last words.."
+    froggy scared_talking "I suppose th-this.. Would be a fitting time for last words.."
     show froggy scared
     me "......"
-    froggy scared talking "No regrets?.. If only things had gone differently.."
+    froggy scared_talking "No regrets?.. If only things had gone differently.."
     show froggy scared
     me "Who knows.. In another universe, we might be happy right now."
     "The mayor gulped and nodded, as the poster monsters had finally grown bored of waiting. Moving right next to us, they piled on top of each other, until we were covered in sharp paper spikes. I could feel the many paper cuts all over my body, stinging, slowly giving off blood as they were bleeding me dry."
@@ -452,19 +452,21 @@ label __beforespeech:
     froggy talking "Now that that has been sorted out.. Phew, that really was a day's work or two! You've really saved me, [name]."
     show froggy neutral
     me "No, no, it's okay. Like I said, my sensei taught me to always help those in need."
-    froggy neutral talking "Sounds like you have a very wise sensei!"
+    froggy neutral_talking "Sounds like you have a very wise sensei!"
     show froggy neutral
     "I winced slightly at the mayor's words, though I didn't correct his assumption. It wasn't relevant for the mayor to know. {w}Barely noticing my hesitation, the mayor continued."
-    froggy neutral talking"Now we just need to print a couple of thousands of these! I can feel the success already!"
+    froggy neutral_talking"Now we just need to print a couple of thousands of these! I can feel the success already!"
     "I raised an eyebrow at the mayor, that suddenly seemed very self-absorbed, as he ranted on."
     froggy "Come, my minion! Advance! You shall help me hang up the posters!"
     show froggy neutral
     me "But we don't even have the posters yet! We only just figured out what to change about them!"
     "The frog tilted his head, pondering for a while, before a light bulb suddenly went off in his head."
-    froggy neutral talking "Oh, but how could I forget? Hurry, to my secretary!"
+    froggy neutral_talking "Oh, but how could I forget? Hurry, to my secretary!"
 
     scene black
     with fade
+    $ renpy.music.stop(fadeout=1)
+    $ renpy.music.queue("sound/music/Teller-of-the-Tales.ogg", loop=True, fadein=1)
     centered "{size=+10}Two hours later...{/size}"
     scene mansion hallway
     with fade
@@ -484,10 +486,10 @@ label __beforespeech:
     froggy hi_talking "Finally, you come. Now, let's hang up posters everywhere. I don't want anyone to miss them."
     show froggy hi
     "I nodded meekly at the mayor. He then pulled a tape dispenser from his pocket, somehow balancing the stack of posters on only one of his arms, and handed it to me."
-    froggy neutral talking "If you take the north part of city, I'll take the south part."
+    froggy neutral_talking "If you take the north part of city, I'll take the south part."
     show froggy neutral
     me "Alright. I'm not sure I can find my way around here, though..."
-    froggy neutral talking "I'm sure you'll manage! Let's meet up here again when we're done."
+    froggy neutral_talking "I'm sure you'll manage! Let's meet up here again when we're done."
     show froggy neutral
     "I nodded at the mayor, and looked around the plaza."
     me "If the sun is over there, then that must mean... This is north."
@@ -524,7 +526,7 @@ label __beforespeech:
     with fade_scene
     show froggy neutral
     "As we were sipping tea, the mayor suddenly spoke."
-    froggy neutral talking "So, [name], it has been a long day. Seeing as I have taken so much of your time, you would be welcome to stay a night in my mansion. And then you can also help me with the contest tomorrow. What do you say?"
+    froggy neutral_talking "So, [name], it has been a long day. Seeing as I have taken so much of your time, you would be welcome to stay a night in my mansion. And then you can also help me with the contest tomorrow. What do you say?"
 
     menu:
         "Stay with Mayor Froggy?"
@@ -539,10 +541,10 @@ label __beforespeech:
                 return
 label __stay:
     "The mayor nodded, seeming pleased with himself."
-    froggy neutral talking "Very well! We have a spare room or two. I will ask my secretary to prepare one of them."
+    froggy neutral_talking "Very well! We have a spare room or two. I will ask my secretary to prepare one of them."
     show froggy neutral
     "The mayor stood up from his chair, pushing it back in place."
-    froggy neutral talking "If you would excuse me for a moment."
+    froggy neutral_talking "If you would excuse me for a moment."
     hide froggy with dissolve
     "I nodded at the mayor who was heading towards his secretary's office. The room quickly became oddly silent. For the lack of better things to do, I looked around, examining the room."
     "A large grandfather clock was standing on the far end of the room, ticking away in the otherways silent room. It was nearing 8 o'clock."
@@ -612,10 +614,10 @@ label __stay:
     show froggy hi
     "I nodded, taking a seat next to the mayor. A second cup of tea had been prepared for me."
     me "So what do you expect me to do?"
-    froggy neutral talking "Not much, to be honest. You can just stand around, looking pretty."
+    froggy neutral_talking "Not much, to be honest. You can just stand around, looking pretty."
     show froggy neutral
     me "That's it?"
-    froggy neutral talking "Pretty much! Ready to go then?"
+    froggy neutral_talking "Pretty much! Ready to go then?"
     me "I suppose."
     hide froggy with dissolve
     "The frog nonchalantly strolled out the door, with me trotting a few metres behind him."
@@ -626,7 +628,7 @@ label __stay:
         jump __not_quite
 
 label __wolfsquad:
-    froggy neutral talking "Really? What a shame. I would have liked to have you stay for another day. But if you insist... I suppose I have to let you go."
+    froggy neutral_talking "Really? What a shame. I would have liked to have you stay for another day. But if you insist... I suppose I have to let you go."
     "I nodded, and went out the front door. The street lights were on, making it easier to navigate. It wouldn't be that easy once I got to the forest though. But I had stayed in one place long enough, and it was time to move on."
 
     $ renpy.music.stop(fadeout=1)
@@ -683,11 +685,11 @@ label __not_quite:
     show froggy neutral
     "I walked up to the mayor, who was in the process of packing together his cue cards."
     me "Was that it, then?"
-    froggy neutral talking "Indeed it was! I thank you for your help. While there weren't that many people that showed up, there were definitely more than there would have been, had you not helped me."
+    froggy neutral_talking "Indeed it was! I thank you for your help. While there weren't that many people that showed up, there were definitely more than there would have been, had you not helped me."
     show froggy neutral
     me "No problem!.. But I think I should be on my way now. What is the quickest way to the capital?"
     "The mayor seemed to ponder for a moment."
-    froggy neutral talking "Well, the fastest way would be to the north. There are wolves in the forest, but they only come out at night, so you should be fine."
+    froggy neutral_talking "Well, the fastest way would be to the north. There are wolves in the forest, but they only come out at night, so you should be fine."
     me "Okay. Good luck with your campaign!"
     "I waved goodbye to the mayor, and to the small town."
 
@@ -714,6 +716,10 @@ label __dragon_eat:
     "Everyone suddenly grew silent, as the mayor walked up the stairs, looking over everyone."
     show froggy hi with dissolve
     froggy hi_talking "Greetings, my citizens! First, a little announcement. I realise that this contest was issued very late, so we will hold it next Tuesday instead. Second of.."
+
+    $ renpy.music.stop(fadeout=1)
+    $ renpy.music.queue("sound/music/Oppressive-Gloom.ogg", loop=True, fadein=1)
+
     "The mayor continued talking, as I blocked him out. Listening to his one-sided speech quickly became dull."
     "I looked up at the gentle clouds and clear skies. The horizon to the south was lined with much darker clouds."
     "Something sounding like a roar could be heard in the distance. Or maybe it was thunder. No one seemed to notice it."
@@ -731,7 +737,7 @@ label __dragon_eat:
     froggy "D-d-dra-dragon!"
     "The large dragon seemed to smirk amusedly. Apparently it relished in the horror and misery of others."
     show magenta annoyed at right with dissolve
-    show froggy scared at left with move #Should be scared or something
+    show froggy scared at left with move
     magenta mad "I AM MAGENTA! FEAR MY NAME!"
     show magenta glee
     "The dragon cackled, releasing a bout of flame from its jaws, setting fire to the large building by the town square."
@@ -748,7 +754,7 @@ label __dragon_eat:
     extend "I have been searching for you."
     show magenta neutral
     "Her voice changed from bottomless rage to coy smugness in an instant. She suddenly seemed like a completely different person. Her evil grin was more than slightly unnerving."
-    magenta talking"And here I thought it would be more difficult to find you. What a stroke of luck!\nI would consider this... Cleaning up."
+    magenta talking "And here I thought it would be more difficult to find you. What a stroke of luck!\nI would consider this... Cleaning up."
     me "Do I... Know you?"
     "Magenta let out an evil cackle."
     magenta glee "That matters not, puny mortal. What matters is that I know you. And now you... Are at my mercy."
@@ -771,7 +777,7 @@ label __almost_end:
     with dissolve
 
     me "Do you have any advice for me, when going through the woods?"
-    froggy neutral talking "Advice? I've got lots! First of all, avoid the forest entrance to the north by northeast. The trees there are a bit suspicious.{w} You should also stay away from the northern entrance, as wolves like to roam around there. {w}I would suggest going to the entrance to the west of town, and following the path north from there."
+    froggy neutral_talking "Advice? I've got lots! First of all, avoid the forest entrance to the north by northeast. The trees there are a bit suspicious.{w} You should also stay away from the northern entrance, as wolves like to roam around there. {w}I would suggest going to the entrance to the west of town, and following the path north from there."
     show froggy neutral
     me "Thank you for the advice! I'll keep that in mind."
     show froggy hi
@@ -823,5 +829,5 @@ label __end:
     # The music "Take a chance could maybe work here? or maybe the travelling scene earlier?"
     #these notes are basically pointless now :P
     scene black with fade_scene
-    centered "End of chapter 1."
+    centered "{size=+10}End of chapter 1.{/size}"
     jump scene02
