@@ -276,7 +276,7 @@ label __postermm_wrong:
 label __postermm_shit:
     froggy "The mayor's eye spasmed a bit, as he stared at me with malice."
     froggy murderous_talking "You... What? How dare you say that to me, the mighty mayor?!"
-    show froggy_murderous
+    show froggy murderous
     "I quickly backed off, as a red aura started to envelop the mayor."
     froggy murderous_talking "We don't... Use swear words here... It's against the law!"
     show froggy murderous
@@ -444,7 +444,7 @@ label __postermm_lose:
 label __postermm_show:
     show overlay shitty_poster
 
-    froggy neutral talking "Here you go."
+    froggy neutral_talking "Here you go."
 
     hide overlay
 
@@ -496,6 +496,8 @@ label __beforespeech:
     "I nodded at the mayor, and looked around the plaza."
     me "If the sun is over there, then that must mean... This is north."
 
+    $ renpy.music.stop(fadeout=1)
+    $ renpy.music.queue("sound/music/Teller-of-the-Tales.ogg", loop=True, fadein=1)
     scene town streets evening
     with fade_scene
 
@@ -670,7 +672,8 @@ label __not_quite:
     froggy talking "Greetings! I am glad to see you, dedicated citizens, that care about our environment."
     hide froggy with dissolve
     "The mayor received little to no response from the crowd."
-    froggy talking with dissolve "First of all, I am sorry to announce that the contest will be postponed. This is due to the late announcement. Second of all..."
+    show froggy talking with dissolve
+    froggy "First of all, I am sorry to announce that the contest will be postponed. This is due to the late announcement. Second of all..."
     "The mayor continued talking, as I blocked him out. Listening to his one-sided speech quickly became dull. I quickly dozed off under the shade of a tree, as I waited for the mayor to finish his speech."
 
     scene black
@@ -746,7 +749,7 @@ label __dragon_eat:
     magenta mad "I AM MAGENTA! FEAR MY NAME!"
     show magenta glee
     "The dragon cackled, releasing a bout of flame from its jaws, setting fire to the large building by the town square."
-    froggy scared talking "P-please! Spare u-"
+    froggy scared_talking "P-please! Spare u-"
     hide froggy with dissolve
     show magenta glee with dissolve
     "The mayor didn't get to say anymore, as Magenta's jaws closed around his small form. She shook her head a few times, burying her teeth deeper into the limp mayor, before she carelessly threw him away, his discarded body ragdolling to the floor."
@@ -796,6 +799,8 @@ label __almost_end:
 
     "The forest seemed relatively quiet. A few fireflies fluttered around, giving off a small amount of light. It wasn't enough to see properly, but it made it easier to see where the trees were. Pale moonlight shone through the leaves, vaguely illuminating the forest path."
 
+    $ renpy.music.stop(fadeout=1)
+    $ renpy.music.queue("sound/music/To-the-Ends.ogg", loop=True, fadein=1)
     scene forest three
     with fade_scene
 
