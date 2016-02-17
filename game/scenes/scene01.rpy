@@ -488,7 +488,7 @@ label __beforespeech:
     "I finally caught up to the mayor, who was standing in the middle of an open plaza, looking expectantly at me. The street lights were still off, even though it was getting dark, but the remaining sunlight was bright enough that I could still properly see my surroundings."
     froggy hi_talking "Finally, you come. Now, let's hang up posters everywhere. I don't want anyone to miss them."
     show froggy hi
-    "I nodded meekly at the mayor. He then pulled a tape dispenser from his pocket, somehow balancing the stack of posters on only one of his arms, and handed it to me."
+    "I nodded meekly at the mayor. He then pulled a tape dispenser from his pocket, somehow balancing the stack of posters on only one of his arms, and handed it to me." #TODO: he doen't even have pockets. Use the hat!
     froggy neutral_talking "If you take the north part of city, I'll take the south part."
     show froggy neutral
     me "Alright. I'm not sure I can find my way around here, though..."
