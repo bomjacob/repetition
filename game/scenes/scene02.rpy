@@ -411,8 +411,10 @@ label __good_pr:
     ghost "I have returned, sinners!"
     "It poked its head out of the ceiling before floating down to eye-level."
 
-    if wrongfox >0
+    if wrongfox > 0:
         jump __ripfox
+    else:
+        jump __deciding
 
 label __ripfox:
     "Foxie dies. sadface."
