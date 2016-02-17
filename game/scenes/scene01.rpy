@@ -49,7 +49,7 @@ label scene01:
     scene sensei_room_flashback
     with flash
     show sensei with dissolve
-    sensei "With the power of communication/IT we can do {i}everything!{/i}"
+    sensei "With the power of communication/IT we can do {i}everything!{/i}\n(Ignore the missing art xD)" #Todo. Draw sensei.
     hide sensei with dissolve
     scene sensei_room
     with flash
@@ -167,6 +167,7 @@ label __no_help:
     "I started walking along the forest path, enjoying the gentle breeze that whistled through the trees.{w} The path slowly grew more unclear, until it dwindled down into several smaller animal paths."
 
     scene forest dark
+    with fade_scene
     "As I got further into the woods, I finally had to admit that I was lost. The large canopy had grown thicker, letting even less light come through the countless leaves. The wind that had earlier been nice and refreshing, suddenly felt harsh and prickly on my skin."
     "My ears suddenly picked up on a very low sound. Something that sounded almost like... A growl?..."
     "Looking around in confusion, I searched for the source of the sound. Surely it couldn't have been my imagination?"
