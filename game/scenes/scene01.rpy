@@ -85,6 +85,8 @@ label __back_home:
     show cubey cubey at left with dissolve:
         yoffset -50
         zoom 0.3
+    $ renpy.music.stop(fadeout=1)
+    $ renpy.music.queue("sound/music/BGM008.ogg", loop=True, fadein=10)
     cubey "I will love you forever! So now, don't go running off again... {w}Don't... {w}Be... {w}Naughty."
     "I gave the companion cube worried glances, as I slowly backed away."
     show cubey cubey at left:
@@ -107,6 +109,8 @@ label __back_home:
 label __adventure:
     "With a sigh, I cast away my doubts, and looked towards the horizon.{w} The journey before me would be long and arduous, but I knew that I had no choice. It was my fate."
 
+    $ renpy.music.stop(fadeout=1)
+    $ renpy.music.queue("sound/music/BGM002.ogg", loop=True, fadein=1)
     scene cliffs with fade_scene
     
     $ renpy.pause(5)
@@ -281,7 +285,7 @@ label __postermm_shit:
     show froggy murderous
     "The mayor was now close enough, that I could feel the stinging red aura, slowly peeling away my skin."
     show overlay red_haze with dissolve
-    froggy murderous_talking"You may never utter a swearword again."
+    froggy murderous_talking "You may never utter a swearword again."
     $ die(1)
     froggy "Have you never heard of constructive criticism?"
     hide overlay
@@ -477,7 +481,7 @@ label __beforespeech:
     me "Oh, well... Doesn't look like I have a say in the matter."
     "I hurried after the mayor, that didn't even look back to check whether I was following or not."
 
-    scene town square
+    scene town square dark
     with fade_scene
 
     "I finally caught up to the mayor, who was standing in the middle of an open plaza, looking expectantly at me. The street lights were still off, even though it was getting dark, but the remaining sunlight was bright enough that I could still properly see my surroundings."
