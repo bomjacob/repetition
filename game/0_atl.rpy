@@ -1,3 +1,17 @@
+init python:
+    import random
+    mm_imgs = ["forest start", "forest three", "mansion ext", "town square", "sensei_room"]
+    mm_index = 0
+    mm_img = mm_imgs[0]
+
+    def mm_img_next():
+        global mm_index
+        rnd = mm_index
+        while rnd == mm_index:
+            rnd = random.randrange(len(mm_imgs))
+        mm_index = rnd
+        return mm_imgs[mm_index]
+
 init:
     $ flash = Fade(.25, 0, .75, color="#fff")
 
@@ -68,16 +82,3 @@ init:
         pause 5.0
         Text("Left Click to continue.")
 
-    image main_menu_image:
-        choice:
-            "forest start" with dissolve
-        choice:
-            "forest three" with dissolve
-        choice:
-            "mansion ext" with dissolve
-        choice:
-            "town square" with dissolve
-        choice:
-            "sensei_room" with dissolve
-        pause 5.0
-        repeat

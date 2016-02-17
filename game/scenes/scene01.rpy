@@ -390,9 +390,7 @@ label __postermm_back:
         "Let me see the poster again please.":
             jump __postermm_show
 
-label __postermm_done:
-    "DEBUG: You scored [postermm_points] points :)"
-    
+label __postermm_done:    
     if postermm_points <= 2:
         jump __postermm_lose
     elif postermm_points > 2 and postermm_points <= 4:

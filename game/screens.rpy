@@ -172,6 +172,15 @@ screen nvl(dialogue, items=None):
 
     use quick_menu
 
+#Code to make main menu and preferences and such share same bg
+screen share_bg(from_mm=False, is_mm=False):
+    if from_mm or is_mm:
+        add mm_img
+        timer 5.0 action SetVariable("mm_img", mm_img_next()), With(dissolve) repeat True
+    if not is_mm:
+        add "#00000055"
+
+
 ##############################################################################
 # Main Menu
 #
@@ -183,9 +192,7 @@ screen main_menu():
     # This ensures that any other menu screen is replaced.
     tag menu
 
-    # The background of the main menu.
-    window:
-        style "mm_root"
+    use share_bg(is_mm=True)
 
     # The main menu buttons.
     frame:
@@ -215,8 +222,6 @@ init -2:
 # navigation and background.
 # http://www.renpy.org/doc/html/screen_special.html#navigation
 screen navigation():
-
-    add "#00000055"
 
     # The various buttons.
     frame:
@@ -316,6 +321,8 @@ screen file_picker():
 
 screen save():
 
+    use share_bg()
+
     # This ensures that any other menu screen is replaced.
     tag menu
 
@@ -324,8 +331,7 @@ screen save():
 
 screen load(from_mm=False):
 
-    if from_mm:
-        add "main_menu_image"
+    use share_bg(from_mm=from_mm)
 
     # This ensures that any other menu screen is replaced.
     tag menu
@@ -351,9 +357,7 @@ screen preferences(from_mm=False):
 
     tag menu
 
-    if from_mm:
-        add "main_menu_image"
-    add "#00000055"
+    use share_bg(from_mm=from_mm)
 
     # Include the navigation.
     use navigation
@@ -493,8 +497,7 @@ screen yesno_prompt(message, yes_action, no_action):
 
     modal True
 
-    add "main_menu_image"
-    add "#00000055"
+    use share_bg(from_mm=True)
 
     frame:
         style_group "yesno"
