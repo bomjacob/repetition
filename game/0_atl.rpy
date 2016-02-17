@@ -1,11 +1,10 @@
 init python:
     import random
     mm_imgs = ["forest start", "forest three", "mansion ext", "town square", "sensei_room"]
-    mm_index = 0
     mm_img = mm_imgs[0]
 
     def mm_img_next():
-        global mm_index
+        mm_index = mm_imgs.index(mm_img)
         rnd = mm_index
         while rnd == mm_index:
             rnd = random.randrange(len(mm_imgs))
