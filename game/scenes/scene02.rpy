@@ -186,16 +186,16 @@ label __good_storyboard:
     if wrongpartridge > 0:
         jump __rippartridge
     else:
-        jump perspective
+        jump __perspective
 
 
     # *if you got any of the above wrong, go to another scene where the partridge dies, that then continues to the following scene, too (but have it remember that the partridge died)*
 label __rippartridge:
     "Partridge dies."
     $ partridge = 1
-    jump perspective
+    jump __perspective
 
-label perspective:
+label __perspective:
     scene town2 palms #Is that the correct one? -- No.
 
     "When we finally stopped running, we were by the ocean. Large palm trees were standing by the sidewalks, giving us a bit of shade from the harsh sun."
