@@ -9,11 +9,11 @@ init:
     define willo = Character(name="Will o' the Wisp", image="willo", who_color="#7EDEFF", ctc="ctc_blink", ctc_position="fixed")
     define unknown = Character(name="???", who_color="#EEEEEE", ctc="ctc_blink", ctc_position="fixed")
     define lilly = Character(name="Lilly", who_color="#9E1B08", image="lilly", ctc="ctc_blink", ctc_position="fixed")
-    define squirrel = Character(name="", who_color="", image="", ctc="ctc_blink", ctc_position="fixed")
-    define partridge = Character(name="", who_color="", image="", ctc="ctc_blink", ctc_position="fixed")
-    define fox = Character(name="", who_color="", image="", ctc="ctc_blink", ctc_position="fixed")
-    define ghost = Character(name="", who_color="", image="", ctc="ctc_blink", ctc_position="fixed")
-    define sloth = Character(name="", who_color="", image="", ctc="ctc_blink", ctc_position="fixed")
+    define squirrel = Character(name="Squirrel", who_color="", image="", ctc="ctc_blink", ctc_position="fixed")
+    define partridge = Character(name="Partridge", who_color="", image="", ctc="ctc_blink", ctc_position="fixed")
+    define fox = Character(name="Fox", who_color="", image="", ctc="ctc_blink", ctc_position="fixed")
+    define ghost = Character(name="Ghost of Bad Filmmaking", who_color="", image="", ctc="ctc_blink", ctc_position="fixed")
+    define sloth = Character(name="As of Yet Unnamed Sloth", who_color="", image="", ctc="ctc_blink", ctc_position="fixed")
 
 init python:
     import random

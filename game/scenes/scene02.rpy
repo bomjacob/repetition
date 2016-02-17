@@ -63,8 +63,18 @@ label scene02:
     me "So... In a desperate attempt to save your hides, why don't we start at the beggining? That would be pre-production..."
     "Upon hearing this, the fox immediately seemed disinterested. It would seem she didn't have much to do with the pre-production."
     squirrel "We have planned this project meticulously!"
-    me "Yeah? So what did your post-production consist of?" # Do you mean pre?
+    me "Yeah? So what did your pre-production consist of?" # Do you mean pre? ... Yeah, I did
 
+
+    $ wrongpartridge = 0
+    $ partridge = 0
+    $ wrongsquirrel = 0
+    $ squirrel = 0
+    $ wrongfox = 0
+    $ fox = 0
+    #Preparation for killing people. Yay!
+
+    # I'm not sure if I'm doing this right, but hey, I'm trying
     #I'm not sure this is what you want for this part :/ Like do you wanna go to the "go on" part even if you answer wait? It's kinda hard to decode without /any/ tabs/leading spaces in your text.
     menu:
         partridge "Well, we started out with finding our cast..."
@@ -72,6 +82,7 @@ label scene02:
             me "You started with /casting/?"
             partridge "Yes? Is there anything wrong with that?"
             me "Yes! Everything is wrong with that!"
+            jump __pre
         "Go oon...":
             menu:
                 partridge "Then we went on with making a storyboard..."
@@ -79,6 +90,7 @@ label scene02:
                     me "You made a storyboard before you made the actual story??"
                     partridge "Well, we wanted a visual representation..."
                     me "No, no, no. That's completely wrong."
+                    jump __pre
                 "Go oooon...":
                     menu:
                         partridge "After that, we found the music we wanted to use."
@@ -86,6 +98,7 @@ label scene02:
                             me "So let me get this right.. You haven't even found a genre yet, and you already found music for it?"
                             partridge "Genre is unimportant! We could always decide that after finding some awesome music!"
                             me "That's not how filmmaking works!"
+                            jump __pre
                         "Go oooooon...":
                             partridge "Lastly, we made our synopsis to recap all things we had planned."
                             menu:
@@ -93,14 +106,17 @@ label scene02:
                                     me "You made your synopsis last?! You're supposed to make that first!"
                                     partridge "You are? But.. But.."
                                     me "Yes! It's completely wrong!"
+                                    jump __pre
                                 "That sounds completely fine.":
                                     me "I'm not sure why the ghost is hunting you down, then. This is a stellar example of how to do pre-production!"
+                                    $ wrongpartridge += 1
+                                    jump __storyboard
 
     # *if you got that wrong (chose the wrong thing /all/ times) insert horrible death scene*
     # Only if you get them /all/ wrong? I'm more thinking if you get /any/ wrong :P
+    #Actually I changed my mind, let's just make it plus one dead partridge later.
 
     # So if /all/ is correct:
-    jump __good_pre
 
 label __pre:
     partridge "Well, how would /you/ do it then?"
@@ -122,11 +138,8 @@ label __pre:
             jump __bad_pre
 
 label __bad_pre:
-    "No..."
-    jump __storyboard
-
-label __good_pre:
-    "Yeah!"
+    $ deadpartridge += 1
+    partridge "Well, it is certainly not what we did..."
     jump __storyboard
 
 label __storyboard:
@@ -138,6 +151,7 @@ label __storyboard:
     partridge "Exactly what it sounds like! A board that says \"story\"!"
 
     #It's funny and all, but doesn't the perosn say above that they wanted a visual representation of their story so they created a storyboard?
+    #Oh, crap, forgot about that part.
 
     "I covered my face with my palm, sighing."
     menu:
@@ -155,26 +169,34 @@ label __storyboard:
             jump __bad_storyboard
 
 label __bad_storyboard:
-    "Uhmm nope!"
+    $ wrongpartridge += 1
+    partridge "Hmm.. You do seem knowledgeable on the subject. I think."
     jump __good_storyboard
 
 label __good_storyboard:
     "We were suddenly interrupted by an evil cackle. A ghotly voice came from behind us."
     ghost "There you are..."
+    scene town2 frosty_playground with dissolve #???
     "A chill ran down my spine, as the air suddenly seemed colder. The playground suddenly started freezing from one end to the other."
     ghost "Flee, flee, flee in horror!"
     "We all got up and ran."
     me "Squirrel! Call the icefighters!"
     squirrel "Icefighters? What universe do you live in?!"
     me "Less talking, more running!"
+    if wrongpartridge > 0:
+        jump __rippartridge
+    else:
+        jump perspective
 
 
     # *if you got any of the above wrong, go to another scene where the partridge dies, that then continues to the following scene, too (but have it remember that the partridge died)*
-
+label __rippartridge:
+    "Partridge dies."
+    $ partridge = 1
     jump perspective
 
 label perspective:
-    scene town2 underpass #Is that the correct one?
+    scene town2 palms #Is that the correct one? -- No.
 
     "When we finally stopped running, we were by the ocean. Large palm trees were standing by the sidewalks, giving us a bit of shade from the harsh sun."
     "After regaining my breath, I I looked at the squirrel."
@@ -198,6 +220,7 @@ label perspective:
         "That sounds correct.":
             me "Let's move on to the next thing, then."
             #(*make it remember that you chose wrong, and jump directly to camera movement*)
+            $ deadsquirrel += 1
             jump __camera
 
     menu:
@@ -216,7 +239,9 @@ label perspective:
             jump __bad_perspective
 
 label __bad_perspective:
-    "Nope!"
+    $ deadsquirrel += 1
+    squirrel "W-well, I liked my suggestion just as much!"
+    me "Do I look like I care? No. Let's move on!"
     jump __good_perspective
 
 label __good_perspective:
@@ -246,7 +271,8 @@ label __camera:
             jump __bad_camera
 
 label __bad_camera:
-    "Uhmm.. no.."
+    squirrel "Not a tanning in there somewhere? No?..."
+    $ deadsquirrel += 1
     jump __good_camera
 
 label __good_camera:
@@ -256,10 +282,9 @@ label __editing:
     me "Hold on! I'm not done yet. You should also be in charge of editing, yes?"
     "The squirrel nodded meekly."
     me "Good. Now tell me this; how do you edit film?"
-    squirrel "Well, uhh, you print the film as pictures and then take some scissors, and..."
 
     menu:
-        #What's the quesiton?
+        squirrel "Well, uhh, you print the film as pictures and then take some scissors, and..."
         "Wrong!":
             squirrel "What then?"
             me "Well, there are two ways of doing it..."
@@ -268,6 +293,7 @@ label __editing:
             squirrel "What do you mean, \"give me this one\"?"
             me "Uhh, don't worry about it."
             "The squirrel seemed sceptical."
+            jump __ghost
             #(*jump to "Before I could say anymore..*)
 
     menu:
@@ -280,7 +306,9 @@ label __editing:
             jump __bad_editing
 
 label __bad_editing:
-    "Nope, that can definitely be used to edit films."
+    squirrel "So you're saying that (whatever wrong answer we put here) can be used for editing? I had no idea!"
+    me "Indeed! Oh, and did you know that in the seventeenth century..."
+    $ deadsquirrel += 1
     jump __ghost
 
 label __good_editing:
@@ -290,14 +318,22 @@ label __good_editing:
     jump __ghost
 
 label __ghost:
+    scene town2 foggy_palms with dissolve #is that a thing? that would work?
     "Before I could say anymore, a thick fog started rolling in from the seas."
     ghost "Did someone say \"terrible filmmaking\"?"
     me "Oh, not again! Let's dash, guys!"
     fox "No need to tell me twice!"
 
+    if deadsquirrel >0:
+        jump __ripsquirrel
+    else:
+        jump __post
+
     # (*insert extra scene for squirrel dying if any of the above was wrong, then proceed to following scene and remember if the squirrel died*)
     # "Any of the above", which are that? All of them? Or just the ones after the partridge potentially died?
-
+label __ripsquirrel:
+    "Bye squirrel"
+    $ squirrel = 1
     jump __post
 
 label __post:
@@ -334,11 +370,13 @@ label __post:
             jump __bad_post
 
 label __bad_post:
-    "Really... we did that in pre."
+    fox "Really...? I thought we did that in pre."
+    me "No, you do it twice. It's doubly important!"
+    $ wrongfox += 1
     jump __good_post
 
 label __good_post:
-    me "Was that what you did, then?"
+    me "Was that what you did in this production, then?"
     fox "I am above such matters."
     "I sighed. I wasn't getting anywhere with this fox."
     jump __pr
@@ -364,7 +402,8 @@ label __pr:
             jump __bad_pr
 
 label __bad_pr:
-    "No... no"
+    fox "Oh, you had me worried for a moment. Though I must admit, I've never heard of this before."
+    $ wrongfox += 1
     jump __good_pr
 
 label __good_pr:
@@ -372,9 +411,31 @@ label __good_pr:
     ghost "I have returned, sinners!"
     "It poked its head out of the ceiling before floating down to eye-level."
 
+    if wrongfox >0
+        jump __ripfox
+
+label __ripfox:
+    "Foxie dies. sadface."
+    $ fox = 1
+    jump __deciding
+
+label __deciding:
+
+    if fox=0, squirrel=0 and partridge=0:
+        jump __everyone_lives
+    elif fox=1, squirrel=1 and partridge=1:
+        jump __noone_lives
+    else:
+        jump __someone_lives
     # if none have died "(*insert two other tags for "if some have died" and "if all have died"*)
     # I have no idea what you mean by that ^
+label __noone_lives:
+    "This is where I want Magenta."
 
+label __someone_lives:
+    "I have no idea how to write this. But there will be death."
+
+label __everyone_lives:
     me "Who are you calling sinners? Haven't you seen that these people have learnt from their mistakes? I'm sure they'll produce a fantastic movie now, if only you let them!"
     "The ghostly being seemed to ponder over this for a while."
     ghost "Are you absolutely sure that you will not commit a crime of this scale against mankind again?"
