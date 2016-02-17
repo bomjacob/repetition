@@ -423,9 +423,9 @@ label __ripfox:
 
 label __deciding:
 
-    if fox=0, squirrel=0 and partridge=0:
+    if fox==0 and squirrel==0 and partridge==0:
         jump __everyone_lives
-    elif fox=1, squirrel=1 and partridge=1:
+    elif fox==1 and squirrel==1 and partridge==1:
         jump __noone_lives
     else:
         jump __someone_lives
