@@ -8,7 +8,7 @@ label scene02:
     partridge "You there! What do you think? Crossclipping, zooming or an over-shoulder view of our heroine?"
     "The fox scoffed."
     fox "Why do I work with such simpleminded people? Clearly zooming on my face here would be the best option! It’s what the people want!"
-    The partridge crossed its wings.
+    "The partridge crossed its wings."
     partridge "A camera movement like that wouldn’t progress the story in any way! We should cut it just as he runs out the door.."
     "The squirrel shook its head, sighing resignedly."
 
@@ -58,7 +58,7 @@ label scene02:
 
     scene town2 playground
 
-    pardtridge "We can sit here."
+    partridge "We can sit here."
     "I nodded at him, and we all took place around the playground."
     me "So... In a desperate attempt to save your hides, why don't we start at the beggining? That would be pre-production..."
     "Upon hearing this, the fox immediately seemed disinterested. It would seem she didn't have much to do with the pre-production."
@@ -102,234 +102,307 @@ label scene02:
     # So if /all/ is correct:
     jump __good_pre
 
-label __good_pre:
+label __pre:
     partridge "Well, how would /you/ do it then?"
 
     menu:
         "How would you do it?"
+        "Brainstorm, Synopsis, Manuscirpt, Storyboard":
+            partridge "I suppose that makes sense..."
+            jump __storyboard
+        "Storyboard, Manuscript, Synopsis, Brainstorm":
+            jump __bad_pre
+        "Synopsis, Manuscript, Storyboard, Brainstorm":
+            jump __bad_pre
+        "Synopsis, Synopsis, Synopsis, Synopsis!":
+            jump __bad_pre
+        "Storyboard, Brainstorm, Synopsis, Manuscript":
+            jump __bad_pre
+        "Brainstorm, Synopsis, Brainstorm, Synopsis, Manuscirpt, Storyboard":
+            jump __bad_pre
+
+label __bad_pre:
+    "No..."
+    jump __storyboard
+
+label __good_pre:
+    "Yeah!"
+    jump __storyboard
+
+label __storyboard:
+    me "And now that we're on the subject of pre-production, why don't we talk about your storyboard?"
+    partridge "I would've shown it to you, but our storyboard was too large to carry around."
+    me "It sounds like you're planned your story very well, then?"
+    partridge "We have? I was just talking about the large sign we have, saying \"Story\". What are you talking about?"
+    me "Sign? What exactly do you think a storyboard it?"
+    partridge "Exactly what it sounds like! A board that says \"story\"!"
+
+    #It's funny and all, but doesn't the perosn say above that they wanted a visual representation of their story so they created a storyboard?
+
+    "I covered my face with my palm, sighing."
+    menu:
+        me "No, that's not a storyboard at all! A storyboard is..."
+        "Where you plan out the story using pictures":
+            partridge "I... Suppose I have learned something today. I thank you, stranger."
+            jump __good_storyboard
+        "Where you plan out the story using only text":
+            jump __bad_storyboard
+        "A special type of black-board, especially made for story-writing":
+            jump __bad_storyboard
+        "A story with boards":
+            jump __bad_storyboard
+        "A board with stories":
+            jump __bad_storyboard
+
+label __bad_storyboard:
+    "Uhmm nope!"
+    jump __good_storyboard
+
+label __good_storyboard:
+    "We were suddenly interrupted by an evil cackle. A ghotly voice came from behind us."
+    ghost "There you are..."
+    "A chill ran down my spine, as the air suddenly seemed colder. The playground suddenly started freezing from one end to the other."
+    ghost "Flee, flee, flee in horror!"
+    "We all got up and ran."
+    me "Squirrel! Call the icefighters!"
+    squirrel "Icefighters? What universe do you live in?!"
+    me "Less talking, more running!"
 
 
-*choice*
+    # *if you got any of the above wrong, go to another scene where the partridge dies, that then continues to the following scene, too (but have it remember that the partridge died)*
 
-How would you do it?
-*input options*
+    jump perspective
 
-if right (if wrong, go here anyways, but make it remember it):
+label perspective:
+    scene town2 underpass #Is that the correct one?
 
-partridge "I suppose that makes sense...
-me "And now that we're on the subject of pre-production, why don't we talk about your storyboard?
-partridge "I would've shown it to you, but our storyboard was too large to carry around.
-me "It sounds like you're planned your story very well, then?
-partridge "We have? I was just talking about the large sign we have, saying "Story". What are you talking about?
-me "Sign? What exactly do you think a storyboard it?
-partridge "Exactly what it sounds like! A board that says "story"!
-I covered my face with my palm, sighing.
-me "No, that's not a storyboard at all! A storyboard is...
+    "When we finally stopped running, we were by the ocean. Large palm trees were standing by the sidewalks, giving us a bit of shade from the harsh sun."
+    "After regaining my breath, I I looked at the squirrel."
+    me "So... Let's continue where we left off."
+    "I looked at the squirrel, who seemed to avoid my gaze."
+    me "Let's talk about camera. What did you do when recording?"
+    squirrel "Well, we used many cinematic effects to make it into a more interesting watching experience-..."
+    "I raised a hand to silence him."
+    me "Who's being chased by the Ghost of Bad Filmmaking? You. So let's skip the lying part."
+    "The squirrel seemed dejected."
+    me "Tell me a bit about the scenes you have."
+    squirrel "Well, we have this one scene where this one person tries to look intimidating."
+    me "And what perspective did you use?"
+    squirrel "We used the, uhh, apple perspective!"
 
-*choice*
+    menu:
+        "No, no, that's not right at all.":
+            me "I'm pretty sure that the \"apple perspective\" doesn't exist."
+            "The squirrel seemed pretty nervous."
+            squirrel "Well, uuh.. How would you do it, then?"
+        "That sounds correct.":
+            me "Let's move on to the next thing, then."
+            #(*make it remember that you chose wrong, and jump directly to camera movement*)
+            jump __camera
 
-A storyboard is...
-    Where you plan out the story using pictures
-    Where you plan out the story using only text
-    A special type of black-board, especially made for story-writing
-    A story with boards
-    A board with stories
+    menu:
+        "To make someone look intimidating, I would use.."
+        "Worm's-eye view":
+            squirrel "O-of course I knew that."
+            me "In that case, let's move on!"
+            jump __good_perspective
+        "Low angle":
+            jump __bad_perspective
+        "Eye-level":
+            jump __bad_perspective
+        "High angle":
+            jump __bad_perspective
+        "Bird's-eye view":
+            jump __bad_perspective
 
-if right (but also wrong - same applies here):
+label __bad_perspective:
+    "Nope!"
+    jump __good_perspective
 
-Liviaoway Orthhjay Xelsenaway, [17.02.16 18:26]
-partridge "I... Suppose I have learned something today. I thank you, stranger.
-We were suddenly interrupted by an evil cackle. A ghotly voice came from behind us.
-ghost "There you are...
-A chill ran down my spine, as the air suddenly seemed colder. The playground suddenly started freezing from one end to the other.
-ghost "Flee, flee, flee in horror!
-We all got up and ran.
-me "Squirrel! Call the icefighters!
-squirre "Icefighters? What universe do you live in?!
-me "Less talking, more running!
+label __good_perspective:
+    jump __camera
 
-*if you got any of the above wrong, go to another scene where the partridge dies, that then continues to the following scene, too (but have it remember that the partridge died)*
+label __camera:
+    me "What kind of camera movements did you use?"
+    squirrel "We used, uhmm, tanning at one point."
+    me "I've never heard of a camera movement called \"tanning\"."
+    squirrel "......"
+    "I crossed my arms."
+    me "What do you actually know about camera movement?"
+    squirrel "Lots! What do {i}you{/i} know?"
 
-*change scene*
+    menu:
+        "The three basic camera movements are called..."
+        "Panning, tilting and moving":
+            squirrel ".. Alright, I admit you might know a thing or two."
+            jump __good_camera
+        "Tilting, angling and booming":
+            jump __bad_camera
+        "Moving, angling and zooming":
+            jump __bad_camera
+        "Tilting, panning and zooming":
+            jump __bad_camera
+        "Panning, focusing and moving":
+            jump __bad_camera
 
-When we finally stopped running, we were by the ocean. Large palm trees were standing by the sidewalks, giving us a bit of shade from the harsh sun.
-After regaining my breath, I I looked at the squirrel.
-me "So... Let's continue where we left off.
-I looked at the squirrel, who seemed to avoid my gaze.
-me "Let's talk about camera. What did you do when recording?
-squirrel "Well, we used many cinematic effects to make it into a more interesting watching experience-...
-I raised a hand to silence him.
-me "Who's being chased by the Ghost of Bad Filmmaking? You. So let's skip the lying part.
-The squirrel seemed dejected.
-me "Tell me a bit about the scenes you have.
-squirrel "Well, we have this one scene where this one person tries to look intimidating.
-me "And what perspective did you use?
-squirrel "We used the, uhh, apple perspective!
+label __bad_camera:
+    "Uhmm.. no.."
+    jump __good_camera
 
-*choice*
+label __good_camera:
+    jump __editing
 
-No, no, that's not right at all.
-me "I'm pretty sure that the "apple perspective" doesn't exist.
-The squirrel seemed pretty nervous.
-squirrel "Well, uuh.. How would you do it, then? (*jump to next choice*)
+label __editing:
+    me "Hold on! I'm not done yet. You should also be in charge of editing, yes?"
+    "The squirrel nodded meekly."
+    me "Good. Now tell me this; how do you edit film?"
+    squirrel "Well, uhh, you print the film as pictures and then take some scissors, and..."
 
-That sounds correct.
-me "Let's move on to the next thing, then. (*make it remember that you chose wrong, and jump directly to camera movement*)
+    menu:
+        #What's the quesiton?
+        "Wrong!":
+            squirrel "What then?"
+            me "Well, there are two ways of doing it..."
+            # Falls out of menu
+        "Okay, I'll give you this one.": #That was the answer, right? #And if you choose this, you don't have to answer the question?
+            squirrel "What do you mean, \"give me this one\"?"
+            me "Uhh, don't worry about it."
+            "The squirrel seemed sceptical."
+            #(*jump to "Before I could say anymore..*)
 
-*choice*
+    menu:
+        "Which of these methods is NOT used for film editing?" #Uhmm.. where is the "correct" answer? All those are methods of editing....
+        "Physically cutting film-strips and putting them together.":
+            jump __bad_editing
+        "Not editing at all, so called cut-in-camera.":
+            jump __bad_editing
+        "Digitally putting files together.":
+            jump __bad_editing
 
-To make someone look intimidating, I would use..
-    Worm's-eye view
-    Low angle
-    Eye-level
-    High angle
-    Bird's-eye view
+label __bad_editing:
+    "Nope, that can definitely be used to edit films."
+    jump __ghost
 
-if right (if wrong, do the same but remember that it's wrong):
+label __good_editing:
+    squirrel "Alright, alright, I admit defeat. Now please, stop this interrogation."
+    "I gave the squirrel a smug smirk."
+    me "Well, then, let's-.."
+    jump __ghost
 
-squirrel "O-of course I knew that.
-me "In that case, let's move on!
-me "What kind of camera movements did you use?
-squirrel "We used, uhmm, tanning at one point.
-me "I've never heard of a camera movement called "tanning".
-squirrel "......
-I crossed my arms.
-me "What do you actually know about camera movement?
-squirrel "Lots! What do /you/ know?
+label __ghost:
+    "Before I could say anymore, a thick fog started rolling in from the seas."
+    ghost "Did someone say \"terrible filmmaking\"?"
+    me "Oh, not again! Let's dash, guys!"
+    fox "No need to tell me twice!"
 
-*choice*
+    # (*insert extra scene for squirrel dying if any of the above was wrong, then proceed to following scene and remember if the squirrel died*)
+    # "Any of the above", which are that? All of them? Or just the ones after the partridge potentially died?
 
-The three basic camera movements are called...
-Panning, tilting and moving
-Tilting, angling and booming
-Moving, angling and zooming
-Tilting, panning and zooming
-Panning, focusing and moving
+    jump __post
 
-if right (but also wrong - same applies)..
+label __post:
+    scene town2 underpass #Okay now it's definitely this one... No idea what the previous was then.
 
-squirrel ".. Alright, I admit you might know a thing or two.
-me "Hold on! I'm not done yet. You should also be in charge of editing, yes?
-The squirrel nodded meekly.
-me "Good. Now tell me this; how do you edit film?
-squirrel "Well, uhh, you print the film as pictures and then take some scissors, and...
+    "We ended up in a tunnel, still being able to see the sea in the distance."
+    "This time, I directed my attention at the fox."
+    me "So.. You're the last link."
+    "She crossed her arms"
+    fox "What do you want with me?"
+    me "Just fix a few mistakes, that's all."
+    "She huffed, but otherwise only seemed passive-agressive."
+    me "So I take it you were an actor in this film?"
+    fox "That... Might have been my main role, yes."
+    me "So you also did something else?"
+    fox "I might have been involved in some... Decisions, yes."
+    me "You were involved in post-production, then?"
+    "The fox seemed to think about this for a moment before nodding."
+    me "Can you tell me what happens during post-production?"
+    fox "It would be... Great if you could refresh my mind about the matter."
 
-*choice*
+    menu:
+        "What does post-production consist of?"
+        "Music, credits, editing, VFX, PR etc.":
+            fox "Exactly!"
+            jump __good_post
+        "Casting, synopsis, manuscript, storyboard etc.":
+            jump __bad_post
+        "Credits, music, VFX, casting, PR etc.":
+            jump __bad_post
+        "Manuscript, music, VFX, PR etc.":
+            jump __bad_post
+        "Editing, VFX, credits, manuscript etc.":
+            jump __bad_post
 
-Wrong!
-squirrel "What then?
-me "Well, there are two ways of doing it...
+label __bad_post:
+    "Really... we did that in pre."
+    jump __good_post
 
-Okay, I'll give you this one.
-squirrel "What do you mean, "give me this one"?
-me "Uhh, don't worry about it.
-The squirrel seemed sceptical.(*jump to "Before I could say anymore..*)
+label __good_post:
+    me "Was that what you did, then?"
+    fox "I am above such matters."
+    "I sighed. I wasn't getting anywhere with this fox."
+    jump __pr
 
-wrong:
+label __pr:
+    me "What about PR?"
+    fox "Private records? Mine are spotless!"
+    "I raised an eyebow."
+    me "No, that wasn't what I meant at all."
 
-*choice*
+    menu:
+        "What is PR?"
+        "Public Relations":
+            fox "Oh, you should just have said so from the beginning."
+            jump __good_pr
+        "Purple Rollercoaster":
+            jump __bad_pr
+        "People's Reaction":
+            jump __bad_pr
+        "Public Reaction":
+            jump __bad_pr
+        "People's Relations":
+            jump __bad_pr
 
-Which of these methods is NOT used for film editing?
-    Physically cutting film-strips and putting them together.
-    Not editing at all, so called cut-in-camera.
-    Digitally putting files together.
+label __bad_pr:
+    "No... no"
+    jump __good_pr
 
-if right(and wrong blah blah):
+label __good_pr:
+    "The voice we had started to anticipate, returned from above."
+    ghost "I have returned, sinners!"
+    "It poked its head out of the ceiling before floating down to eye-level."
 
-squirrel "Alright, alright, I admit defeat. Now please, stop this interrogation.
-I gave the squirrel a smug smirk.
-me "Well, then, let's-..
-Before I could say anymore, a thick fog started rolling in from the seas.
-ghost "Did someone say "terrible filmmaking"?
-me "Oh, not again! Let's dash, guys!
-fox "No need to tell me twice!
+    # if none have died "(*insert two other tags for "if some have died" and "if all have died"*)
+    # I have no idea what you mean by that ^
 
-(*insert extra scene for squirrel dying if any of the above was wrong, then proceed to following scene and remember if the squirrel died*)
-
-*change scene*
-
-Liviaoway Orthhjay Xelsenaway, [17.02.16 18:26]
-We ended up in a tunnel, still being able to see the sea in the distance.
-This time, I directed my attention at the fox.
-me "So.. You're the last link.
-She crossed her arms
-fox "What do you want with me?
-me "Just fix a few mistakes, that's all.
-She huffed, but otherwise only seemed passive-agressive.
-me "So I take it you were an actor in this film?
-fox "That... Might have been my main role, yes.
-me "So you also did something else?
-fox "I might have been involved in some... Decisions, yes.
-me "You were involved in post-production, then?
-The fox seemed to think about this for a moment before nodding.
-me "Can you tell me what happens during post-production?
-fox "It would be... Great if you could refresh my mind about the matter.
-
-*choice*
-
-What does post-production consist of?
-    Music, credits, editing, VFX, PR etc.
-    Casting, synopsis, manuscript, storyboard etc.
-    Credits, music, VFX, casting, PR etc.
-    Manuscript, music, VFX, PR etc.
-    Editing, VFX, credits, manuscript etc.
-
-if right (but also wrong):
-
-fox "Exactly!
-me "Was that what you did, then?
-fox "I am above such matters.
-I sighed. I wasn't getting anywhere with this fox.
-me "What about PR?
-fox "Private records? Mine are spotless!
-I raised an eyebow.
-me "No, that wasn't what I meant at all.
-
-*choice*
-
-What is PR?
-    Public Relations
-    Purple Rollercoaster
-    People's Reaction
-    Public Reaction
-    People's Relations
-
-if right (but also wrong):
-
-fox "Oh, you should just have said so from the beginning.
-The voice we had started to anticipate, returned from above.
-ghost "I have returned, sinners!
-It poked its head out of the ceiling before floating down to eye-level.
-
-if none have died "(*insert two other tags for "if some have died" and "if all have died"*)
-
-me "Who are you calling sinners? Haven't you seen that these people have learnt from their mistakes? I'm sure they'll produce a fantastic movie now, if only you let them!
-The ghostly being seemed to ponder over this for a while.
-ghost "Are you absolutely sure that you will not commit a crime of this scale against mankind again?
-The fox, the partridge and the squirrel all nodded enthusiastically. The ghost crossed its arms.
-ghost "Pinky swear?
-The three noded again.\nThe ghost sighed exhaustedly.
-ghost "Very well. But if anything like this happens again... At any rate, I have somewhere better to be. I've heard that the scoundrel, Horse Ruecas is making another terrible movie. Adieu, adieu! I wish thee adieu.
-The ghost seemed to fade away, this time leaving for good.
-me "Looks like we're saved, people!
-partridge "Indeed.. And I believe we have you to thank for this! This just shows that I should have taken an education before starting this job...
-fox "That was the last straw. I'm done working with you people!
-The fox threw her parasol on the floor, walking away with clenched fists.
-squirrel "That sure was something.
-partridge "Stranger, I believe we have never asked for your name?
-me "I'm [name]! Just passing by.
-partridge "Whatever your reason for being here is, we are forever in your debt.
-squirrel "Indeed! Now, does anyone feel like calling for a police officer?
-centered "A moment later...
-me "Oh, hello, mister sloth!
-sloth "I have a name, you know...
-I smiled sheepishly at the sloth. I had totally forgotten his name.
-sloth "At any rate, I'm sorry I got you into this mess, traveler.
-me "You can repay me by showing me the way north! I'm going to the capital, after all.
-sloth "Are you sure you would not like me to drive you there?
-me "No, it's okay. I'm starting to like this fresh air. It's weird.
-sloth "Okay... I will finish up with these two, then. I wish you a good journey.
-me "Thank you!
-... And with that, I waved goodbye to the partridge, the sloth and the squirrel, and continued my journey.
-I was drawing ever closer to the capital, on this danger-filled journey, but I had a good feeling about the future. After all, what could ever go wrong?
-centered - End of Chapter 2
+    me "Who are you calling sinners? Haven't you seen that these people have learnt from their mistakes? I'm sure they'll produce a fantastic movie now, if only you let them!"
+    "The ghostly being seemed to ponder over this for a while."
+    ghost "Are you absolutely sure that you will not commit a crime of this scale against mankind again?"
+    "The fox, the partridge and the squirrel all nodded enthusiastically. The ghost crossed its arms."
+    ghost "Pinky swear?"
+    "The three noded again.\nThe ghost sighed exhaustedly."
+    ghost "Very well. But if anything like this happens again... At any rate, I have somewhere better to be. I've heard that the scoundrel, Horse Ruecas is making another terrible movie. Adieu, adieu! I wish thee adieu."
+    "The ghost seemed to fade away, this time leaving for good."
+    me "Looks like we're saved, people!"
+    partridge "Indeed.. And I believe we have you to thank for this! This just shows that I should have taken an education before starting this job..."
+    fox "That was the last straw. I'm done working with you people!"
+    "The fox threw her parasol on the floor, walking away with clenched fists."
+    squirrel "That sure was something."
+    partridge "Stranger, I believe we have never asked for your name?"
+    me "I'm [name]! Just passing by."
+    partridge "Whatever your reason for being here is, we are forever in your debt."
+    squirrel "Indeed! Now, does anyone feel like calling for a police officer?"
+    centered "A moment later..."
+    me "Oh, hello, mister sloth!"
+    sloth "I have a name, you know..."
+    "I smiled sheepishly at the sloth. I had totally forgotten his name."
+    sloth "At any rate, I'm sorry I got you into this mess, traveler."
+    me "You can repay me by showing me the way north! I'm going to the capital, after all."
+    sloth "Are you sure you would not like me to drive you there?"
+    me "No, it's okay. I'm starting to like this fresh air. It's weird."
+    sloth "Okay... I will finish up with these two, then. I wish you a good journey."
+    me "Thank you!"
+    "... And with that, I waved goodbye to the partridge, the sloth and the squirrel, and continued my journey."
+    "I was drawing ever closer to the capital, on this danger-filled journey, but I had a good feeling about the future. After all, what could ever go wrong?"
+    scene black with fade_scene
+    centered "{size=+10}End of chapter 1.{/size}"

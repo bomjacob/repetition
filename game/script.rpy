@@ -8,7 +8,12 @@ init:
     define centered = Character(None, what_style="centered_text", window_style="centered_window", ctc="ctc_blink", ctc_position="fixed")
     define willo = Character(name="Will o' the Wisp", image="willo", who_color="#7EDEFF", ctc="ctc_blink", ctc_position="fixed")
     define unknown = Character(name="???", who_color="#EEEEEE", ctc="ctc_blink", ctc_position="fixed")
-    define lilly = Character(name="Lilly", who_colour="#9E1B08", image="lilly", ctc="ctc_blink", ctc_position="fixed")
+    define lilly = Character(name="Lilly", who_color="#9E1B08", image="lilly", ctc="ctc_blink", ctc_position="fixed")
+    define squirrel = Character(name="", who_color="", image="", ctc="ctc_blink", ctc_position="fixed")
+    define partridge = Character(name="", who_color="", image="", ctc="ctc_blink", ctc_position="fixed")
+    define fox = Character(name="", who_color="", image="", ctc="ctc_blink", ctc_position="fixed")
+    define ghost = Character(name="", who_color="", image="", ctc="ctc_blink", ctc_position="fixed")
+    define sloth = Character(name="", who_color="", image="", ctc="ctc_blink", ctc_position="fixed")
 
 init python:
     import random
