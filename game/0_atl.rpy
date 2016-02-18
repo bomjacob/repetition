@@ -81,3 +81,15 @@ init:
         pause 5.0
         Text("Left Click to continue.")
 
+    image ghosti:
+        on show:
+            "img/characters/ghost/0.png"
+            pause 0.2
+            "img/characters/ghost/1.png"
+            pause 0.2
+            "img/characters/ghost/3.png"
+            pause 0.2
+            "img/characters/ghost/4.png"
+            pause 0.2
+        "img/characters/ghost/full.png"
+

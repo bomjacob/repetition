@@ -28,6 +28,7 @@ label scene02:
     squirrel "Silent everyone! It would seem something is coming."
     "As if waiting for this to happen, a mysterious voice resounded through the wooden walls and fake furniture."
     unknown "Fire? Yes, yes! Fire. You have done me injustice. You have done the world a horrible injustice!"
+    show ghosti
     ghost "I am the Ghost of Bad Filmmaking here to tell you that you are doing the world a terrible, unjustified injustice! The world weeps!"
     "The fox’s eyes widened, though she seemed to keep her calm, denying the existence of this bodyless voice for the moment. The squirrel kept moving his head around, searching for the voice of the perpetrator. The partridge seemed to have the most calm out of all of them, even daring to speak."
     partridge "Who is this? Show yourself!"
@@ -66,12 +67,12 @@ label scene02:
     me "Yeah? So what did your pre-production consist of?" # Do you mean pre? ... Yeah, I did
 
 
-    $ wrongpartridge = 0
-    $ partridge = 0
-    $ wrongsquirrel = 0
-    $ squirrel = 0
-    $ wrongfox = 0
-    $ fox = 0
+    $ __wrongpartridge = 0
+    $ __partridge = 0
+    $ __wrongsquirrel = 0
+    $ __squirrel = 0
+    $ __wrongfox = 0
+    $ __fox = 0
     #Preparation for killing people. Yay!
 
     # I'm not sure if I'm doing this right, but hey, I'm trying
@@ -109,14 +110,9 @@ label scene02:
                                     jump __pre
                                 "That sounds completely fine.":
                                     me "I'm not sure why the ghost is hunting you down, then. This is a stellar example of how to do pre-production!"
-                                    $ wrongpartridge += 1
+                                    $ __wrongpartridge += 1
                                     jump __storyboard
 
-    # *if you got that wrong (chose the wrong thing /all/ times) insert horrible death scene*
-    # Only if you get them /all/ wrong? I'm more thinking if you get /any/ wrong :P
-    #Actually I changed my mind, let's just make it plus one dead partridge later.
-
-    # So if /all/ is correct:
 
 label __pre:
     partridge "Well, how would /you/ do it then?"
@@ -138,7 +134,7 @@ label __pre:
             jump __bad_pre
 
 label __bad_pre:
-    $ deadpartridge += 1
+    $ __deadpartridge += 1
     partridge "Well, it is certainly not what we did..."
     jump __storyboard
 
@@ -169,34 +165,32 @@ label __storyboard:
             jump __bad_storyboard
 
 label __bad_storyboard:
-    $ wrongpartridge += 1
+    $ __wrongpartridge += 1
     partridge "Hmm.. You do seem knowledgeable on the subject. I think."
     jump __good_storyboard
 
 label __good_storyboard:
     "We were suddenly interrupted by an evil cackle. A ghotly voice came from behind us."
     ghost "There you are..."
-    scene town2 frosty_playground with dissolve #???
+    scene town2 frosty_playground with dissolve
     "A chill ran down my spine, as the air suddenly seemed colder. The playground suddenly started freezing from one end to the other."
     ghost "Flee, flee, flee in horror!"
     "We all got up and ran."
     me "Squirrel! Call the icefighters!"
     squirrel "Icefighters? What universe do you live in?!"
     me "Less talking, more running!"
-    if wrongpartridge > 0:
+    if __wrongpartridge > 0:
         jump __rippartridge
     else:
         jump __perspective
 
-
-    # *if you got any of the above wrong, go to another scene where the partridge dies, that then continues to the following scene, too (but have it remember that the partridge died)*
 label __rippartridge:
     "Partridge dies."
-    $ partridge = 1
+    $ __partridge = 1
     jump __perspective
 
 label __perspective:
-    scene town2 palms #Is that the correct one? -- No.
+    scene town2 palms
 
     "When we finally stopped running, we were by the ocean. Large palm trees were standing by the sidewalks, giving us a bit of shade from the harsh sun."
     "After regaining my breath, I I looked at the squirrel."
@@ -219,8 +213,7 @@ label __perspective:
             squirrel "Well, uuh.. How would you do it, then?"
         "That sounds correct.":
             me "Let's move on to the next thing, then."
-            #(*make it remember that you chose wrong, and jump directly to camera movement*)
-            $ deadsquirrel += 1
+            $ __deadsquirrel += 1
             jump __camera
 
     menu:
@@ -272,7 +265,7 @@ label __camera:
 
 label __bad_camera:
     squirrel "Not a tanning in there somewhere? No?..."
-    $ deadsquirrel += 1
+    $ __deadsquirrel += 1
     jump __good_camera
 
 label __good_camera:
@@ -289,15 +282,14 @@ label __editing:
             squirrel "What then?"
             me "Well, there are two ways of doing it..."
             # Falls out of menu
-        "Okay, I'll give you this one.": #That was the answer, right? #And if you choose this, you don't have to answer the question?
+        "Okay, I'll give you this one.":
             squirrel "What do you mean, \"give me this one\"?"
             me "Uhh, don't worry about it."
             "The squirrel seemed sceptical."
             jump __ghost
-            #(*jump to "Before I could say anymore..*)
 
     menu:
-        "Which of these methods is NOT used for film editing?" #Uhmm.. where is the "correct" answer? All those are methods of editing....
+        "Which of these methods is NOT used for film editing?" #TODO: Have a correct answer
         "Physically cutting film-strips and putting them together.":
             jump __bad_editing
         "Not editing at all, so called cut-in-camera.":
@@ -308,7 +300,7 @@ label __editing:
 label __bad_editing:
     squirrel "So you're saying that (whatever wrong answer we put here) can be used for editing? I had no idea!"
     me "Indeed! Oh, and did you know that in the seventeenth century..."
-    $ deadsquirrel += 1
+    $ __deadsquirrel += 1
     jump __ghost
 
 label __good_editing:
@@ -324,20 +316,18 @@ label __ghost:
     me "Oh, not again! Let's dash, guys!"
     fox "No need to tell me twice!"
 
-    if deadsquirrel >0:
+    if __deadsquirrel >0:
         jump __ripsquirrel
     else:
         jump __post
 
-    # (*insert extra scene for squirrel dying if any of the above was wrong, then proceed to following scene and remember if the squirrel died*)
-    # "Any of the above", which are that? All of them? Or just the ones after the partridge potentially died?
 label __ripsquirrel:
     "Bye squirrel"
-    $ squirrel = 1
+    $ __squirrel = 1
     jump __post
 
 label __post:
-    scene town2 underpass #Okay now it's definitely this one... No idea what the previous was then.
+    scene town2 underpass
 
     "We ended up in a tunnel, still being able to see the sea in the distance."
     "This time, I directed my attention at the fox."
@@ -372,7 +362,7 @@ label __post:
 label __bad_post:
     fox "Really...? I thought we did that in pre."
     me "No, you do it twice. It's doubly important!"
-    $ wrongfox += 1
+    $ __wrongfox += 1
     jump __good_post
 
 label __good_post:
@@ -403,7 +393,7 @@ label __pr:
 
 label __bad_pr:
     fox "Oh, you had me worried for a moment. Though I must admit, I've never heard of this before."
-    $ wrongfox += 1
+    $ __wrongfox += 1
     jump __good_pr
 
 label __good_pr:
@@ -411,21 +401,21 @@ label __good_pr:
     ghost "I have returned, sinners!"
     "It poked its head out of the ceiling before floating down to eye-level."
 
-    if wrongfox > 0:
+    if __wrongfox > 0:
         jump __ripfox
     else:
         jump __deciding
 
 label __ripfox:
     "Foxie dies. sadface."
-    $ fox = 1
+    $ __fox = 1
     jump __deciding
 
 label __deciding:
 
-    if fox==0 and squirrel==0 and partridge==0:
+    if __fox==0 and __squirrel==0 and __partridge==0:
         jump __everyone_lives
-    elif fox==1 and squirrel==1 and partridge==1:
+    elif __fox==1 and __squirrel==1 and __partridge==1:
         jump __noone_lives
     else:
         jump __someone_lives

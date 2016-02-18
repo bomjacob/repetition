@@ -9,18 +9,18 @@ init:
     define willo = Character(name="Will o' the Wisp", image="willo", who_color="#7EDEFF", ctc="ctc_blink", ctc_position="fixed")
     define unknown = Character(name="???", who_color="#EEEEEE", ctc="ctc_blink", ctc_position="fixed")
     define lilly = Character(name="Lilly", who_color="#9E1B08", image="lilly", ctc="ctc_blink", ctc_position="fixed")
-    define squirrel = Character(name="Squirrel", who_color="", image="", ctc="ctc_blink", ctc_position="fixed")
-    define partridge = Character(name="Partridge", who_color="", image="", ctc="ctc_blink", ctc_position="fixed")
-    define fox = Character(name="Fox", who_color="", image="", ctc="ctc_blink", ctc_position="fixed")
-    define ghost = Character(name="Ghost of Bad Filmmaking", who_color="", image="", ctc="ctc_blink", ctc_position="fixed")
-    define sloth = Character(name="As of Yet Unnamed Sloth", who_color="", image="", ctc="ctc_blink", ctc_position="fixed")
+    define squirrel = Character(name="Squirrel", who_color="#FFF", image="squirrel", ctc="ctc_blink", ctc_position="fixed")
+    define partridge = Character(name="Partridge", who_color="#FFF", image="partridge", ctc="ctc_blink", ctc_position="fixed")
+    define fox = Character(name="Fox", who_color="#FFF", image="fox", ctc="ctc_blink", ctc_position="fixed")
+    define ghost = Character(name="Ghost of Bad Filmmaking", who_color="#FFF", image="ghost", ctc="ctc_blink", ctc_position="fixed")
+    define sloth = Character(name="As of Yet Unnamed Sloth", who_color="#FFF", image="sloth", ctc="ctc_blink", ctc_position="fixed")
 
 init python:
     import random
     
     def die(version=0):
         renpy.music.stop(fadeout=2)
-        lengths = [4, 3]
+        lengths = [4, 3, 3]
         for i in range(lengths[version]):
             renpy.show('overlay dead ' + str(version) + ' ' + str(i))
             renpy.sound.play('sound/fx/blood_drip.ogg')
