@@ -56,8 +56,7 @@ label __cafe:
     with fade_scene
     show fox talking_normal at center with dissolve
     show partridge neutral at right with dissolve
-    show squirrel neutral at left with move:
-        xzoom -1.0
+    show squirrel neutral at left, flip with dissolve
     "As I opened the saloon-like doors, I was greeted by a place furnished like a restaurant. A partridge, a fox and a squirrel (and possibly more) seemed to be arguing about something."
     partridge no "No, it should definitely be cut like this! That adds the most suspense!"
     fox neutral_sceptic "No, this it should be cut like this instead. This shows me from the best angle!"
@@ -113,9 +112,7 @@ label __cafe:
     with fade_scene
     show fox neutral_sceptic at center with dissolve
     show partridge very_sad at right with dissolve
-    show squirrel hmm at left with move:
-        xzoom -1.0
-
+    show squirrel hmm at left, flip with dissolve
     "We ran outside, leaving behind the burning props. The fox seemed offended that she had to run anywhere. The partridge looked back at the burning building in despair."
     me "Does anyone have a phone? We should probably call the firefighters.."
     "The squirrel took a mobile phone out of his pocket, pressing a few buttons before holding it to his ear."
@@ -133,8 +130,7 @@ label __cafe:
     "I nodded at him, and we all took place around the playground."
     me "So... In a desperate attempt to save your hides, why don't we start at the beggining? That would be pre-production..."
     "Upon hearing this, the fox immediately seemed disinterested. It would seem she didn't have much to do with the pre-production."
-    show squirrel hmm at left with move:
-        xzoom -1.0
+    show squirrel hmm at left, flip with dissolve
     squirrel no "We have planned this project meticulously!"
     me "Yeah? So what did your pre-production consist of?"
     hide squirrel with dissolve
@@ -435,15 +431,13 @@ label __ripsquirrel:
     "The squirrel still didn't reply, simply staring at the fog, covering the place like a blanket."
     squirrel no "I-I... I'll see you later, guys..."
     if __partridge==0:
-        show partridge no at center with move:
-            xzoom -1.0
+        show partridge no at center, flip with dissolve
         partridge "We need you on this crew! Snap out of it!"
         squirrel "S-sorry..."
         hide partridge with dissolve
         "The partridge seemed like he wanted to run back and get the squirrel, but the ominous fog was keeping him from rushing in."
     else:
-        show fox neutral_normal at center with move:
-            xzoom -1.0
+        show fox neutral_normal at center, flip with dissolve
         fox "Come on, squirrel, don't end up like that old partridge!"
         me "Please don't leave me alone with this fox!"
         fox neutral_sceptic "{i}What{/i} did you say, brat?"
@@ -451,8 +445,7 @@ label __ripsquirrel:
         hide fox with dissolve
     "Before we could say anymore, large hands formed from the fog, reaching down to carress the poor squirrel."
     "Strange whispers of \"everything is going to be alright\" kept the squirrel ensnared, allowing him no escape."
-    show fox neutral_sceptic at center with move:
-        xzoom -1.0
+    show fox neutral_sceptic at center, flip with dissolve
     fox "We need to get away from here."
     hide fox with dissolve
     if __partridge==0:
@@ -705,13 +698,11 @@ label __everyone_lives:
     me "Looks like we're saved, people!"
     show partridge neutral at right with dissolve
     partridge "Indeed.. And I believe we have you to thank for this! This just shows that I should have taken an education before starting this job..."
-    show fox neutral_sceptic at left with easeinleft:
-        xzoom -1.0
+    show fox neutral_sceptic at left, flip with dissolve
     fox "That was the last straw. I'm done working with you people!"
     "The fox threw her parasol on the floor, walking away with clenched fists."
     hide fox with dissolve
-    show squirrel at left with easeinleft:
-        xzoom -1.0
+    show squirrel at left, flip with dissolve
     squirrel talking "That sure was something."
     partridge neutral "Stranger, I believe we have never asked for your name?"
     me "I'm [name]! Just passing by."
