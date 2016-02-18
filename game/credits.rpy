@@ -52,7 +52,7 @@ init python:
                 'www.newgrounds.com/audio/listen/668009',
                 '2 and 10 on BGM 9 by ASOBEAT',
                 'Various BGM from pianosdauge.org/BGM/list.html',
-                '\nImpending Boom, First Call, Unity, Not As It Seems, Oppressive-Gloom, Teller of the Tales\n Take a Chance, To the Ends, Volatile Reaction and Looping String, Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 3.0 License\nhttp://creativecommons.org/licenses/by/3.0/'
+                '\nImpending Boom, First Call, Unity, Not As It Seems, Oppressive-Gloom, Arcadia, Water Prelude, Teller of the Tales, Take a Chance, To the Ends, Volatile Reaction and Looping String, Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 3.0 License\nhttp://creativecommons.org/licenses/by/3.0/'
             )),
             ('Other', (
                 '{size=-5}Letter:{/size}\nwww.flickr.com/photos/playingwithpsp/2546732435',
@@ -72,7 +72,7 @@ init python:
 init:
     $ credits_speed = 20
     image cred:
-        Text(credits_s, text_align=0.5)
+        Text(credits_s, text_align=0.5, xmaximum=740)
         anchor (0.5, 0.0)
         pos (0.5, 1.0)
         linear credits_speed ypos 0.0 yanchor 1.0

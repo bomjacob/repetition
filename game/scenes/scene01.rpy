@@ -2,8 +2,7 @@
 
 label scene01:
     $ save_name = "Introduction"
-    $ renpy.music.stop(fadeout=1)
-    $ renpy.music.queue("sound/music/Serene-Separations-Soundtrack.ogg", loop=True, fadein=1)
+    play music "sound/music/Serene-Separations-Soundtrack.ogg"
     with Fade(0.5, 1.0, 0.5)
 
     centered "{size=+10}Let me tell you a story.{/size}"
@@ -47,9 +46,10 @@ label scene01:
 
     hide overlay
 
+    play sound "sound/fx/flashback.ogg"
     scene sensei_room_flashback
     with flash
-    sensei "With the power of communication/IT we can do {i}everything!{/i}\n(Ignore the missing art xD)"
+    sensei "With the power of communication/IT we can do {i}everything!{/i}" #Maybe add some art here...
     scene sensei_room
     with flash
 
@@ -57,7 +57,7 @@ label scene01:
 
     scene mountains
     with door_trans
-    $ renpy.sound.play("sound/fx/door_close.ogg")
+    play sound "sound/fx/door_close.ogg"
 
     "As I closed the door behind me and looked at the mountains stretching out before me, I felt an ounce of regret."
 
@@ -75,7 +75,7 @@ label __back_home:
     "With a sigh of resignation, I turned back towards the house.\n"
     scene sensei_room
     with door_trans
-    $ renpy.sound.play("sound/fx/door_close.ogg")
+    play sound "sound/fx/door_close.ogg"
     extend "Walking back inside, I slammed the door behind me."
     me "I suppose... I couldn't do it after all."
 
@@ -85,8 +85,7 @@ label __back_home:
     show cubey cubey at left with dissolve:
         yoffset -50
         zoom 0.3
-    $ renpy.music.stop(fadeout=1)
-    $ renpy.music.queue("sound/music/BGM008.ogg", loop=True, fadein=10)
+    play music "sound/music/BGM008.ogg" fadein 10
     cubey "I will love you forever! So now, don't go running off again... {w}Don't... {w}Be... {w}Naughty."
     "I gave the companion cube worried glances, as I slowly backed away."
     show cubey cubey at left:
@@ -110,8 +109,7 @@ label __adventure:
     $ save_name = "Adventure!"
     "With a sigh, I cast away my doubts, and looked towards the horizon.{w} The journey before me would be long and arduous, but I knew that I had no choice. It was my fate."
 
-    $ renpy.music.stop(fadeout=1)
-    $ renpy.music.queue("sound/music/BGM002.ogg", loop=True, fadein=1)
+    play music "sound/music/BGM002.ogg"
     scene cliffs with fade_scene
     
     $ renpy.pause(5)
@@ -133,7 +131,7 @@ label __adventure:
 
     show froggy hi_talking with dissolve
 
-    $ renpy.sound.play("sound/fx/First Call.ogg")
+    play sound "sound/fx/First Call.ogg"
 
     froggy "Greetings!{w} Salutations!{w} Might I ask who you are, and what you are doing here?"
 
@@ -160,8 +158,7 @@ label __no_help:
 
     "I turned my back towards the mayor, and started walking out of the town. Since it was a small town, the walk wasn't very far."
 
-    $ renpy.music.stop(fadeout=1)
-    $ renpy.music.queue("sound/music/Unity.ogg", loop=True, fadein=1)
+    play music "sound/music/Unity.ogg"
     scene forest start
     with Fade(0.5, 1.0, 0.5)
 
@@ -206,8 +203,7 @@ label __postermm_start:
 
     show overlay shitty_poster
 
-    $ renpy.music.stop(fadeout=2)
-    $ renpy.music.queue(["sound/music/ASOBEAT-BGM9-2.ogg", "sound/music/ASOBEAT-BGM9-10.ogg"], loop=True, fadein=1)
+    play music ["sound/music/ASOBEAT-BGM9-2.ogg", "sound/music/ASOBEAT-BGM9-10.ogg"]
 
     froggy "So what do you think?"
 
@@ -234,8 +230,8 @@ label __postermm_amazing:
     me "No problem!"
     hide froggy with fade
     "As I waved to him and walked towards the edge of the village, I felt a bit of doubt. Had I chosen the right thing?"
-    $ renpy.music.stop(fadeout=1)
-    $ renpy.music.queue("sound/music/Not-As-It-Seems.ogg", loop=True, fadein=1)
+
+    play music "sound/music/Not-As-It-Seems.ogg"
     scene forest dark
     with Fade(0.5, 1.0, 0.5)
 
@@ -422,8 +418,7 @@ label __postermm_lose:
     froggy neutral_talking "I think we should call it a day, then. "
     "I nodded my head, looking at the front door.{w} Just as I was about to exit the room, however.."
 
-    $ renpy.music.stop(fadeout=5)
-    $ renpy.music.queue("sound/music/Volatile-Reaction.ogg", loop=True, fadein=5)
+    play music "sound/music/Volatile-Reaction.ogg" fadeout 5 fadein 5
 
     "Mayor Froggy and I both turned immediately, as a shrill shriek abruptly came from behind us. {w}We both stood there for a while, looking for the source of the ear-piercing sound."
     "Another shriek echoed, turning both of our attention to the discarded poster. {w}It.. Didn't look like a poster anymore.{w} Instead, what used to be a terrible poster had turned into a terrifying paper monster, with sharp teeth and an even sharper voice."
@@ -475,8 +470,7 @@ label __beforespeech:
 
     scene black
     with fade
-    $ renpy.music.stop(fadeout=1)
-    $ renpy.music.queue("sound/music/Teller-of-the-Tales.ogg", loop=True, fadein=1)
+    play music "sound/music/Teller-of-the-Tales.ogg"
     centered "{size=+10}Two hours later...{/size}"
     scene mansion hallway
     with fade
@@ -504,8 +498,7 @@ label __beforespeech:
     "I nodded at the mayor, and looked around the plaza."
     me "If the sun is over there, then that must mean... This is north."
 
-    $ renpy.music.stop(fadeout=1)
-    $ renpy.music.queue("sound/music/Teller-of-the-Tales.ogg", loop=True, fadein=1)
+    play music "sound/music/Water-Prelude.ogg"
     scene town streets evening
     with fade_scene
 
@@ -540,6 +533,8 @@ label __beforespeech:
     "As we were sipping tea, the mayor suddenly spoke."
     froggy neutral_talking "So, [name], it has been a long day. Seeing as I have taken so much of your time, you would be welcome to stay a night in my mansion. And then you can also help me with the contest tomorrow. What do you say?"
 
+    play music "sound/music/To-the-Ends.ogg"
+
     menu:
         "Stay with Mayor Froggy?"
         "Yes! I'd love to stay a night in your mansion!":
@@ -560,10 +555,12 @@ label __stay:
     froggy neutral_talking "If you would excuse me for a moment."
     hide froggy with dissolve
     "I nodded at the mayor who was heading towards his secretary's office. The room quickly became oddly silent. For the lack of better things to do, I looked around, examining the room."
+    play sound "sound/fx/tick-tock.ogg"
     "A large grandfather clock was standing on the far end of the room, ticking away in the otherways silent room. It was nearing 8 o'clock."
     "A few minutes slipped by, as I listened to the dull \"tick tock\" of the antique clock."
     "Several large vases with different patterns were standing on shelves on the far wall. A few family pictures of the mayor as a child were standing on the table."
     "Footsteps in the hallway were telling me that the mayor was on his way back."
+    stop sound
     show froggy neutral with dissolve
     froggy talking "A room should be ready for you now. Follow me!"
     hide froggy with dissolve
@@ -585,6 +582,7 @@ label __stay:
             "Yawning, I decided to brush my teeth and go to bed."
 
         "Yes!":
+            play music "sound/music/BGM008.ogg"
             "I clenched my fist, looking at the door resolutely. Don't try to sneak around? I wondered what secrets the mayor could be hiding."
             "Approaching the door carefully, I turned the doorknob and pushed the door ajar, just enough to stick my head out. The lights in the hallway were still on."
             "Seeing as there was no one around, I opened the door a bit more, and sneaked my way across the hallway. Standing in front of the door across from mine, I tried to turn the doorknob. {w}The door was locked."
@@ -610,6 +608,7 @@ label __stay:
 
     scene black
     with fade
+    $ renpy.music.play("sound/music/To-the-Ends.ogg", if_changed=True)
     centered "{size=+10}Next morning{/size}"
     scene mansion bedroom
     with fade
@@ -645,8 +644,7 @@ label __wolfsquad:
     froggy neutral_talking "Really? What a shame. I would have liked to have you stay for another day. But if you insist... I suppose I have to let you go."
     "I nodded, and went out the front door. The street lights were on, making it easier to navigate. It wouldn't be that easy once I got to the forest though. But I had stayed in one place long enough, and it was time to move on."
 
-    $ renpy.music.stop(fadeout=1)
-    $ renpy.music.queue("sound/music/Unity.ogg", loop=True, fadein=1)
+    play music "sound/music/Unity.ogg"
     scene forest dark
     with fade_scene
 
@@ -689,6 +687,7 @@ label __not_quite:
 
     scene black
     with fade
+    play music "sound/music/BGM001.ogg"
     centered "{size=+10}One hour later...{/size}"
     scene town square dark
     with fade
@@ -734,8 +733,7 @@ label __dragon_eat:
     show froggy hi with dissolve
     froggy hi_talking "Greetings, my citizens! First, a little announcement. I realise that this contest was issued very late, so we will hold it next Tuesday instead. Second of.."
 
-    $ renpy.music.stop(fadeout=1)
-    $ renpy.music.queue("sound/music/Oppressive-Gloom.ogg", loop=True, fadein=1)
+    play music "sound/music/Oppressive-Gloom.ogg"
 
     "The mayor continued talking, as I blocked him out. Listening to his one-sided speech quickly became dull."
     "I looked up at the gentle clouds and clear skies. The horizon to the south was lined with much darker clouds."
@@ -790,7 +788,7 @@ label __dragon_eat:
     jump you_dead
 
 label __almost_end:
-    $ save_name = "What's that light??ff"
+    $ save_name = "What's that light??"
     "The mayor sighed, but nodded at me."
     froggy "Very well. If that is what you wish, I shan't hold you back. I would have wished that you stayed, but I suppose that is too much to ask after all you've done for me. I wish you a merry journey though! And don't get lost in the woods."
 
@@ -812,15 +810,15 @@ label __almost_end:
 
     "The forest seemed relatively quiet. A few fireflies fluttered around, giving off a small amount of light. It wasn't enough to see properly, but it made it easier to see where the trees were. Pale moonlight shone through the leaves, vaguely illuminating the forest path."
 
-    $ renpy.music.stop(fadeout=1)
-    $ renpy.music.queue("sound/music/To-the-Ends.ogg", loop=True, fadein=1)
+    play music "sound/music/Arcadia.ogg"
     scene forest three
     with fade_scene
 
     "Getting deeper into the forest, it suddenly seemed brighter. Almost... Like there was something magical about it. The path spread out and faded out, leaving me next to a forest lake."
     "Small lights were flickering around the edges of the treeline, but it was no longer fireflies. {w}A large, blue light flickered towards me from between the trees, and towards me. Its presence seemed calming."
     
-    show willo willo at right
+    show willo willo at right:
+        yalign 0.3
     with dissolve
 
     unknown "It... is rare that we see strangers like you in these woods... You do not belong here... We shall show you the way you seek..."
@@ -833,6 +831,7 @@ label __almost_end:
     "The many lights spread around the forest seemed to draw closer."
     me "I would like to go to the north of the forest. I heard that the capital is that way."
     "The Will o' the Wisp didn't reply, though it seemed to convey some sort of silent understanding. {w}Suddenly, all of the lights disappeared."
+    hide willo
     me "Wh-where did you go?"
     "As if replying to my question, a light blinked into existence a short way away. I walked towards the light. Just before I reached it, the light disappeared, replaced by a new one even farther away."
     "This continued until the edge of the forest was in sight. As the last light disappeared, I knew that the Will o' the Wisp had lead me as far as they could."

@@ -272,6 +272,8 @@ init -1 python hide:
     config.thumbnail_height = 80
     config.thumbnail_width = 128
 
+    config.fade_music = 1.0
+
     #########################################
     ## This is the name of the directory where the game's data is
     ## stored. (It needs to be set early, before any other init code
