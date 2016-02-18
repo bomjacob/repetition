@@ -38,9 +38,9 @@ label scene01:
 
     me "Wait, is that..?"
 
-    "I picked it up,{w}"
+    "I picked it up,"
     show overlay sensei_letter at top with dissolve
-    extend " reading over each word carefully."
+    extend " reading over each word carefully.{cps=*0.001}\n          {/cps}"
 
     "As I read over the words, I could not help but despair.{w} The outside world sounded like a dangerous place, filled with mystery and horror. But then,{w} I thought back to my sensei's words.."
 
