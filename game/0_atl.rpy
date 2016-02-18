@@ -1,7 +1,7 @@
 init python:
     import random
-    mm_imgs = ["forest start", "forest three", "mansion ext", "town square", "sensei_room"]
-    mm_img = mm_imgs[0]
+    mm_imgs = ["forest start", "forest three", "mansion ext", "town square", "sensei_room", "mansion hallway", "meadows evening", "town2 playground"]
+    mm_img = mm_imgs[random.randrange(len(mm_imgs))]
 
     def mm_img_next():
         mm_index = mm_imgs.index(mm_img)
