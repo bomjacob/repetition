@@ -49,9 +49,7 @@ label scene01:
 
     scene sensei_room_flashback
     with flash
-    show sensei with dissolve
-    sensei "With the power of communication/IT we can do {i}everything!{/i}\n(Ignore the missing art xD)" #Todo. Draw sensei.
-    hide sensei with dissolve
+    sensei "With the power of communication/IT we can do {i}everything!{/i}\n(Ignore the missing art xD)"
     scene sensei_room
     with flash
 
