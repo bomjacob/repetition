@@ -1,5 +1,6 @@
 label scene02:
     scene dusty_road
+    with fade_scene
     "I walked along a dusty asphalt road."
     "..."
     "Was that a car I could hear in the distance?"
@@ -704,12 +705,12 @@ label __everyone_lives:
     me "Looks like we're saved, people!"
     show partridge neutral at right with dissolve
     partridge "Indeed.. And I believe we have you to thank for this! This just shows that I should have taken an education before starting this job..."
-    show fox neutral_sceptic at left with dissolve and move:
+    show fox neutral_sceptic at left with easeinleft:
         xzoom -1.0
     fox "That was the last straw. I'm done working with you people!"
     "The fox threw her parasol on the floor, walking away with clenched fists."
     hide fox with dissolve
-    show squirrel at left with disslove and move:
+    show squirrel at left with easeinleft:
         xzoom -1.0
     squirrel talking "That sure was something."
     partridge neutral "Stranger, I believe we have never asked for your name?"
