@@ -59,15 +59,16 @@ label naming:
     python:
         namenotok = True
         while namenotok:
+            name_placeholder = None
             #If windows then get system username
             if os.name == "nt":
                 name_placeholder = os.getenv("username")
-            #If not windows, just pick a random name
-            else:
+            #If not windows, or windows messed up, just pick a random name
+            if os.name != "nt" or name_placeholder is None or name_placeholder == "":
                 with renpy.file("names.txt") as f:
                     name_placeholder = random_file_line(f)[:-2]
 
-            name = renpy.input(prompt="{size=+10}Before we begin.\nWould you mind telling us your name?\nLeave it blank to choose a random one.", default=name_placeholder, length=20)
+            name = renpy.input(prompt="{size=+10}Before we begin.\nWould you mind telling us your name?\nLeave it blank to choose a random one.", default=name_placeholder.capitalize(), length=20)
 
             if name == "":
                 with renpy.file("names.txt") as f:
