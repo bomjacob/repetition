@@ -269,8 +269,8 @@ init -1 python hide:
     style.large_button_text.size = 26
     style.small_button_text.size = 26
 
-    config.thumbnail_height = 60
-    config.thumbnail_width = 96
+    config.thumbnail_height = 80
+    config.thumbnail_width = 128
 
     #########################################
     ## This is the name of the directory where the game's data is

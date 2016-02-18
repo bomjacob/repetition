@@ -54,6 +54,7 @@ label tutorial_ask:
 
 
 label naming:
+    $ save_name = "What's your name?"
     python:
         namenotok = True
         while namenotok:
@@ -76,6 +77,7 @@ label naming:
     jump scene01
 
 label tutorial:
+    $ save_name = "Tutorial"
     "Hello! Welcome to this Virtual Novel. What is a virtual novel, you may ask?\n{image=tutorial_ctc}"
     "Well, according to wikipedia:\nA visual novel is an interactive game, featuring mostly static graphics, most often using anime-style art or occasionally live-action stills (and sometimes video footage). As the name might suggest, they resemble mixed-media novels.\nRead more: {a=https://en.wikipedia.org/wiki/Visual_novel}en.wikipedia.org/wiki/Visual_novel{/a}\n{image=tutorial_ctc}"
 
@@ -99,10 +101,34 @@ label tutorial_part_2:
     if renpy.in_rollback():
         jump tutorial_part_3
     "This game uses a powerful engine known as Ren'Py. Ren'Py comes with a special mechanic called \"{i}rollback{/i}\" which allows to player to go \"back in time\" in terms of the game. PGUP or mousewheel up will go back in time, while PGDN or mousewheel down will go forward, if you've already gone backwards. Try it now!"
+    $ __i = 0
     while True:
         if renpy.in_rollback():
             jump tutorial_part_3
         "Please try using rollback at least once. It's sure to come in handy."
+        $ __i += 1
+        if __i > 10:
+            if renpy.in_rollback():
+                jump tutorial_part_3
+            "I really didn't want it to come to this..."
+            if renpy.in_rollback():
+                jump tutorial_part_3
+            menu:
+                "Rollback... (using PGUP or mousewheel up) or die!"
+                "Okay! I'll rollback!":
+                    if renpy.in_rollback():
+                        jump tutorial_part_3
+                    "You better..."
+                    if renpy.in_rollback():
+                        jump tutorial_part_3
+                    "Do it, or you'll die!"
+                    $ die(2)
+                    "Don't say I didn't warn you!"
+                    return
+                "Never! I'd rather die, than rollback.":
+                    "Very well..."
+                    $ die(1)
+                    return
 
 label tutorial_part_3:
     "Well done! Normally that would have taken you back to the previous dialogue block, but for now let's continue with the tutorial."

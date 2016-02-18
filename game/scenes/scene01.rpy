@@ -1,6 +1,7 @@
 # Code for scene 1, including the code for the poster minigame at the beginning of the game
 
 label scene01:
+    $ save_name = "Introduction"
     $ renpy.music.stop(fadeout=1)
     $ renpy.music.queue("sound/music/Serene-Separations-Soundtrack.ogg", loop=True, fadein=1)
     with Fade(0.5, 1.0, 0.5)
@@ -72,6 +73,7 @@ label scene01:
             jump __back_home
 
 label __back_home:
+    $ save_name = "Stay home"
     "With a sigh of resignation, I turned back towards the house.\n"
     scene sensei_room
     with door_trans
@@ -107,6 +109,7 @@ label __back_home:
     jump you_dead
 
 label __adventure:
+    $ save_name = "Adventure!"
     "With a sigh, I cast away my doubts, and looked towards the horizon.{w} The journey before me would be long and arduous, but I knew that I had no choice. It was my fate."
 
     $ renpy.music.stop(fadeout=1)
@@ -151,6 +154,7 @@ label __adventure:
             jump __postermm_start
 
 label __no_help:
+    $ save_name = "Why would I help a frog??"
     me "Actually, I'm... Rather busy at the moment! If you wouldn't mind, I need to be on my way."
     froggy confused "That's a shame. I hope nothing bad happens to you on your journey, though."
 
@@ -187,6 +191,7 @@ label __no_help:
     
 
 label __postermm_start:
+    $ save_name = "Just helping out a frog."
     $ postermm_points = 0
     $ __postermm_done = {}
 
@@ -224,6 +229,7 @@ label __postermm_start:
 
 
 label __postermm_amazing:
+    $ save_name = "That poster really was amazing."
     me "It looks fantastic! That has to be the best promotional poster I've ever seen!"
     froggy neutral_talking "Really? You think so? I suppose I should print a couple of thousand posters then, and hang them about. Thanks for the help!"
     show froggy neutral
@@ -275,6 +281,7 @@ label __postermm_wrong:
 
 
 label __postermm_shit:
+    $ save_name = "Non-constructive criticism."
     froggy "The mayor's eye spasmed a bit, as he stared at me with malice."
     froggy murderous_talking "You... What? How dare you say that to me, the mighty mayor?!"
     show froggy murderous
@@ -408,6 +415,7 @@ label __postermm_done:
     return
 
 label __postermm_lose:
+    $ save_name = "Posters are dangerous..."
     me "So?.. What do you think?"
     "Mayor Froggy tilted his head as he stared at the poster with something that might have been disgust."
     froggy confused "Well, uhh, I'd say the results are.. Debatable."
@@ -452,6 +460,7 @@ label __postermm_show:
     $ renpy.rollback(force=True, checkpoints=2)
 
 label __beforespeech:
+    $ save_name = "Helping the frog... again."
     froggy talking "Now that that has been sorted out.. Phew, that really was a day's work or two! You've really saved me, [name]."
     show froggy neutral
     me "No, no, it's okay. Like I said, my sensei taught me to always help those in need."
@@ -545,6 +554,7 @@ label __beforespeech:
                 jump __wolfsquad
                 return
 label __stay:
+    $ save_name = "Froggys mansion."
     "The mayor nodded, seeming pleased with himself."
     froggy neutral_talking "Very well! We have a spare room or two. I will ask my secretary to prepare one of them."
     show froggy neutral
@@ -633,6 +643,7 @@ label __stay:
         jump __not_quite
 
 label __wolfsquad:
+    $ save_name = "Whatever could be hiding in the creepy forest."
     froggy neutral_talking "Really? What a shame. I would have liked to have you stay for another day. But if you insist... I suppose I have to let you go."
     "I nodded, and went out the front door. The street lights were on, making it easier to navigate. It wouldn't be that easy once I got to the forest though. But I had stayed in one place long enough, and it was time to move on."
 
@@ -668,6 +679,7 @@ label __too_sucessful:
     jump __dragon_eat
 
 label __not_quite:
+    $ save_name = "Goodbye Froggy"
     scene town square people
     "A small crowd was gathered in the town square. Fewer than I would have liked, but still better than none. In fact, I should have been surprised that any turned up at all, since we only just hung up posters the day before. The mayor cleared his throat, and started his speech."
     froggy talking "Greetings! I am glad to see you, dedicated citizens, that care about our environment."
@@ -715,6 +727,7 @@ label __not_quite:
 
 
 label __dragon_eat:
+    $ save_name = "It's a Bird... It's a Plane..."
     scene town square people
     with fade_scene
     "A large crowd had gathered at the square. Smalltalk filled the air, as people were conversing with eachother."
@@ -779,6 +792,7 @@ label __dragon_eat:
     jump you_dead
 
 label __almost_end:
+    $ save_name = "What's that light??ff"
     "The mayor sighed, but nodded at me."
     froggy "Very well. If that is what you wish, I shan't hold you back. I would have wished that you stayed, but I suppose that is too much to ask after all you've done for me. I wish you a merry journey though! And don't get lost in the woods."
 
