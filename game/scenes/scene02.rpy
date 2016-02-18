@@ -1,5 +1,58 @@
 label scene02:
+    scene dusty_road
+    "I walked along a dusty asphalt road."
+    "..."
+    "Was that a car I could hear in the distance?"
+    "I looked around to orient myself. True enough, a car was about to drive by. I raised a thumb, in the hopes that the driver was kind enough to pick up a stray soul." #Can you say true enough? Isn't it sure enough?
+    "The car didn't seem to slow down at all. {w}I had almost lost hope."
+    "Then the driver stopped."
+    "The driver was a sloth, wearing a sheriff’s badge. He looked expectantly at me."
+    sloth "So? Are you going to hop in, or what?"
+    "Barely believing my luck, I nodded voicelessly, and opened the door to get in. Starting the car again, the sloth began speaking to me."
+
+    menu:
+        sloth "What’s a person like you doing around these parts then?"
+        "I’m just passing by":
+            sloth "Oh? Well, in that case, we’re nearing the city where I live, Pollyhoot city. If you would like, I could tell you about some points of interest?"
+            me "Sure! I might as well, since I have nothing better to do."
+            "The sloth turned his eyes towards the road as he thought.{w} Suddenly, a metaphorical lightbulb went off in his head."
+            sloth "I know! We currently have a filmcrew in town. People talk a lot about it, since it’s rare that we get something like that in town, despite its name’s semblance to that other city."
+            me "A filmcrew? That sounds interesting. I’d love to have a look at it, if you wouldn’t mind telling me where it is."
+            sloth "I’m going that way anyways, so I can drive you there if you want a lift?"
+            me "That would be awesome. Thanks!"
+            "The rest of the ride happened in silence."
+
+            # scene something
+            # ////////
+
+            "About twenty minutes later, we arrived at a set of red wooden houses."
+            sloth "This is where they film! Go to the second hut on the right, and they should be in there."
+            me "Thank you for the ride, sir sloth."
+            sloth "Please, call me NAME."
+            me "Okay, NAME. I hope I can repay the favour sometime."
+            sloth "Don’t worry about it! Though if you do get time, I’m at the police station."
+            "I exited the car and waved goodbye to the sloth sheriff."
+
+            "Walking towards the red houses, I felt something like a chill. It was very brief, but noticeable. But the memory of it even being there in the first place soon escaped my mind."
+            jump cafe
+
+        "I’m actually a secret agent from the government; don’t tell anyone.":
+            sloth "Oh? Are you now? Would you forgive me if I said that I don’t believe you?"
+            "I crossed my arms and huffed. "
+            me "I find that rude."
+            "The sloth stared me in the eyes, an air of seriousness about him,"
+            sloth "Lying about being a secret agent isn’t exactly light stuff. You shouldn’t go around te-.."
+            "The sloth was suddenly cut off as the front of his car smashed into a tree. His head had been thrown violently into the steering wheel, blood running from his forehead and down through his fur. The windshield was shattered into many pieces."
+            "A few moments later, I discovered that I, myself, was not doing too well. Feeling slightly dizzy, I raised a hand to my head. {w}Bringing it down again, I saw that my hand was covered in blood."
+            "I would have panicked, had I not suddenly felt so very tired."
+            "Just... A moment of rest... Was all I needed..."
+            $ die(2)
+            "Public Safety Announcement: Pay attention when you drive! Avoid car accidents!{w}\nOh, and you should probably not tell others that you’re a secret agent either."
+            jump you_dead
+
+label __cafe:
     scene town2 cafe
+    with fade_scene
     "As I opened the saloon-like doors, I was greeted by a place furnished like a restaurant. A partridge, a fox and a squirrel (and possibly more) seemed to be arguing about something."
     partridge "No, it should definitely be cut like this! That adds the most suspense!"
     fox "No, this it should be cut like this instead. This shows me from the best angle!"
@@ -39,6 +92,7 @@ label scene02:
     "The ghost snapped what looked like its fingers, making a small spark appear. The small spark jumped around, hopping from the ghostly shape to the floor, and around the furniture. Everywhere it touched, burst into flames."
 
     scene town2 burning_cafe
+    with dissolve
 
     "I, who was standing at the entrance, quickly realised what was happening."
     me "Hurry up, guys! If you stay like this, you'll get charred to ash!"
@@ -46,6 +100,7 @@ label scene02:
     ghost "You may have escaped your doom this time. But as long as your sin remains, do not expect to avoid the fiery demise that awaits you! The world will have justice from terrible filmmakers like you!"
 
     scene town2 red_houses
+    with fade_scene
 
     "We ran outside, leaving behind the burning props. The fox seemed offended that she had to run anywhere. The partridge looked back at the burning building in despair."
     me "Does anyone have a phone? We should probably call the firefighters.."
@@ -58,13 +113,14 @@ label scene02:
     "We waited a few more moments before the fire department arrived, before going to a nearby playground."
 
     scene town2 playground
+    with fade_scene
 
     partridge "We can sit here."
     "I nodded at him, and we all took place around the playground."
     me "So... In a desperate attempt to save your hides, why don't we start at the beggining? That would be pre-production..."
     "Upon hearing this, the fox immediately seemed disinterested. It would seem she didn't have much to do with the pre-production."
     squirrel "We have planned this project meticulously!"
-    me "Yeah? So what did your pre-production consist of?" # Do you mean pre? ... Yeah, I did
+    me "Yeah? So what did your pre-production consist of?"
 
 
     $ __wrongpartridge = 0
@@ -172,7 +228,8 @@ label __bad_storyboard:
 label __good_storyboard:
     "We were suddenly interrupted by an evil cackle. A ghotly voice came from behind us."
     ghost "There you are..."
-    scene town2 frosty_playground with dissolve
+    scene town2 frosty_playground
+    with dissolve
     "A chill ran down my spine, as the air suddenly seemed colder. The playground suddenly started freezing from one end to the other."
     ghost "Flee, flee, flee in horror!"
     "We all got up and ran."
@@ -191,6 +248,7 @@ label __rippartridge:
 
 label __perspective:
     scene town2 palms
+    with fade_scene
 
     "When we finally stopped running, we were by the ocean. Large palm trees were standing by the sidewalks, giving us a bit of shade from the harsh sun."
     "After regaining my breath, I I looked at the squirrel."
@@ -310,7 +368,8 @@ label __good_editing:
     jump __ghost
 
 label __ghost:
-    scene town2 foggy_palms with dissolve #is that a thing? that would work?
+    scene town2 foggy_palms
+    with dissolve
     "Before I could say anymore, a thick fog started rolling in from the seas."
     ghost "Did someone say \"terrible filmmaking\"?"
     me "Oh, not again! Let's dash, guys!"
@@ -328,6 +387,7 @@ label __ripsquirrel:
 
 label __post:
     scene town2 underpass
+    with fade_scene
 
     "We ended up in a tunnel, still being able to see the sea in the distance."
     "This time, I directed my attention at the fox."
@@ -419,8 +479,7 @@ label __deciding:
         jump __noone_lives
     else:
         jump __someone_lives
-    # if none have died "(*insert two other tags for "if some have died" and "if all have died"*)
-    # I have no idea what you mean by that ^
+
 label __noone_lives:
     "This is where I want Magenta."
 
@@ -457,5 +516,7 @@ label __everyone_lives:
     me "Thank you!"
     "... And with that, I waved goodbye to the partridge, the sloth and the squirrel, and continued my journey."
     "I was drawing ever closer to the capital, on this danger-filled journey, but I had a good feeling about the future. After all, what could ever go wrong?"
-    scene black with fade_scene
+    scene black
+    with fade_scene
     centered "{size=+10}End of chapter 1.{/size}"
+    #jump scene03

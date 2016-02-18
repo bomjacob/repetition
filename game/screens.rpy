@@ -566,7 +566,7 @@ init -2:
 
     style quick_button_text:
         is default
-        size 12
+        size 16
         idle_color "#8888"
         hover_color "#ccc"
         selected_idle_color "#cc08"
