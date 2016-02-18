@@ -17,6 +17,7 @@ init:
 
 init python:
     import random
+    import os
     
     def die(version=0):
         renpy.music.stop(fadeout=2)
@@ -58,21 +59,32 @@ label naming:
     python:
         namenotok = True
         while namenotok:
-            with renpy.file("names.txt") as f:
-                name = renpy.input(prompt="{size=+10}Before we begin.\nWould you mind telling us your name?", default=random_file_line(f)[:-2], length=20)
+            #If windows then get system username
+            if os.name == "nt":
+                name_placeholder = os.getenv("username")
+            #If not windows, just pick a random name
+            else:
+                with renpy.file("names.txt") as f:
+                    name_placeholder = random_file_line(f)[:-2]
 
-                if len(name) > 20:
-                    renpy.say(None, "Are you sure? That name seems very long.")
-                    continue
-                elif len(name) < 2:
-                    renpy.say(None, "Are you sure? That name seems unusually short.")
-                    continue
-                renpy.say(None, "Your name is [name]?", interact=False)
-                if renpy.display_menu([("Yes", True), ("No", False)]) == True:
-                    namenotok = False
-                    continue
-                else:
-                    continue
+            name = renpy.input(prompt="{size=+10}Before we begin.\nWould you mind telling us your name?\nLeave it blank to choose a random one.", default=name_placeholder, length=20)
+
+            if name == "":
+                with renpy.file("names.txt") as f:
+                    name = random_file_line(f)[:-2]
+
+            if len(name) > 20:
+                renpy.say(None, "Are you sure? That name seems very long.")
+                continue
+            elif len(name) < 2:
+                renpy.say(None, "Are you sure? That name seems unusually short.")
+                continue
+            renpy.say(None, "Your name is [name]?", interact=False)
+            if renpy.display_menu([("Yes", True), ("No", False)]) == True:
+                namenotok = False
+                continue
+            else:
+                continue
 
     jump scene01
 
