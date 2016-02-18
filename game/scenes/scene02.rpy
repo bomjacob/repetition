@@ -3,7 +3,7 @@ label scene02:
     "I walked along a dusty asphalt road."
     "..."
     "Was that a car I could hear in the distance?"
-    "I looked around to orient myself. True enough, a car was about to drive by. I raised a thumb, in the hopes that the driver was kind enough to pick up a stray soul." #Can you say true enough? Isn't it sure enough?
+    "I looked around to orient myself. True enough, a red car was about to drive by. I raised a thumb, in the hopes that the driver was kind enough to pick up a stray soul." #Can you say true enough? Isn't it sure enough?
     "The car didn't seem to slow down at all. {w}I had almost lost hope."
     "Then the driver stopped."
     "The driver was a sloth, wearing a sheriff’s badge. He looked expectantly at me."
@@ -22,8 +22,8 @@ label scene02:
             me "That would be awesome. Thanks!"
             "The rest of the ride happened in silence."
 
-            # scene something
-            # ////////
+            scene red_houses
+            with fade_scene
 
             "About twenty minutes later, we arrived at a set of red wooden houses."
             sloth "This is where they film! Go to the second hut on the right, and they should be in there."
@@ -81,7 +81,7 @@ label __cafe:
     squirrel "Silent everyone! It would seem something is coming."
     "As if waiting for this to happen, a mysterious voice resounded through the wooden walls and fake furniture."
     unknown "Fire? Yes, yes! Fire. You have done me injustice. You have done the world a horrible injustice!"
-    show ghosti
+    show ghost with dissolve
     ghost "I am the Ghost of Bad Filmmaking here to tell you that you are doing the world a terrible, unjustified injustice! The world weeps!"
     "The fox’s eyes widened, though she seemed to keep her calm, denying the existence of this bodyless voice for the moment. The squirrel kept moving his head around, searching for the voice of the perpetrator. The partridge seemed to have the most calm out of all of them, even daring to speak."
     partridge "Who is this? Show yourself!"
@@ -125,10 +125,6 @@ label __cafe:
 
     $ __wrongpartridge = 0
     $ __partridge = 0
-    $ __wrongsquirrel = 0
-    $ __squirrel = 0
-    $ __wrongfox = 0
-    $ __fox = 0
     #Preparation for killing people. Yay!
 
     # I'm not sure if I'm doing this right, but hey, I'm trying
@@ -242,7 +238,16 @@ label __good_storyboard:
         jump __perspective
 
 label __rippartridge:
-    "Partridge dies."
+    "As we ran, I noticed that only the fox and squirrel were next to me."
+    me "Partridge? Anyone know where the partridge went?"
+    "I slowed down, and looked back at the playground. {w}There stood the partridge, having not moved out of his spot."
+    me "What are you doing? We need to get away from that ghost!"
+    ghost "Mwaahahah... He is mine. He knows his sin, and he cannot flee."
+    "The partidge shook in fear, as the icy cold drew closer."
+    ghost "Yeesss... I feel that this is a fitting end for you... Frozen, frozen in place!"
+    "We watched in horror as the ice slowly spread from te grass, up the partridge's leg, slowly crawling across his body and trapping him in ice."
+    fox "Come on you two, no time for staring. Unless you want to end up like him."
+    "Those simple words of \"encouragement\" were enough to get us moving. The ghost cackled evilly as we ran, but made no move to follow us."
     $ __partridge = 1
     jump __perspective
 
@@ -250,6 +255,9 @@ label __perspective:
     scene town2 palms
     with fade_scene
 
+    $ __deadsquirrel = 0
+    $ __squirrel = 0
+    #moved this here for rollback purposes
     "When we finally stopped running, we were by the ocean. Large palm trees were standing by the sidewalks, giving us a bit of shade from the harsh sun."
     "After regaining my breath, I I looked at the squirrel."
     me "So... Let's continue where we left off."
@@ -381,14 +389,43 @@ label __ghost:
         jump __post
 
 label __ripsquirrel:
-    "Bye squirrel"
+    "As we ran, I suddenly noticed that the squirrel wasn't following us."
+    me "Come on, squirrel!"
+    "The squirrel didn't reply."
+    me "We need to get out of here!"
+    "The squirrel still didn't reply, simply staring at the fog, covering the place like a blanket."
+    squirrel "I-I... I'll see you later, guys..."
+    if __partridge==0:
+        partridge "We need you on this crew! Snap out of it!"
+        squirrel "S-sorry..."
+        "The partridge seemed like he wanted to run back and get the squirrel, but the ominous fog was keeping him from rushing in."
+    else:
+        fox "Come on, squirrel, don't end up like that old partridge!"
+        me "Please don't leave me alone with this fox!"
+        fox "{i}What{/i} did you say, brat?"
+        me "Uhhmm.."
+    "Before we could say anymore, large hands formed from the fog, reaching down to carress the poor squirrel."
+    "Strange whispers of \"everything is going to be alright\" kept the squirrel ensnared, allowing him no escape."
+    fox "We need to get away from here."
+    if __partridge==0:
+        "The partridge seemed reluctant to leave, but when the fog swallowed the squirrel whole, and he was no longer in sight, the partridge complied."
+        partridge "She's right... We can't stay here."
+        "The partridge looked at his feet. On the ground, the squirrel's camera was lying. How did it get there? Maybe it was fate. At any rate, the partridge picked up the camera."
+    else:
+        me "If only there was a way to save him!"
+        "The fog had finally swallowed the squirrel whole, leaving no trace that he was ever there. The fox snarled at me."
+        fox "Give up already! I don't feel like dying today."
+    "As we ran away, the ghost made no move to follow us."
+
     $ __squirrel = 1
     jump __post
 
 label __post:
     scene town2 underpass
     with fade_scene
-
+    $ __wrongfox = 0
+    $ __fox = 0
+    #Moved here for rollback purposes
     "We ended up in a tunnel, still being able to see the sea in the distance."
     "This time, I directed my attention at the fox."
     me "So.. You're the last link."
@@ -467,7 +504,22 @@ label __good_pr:
         jump __deciding
 
 label __ripfox:
-    "Foxie dies. sadface."
+    "The ghost barely gave us time to react, before he picked up the fox and threw her at a wall. Glaring at me, he spoke."
+    ghost "I have no qualms with you."
+    "As the shape said this, it slowly floated towards the fox who was slumped on the ground."
+    if __squirrel==0:
+        squirrel "L-leave her alone!"
+    elif __partridge==0:
+        partridge "What are you doing to her?!"
+    else:
+        me "S-stop! Don't leave me here alone!"
+    "The ghost simply laughed."
+    ghost "This one... This one deserves it most of all."
+    "The ghost raised its spectral hand, clamping it around the fox's throat."
+    if __partridge==0:
+        partridge "Please!"
+        "The ghost didn't seem to hear him."
+    "As the final light of life left the fox's eyes, the ghost turned its attention towards me."
     $ __fox = 1
     jump __deciding
 
@@ -481,10 +533,93 @@ label __deciding:
         jump __someone_lives
 
 label __noone_lives:
-    "This is where I want Magenta."
+    ghost "I have done all I came to do. At first, I considered whether you were sinful, too. But I have gotten my vengeance for now. I have other, more important places to be."
+    "I looked at the discarded body of the fox."
+    me "What do I do now..."
+    "The ghost shrugged at me, before vanishing.{w} Sighing, I sat down on the ground by the limp and lifeless fox."
+    me "This really went badly, didn't it, fox?"
+    "The fox, of course, didn't reply."
+    "I was just about to get up and leave, when a loud crash came from outside, from the exit I was about to leave out of."
+    me "Wha-?..."
+    unknown "MWAHAHAHAH! I don't believe my LUCK!"
+    "A large head slithered through the entrance of the tunnel."
+    unknown "That the stench of ROTTEN CORPSES would lead me to you, of all things!"
+    me "Wh-who are you?"
+    magenta "You have never heard of me, the fearsome Magenta?!"
+    me "But..."
+    magenta "SILENCE!"
+    "The dragon moved its head closer to me, studying me with her eye. Cackling, she drew back her head."
+    magenta "No doubt about it. You will not leave this place alive, MORTAL! Try and FLEE, if you will."
+    "The dragon seemed to wait a bit for me to run. Seeing that I didn't move at all, she narrowed her eyes."
+    magenta "Very well. If you do not move, I might as well BURN YOU WHERE YOU STAND! MWAHAHAHAH!"
+    "The dragon opened its huge jaws, a red glow coming from its throat. Finally realising that I should probably move, I stood up and started running for the far exit."
+    magenta "YOU CANNOT OUTRUN MY FIRE!"
+    "The red glow got released as a relentless torrent of fire, drawing ever closer."
+    $ die(1)
+    "Magenta immediately seemed disinterested."
+    magenta "That was more boring than I thought it would be. Here I spent all this time chasing this one down, and this is the challenge I get?"
+    "Magenta sighed, pulling her head out of the tunnel, looking up at the clear skies."
+    magenta "Oh, well. Time to find somewhere else to spread misery."
+    "Magenta flapped her large bat-like wings and took off, leaving a charred tunnel and two corpses behind."
 
 label __someone_lives:
-    "I have no idea how to write this. But there will be death."
+    "The ghost stared me in the eyes."
+    ghost "I have observed you! And I have decided that you too are a sinner!"
+    "The ghost seemed to grin evilly."
+    ghost "It is time to get rid of the remaining pests..."
+    if __squirrel==1 and __partridge==0:
+        partridge "No!"
+        "The partridge raised the camera he had picked up from the squirrel, the blitz flashing briefly. The ghost raised an arm to cover for its eyes."
+        ghost "Bright! Briight!"
+        "The partridge kept firing the blitz at the ghost, keeping it occupied."
+        partridge "You there! Pick up my phone and call the police!"
+        "The partridge threw his phone to me. The ghost growled in rage."
+        me "Are you sure I shouldn't call the ghostbusters instead?"
+        "The partridge was too busy keeping the ghost at bay to respond. I raised my phone to call the police."
+        centered "{size=+10}A few tense moments later...{/size}"
+        "A red car arrived. I was almost getting bored of waiting, and the partridge was getting worried that the camera might run out of battery soon."
+        "A sloth hurried out of the car, having something akin to a vacuum cleaner strapped to his back."
+        me "You're a ghostbuster?!"
+        sloth "I have dabbled a bit in these cases, yes. After all, every city needs a jack of all trades!"
+        "The sloth raised the vacuum cleaner, pointing it at the ghost."
+        ghost "Nooo!"
+        sloth "Yes!"
+        "The sloth was sucked up into the vacuum cleaner, every trace that it had ever been there, gone."
+        me "Thank you mister sloth!"
+        sloth "I have a name, you know..."
+        "I smiled sheepishly at the sloth. I had totally forgotten his name."
+        sloth "At any rate, I'm sorry I got you into this mess, traveler."
+        me "You can repay me by showing me the way north! I'm going to the capital, after all."
+        sloth "Are you sure you would not like me to drive you there?"
+        me "No, it's okay. I'm starting to like this fresh air. It's weird."
+        sloth "Okay... I will... Clean up after this mess. I wish you a good journey."
+        me "Thank you!"
+        if __fox==0:
+            "... And with that, I waved goodbye to the partridge, the sloth and the fox, and continued my journey."
+        else:
+            "... And with that, I waved goodbye to the partridge and the sloth, and continued my journey."
+        "I was drawing ever closer to the capital, on this danger-filled journey, but I had a good feeling about the future. After all, what could ever go wrong?"
+        scene black
+        with fade_scene
+        centered "{size=+10}End of Chapter 1.{/size}"
+        #jump scene03
+    else:
+        "The ghost snapped its fingers,{w}"
+        scene black
+        "and the room was enveloped by pitch-black darkness."
+        me "He-hello? Anybody there?"
+        "No reply."
+        me "Anyone?"
+        "The silence was deafening."
+        "Suddenly,{w}"
+        scene eyes with dissolve
+        "two large white eyes opened to stare at me."
+        unknown "Don't worry... Don't worry... It's all going to be alright..."
+        "The eyes seemed to draw closer, until the whiteness was blinding."
+        "I slowly felt my consciousness fade."
+        $ die(2)
+        unknown "Mwahahahah..."
+
 
 label __everyone_lives:
     me "Who are you calling sinners? Haven't you seen that these people have learnt from their mistakes? I'm sure they'll produce a fantastic movie now, if only you let them!"
@@ -518,5 +653,5 @@ label __everyone_lives:
     "I was drawing ever closer to the capital, on this danger-filled journey, but I had a good feeling about the future. After all, what could ever go wrong?"
     scene black
     with fade_scene
-    centered "{size=+10}End of chapter 1.{/size}"
+    centered "{size=+10}End of Chapter 1.{/size}"
     #jump scene03
