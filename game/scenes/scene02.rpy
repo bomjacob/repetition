@@ -1,4 +1,5 @@
 label scene02:
+    $ save_name = _("Driving with a sloth.")
     play music "sound/music/Twisted.ogg"
     scene dusty_road
     with fade_scene
@@ -53,6 +54,7 @@ label scene02:
             jump you_dead
 
 label __cafe:
+    $ save_name = _("Film crew?")
     scene town2 cafe
     with fade_scene
     show fox talking_normal at center with dissolve
@@ -79,7 +81,7 @@ label __cafe:
         "Over-shoulder! It’s dramatic.":
             squirrel happy "That’s what I thought too. See, people? This is definitely the right cho-.."
 
-
+    $ save_name = _("Who's there?")
     "The lights suddenly flickered off, as the front doors flew open, a gust of wind circling around the room before dying out.{w} A few seconds later, the lights flickered back on."
     fox neutral_sceptic "I thought you hired proper electricians for this job!"
     partridge sad "I-.. I did, I swear! I’m not sure what that-.."
@@ -136,6 +138,7 @@ label __cafe:
     me "Yeah? So what did your pre-production consist of?"
     hide squirrel with dissolve
 
+    $ save_name = _("Pre-production.")
 
     $ __wrongpartridge = 0
     $ __partridge = 0
@@ -205,6 +208,7 @@ label __bad_pre:
     jump __storyboard
 
 label __storyboard:
+    $ save_name = _("Storyboarding.")
     me "And now that we're on the subject of pre-production, why don't we talk about your storyboard?"
     partridge neutral "I would've shown it to you, but our storyboard was too large to carry around."
     me "It sounds like you're planned your story very well, then?"
@@ -258,6 +262,7 @@ label __good_storyboard:
         jump __perspective
 
 label __rippartridge:
+    $ save_name = _("RIP partridge.")
     "As we ran, I noticed that only the fox and squirrel were next to me."
     me "Partridge? Anyone know where the partridge went?"
     "I slowed down, and looked back at the playground. {w}"
@@ -278,6 +283,7 @@ label __rippartridge:
     jump __perspective
 
 label __perspective:
+    $ save_name = _("Perspectives.")
     scene town2 palms
     with fade_scene
 
@@ -335,6 +341,7 @@ label __good_perspective:
     jump __camera
 
 label __camera:
+    $ save_name = _("Camera movements.")
     me "What kind of camera movements did you use?"
     squirrel no "We used, uhmm, tanning at one point."
     me "I've never heard of a camera movement called \"tanning\"."
@@ -366,6 +373,7 @@ label __good_camera:
     jump __editing
 
 label __editing:
+    $ save_name = _("Editing...")
     me "Hold on! I'm not done yet. You should also be in charge of editing, yes?"
     show squirrel hmm
     "The squirrel nodded meekly."
@@ -422,6 +430,7 @@ label __ghost:
         jump __post
 
 label __ripsquirrel:
+    $ save_name = _("RIP squirrel.")
     "As we ran, I suddenly noticed that the squirrel wasn't following us."
     show squirrel hmm at right with dissolve
     me "Come on, squirrel!"
@@ -469,6 +478,7 @@ label __ripsquirrel:
     jump __post
 
 label __post:
+    $ save_name = _("Post production")
     scene town2 underpass
     with fade_scene
     $ __wrongfox = 0
@@ -555,6 +565,7 @@ label __good_pr:
         jump __deciding
 
 label __ripfox:
+    $ save_name = _("RIP foxy.")
     "The ghost barely gave us time to react, before he picked up the fox and threw her at a wall. Glaring at me, he spoke."
     ghost meh "I have no qualms with you."
     "As the shape said this, it slowly floated towards the fox who was slumped on the ground."
@@ -590,6 +601,7 @@ label __deciding:
         jump __someone_lives
 
 label __noone_lives:
+    $ save_name = _("Uhmm.. that dragon looks mad.")
     ghost "I have done all I came to do. At first, I considered whether you were sinful, too. But I have gotten my vengeance for now. I have other, more important places to be."
     "I looked at the discarded body of the fox."
     me "What do I do now..."
@@ -622,6 +634,7 @@ label __noone_lives:
     "Magenta flapped her large bat-like wings and took off, leaving a charred tunnel and two corpses behind."
 
 label __someone_lives:
+    $ save_name = _("I ain't afaid a no ghost.")
     "The ghost stared me in the eyes."
     ghost meh "I have observed you! And I have decided that you too are a sinner!"
     "The ghost seemed to grin evilly."
@@ -684,6 +697,7 @@ label __someone_lives:
 
 
 label __everyone_lives:
+    $ save_name = _("Convincing a ghost.")
     me "Who are you calling sinners? Haven't you seen that these people have learnt from their mistakes? I'm sure they'll produce a fantastic movie now, if only you let them!"
     "The ghostly being seemed to ponder over this for a while."
     ghost "Are you absolutely sure that you will not commit a crime of this scale against mankind again?"
