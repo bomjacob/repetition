@@ -236,7 +236,7 @@ label __bad_storyboard:
 
 label __good_storyboard:
     "We were suddenly interrupted by an evil cackle. A ghotly voice came from behind us."
-    show ghosti at left
+    show ghost appear at left
     ghost "There you are..."
     scene town2 frosty_playground
     with dissolve
@@ -408,10 +408,8 @@ label __ghost:
     scene town2 foggy_palms
     with dissolve
     "Before I could say anymore, a thick fog started rolling in from the seas."
-    show ghosti at left
-    hide ghosti
-    show ghost happy at left
-    ghost "Did someone say \"terrible filmmaking\"?"
+    show ghost appear at left
+    ghost happy "Did someone say \"terrible filmmaking\"?"
     me "Oh no, not again! Let's dash, guys!"
     show fox neutral_sceptic at right with dissolve
     fox "No need to tell me twice!"
@@ -545,8 +543,7 @@ label __bad_pr:
 
 label __good_pr:
     "The voice we had started to anticipate, returned from above."
-    show ghosti
-    hide ghosti
+    show ghost appear
     show ghost happy
     ghost "I have returned, sinners!"
     "It poked its head out of the ceiling before floating down to eye-level."
