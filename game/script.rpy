@@ -9,11 +9,11 @@ init:
     define willo = Character(name="Will o' the Wisp", image="willo", who_color="#7EDEFF", ctc="ctc_blink", ctc_position="fixed")
     define unknown = Character(name="???", who_color="#EEEEEE", ctc="ctc_blink", ctc_position="fixed")
     define lilly = Character(name="Lilly", who_color="#9E1B08", image="lilly", ctc="ctc_blink", ctc_position="fixed")
-    define squirrel = Character(name="Squirrel", who_color="#FFF", image="squirrel", ctc="ctc_blink", ctc_position="fixed")
-    define partridge = Character(name="Partridge", who_color="#FFF", image="partridge", ctc="ctc_blink", ctc_position="fixed")
-    define fox = Character(name="Fox", who_color="#FFF", image="fox", ctc="ctc_blink", ctc_position="fixed")
-    define ghost = Character(name="Ghost of Bad Filmmaking", who_color="#FFF", image="ghost", ctc="ctc_blink", ctc_position="fixed")
-    define sloth = Character(name="As of Yet Unnamed Sloth", who_color="#FFF", image="sloth", ctc="ctc_blink", ctc_position="fixed")
+    define squirrel = Character(name="Squirrel", who_color="#B89067", image="squirrel", ctc="ctc_blink", ctc_position="fixed")
+    define partridge = Character(name="Partridge", who_color="#A43023", image="partridge", ctc="ctc_blink", ctc_position="fixed")
+    define fox = Character(name="Fox", who_color="#F295CA", image="fox", ctc="ctc_blink", ctc_position="fixed")
+    define ghost = Character(name="Ghost of Bad Filmmaking", who_color="#F3F6FB", image="ghost", ctc="ctc_blink", ctc_position="fixed")
+    define sloth = Character(name="As of Yet Unnamed Sloth", who_color="#F0AE2E", image="sloth", ctc="ctc_blink", ctc_position="fixed")
 
 init python:
     import random
@@ -88,6 +88,8 @@ label naming:
             else:
                 if name == name_placeholder:
                     name_placeholder = get_name(rnd_overwrite=True)
+                else:
+                    name_placeholder = name
                 continue
 
     jump scene01
