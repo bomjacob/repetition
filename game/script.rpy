@@ -38,7 +38,7 @@ init python:
 # The game starts here.
 label start:
     scene black
-    $ name = "DEFAULT NAME"
+    $ name = _("DEFAULT NAME")
 
     jump tutorial_ask
 
@@ -55,7 +55,7 @@ label tutorial_ask:
 
 
 label naming:
-    $ save_name = "What's your name?"
+    $ save_name = _("What's your name?")
     python:
         namenotok = True
         while namenotok:
@@ -68,20 +68,20 @@ label naming:
                 with renpy.file("names.txt") as f:
                     name_placeholder = random_file_line(f)[:-2]
 
-            name = renpy.input(prompt="{size=+10}Before we begin.\nWould you mind telling us your name?\nLeave it blank to choose a random one.", default=name_placeholder.title(), length=20)
+            name = renpy.input(prompt=_("{size=+10}Before we begin.\nWould you mind telling us your name?\nLeave it blank to choose a random one."), default=name_placeholder.title(), length=20)
 
             if name == "":
                 with renpy.file("names.txt") as f:
                     name = random_file_line(f)[:-2]
 
             if len(name) > 20:
-                renpy.say(None, "Are you sure? That name seems very long.")
+                renpy.say(None, _("Are you sure? That name seems very long."))
                 continue
             elif len(name) < 2:
-                renpy.say(None, "Are you sure? That name seems unusually short.")
+                renpy.say(None, _("Are you sure? That name seems unusually short."))
                 continue
-            renpy.say(None, "Your name is [name]?", interact=False)
-            if renpy.display_menu([("Yes", True), ("No", False)]) == True:
+            renpy.say(None, _("Your name is [name]?"), interact=False)
+            if renpy.display_menu([(_("Yes"), True), (_("No"), False)]) == True:
                 namenotok = False
                 continue
             else:
@@ -90,7 +90,7 @@ label naming:
     jump scene01
 
 label tutorial:
-    $ save_name = "Tutorial"
+    $ save_name = _("Tutorial")
     "Hello! Welcome to this Virtual Novel. What is a virtual novel, you may ask?\n{image=tutorial_ctc}"
     "Well, according to wikipedia:\nA visual novel is an interactive game, featuring mostly static graphics, most often using anime-style art or occasionally live-action stills (and sometimes video footage). As the name might suggest, they resemble mixed-media novels.\nRead more: {a=https://en.wikipedia.org/wiki/Visual_novel}en.wikipedia.org/wiki/Visual_novel{/a}\n{image=tutorial_ctc}"
 

@@ -79,7 +79,7 @@ init:
 
     image tutorial_ctc:
         pause 5.0
-        Text("Left Click to continue.")
+        Text(_("Left Click to continue."))
 
     image ghosti:
         on show:

@@ -29,7 +29,7 @@ init -1 python hide:
     ## This controls the title of the window, when Ren'Py is
     ## running in a window.
 
-    config.window_title = u"Communication/IT Repetition v." + config.version
+    config.window_title = _(u"Communication/IT Repetition v.") + config.version
 
     #########################################
     # Themes
