@@ -228,7 +228,7 @@ label __postermm_amazing:
     froggy neutral_talking "Really? You think so? I suppose I should print a couple of thousand posters then, and hang them about. Thanks for the help!"
     show froggy neutral
     me "No problem!"
-    hide froggy with fade
+    hide froggy with dissolve
     "As I waved to him and walked towards the edge of the village, I felt a bit of doubt. Had I chosen the right thing?"
 
     play music "sound/music/Not-As-It-Seems.ogg"
@@ -320,7 +320,7 @@ label __postermm_typography:
         "You should use a fancy cursive font!":
             froggy "Wouldn't that be hard to read? People shouldn't have to strain their eyes to read the message."
             $ postermm_points -=1
-        "You should use the same font for all of text.":
+        "You should use the same font for all of body text.":
             froggy "Yes... I suppose I see what you mean by that. The text by the pricing is definitely a different font."
             $ postermm_points +=1
         "Let me see the poster again please.":
