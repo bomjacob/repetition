@@ -3,12 +3,14 @@
 label scene01:
     $ save_name = _("Introduction")
     play music "sound/music/Serene-Separations-Soundtrack.ogg"
-    with Fade(0.5, 1.0, 0.5)
+
+    scene black
+    with dissolve
 
     centered "{size=+10}Let me tell you a story.{/size}"
     centered "{size=+10}{cps=*0.25}Ah...{/cps} But where do I start?{/size}"
     centered "{size=+10}I suppose I should start with my name.{/size}"
-    centered "{size=+10}I am [name] SURNAME.{/size}"
+    centered "{size=+10}I am [name].{/size}"
 
     show book sensei_and_me
     $ renpy.pause(5)

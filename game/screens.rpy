@@ -109,6 +109,8 @@ init -2:
 
 screen input(prompt):
 
+    add "#00000033"
+
     window style "nvl_window":
         #has vbox
 
@@ -175,7 +177,7 @@ screen nvl(dialogue, items=None):
 #Code to make main menu and preferences and such share same bg
 screen share_bg(from_mm=False, is_mm=False):
     if from_mm or is_mm:
-        add mm_img
+        add mm_img xalign 0.5 yalign 0.5
         timer 5.0 action SetVariable("mm_img", mm_img_next()), With(dissolve) repeat True
     if not is_mm:
         add "#00000055"

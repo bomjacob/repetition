@@ -35,9 +35,19 @@ init python:
           line = aline
         return line
 
+    def get_name(rnd_overwrite=False):
+        #If windows then get system username
+        if os.name == "nt" and not rnd_overwrite:
+            return os.getenv("username").title()
+        #If not windows, or windows messed up, just pick a random name
+        if os.name != "nt" or name_placeholder is None or name_placeholder == "" or rnd_overwrite:
+            with renpy.file("names.txt") as f:
+                return random_file_line(f)[:-2]
+
 # The game starts here.
 label start:
-    scene black
+    show expression mm_img:
+        xalign 0.5 yalign 0.5
     $ name = _("DEFAULT NAME")
 
     jump tutorial_ask
@@ -57,34 +67,27 @@ label tutorial_ask:
 label naming:
     $ save_name = _("What's your name?")
     python:
-        namenotok = True
-        while namenotok:
-            name_placeholder = None
-            #If windows then get system username
-            if os.name == "nt":
-                name_placeholder = os.getenv("username")
-            #If not windows, or windows messed up, just pick a random name
-            if os.name != "nt" or name_placeholder is None or name_placeholder == "":
-                with renpy.file("names.txt") as f:
-                    name_placeholder = random_file_line(f)[:-2]
-
-            name = renpy.input(prompt=_("{size=+10}Before we begin.\nWould you mind telling us your name?\nLeave it blank to choose a random one."), default=name_placeholder.title(), length=20)
+        name_placeholder = get_name()
+        while True:
+            name = renpy.input(prompt=_("{size=+10}Before we begin.\nWould you mind telling us your name?\nLeave it blank to choose a random one."), default=name_placeholder, length=20)
 
             if name == "":
-                with renpy.file("names.txt") as f:
-                    name = random_file_line(f)[:-2]
+                name_placeholder = get_name(rnd_overwrite=True)
+                continue
 
             if len(name) > 20:
-                renpy.say(None, _("Are you sure? That name seems very long."))
+                narrator(_("Are you sure? That name seems very long."))
                 continue
             elif len(name) < 2:
-                renpy.say(None, _("Are you sure? That name seems unusually short."))
+                narrator(_("Are you sure? That name seems unusually short."))
                 continue
-            renpy.say(None, _("Your name is [name]?"), interact=False)
-            if renpy.display_menu([(_("Yes"), True), (_("No"), False)]) == True:
-                namenotok = False
-                continue
+
+            narrator(_("Your name is [name]?"), interact=False)
+            if menu([(_("Yes"), True), (_("No"), False)]) == True:
+                break
             else:
+                if name == name_placeholder:
+                    name_placeholder = get_name(rnd_overwrite=True)
                 continue
 
     jump scene01

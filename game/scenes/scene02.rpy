@@ -1,5 +1,5 @@
 label scene02:
-    play "sound/music/Twisted.ogg"
+    play music "sound/music/Twisted.ogg"
     scene dusty_road
     with fade_scene
     "I walked along a dusty asphalt road."
