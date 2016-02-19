@@ -40,7 +40,7 @@ label scene01:
 
     "I picked it up,"
     show overlay sensei_letter at top with dissolve
-    extend " reading over each word carefully.{cps=*0.001}\n          {/cps}"
+    extend " reading over each word carefully.{cps=*0.001}\n               {/cps}"
 
     "As I read over the words, I could not help but despair.{w} The outside world sounded like a dangerous place, filled with mystery and horror. But then,{w} I thought back to my sensei's words.."
 
@@ -245,7 +245,7 @@ label __postermm_amazing:
     "Suddenly, something gripped my ankle tightly. {w}Looking back in fright, I found a mossy root protruding from the ground, coiled around my ankle like a snake. {w}I tried kicking out with my leg to shake it off, but the root adamantly held its ground."
     "As I was distracted by the stubborn root, a second one shot out of the ground and fastened my right wrist. I raised my left hand to try and get it off of me, but the moment I was about to grab it, a third root shot out of the ground and entangled my left wrist too."
     "Fighting futilely against the roots, I could do nothing but look as large network of roots slowly entangled my entire body. An especially thick one lazily burst out of the ground next to me, wrapping itself around my stomach before going back into the earth. {w}It's grip slowly tightened as it dragged me downwards, forcing the air out of my lungs, as the earth slowly swallowed me whole."
-    $ die(1)
+    $ die(2)
     "Not even a trace was left."
     jump you_dead
 
@@ -438,7 +438,7 @@ label __postermm_lose:
     show froggy scared
     me "Who knows.. In another universe, we might be happy right now."
     "The mayor gulped and nodded, as the poster monsters had finally grown bored of waiting. Moving right next to us, they piled on top of each other, until we were covered in sharp paper spikes. I could feel the many paper cuts all over my body, stinging, slowly giving off blood as they were bleeding me dry."
-    $ die(1)
+    $ die(0)
     "What a mess. Someone would have to clean this up later."
     jump you_dead
 

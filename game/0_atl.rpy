@@ -81,7 +81,7 @@ init:
         pause 5.0
         Text(_("Left Click to continue."))
 
-    image ghosti:
+    image ghost appear:
         on show:
             "img/characters/ghost/0.png"
             pause 0.2

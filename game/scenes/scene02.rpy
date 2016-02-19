@@ -91,10 +91,10 @@ label __cafe:
     hide partridge with dissolve
     hide fox with dissolve
     hide squirrel with dissolve
-    show ghosti
+    show ghost appear
     "A ghostly laugh went through the walls, seeming to come from all directions. A small light flickered in mid-air. {w}The light flickered again, growing a bit larger. It seemed to rotate around itself, swallowing itself, growing larger and larger until it formed a ghastly shape."
     show ghost full
-    ghost full "I have seen your sin! This terrible crime of a movie! I am in disgust!"
+    ghost "I have seen your sin! This terrible crime of a movie! I am in disgust!"
     "The ghost seemed to cry out of a strange mix between rage and sadness, the luminescent tears disappearing without a trace as soon as they touched the ground below."
     ghost fire "I give you this warning! If you do not fix your terrible excuse for a film, this crime against humanity, you will be punished! Nothing less than death will suffice! Now, flee! Tremble in terror and repent! I am a merciful evil!"
     "The ghost snapped what looked like its fingers, making a small spark appear. The small spark jumped around, hopping from the ghostly shape to the floor, and around the furniture. Everywhere it touched, burst into flames."
