@@ -677,7 +677,7 @@ label __someone_lives:
         scene black
         with fade_scene
         centered "{size=+10}End of Chapter 2.{/size}"
-        #jump scene03
+        jump scene03
     else:
         "The ghost snapped its fingers,{w}"
         scene black
@@ -735,4 +735,4 @@ label __everyone_lives:
     scene black
     with fade_scene
     centered "{size=+10}End of Chapter 2.{/size}"
-    #jump scene03
+    jump scene03
