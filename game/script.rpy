@@ -150,6 +150,7 @@ label tutorial_part_2:
 
 label tutorial_part_3:
     "Well done! Normally that would have taken you back to the previous dialogue block, but for now let's continue with the tutorial."
+    "If you want to go back further than a simple rollback, then saving is the way to go. The game will also auto-save before every single choice. Auto-saves can be accessed by clicking \"Auto\" in the save/load screen."
     "If at any time you need any help with controls or an explanation of the different preferences you can access additional help anytime by going into the game-menu (RIGHT CLICK OR ESC, remember?) and choosing \"Help\". You can also click {a=show_help}here{/a}."
 
     menu:
