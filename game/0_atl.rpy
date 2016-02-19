@@ -98,3 +98,8 @@ init:
     transform unflip:
         xzoom 1.0
 
+    transform floating:
+        ease 2 yoffset 20
+        ease 2 yoffset -20
+        repeat
+

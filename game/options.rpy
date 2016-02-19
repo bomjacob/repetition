@@ -274,6 +274,13 @@ init -1 python hide:
 
     config.fade_music = 1.0
 
+    def replace_text(s):
+        s = s.replace("'", u'\u2019') # apostrophe
+        s = s.replace('--', u'\u2014') # em dash
+        s = s.replace('...', u'\u2026') # ellipsis
+        return s
+    config.replace_text = replace_text
+
     #########################################
     ## This is the name of the directory where the game's data is
     ## stored. (It needs to be set early, before any other init code

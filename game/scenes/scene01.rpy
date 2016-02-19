@@ -816,7 +816,7 @@ label __almost_end:
     "Getting deeper into the forest, it suddenly seemed brighter. Almost... Like there was something magical about it. The path spread out and faded out, leaving me next to a forest lake."
     "Small lights were flickering around the edges of the treeline, but it was no longer fireflies. {w}A large, blue light flickered towards me from between the trees, and towards me. Its presence seemed calming."
     
-    show willo willo at right:
+    show willo willo at floating, right:
         yalign 0.3
     with dissolve
 
