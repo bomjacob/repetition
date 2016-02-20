@@ -55,7 +55,7 @@ label __helpher:
     "We went through a side-entrance to the school building, and up a flight of stairs, before we came to a brightly lit corridor. Several students were wandering around, talking to each other. {w}Some seemed to send me weary glances, probably because I didn't look like anyone belonging to this school"
     "A shadow drew my attention on the far end of the hallway. As soon as I looked at it, however, it disappeared."
 
-    play music "Kawai-Katsune"
+    play music "Kawai-Kitsune"
     scene school roof with fade_scene
     show yen talking with dissolve
     "We soon got to the roof of the building. I immediately noticed that it was completely empty. But not only that; it was also completely open, with few places to hide. It also had benches to sit on."
