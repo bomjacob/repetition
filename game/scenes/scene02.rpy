@@ -156,7 +156,7 @@ label __cafe:
                 partridge "Then we went on with making a storyboard..."
                 "Wait!":
                     me "You made a storyboard before you made the actual story??"
-                    partridge "Well, we wanted a visual representation..."
+                    partridge "Well, we thought that making a storyboard would be..."
                     me "No, no, no. That's completely wrong."
                     jump __pre
                 "Go oooon...":
