@@ -335,7 +335,7 @@ label __toowrong:
     unknown "You think that YOU, a little MIDGET can command me around, the mighty MAGENTA?"
     magenta annoyed_talking "DIE, mortal!"
     show magenta annoyed
-    hide raccoon with dissolve
+    hide yen with dissolve
     "The dragon, who had dubbed herself \"Magenta\", lowered her clawed hand, piercing the chest of Yen with a sharp claw.{w} The raccoon gurgled, desperately trying to breathe, but instead she found blood spilling out from her mouth."
     "She looked to me with a desperate look in her eyes, trying to say something... But no intelligible sounds escaped her mouth."
     me "Y-you... You monster! What did she do to-"
