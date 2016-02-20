@@ -1,5 +1,7 @@
 label scene03:
+    play music "The-Forest-and-the-Trees"
     scene school bike
+    with fade_scene
     "I looked up at the many tall buildings. This would be my final stop before the capital. For a moment I wondered why I was going to the capital in the first place. But then I remembered that my sensei once had said in a drunken haze, that it was where my parents grew up. So I wanted to see this capital for myself."
     "This city seemed a lot larger than the two previous I had visited."
     "As I walked up to a school bike parking place, I felt something tugging in my clothes from behind."
@@ -20,6 +22,9 @@ label scene03:
 label __busy:
     me "I'm sorry, I'm quite busy."
     raccoon talking "Oh?... Does that make you a bad person?"
+
+    play music "BGM008"
+
     "I raised an eyebrow. Something so simple didn't seem like enough to warrant calling me a bad person."
     me "I wouldn't say so, no."
     "The raccoon suddenly seemed quite gloomy."
@@ -49,6 +54,8 @@ label __helpher:
     scene school hallway with fade_scene
     "We went through a side-entrance to the school building, and up a flight of stairs, before we came to a brightly lit corridor. Several students were wandering around, talking to each other. {w}Some seemed to send me weary glances, probably because I didn't look like anyone belonging to this school"
     "A shadow drew my attention on the far end of the hallway. As soon as I looked at it, however, it disappeared."
+
+    play music "Kawai-Katsune"
     scene school roof with fade_scene
     show yen talking with dissolve
     "We soon got to the roof of the building. I immediately noticed that it was completely empty. But not only that; it was also completely open, with few places to hide. It also had benches to sit on."
@@ -92,6 +99,7 @@ label __somethingclever:
             jump __sorrynope
 
 label __sorrynope:
+    play music "Investigations"
     me "I would... Rather not. I'm sorry, but I have other things to do."
     "Yen hung her head, seeming very disappointed. Tears started running down her cheeks."
     raccoon sad "N-... Nobody believes me..."
@@ -147,9 +155,10 @@ label __totallyinteresting:
     jump __dragons_exist
 
 label __dragons_exist:
+    play music "Carefree" #Meh
     scene library with fade_scene
     "In the library, we found an out-of-the-way table to sit by."
-    if __lilly==1:
+    if has_met_lilly:
         "A small cough came from behind me."
         show lilly sad with dissolve
         "As I turned around, I was greeted by a familiar sight."
@@ -402,7 +411,7 @@ label __allcorrect:
     raccoon sad "B-but... Why can't we just be friends? Why can't everyone just get along?"
     me "Does that dragon seem like it has good intentions?!"
     raccoon "I-... I'm sure it has its reasons..."
-    "As even more smoke spread in the distance, i shook my head."
+    "As even more smoke spread in the distance, I shook my head."
     me "I don't think so."
     "The dragon seemed determined to burn this whole place to the ground."
     scene black

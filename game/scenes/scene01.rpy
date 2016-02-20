@@ -604,7 +604,7 @@ label __stay:
             hide lilly with dissolve
             "The crane went out the door and closed it behind her, leaving me in the empty room. Deciding that it would be futile to attempt sneaking out again, I decided to go to sleep."
             if postermm_points <= 4 and postermm_points > 2:
-                $ __lilly=1
+                $ has_met_lilly = True
 
     scene black
     with fade

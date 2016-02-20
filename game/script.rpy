@@ -17,6 +17,7 @@ init:
     define raccoon = Character(name="Yen", who_color="#FFF", image="yen", ctc="ctc_blink", ctc_position="fixed")
 
     # Points for games/quizes and such
+    default has_met_lilly = False
     default postermm_points = 0
     default postermm_done = {}
 
