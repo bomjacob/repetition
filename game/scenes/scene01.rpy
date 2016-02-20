@@ -551,7 +551,7 @@ label __stay:
     hide froggy with dissolve
     "I nodded at the mayor who was heading towards his secretary's office. The room quickly became oddly silent. For the lack of better things to do, I looked around, examining the room."
     play sound "tick-tock"
-    "A large grandfather clock was standing on the far end of the room, ticking away in the otherways silent room. It was nearing 8 o'clock."
+    "A large grandfather clock was standing on the far end of the room, ticking away in the otherwise silent room. It was nearing 8 o'clock."
     "A few minutes slipped by, as I listened to the dull \"tick tock\" of the antique clock."
     "Several large vases with different patterns were standing on shelves on the far wall. A few family pictures of the mayor as a child were standing on the table."
     "Footsteps in the hallway were telling me that the mayor was on his way back."
@@ -559,7 +559,9 @@ label __stay:
     show froggy neutral with dissolve
     froggy talking "A room should be ready for you now. Follow me!"
     hide froggy with dissolve
+    scene mansion hallway_night with fade_scene
     "I wordlessly followed the mayor as we walked up some winding stairs, and unto the second floor. Walking past several closed doors, he finally stopped."
+    scene mansion bedroom with fade_scene
     show froggy not_talking with dissolve
     froggy talking "This will be your room. If you need anything, my secretary is at the end of the hallway."
     show froggy not_talking
@@ -568,7 +570,7 @@ label __stay:
     froggy "Oh, and... One last thing. Don't try to sneak around here."
     "The mayor's words seemed slightly eerie. Or maybe they seemed like a challenge."
     hide froggy with dissolve
-    "The mayor went out the door, closing it behind him. As I heard his footsteps dissapear in the distance, I let out a breath I didn't know I had been holding."
+    "The mayor went out the door, closing it behind him. As I heard his footsteps disappear in the distance, I let out a breath I didn't know I had been holding."
 
     menu:
         "Go explore the mayor's mansion?"
@@ -579,7 +581,8 @@ label __stay:
         "Yes!":
             play music "BGM008"
             "I clenched my fist, looking at the door resolutely. Don't try to sneak around? I wondered what secrets the mayor could be hiding."
-            "Approaching the door carefully, I turned the doorknob and pushed the door ajar, just enough to stick my head out. The lights in the hallway were still on."
+            scene mansion hallway_night with door_trans
+            "Approaching the door carefully, I turned the doorknob and pushed the door ajar, just enough to stick my head out. The lights in the hallway were off, but the moonlight streaming through the windows was more than enough to illuminate the place."
             "Seeing as there was no one around, I opened the door a bit more, and sneaked my way across the hallway. Standing in front of the door across from mine, I tried to turn the doorknob. {w}The door was locked."
             "Walking along to the next door, I tried my luck here too. {w}This one was locked as well."
             "As I reached the third door, I noticed a peculiar smell. Almost like... Something rotten. I reached for the door when a sharp cough startled me."
@@ -600,6 +603,8 @@ label __stay:
             lilly "Oh, I am glad you understand."
             hide lilly with dissolve
             "The crane went out the door and closed it behind her, leaving me in the empty room. Deciding that it would be futile to attempt sneaking out again, I decided to go to sleep."
+            if postermm_points <= 4 and postermm_points > 2:
+                $ __lilly=1
 
     scene black
     with fade
@@ -612,7 +617,7 @@ label __stay:
     me "Sensei?..."
     "Opening my eyes, I saw an unfamiliar ceiling."
     me "Oh... That's right... I'm at the mayor's place."
-    "Feeling a bit dissapointed, I closed my eyes again, wishing myself back to just a few days ago. How certain the future had been back then. Now, nothing was certain."
+    "Feeling a bit disappointed, I closed my eyes again, wishing myself back to just a few days ago. How certain the future had been back then. Now, nothing was certain."
     "Deciding to mull over this topic no longer, I got up from my bed and went downstairs."
     scene mansion livingroom with fade_scene
     show froggy neutral
@@ -652,7 +657,7 @@ label __wolfsquad:
     "A glowing red shape crept out of the bushes, snarling at me menacingly."
     me "I don't think this is my imagination anymore..."
     show wolves mad at right with dissolve
-    "The shape resembled that of a wolf, but it was coated in a malicious, red aura. It wore a collar with the nametag \"fluffy\" on it. A couple of wolves bearing the same red aura followed behind it, all of them glaring at me."
+    "The shape resembled that of a wolf, but it was coated in a malicious, red aura. It wore a collar with the name tag \"fluffy\" on it. A couple of wolves bearing the same red aura followed behind it, all of them glaring at me."
     me "Oh no! It's the mayor's wolf squad! It looks like he really didn't like me leaving..."
     "The foremost wolf barked at me, staring me in the eyes. I gulped, as I stepped slowly backwards. Rationally, I knew that it was impossible to get away from the mayor's wolf squad. Instinctally, however, there was nothing I'd rather do than run."
     "So I ran."
@@ -722,7 +727,7 @@ label __dragon_eat:
     $ save_name = _("It's a Bird... It's a Plane...")
     scene town square people
     with fade_scene
-    "A large crowd had gathered at the square. Smalltalk filled the air, as people were conversing with eachother."
+    "A large crowd had gathered at the square. Smalltalk filled the air, as people were conversing with each other."
     "I was very surprised by the number of people that showed up, considering that we had only just hung up the posters the day before."
     "Everyone suddenly grew silent, as the mayor walked up the stairs, looking over everyone."
     show froggy hi with dissolve
@@ -756,7 +761,7 @@ label __dragon_eat:
     froggy scared_talking "P-please! Spare u-"
     hide froggy with dissolve
     show magenta glee with dissolve
-    "The mayor didn't get to say anymore, as Magenta's jaws closed around his small form. She shook her head a few times, burying her teeth deeper into the limp mayor, before she carelessly threw him away, his discarded body ragdolling to the floor."
+    "The mayor didn't get to say anymore, as Magenta's jaws closed around his small form. She shook her head a few times, burying her teeth deeper into the limp mayor, before she carelessly threw him away, his discarded body rag-dolling to the floor."
     "The few people that had not fled yet, started running around the square like ants. Magenta stomped on the few unlucky ones that came too close, ending their lives in a second."
     magenta annoyed_talking "I GROW BORED OF YOU. Now DIE like the MIDGETS you are!"
     show magenta mad
@@ -834,7 +839,7 @@ label __almost_end:
     scene meadows
     with fade
 
-    "Yawning loudly, I rubbed my eyes open and looked around. I hadn't slep amazingly, but I was also unharmed, which could be seen as a miracle. I looked up at the lazy clouds. Packing together my stuff, I got up and walked along the path. This would take me to the capital eventually, though I might pass by a couple of cities first."
+    "Yawning loudly, I rubbed my eyes open and looked around. I hadn't slept amazingly, but I was also unharmed, which could be seen as a miracle. I looked up at the lazy clouds. Packing together my stuff, I got up and walked along the path. This would take me to the capital eventually, though I might pass by a couple of cities first."
     "As I walked along, I thought about how glad I was to be alive. The outside world was definitely a dangerous place, filled with horrors... But on a sunny day like this, being alive wasn't so bad after all."
     "As I walked towards my future, a deep roar could be heard in the distance."
 

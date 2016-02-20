@@ -9,48 +9,51 @@ label scene02:
     "I looked around to orient myself. True enough, a red car was about to drive by. I raised a thumb, in the hopes that the driver was kind enough to pick up a stray soul." #Can you say true enough? Isn't it sure enough?
     "The car didn't seem to slow down at all. {w}I had almost lost hope."
     "Then the driver stopped."
-    "The driver was a sloth, wearing a sheriff’s badge. He looked expectantly at me."
-    sloth "So? Are you going to hop in, or what?"
+    show sloth neutral with dissolve
+    "The driver was a sloth, wearing a sheriff's badge. He looked expectantly at me."
+    sloth talking "So? Are you going to hop in, or what?"
     "Barely believing my luck, I nodded voicelessly, and opened the door to get in. Starting the car again, the sloth began speaking to me."
 
     menu:
-        sloth "What’s a person like you doing around these parts then?"
-        "I’m just passing by":
-            sloth "Oh? Well, in that case, we’re nearing the city where I live, Pollyhoot city. If you would like, I could tell you about some points of interest?"
+        sloth "What's a person like you doing around these parts then?"
+        "I'm just passing by":
+            sloth "Oh? Well, in that case, we're nearing the city where I live, Pollyhoot city. If you would like, I could tell you about some points of interest?"
             me "Sure! I might as well, since I have nothing better to do."
-            "The sloth turned his eyes towards the road as he thought.{w} Suddenly, a metaphorical lightbulb went off in his head."
-            sloth "I know! We currently have a filmcrew in town. People talk a lot about it, since it’s rare that we get something like that in town, despite its name’s semblance to that other city."
-            me "A filmcrew? That sounds interesting. I’d love to have a look at it, if you wouldn’t mind telling me where it is."
-            sloth "I’m going that way anyways, so I can drive you there if you want a lift?"
+            show sloth neutral
+            "The sloth turned his eyes towards the road as he thought.{w} Suddenly, a metaphorical light bulb went off in his head."
+            sloth talking "I know! We currently have a film crew in town. People talk a lot about it, since it's rare that we get something like that in town, despite its name's semblance to that other city."
+            me "A film crew? That sounds interesting. I'd love to have a look at it, if you wouldn't mind telling me where it is."
+            sloth "I'm going that way anyways, so I can drive you there if you want a lift?"
             me "That would be awesome. Thanks!"
+            show sloth neutral
             "The rest of the ride happened in silence."
 
             scene town2 red_houses
             with fade_scene
-
+            show sloth neutral with fade
             "About twenty minutes later, we arrived at a set of red wooden houses."
-            sloth "This is where they film! Go to the second hut on the right, and they should be in there."
+            sloth talking "This is where they film! Go to the second hut on the right, and they should be in there."
             me "Thank you for the ride, sir sloth."
             sloth "Please, call me NAME."
             me "Okay, NAME. I hope I can repay the favour sometime."
-            sloth "Don’t worry about it! Though if you do get time, I’m at the police station."
+            sloth "Don't worry about it! Though if you do get time, I'm at the police station."
             "I exited the car and waved goodbye to the sloth sheriff."
-
+            hide sloth with dissolve
             "Walking towards the red houses, I felt something like a chill. It was very brief, but noticeable. But the memory of it even being there in the first place soon escaped my mind."
             jump __cafe
 
-        "I’m actually a secret agent from the government; don’t tell anyone.":
-            sloth "Oh? Are you now? Would you forgive me if I said that I don’t believe you?"
+        "I'm actually a secret agent from the government; don't tell anyone.":
+            sloth talking "Oh? Are you now? Would you forgive me if I said that I don't believe you?"
             "I crossed my arms and huffed. "
             me "I find that rude."
             "The sloth stared me in the eyes, an air of seriousness about him,"
-            sloth "Lying about being a secret agent isn’t exactly light stuff. You shouldn’t go around te-.."
+            sloth mad "Lying about being a secret agent isn't exactly light stuff. You shouldn't go around te-.."
             "The sloth was suddenly cut off as the front of his car smashed into a tree. His head had been thrown violently into the steering wheel, blood running from his forehead and down through his fur. The windshield was shattered into many pieces."
             "A few moments later, I discovered that I, myself, was not doing too well. Feeling slightly dizzy, I raised a hand to my head. {w}Bringing it down again, I saw that my hand was covered in blood."
             "I would have panicked, had I not suddenly felt so very tired."
             "Just... A moment of rest... Was all I needed..."
             $ die(2)
-            "Public Safety Announcement: Pay attention when you drive! Avoid car accidents!{w}\nOh, and you should probably not tell others that you’re a secret agent either."
+            "Public Safety Announcement: Pay attention when you drive! Avoid car accidents!{w}\nOh, and you should probably not tell others that you're a secret agent either."
             jump you_dead
 
 label __cafe:
@@ -66,32 +69,32 @@ label __cafe:
     fox neutral_sceptic "No, this it should be cut like this instead. This shows me from the best angle!"
     squirrel no "My professional opinion states that it should be cut like this, for the best dramatic effect!"
     "As the saloon-like doors closed behind me, three pairs of eyes stared intently at me."
-    partridge hi "You there! What do you think? Crossclipping, zooming or an over-shoulder view of our heroine?"
+    partridge hi "You there! What do you think? Cross clipping, zooming or an over-shoulder view of our heroine?"
     "The fox scoffed."
-    fox talking_sceptic "Why do I work with such simpleminded people? Clearly zooming on my face here would be the best option! It’s what the people want!"
+    fox talking_sceptic "Why do I work with such simpleminded people? Clearly zooming on my face here would be the best option! It's what the people want!"
     "The partridge crossed its wings."
-    partridge no "A camera movement like that wouldn’t progress the story in any way! We should cut it just as he runs out the door.."
+    partridge no "A camera movement like that wouldn't progress the story in any way! We should cut it just as he runs out the door.."
     "The squirrel shook its head, sighing resignedly."
 
     menu:
         squirrel "So? What do you think?"
         "Cut! It adds suspense.":
             partridge neutral "Hah! See, this person agrees with me! I kne-.."
-        "Zoom! It’s what the people want.":
+        "Zoom! It's what the people want.":
             fox talking_normal "See, this person is smart. This person knows what is the right thing to-.."
-        "Over-shoulder! It’s dramatic.":
-            squirrel happy "That’s what I thought too. See, people? This is definitely the right cho-.."
+        "Over-shoulder! It's dramatic.":
+            squirrel happy "That's what I thought too. See, people? This is definitely the right cho-.."
 
     $ save_name = _("Who's there?")
     play music "On-the-Cool-Side"
     "The lights suddenly flickered off, as the front doors flew open, a gust of wind circling around the room before dying out.{w} A few seconds later, the lights flickered back on."
     fox neutral_sceptic "I thought you hired proper electricians for this job!"
-    partridge sad "I-.. I did, I swear! I’m not sure what that-.."
+    partridge sad "I-.. I did, I swear! I'm not sure what that-.."
     squirrel no "Silent everyone! It would seem something is coming."
     "As if waiting for this to happen, a mysterious voice resounded through the wooden walls and fake furniture."
     unknown "Fire? Yes, yes! Fire. You have done me injustice. You have done the world a horrible injustice!"
-    ghost "I am the Ghost of Bad Filmmaking here to tell you that you are doing the world a terrible, unjustified injustice! The world weeps!"
-    "The fox’s eyes widened, though she seemed to keep her calm, denying the existence of this bodyless voice for the moment. The squirrel kept moving his head around, searching for the voice of the perpetrator. The partridge seemed to have the most calm out of all of them, even daring to speak."
+    ghost "I am the Ghost of Bad Film making here to tell you that you are doing the world a terrible, unjustified injustice! The world weeps!"
+    "The fox's eyes widened, though she seemed to keep her calm, denying the existence of this bodiless voice for the moment. The squirrel kept moving his head around, searching for the voice of the perpetrator. The partridge seemed to have the most calm out of all of them, even daring to speak."
     partridge no "Who is this? Show yourself!"
     hide partridge with dissolve
     hide fox with dissolve
@@ -110,7 +113,7 @@ label __cafe:
 
     "I, who was standing at the entrance, quickly realised what was happening."
     me "Hurry up, guys! If you stay like this, you'll get charred to ash!"
-    "This seemed to snap the three out of their trance, as they ran for the front door. Just as we got to the doorway, the entire inside of the fake restaurent burst into flames. The ghost-like form cackled."
+    "This seemed to snap the three out of their trance, as they ran for the front door. Just as we got to the doorway, the entire inside of the fake restaurant burst into flames. The ghost-like form cackled."
     ghost "You may have escaped your doom this time. But as long as your sin remains, do not expect to avoid the fiery demise that awaits you! The world will have justice from terrible filmmakers like you!"
 
     scene town2 red_houses
@@ -135,7 +138,7 @@ label __cafe:
     show partridge sad at right
     partridge "We can sit here."
     "I nodded at him, and we all took place around the playground."
-    me "So... In a desperate attempt to save your hides, why don't we start at the beggining? That would be pre-production..."
+    me "So... In a desperate attempt to save your hides, why don't we start at the beginning? That would be pre-production..."
     "Upon hearing this, the fox immediately seemed disinterested. It would seem she didn't have much to do with the pre-production."
     show squirrel hmm at left, flip with dissolve
     squirrel no "We have planned this project meticulously!"
@@ -156,7 +159,7 @@ label __cafe:
                 partridge "Then we went on with making a storyboard..."
                 "Wait!":
                     me "You made a storyboard before you made the actual story??"
-                    partridge "Well, we wanted a visual representation..."
+                    partridge "Well, we thought that making a storyboard would be..."
                     me "No, no, no. That's completely wrong."
                     jump __pre
                 "Go oooon...":
@@ -165,7 +168,7 @@ label __cafe:
                         "Wait!":
                             me "So let me get this right.. You haven't even found a genre yet, and you already found music for it?"
                             partridge "Genre is unimportant! We could always decide that after finding some awesome music!"
-                            me "That's not how filmmaking works!"
+                            me "That's not how film making works!"
                             jump __pre
                         "Go oooooon...":
                             partridge "Lastly, we made our synopsis to recap all things we had planned."
@@ -186,18 +189,18 @@ label __pre:
 
     menu:
         "How would you do it?"
-        "Brainstorm, Synopsis, Manuscirpt, Storyboard":
-            partridge "I suppose that makes sense..."
-            jump __storyboard
         "Storyboard, Manuscript, Synopsis, Brainstorm":
             jump __bad_pre
         "Synopsis, Manuscript, Storyboard, Brainstorm":
             jump __bad_pre
         "Synopsis, Synopsis, Synopsis, Synopsis!":
             jump __bad_pre
+        "Brainstorm, Synopsis, Manuscript, Storyboard":
+            partridge "I suppose that makes sense..."
+            jump __storyboard
         "Storyboard, Brainstorm, Synopsis, Manuscript":
             jump __bad_pre
-        "Brainstorm, Synopsis, Brainstorm, Synopsis, Manuscirpt, Storyboard":
+        "Brainstorm, Synopsis, Brainstorm, Synopsis, Manuscript, Storyboard":
             jump __bad_pre
 
 label __bad_pre:
@@ -220,15 +223,15 @@ label __storyboard:
     "I covered my face with my palm, sighing."
     menu:
         me "No, that's not a storyboard at all! A storyboard is..."
-        "Where you plan out the story using pictures":
-            partridge neutral "I... Suppose I have learned something today. I thank you, stranger."
-            jump __good_storyboard
         "Where you plan out the story using only text":
             jump __bad_storyboard
         "A special type of black-board, especially made for story-writing":
             jump __bad_storyboard
         "A story with boards":
             jump __bad_storyboard
+        "Where you plan out the story using pictures":
+            partridge neutral "I... Suppose I have learned something today. I thank you, stranger."
+            jump __good_storyboard
         "A board with stories":
             jump __bad_storyboard
 
@@ -238,7 +241,7 @@ label __bad_storyboard:
     jump __good_storyboard
 
 label __good_storyboard:
-    "We were suddenly interrupted by an evil cackle. A ghotly voice came from behind us."
+    "We were suddenly interrupted by an evil cackle. A ghostly voice came from behind us."
     show ghost appear at left
     ghost "There you are..."
     play music "Day-of-Chaos"
@@ -249,10 +252,10 @@ label __good_storyboard:
     "A chill ran down my spine, as the air suddenly seemed colder. The playground suddenly started freezing from one end to the other."
     ghost "Flee, flee, flee in horror!"
     "We all got up and ran."
-    me "Squirrel! Call the icefighters!"
+    me "Squirrel! Call the ice fighters!"
     hide partridge with dissolve
     show squirrel no at right with dissolve
-    squirrel "Icefighters? What universe do you live in?!"
+    squirrel "Ice fighters? What universe do you live in?!"
     hide squirrel with dissolve
     me "Less talking, more running!"
     if film_wrongpartridge > 0:
@@ -270,9 +273,9 @@ label __rippartridge:
     me "What are you doing? We need to get away from that ghost!"
     ghost "Mwaahahah... He is mine. He knows his sin, and he cannot flee."
     show partridge very_sad
-    "The partidge shook in fear, as the icy cold drew closer."
+    "The partridge shook in fear, as the icy cold drew closer."
     ghost "Yeesss... I feel that this is a fitting end for you... Frozen, frozen in place!"
-    "We watched in horror as the ice slowly spread from te grass, up the partridge's leg, slowly crawling across his body and trapping him in ice."
+    "We watched in horror as the ice slowly spread from the grass, up the partridge's leg, slowly crawling across his body and trapping him in ice."
     hide partridge with dissolve
     show fox neutral_sceptic at right with dissolve
     fox "Come on you two, no time for staring. Unless you want to end up like him."
@@ -295,7 +298,7 @@ label __perspective:
     me "Let's talk about camera. What did you do when recording?"
     squirrel happy "Well, we used many cinematic effects to make it into a more interesting watching experience-..."
     "I raised a hand to silence him."
-    me "Who's being chased by the Ghost of Bad Filmmaking? You. So let's skip the lying part."
+    me "Who's being chased by the Ghost of Bad Film making? You. So let's skip the lying part."
     show squirrel mad
     "The squirrel seemed annoyed."
     me "Tell me a bit about the scenes you have."
@@ -315,12 +318,12 @@ label __perspective:
 
     menu:
         "To make someone look intimidating, I would use.."
+        "Low angle":
+            jump __bad_perspective
         "Worm's-eye view":
             squirrel "O-of course I knew that."
             me "In that case, let's move on!"
             jump __good_perspective
-        "Low angle":
-            jump __bad_perspective
         "Eye-level":
             jump __bad_perspective
         "High angle":
@@ -349,9 +352,6 @@ label __camera:
 
     menu:
         "The three basic camera movements are called..."
-        "Panning, tilting and moving":
-            squirrel ".. Alright, I admit you might know a thing or two."
-            jump __good_camera
         "Tilting, angling and booming":
             jump __bad_camera
         "Moving, angling and zooming":
@@ -360,6 +360,9 @@ label __camera:
             jump __bad_camera
         "Panning, focusing and moving":
             jump __bad_camera
+        "Panning, tilting and moving":
+            squirrel ".. Alright, I admit you might know a thing or two."
+            jump __good_camera
 
 label __bad_camera:
     squirrel "Not a tanning in there somewhere? No?..."
@@ -381,12 +384,12 @@ label __editing:
         squirrel "Well, uhh, you print the film as pictures and then take some scissors, and..."
         "Wrong!":
             squirrel "What then?"
-            me "Well, there are two ways of doing it..."
+            me "Well, there are three ways of doing it..."
             # Falls out of menu
         "Okay, I'll give you this one.":
             squirrel "What do you mean, \"give me this one\"?"
             me "Uhh, don't worry about it."
-            "The squirrel seemed sceptical."
+            "The squirrel seemed skeptical."
             jump __ghost
 
     menu:
@@ -395,11 +398,13 @@ label __editing:
             jump __bad_editing
         "Not editing at all, so called cut-in-camera.":
             jump __bad_editing
+        "Re-recording the video clips in the right sequence.":
+            jump __good_editing
         "Digitally putting files together.":
             jump __bad_editing
 
 label __bad_editing:
-    squirrel "So you're saying that (whatever wrong answer we put here) can be used for editing? I had no idea!"
+    squirrel "So you're saying that re-recording video clips in the right sequence can be used for editing? I had no idea!"
     me "Indeed! Oh, and did you know that in the seventeenth century..."
     $ film_deadsquirrel += 1
     jump __ghost
@@ -416,7 +421,7 @@ label __ghost:
     with dissolve
     "Before I could say anymore, a thick fog started rolling in from the seas."
     show ghost appear at left
-    ghost happy "Did someone say \"terrible filmmaking\"?"
+    ghost happy "Did someone say \"terrible film making\"?"
     me "Oh no, not again! Let's dash, guys!"
     show fox neutral_sceptic at right with dissolve
     fox "No need to tell me twice!"
@@ -450,7 +455,7 @@ label __ripsquirrel:
         fox neutral_sceptic "{i}What{/i} did you say, brat?"
         me "Uhhmm.."
         hide fox with dissolve
-    "Before we could say anymore, large hands formed from the fog, reaching down to carress the poor squirrel."
+    "Before we could say anymore, large hands formed from the fog, reaching down to caress the poor squirrel."
     "Strange whispers of \"everything is going to be alright\" kept the squirrel ensnared, allowing him no escape."
     show fox neutral_sceptic at center, flip with dissolve
     fox "We need to get away from here."
@@ -489,7 +494,7 @@ label __post:
     "She narrowed her eyes."
     fox neutral_sceptic "What do you want with me?"
     me "Just fix a few mistakes, that's all."
-    "She huffed, but otherwise only seemed passive-agressive."
+    "She huffed, but otherwise only seemed passive-aggressive."
     me "So I take it you were an actor in this film?"
     fox talking_normal "That... Might have been my main role, yes."
     me "So you also did something else?"
@@ -528,15 +533,12 @@ label __good_post:
 label __pr:
     me "What about PR?"
     fox talking_normal "Private records? Mine are spotless!"
-    "I raised an eyebow."
+    "I raised an eyebrow."
     me "No, that wasn't what I meant at all."
 
     menu:
         "What is PR?"
-        "Public Relations":
-            fox "Oh, you should just have said so from the beginning."
-            jump __good_pr
-        "Purple Rollercoaster":
+        "Purple Roller-coaster":
             jump __bad_pr
         "People's Reaction":
             jump __bad_pr
@@ -544,6 +546,9 @@ label __pr:
             jump __bad_pr
         "People's Relations":
             jump __bad_pr
+        "Public Relations":
+            fox "Oh, you should just have said so from the beginning."
+            jump __good_pr
 
 label __bad_pr:
     fox "Oh, you had me worried for a moment. Though I must admit, I've never heard of this before."
@@ -635,7 +640,7 @@ label __noone_lives:
     "Magenta flapped her large bat-like wings and took off, leaving a charred tunnel and two corpses behind."
 
 label __someone_lives:
-    $ save_name = _("I ain't afaid a no ghost.")
+    $ save_name = _("I ain't afraid a no ghost.")
     play music "Day-of-Chaos"
     "The ghost stared me in the eyes."
     ghost meh "I have observed you! And I have decided that you too are a sinner!"
@@ -653,15 +658,18 @@ label __someone_lives:
         me "Are you sure I shouldn't call the ghostbusters instead?"
         show partridge sad
         "The partridge was too busy keeping the ghost at bay to respond. I raised my phone to call the police."
+        scene black with fade_scene
         centered "{size=+10}A few tense moments later...{/size}"
+        scene town2 underpass with fade_scene
         "A red car arrived. I was almost getting bored of waiting, and the partridge was getting worried that the camera might run out of battery soon."
+        show sloth ghostbuster at left, flip with dissolve
         "A sloth hurried out of the car, having something akin to a vacuum cleaner strapped to his back."
         me "You're a ghostbuster?!"
         sloth "I have dabbled a bit in these cases, yes. After all, every city needs a jack of all trades!"
         "The sloth raised the vacuum cleaner, pointing it at the ghost."
         ghost "Nooo!"
         sloth "Yes!"
-        "The sloth was sucked up into the vacuum cleaner, every trace that it had ever been there, gone."
+        "The ghost was sucked up into the vacuum cleaner, every trace that it had ever been there, gone."
         me "Thank you mister sloth!"
         sloth "I have a name, you know..."
         "I smiled sheepishly at the sloth. I had totally forgotten his name."
@@ -706,7 +714,7 @@ label __everyone_lives:
     ghost "Are you absolutely sure that you will not commit a crime of this scale against mankind again?"
     "The fox, the partridge and the squirrel all nodded enthusiastically. The ghost crossed its arms."
     ghost "Pinky swear?"
-    "The three noded again.\nThe ghost sighed exhaustedly."
+    "The three nodded again.\nThe ghost sighed exhaustedly."
     ghost "Very well. But if anything like this happens again... At any rate, I have somewhere better to be. I've heard that the scoundrel, Horse Ruecas is making another terrible movie. Adieu, adieu! I wish thee adieu."
     "The ghost seemed to fade away, this time leaving for good."
     hide ghost with dissolve
@@ -723,7 +731,9 @@ label __everyone_lives:
     me "I'm [name]! Just passing by."
     partridge hi "Whatever your reason for being here is, we are forever in your debt."
     squirrel happy "Indeed! Now, does anyone feel like calling for a police officer?"
+    scene black with fade_scene
     centered "A moment later..."
+    scene town2 underpass with fade_scene
     me "Oh, hello, mister sloth!"
     sloth "I have a name, you know..."
     "I smiled sheepishly at the sloth. I had totally forgotten his name."
