@@ -1,6 +1,6 @@
 init python:
     import random
-    mm_imgs = ["forest start", "forest three", "mansion ext", "town square", "sensei_room", "mansion hallway", "meadows evening", "town2 playground"]
+    mm_imgs = ["forest start", "forest three", "mansion ext", "town square", "sensei_room", "mansion hallway", "meadows evening", "town2 playground", "school hallway"]
     mm_img = mm_imgs[random.randrange(len(mm_imgs))]
 
     def mm_img_next():
