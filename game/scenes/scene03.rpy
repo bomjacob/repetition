@@ -172,13 +172,13 @@ label __dragons_exist:
     me "Could you show it to me?"
     raccoon "Sure!"
     show overlay bad_html:
-    xalign 0.5
-    yalign 0.5
+        xalign 0.5
+        yalign 0.5
     me "Hmm... You're on the right track, but there are a few things you might want to fix..."
     hide overlay
     menu:
         "What {i}three{/i} things need to be changed to make a functional website?"
-        "It needs a <!DOCTYPE html>":
+        "It needs a \<!DOCTYPE html\>":
         "It needs a return (as in ENTER) after <body>":
         "Big is not a html tag.":
         "Head should be before body.":
@@ -200,3 +200,111 @@ label __dragons_exist:
         #Maybe remove the ones you're uncertain about?
     raccoon "So I should stick with these other ones instead? Okay..."
     me "The rest of them should work, yeah."
+    raccoon "So, uhhm, my last question is... I have this friend who draws really cool dragons, and I want to link to her website, but how do I link to stuff?"
+    me "Well, I can see that you have worked with tags. To refer to another website, you just need to use the proper tag, which is..."
+    menu:
+        "How are links made in HTML?"
+        "The a tag.":
+        "The l tag.":
+        "The link tag.":
+        "The anchor tag.":
+        "The p tag.":
+        "The pointer tag.":
+    raccoon "Okay, that was all I needed I think. Thank you, sirmissperson!"
+    me "It's okay, I'm happy to help. Oh, and I have a name."
+    raccoon "What would that be?"
+    me "[name]! Nice to make your acquaintence."
+    raccoon "Uh-huh!"
+    me "Well, let's find a place to publish it, then."
+    raccoon "Can we go back to my school? I want to show it to my teacher."
+    me "Sure."
+
+    scene school hallway
+    "While NAME was talking with her teacher, I looked at a bulletin board."
+    "A poster with the title \"Dragons are real!\" was hanging there, probably from an earlier assignment. It looked a bit like a PSA."
+    "The little raccoon hopped back towards me, apparently done with talking with her teacher."
+    me "How long have you been running this campaign?"
+    raccoon "Uhh... For a while, I suppose."
+    me "So a lot of people here know about dragons?"
+    raccoon "Uh-huh. Not a lot of people believe me, though..."
+    #Split!
+
+label __toowrong:
+    "A loud \"thump\" could be heard, almost as if something had landed on the roof."
+    raccoon "We should go investigate!"
+    me "I'm really not sure that's a wise id-..."
+    "NAME grabbed my shirt and dragged me along, leaving me little room for objection."
+    scene school roof
+    "As soon as we rushed out the door, we were greeted by two bright eyes, staring at us intently."
+    show magenta talking at right
+    unknown "Greetings. WORMS. I had thought that getting this far would be FAR more difficult. But once again, the mortal races PROVE THEIR INCOMPETENCE."
+    show magenta neutral
+    raccoon "Y-you don't need to yell!"
+    show magenta glee
+    unknown "MWAHAHAHAHAH!"
+    "The dragon let out a terrifying cackle."
+    show magenta talking
+    unknown "You think that YOU, a little MIDGET can command me around, the mighty MAGENTA?"
+    magenta annoyed_talking "DIE, mortal!"
+    show magenta annoyed
+    "The dragon, who had dubbed herself \"Magenta\", lowered her clawed hand, piercing the chest of NAME with a sharp claw.{w} The raccoon gurgled, depserately trying to breathe, but instead she found blood spilling out from her mouth."
+    "She looked to me with a desperate look in her eyes, trying to say something... But no intelligible sounds escaped her mouth."
+    me "Y-you... You monster! What did she do to-"
+    magenta annoyed_talking "SILENCE, mortal! You lesser races have NO RIGHT to speak to me! I do AS I PLEASE."
+    show magenta annoyed
+    "I backed away towards the rooftop door. Magenta grinned evilly at me."
+    magenta glee "Going somewhere?"
+    "She looked at me gleefully, seemingly enjoying the moment."
+    magenta talking "I think not."
+    "She raised a hand and placed it right in front of the door."
+    "I started at the mocking face that was getting closer... Her jaws opened around me... And then her jaws closed."
+    $ die(0)
+    magenta annoyed_talking "Well, that was easy..."
+    show magenta annoyed
+    "Magenta looked around at the city, several armored cars encroaching on her position."
+    magenta annoyed_talking "I should probably get out of here."
+    "With that said, Magenta spread her large bat-like wings and took off, leaving behind the bodies of NAME and [name]."
+    jump you_dead
+
+label __semicorrect:
+    "A loud alarm suddenly rung through the city."
+    me "Wha-what is that?"
+    raccoon "It's the alarm! Something big is coming... Could it be?"
+    me "Could it be what?"
+    raccoon "Dragon!"
+    "A loud roar soon followed."
+    raccoon "Come on, let's go to the roof!"
+    "I was about to protest that being outside with a dragon approaching probably wasn't a good idea, but I couldn't help but be intrigued myself."
+    scene school roof
+    raccoon "It... It's coming this way. It's coming closer!"
+    "Indeed, the looming shape of the reptile was swiftly approaching us."
+    raccoon "It seems like they couldn't keep it back at the walls... Why is it here, I wonder?"
+    me "It probably doesn't have good intentions."
+    raccoon "B-but... We can be friends!"
+    me "Look at its eyes. Does that look like a friendly dragon to you?"
+    "As we talked, the dragon kept getting closer. It seemed like it was heading directly for us."
+    centered "{size=+10}End of Chapter 3.{/size}"
+    centered "{size=+10}... To be continued...{/size}"
+    #jump scene04
+
+label __allcorrect:
+    "A loud alarm suddenly rung through the city."
+    me "Wha-what is that?"
+    raccoon "It's the alarm! Something big is coming... Could it be?"
+    me "Could it be what?"
+    raccoon "Dragon!"
+    "A loud roar soon followed."
+    raccoon "Come on, let's go to the roof!"
+    "I was about to protest that being outside with a dragon approaching probably wasn't a good idea, but I couldn't help but be intrigued myself."
+    scene school roof
+    raccoon "Look, out there at the town walls!"
+    "Indeed, a large shape had placed itself on the walls, spewing fire at the building. Several firetrucks were already at the sites, spraying water at the fires, which lead to huge collumns of smoke rising up from the buildings.{w} The raccoon seemed devestated."
+    raccoon "B-but... Why can't we just be friends? Why can't everyone just get along?"
+    me "Does that dragon seem like it has good intentions?!"
+    raccoon "I-... I'm sure it has its reasons..."
+    "As even more smoke spread in the distance, i shook my head."
+    me "I don't think so."
+    "The dragon seemed determined to burn this whole place to the ground."
+    centered "{size=+10}End of Chapter 3.{/size}"
+    centered "{size=+10}... To be continued...{/size}"
+    #jump scene04
