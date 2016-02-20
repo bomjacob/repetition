@@ -314,7 +314,14 @@ label __colours:
     raccoon talking2 "Uhh... For a while, I suppose."
     me "So a lot of people here know about dragons?"
     raccoon talking "Uh-huh. Not a lot of people believe me, though..."
-    #Split!
+    
+
+    if web_total >= 3:
+        jump __allcorrect
+    elif web_total >= 1:
+        jump __semicorrect
+    else:
+        jump __toowrong
 
 label __toowrong:
     "A loud \"thump\" could be heard, almost as if something had landed on the roof."
@@ -350,7 +357,7 @@ label __toowrong:
     $ die(0)
     magenta annoyed_talking "Well, that was easy..."
     show magenta annoyed
-    "Magenta looked around at the city, several armored cars encroaching on her position."
+    "Magenta looked around at the city, several armoured cars encroaching on her position."
     magenta annoyed_talking "I should probably get out of here."
     "With that said, Magenta spread her large bat-like wings and took off, leaving behind the bodies of Yen and [name]."
     jump you_dead
