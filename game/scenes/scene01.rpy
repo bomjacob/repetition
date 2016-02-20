@@ -559,7 +559,9 @@ label __stay:
     show froggy neutral with dissolve
     froggy talking "A room should be ready for you now. Follow me!"
     hide froggy with dissolve
+    scene mansion hallway_night with fade_scene
     "I wordlessly followed the mayor as we walked up some winding stairs, and unto the second floor. Walking past several closed doors, he finally stopped."
+    scene mansion bedroom with fade_scene
     show froggy not_talking with dissolve
     froggy talking "This will be your room. If you need anything, my secretary is at the end of the hallway."
     show froggy not_talking
@@ -579,6 +581,7 @@ label __stay:
         "Yes!":
             play music "BGM008"
             "I clenched my fist, looking at the door resolutely. Don't try to sneak around? I wondered what secrets the mayor could be hiding."
+            scene mansion hallway_night with door_trans
             "Approaching the door carefully, I turned the doorknob and pushed the door ajar, just enough to stick my head out. The lights in the hallway were off, but the moonlight streaming through the windows was more than enough to illuminate the place."
             "Seeing as there was no one around, I opened the door a bit more, and sneaked my way across the hallway. Standing in front of the door across from mine, I tried to turn the doorknob. {w}The door was locked."
             "Walking along to the next door, I tried my luck here too. {w}This one was locked as well."

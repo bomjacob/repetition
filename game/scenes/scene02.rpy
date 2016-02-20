@@ -9,8 +9,9 @@ label scene02:
     "I looked around to orient myself. True enough, a red car was about to drive by. I raised a thumb, in the hopes that the driver was kind enough to pick up a stray soul." #Can you say true enough? Isn't it sure enough?
     "The car didn't seem to slow down at all. {w}I had almost lost hope."
     "Then the driver stopped."
+    show sloth neutral with dissolve
     "The driver was a sloth, wearing a sheriff's badge. He looked expectantly at me."
-    sloth "So? Are you going to hop in, or what?"
+    sloth talking "So? Are you going to hop in, or what?"
     "Barely believing my luck, I nodded voicelessly, and opened the door to get in. Starting the car again, the sloth began speaking to me."
 
     menu:
@@ -18,33 +19,35 @@ label scene02:
         "I'm just passing by":
             sloth "Oh? Well, in that case, we're nearing the city where I live, Pollyhoot city. If you would like, I could tell you about some points of interest?"
             me "Sure! I might as well, since I have nothing better to do."
+            show sloth neutral
             "The sloth turned his eyes towards the road as he thought.{w} Suddenly, a metaphorical light bulb went off in his head."
-            sloth "I know! We currently have a film crew in town. People talk a lot about it, since it's rare that we get something like that in town, despite its name's semblance to that other city."
+            sloth talking "I know! We currently have a film crew in town. People talk a lot about it, since it's rare that we get something like that in town, despite its name's semblance to that other city."
             me "A film crew? That sounds interesting. I'd love to have a look at it, if you wouldn't mind telling me where it is."
             sloth "I'm going that way anyways, so I can drive you there if you want a lift?"
             me "That would be awesome. Thanks!"
+            show sloth neutral
             "The rest of the ride happened in silence."
 
             scene town2 red_houses
             with fade_scene
-
+            show sloth neutral with fade
             "About twenty minutes later, we arrived at a set of red wooden houses."
-            sloth "This is where they film! Go to the second hut on the right, and they should be in there."
+            sloth talking "This is where they film! Go to the second hut on the right, and they should be in there."
             me "Thank you for the ride, sir sloth."
             sloth "Please, call me NAME."
             me "Okay, NAME. I hope I can repay the favour sometime."
             sloth "Don't worry about it! Though if you do get time, I'm at the police station."
             "I exited the car and waved goodbye to the sloth sheriff."
-
+            hide sloth with dissolve
             "Walking towards the red houses, I felt something like a chill. It was very brief, but noticeable. But the memory of it even being there in the first place soon escaped my mind."
             jump __cafe
 
         "I'm actually a secret agent from the government; don't tell anyone.":
-            sloth "Oh? Are you now? Would you forgive me if I said that I don't believe you?"
+            sloth talking "Oh? Are you now? Would you forgive me if I said that I don't believe you?"
             "I crossed my arms and huffed. "
             me "I find that rude."
             "The sloth stared me in the eyes, an air of seriousness about him,"
-            sloth "Lying about being a secret agent isn't exactly light stuff. You shouldn't go around te-.."
+            sloth mad "Lying about being a secret agent isn't exactly light stuff. You shouldn't go around te-.."
             "The sloth was suddenly cut off as the front of his car smashed into a tree. His head had been thrown violently into the steering wheel, blood running from his forehead and down through his fur. The windshield was shattered into many pieces."
             "A few moments later, I discovered that I, myself, was not doing too well. Feeling slightly dizzy, I raised a hand to my head. {w}Bringing it down again, I saw that my hand was covered in blood."
             "I would have panicked, had I not suddenly felt so very tired."
@@ -655,8 +658,11 @@ label __someone_lives:
         me "Are you sure I shouldn't call the ghostbusters instead?"
         show partridge sad
         "The partridge was too busy keeping the ghost at bay to respond. I raised my phone to call the police."
+        scene black with fade_scene
         centered "{size=+10}A few tense moments later...{/size}"
+        scene town2 underpass with fade_scene
         "A red car arrived. I was almost getting bored of waiting, and the partridge was getting worried that the camera might run out of battery soon."
+        show sloth ghostbuster at left, flip with dissolve
         "A sloth hurried out of the car, having something akin to a vacuum cleaner strapped to his back."
         me "You're a ghostbuster?!"
         sloth "I have dabbled a bit in these cases, yes. After all, every city needs a jack of all trades!"
@@ -725,7 +731,9 @@ label __everyone_lives:
     me "I'm [name]! Just passing by."
     partridge hi "Whatever your reason for being here is, we are forever in your debt."
     squirrel happy "Indeed! Now, does anyone feel like calling for a police officer?"
+    scene black with fade_scene
     centered "A moment later..."
+    scene town2 underpass with fade_scene
     me "Oh, hello, mister sloth!"
     sloth "I have a name, you know..."
     "I smiled sheepishly at the sloth. I had totally forgotten his name."

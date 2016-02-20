@@ -121,7 +121,7 @@ label __totallyinteresting:
     me "See you at the library!"
     hide yen with dissolve
     "As the little raccoon darted off, I started wondering how I would get off this roof."
-    scene black
+    scene black with fade_scene
     centered "{size=+10}A couple of hours and some staircase-climbing later...{/size}"
     scene library with fade_scene
     "The small raccoon walked through the front doors, seeming unsure of herself. Then she saw me, and her face brightened up."
@@ -130,7 +130,9 @@ label __totallyinteresting:
     me "Of course I would. Now, why don't we go to what you wanted to show me?"
     raccoon "Oh, of course! Follow me! It's just down by the beach."
     "I followed the little raccoon, unsure of what I'd find."
+    scene black with fade_scene
     centered "{size=+10}A short walk later...{/size}"
+    scene beach with fade_scene
     "Yen had lead me down to a beach. Seagulls cawed, making the place very noisy."
     me "So is this where you-"
     raccoon "She isn't here! Where did she go?"
@@ -367,6 +369,8 @@ label __semicorrect:
     raccoon sad "B-but... We can be friends!"
     me "Look at its eyes. Does that look like a friendly dragon to you?"
     "As we talked, the dragon kept getting closer. It seemed like it was heading directly for us."
+    scene black
+    with fade_scene
     centered "{size=+10}End of Chapter 3.{/size}"
     centered "{size=+10}... To be continued...{/size}"
     #jump scene04
@@ -390,6 +394,8 @@ label __allcorrect:
     "As even more smoke spread in the distance, i shook my head."
     me "I don't think so."
     "The dragon seemed determined to burn this whole place to the ground."
+    scene black
+    with fade_scene
     centered "{size=+10}End of Chapter 3.{/size}"
     centered "{size=+10}... To be continued...{/size}"
     #jump scene04
