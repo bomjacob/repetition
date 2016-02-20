@@ -74,7 +74,7 @@ label __believe:
     me "... Yes, I believe you."
     "A wide smile spread across her face."
     raccoon happy "I knew I could get someone to help me!"
-    raccoon taling "But... I have classes soon... Would you mind meeting me at the library in a couple of hours?"
+    raccoon talking "But... I have classes soon... Would you mind meeting me at the library in a couple of hours?"
     me "Alright."
     jump __dragons_exist
 
@@ -305,7 +305,7 @@ label __colours:
     "While Yen was talking with her teacher, I looked at a bulletin board."
     "A poster with the title \"Dragons are real!\" was hanging there, probably from an earlier assignment. It looked a bit like a PSA."
     "The little raccoon hopped back towards me, apparently done with talking with her teacher."
-    show raccoon talking with dissolve
+    show yen talking with dissolve
     me "How long have you been running this campaign?"
     raccoon talking2 "Uhh... For a while, I suppose."
     me "So a lot of people here know about dragons?"
@@ -322,7 +322,7 @@ label __toowrong:
     show magenta talking at right
     unknown "Greetings. WORMS. I had thought that getting this far would be FAR more difficult. But once again, the mortal races PROVE THEIR INCOMPETENCE."
     show magenta neutral
-    show raccoon talking at left, flip with dissolve
+    show yen talking at left, flip with dissolve
     raccoon "Y-you don't need to yell!"
     show magenta glee
     unknown "MWAHAHAHAHAH!"
@@ -361,7 +361,7 @@ label __semicorrect:
     raccoon "Come on, let's go to the roof!"
     "I was about to protest that being outside with a dragon approaching probably wasn't a good idea, but I couldn't help but be intrigued myself."
     scene school roof with fade_scene
-    show raccoon talking2 with dissolve
+    show yen talking2 with dissolve
     raccoon "It... It's coming this way. It's coming closer!"
     "Indeed, the looming shape of the reptile was swiftly approaching us."
     raccoon talking "It seems like they couldn't keep it back at the walls... Why is it here, I wonder?"
@@ -385,7 +385,7 @@ label __allcorrect:
     raccoon "Come on, let's go to the roof!"
     "I was about to protest that being outside with a dragon approaching probably wasn't a good idea, but I couldn't help but be intrigued myself."
     scene school roof with fade_scene
-    show raccoon talking2 with dissolve
+    show yen talking2 with dissolve
     raccoon "Look, out there at the town walls!"
     "Indeed, a large shape had placed itself on the walls, spewing fire at the building. Several firetrucks were already at the sites, spraying water at the fires, which lead to huge columns of smoke rising up from the buildings.{w} The raccoon seemed devastated."
     raccoon sad "B-but... Why can't we just be friends? Why can't everyone just get along?"
