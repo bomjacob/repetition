@@ -7,7 +7,7 @@ label scene03:
     "I turned around to see a small raccoon girl, tugging at my shirt. crouching down to be at eyeheight with her, I tilted my head to the side."
     me "Well, hello there. What's your name?."
     "She smiled at me."
-    unknown "Hello! Uhh, my name is NAME. Would you mind, uhhmm, helping me with something?"
+    unknown "Hello! Uhh, my name is Yen. Would you mind, uhhmm, helping me with something?"
     menu:
         "Help her with something?"
         "Yes":
@@ -75,7 +75,7 @@ label __believe:
 
 label __somethingclever:
     me "I'm sorry, but... Dragons? And friends? It seems a bit far-fetched."
-    "NAME pouted."
+    "Yen pouted."
     raccoon "I... Knew that you might doubt me...{w} Which is why I want to show you where I met the dragon!"
     "She looked expectantly at me."
     raccoon "So, uhh... Will you meet me there after school?... I have classes soon..."
@@ -88,7 +88,7 @@ label __somethingclever:
 
 label __sorrynope:
     me "I would... Rather not. I'm sorry, but I have other things to do."
-    "NAME hung her head, seeming very disappointed. Tears started running down her cheeks."
+    "Yen hung her head, seeming very disappointed. Tears started running down her cheeks."
     raccoon "N-... Nobody believes me..."
     "Crying, she ran towards the door to the rooftop terrace."
     me "Wait a moment!"
@@ -108,7 +108,7 @@ label __sorrynope:
 label __totallyinteresting:
     me "... Alright, it sounds interesting."
     "I decided that it might be worth investigating, since I wasn't really in a hurry anyways."
-    "NAME's face brightened."
+    "Yen's face brightened."
     raccoon "Okay! Uhhmm... A bit further north, down the street, there's a lirbrary we could meet up at."
     "Just as I was about to reply, the school bell rung."
     raccoon "Oh, uhmm, I need to go now!"
@@ -122,7 +122,7 @@ label __totallyinteresting:
     raccoon "Oh, of course! Follow me! It's just down by the beach."
     "I followed the little raccoon, unsure of what I'd find."
     centered "{size=+10}A short walk later...{/size}"
-    "NAME had lead me down to a beach. Seagulls cawed, making the place very noisy."
+    "Yen had lead me down to a beach. Seagulls cawed, making the place very noisy."
     me "So is this where you-"
     raccoon "She isn't here! Where did she go?"
     me "Where did who go?"
@@ -132,7 +132,7 @@ label __totallyinteresting:
     raccoon "Really?!"
     me "Yeah... Let's go back to the library and look at your assignment."
     raccoon "Yay!"
-    "NAME smiled and ran off, forcing me to run after her."
+    "Yen smiled and ran off, forcing me to run after her."
     jump __dragons_exist
 
 label __dragons_exist:
@@ -151,7 +151,7 @@ label __dragons_exist:
             raccoon "Won't it be difficult then to find what I'm looking for?..."
     raccoon "Okay, I think I know what I should be doing now... So how do I make people notice my website? I want to spread the word!"
     me "Have you heard about \"SEO\"?"
-    "NAME shook her head."
+    "Yen shook her head."
     raccoon "Nope. What is it?"
     menu:
         me "Well, \"SEO\" stands for..."
@@ -160,6 +160,7 @@ label __dragons_exist:
         "Search Engine Orbiting":
             raccoon "Isn't orbiting a space thing?"
         "Search Engine Optimization":
+            $ web_total += 1
             raccoon "So what does that mean?"
             me "It means that you put some tags on your website that helps people find it."
         "Surviving Electronically Online":
@@ -168,35 +169,74 @@ label __dragons_exist:
             raccoon "Surviving is good."
     raccoon "So... That actually works?"
     me "Yeah! I'm sure people will notice your website in no time."
+    jump __code
+
+label __code:
     raccoon "Okay... Then, uhhmm, I have this code that I wrote up that I wanted to get to work, but it didn't really work..."
     me "Could you show it to me?"
-    raccoon "Sure!"
-    show overlay bad_html:
-    xalign 0.5
-    yalign 0.5
+    jump __code_show
     me "Hmm... You're on the right track, but there are a few things you might want to fix..."
+    
+    while True:
+        $ code_asked_i += 1
+        menu:
+            "What {i}three{/i} things need to be changed to make a functional website?"
+            "It needs a <!DOCTYPE html>" if not code_asked['doctype']:
+                $ code_asked['doctype'] = True
+                me "This is to signify that we're using HTML5."
+                $ code_correct += 1
+            "It needs a enter (as in ENTER) after <body>" if not code_asked['enter']:
+                $ code_asked['enter'] = True
+                me "Actually that's not true... HTML doesn't care about indentation." #Fix
+            "Big is not a html tag." if not code_asked['big']:
+                $ code_asked['big'] = True
+                $ code_correct += 1
+                me "Hmm" #fix
+            "Head should be before body." if not code_asked['head']:
+                $ code_asked['head'] = True
+                $ code_correct += 1
+                "something"
+            "It needs CSS (styling) to work." if not code_asked['css']:
+                $ code_asked['css'] = True
+                "nope"
+            "Show it to me again please.":
+                jump __code_show
+        if code_asked['doctype'] and code_asked['big'] and code_asked['head']:
+            $ web_total += (code_correct - code_asked_i)
+            #So if you did everything correct then you get 0 points... if not you get subtracted up to 2 points... that's fair right?
+            jump __colours
+
+label __code_show:
+    show overlay bad_html:
+        xalign 0.5
+        yalign 0.5
+    raccoon "Sure!"
     hide overlay
-    menu:
-        "What {i}three{/i} things need to be changed to make a functional website?"
-        "It needs a <!DOCTYPE html>":
-        "It needs a return (as in ENTER) after <body>":
-        "Big is not a html tag.":
-        "Head should be before body.":
-        "It needs CSS (styling) to work.":
-        #you handle this damnit
+    $ renpy.rollback(force=True, checkpoints=2)
+
+label __colours:
     raccoon "Oh... Uhh, okay... I don't know much about this stuff, so thanks."
     me "It's okay! Now then, have you thought about styling?"
     raccoon "Well, I have these colours that I wrote down when we had colour theory... I think I sort of get it, but maybe it would be a good idea to let you look through them..."
     menu:
-        "Which of these colours is not a valid colour?"
+        "Which of these colours is not a valid colour?" #Can you add some dialogue? And yeah two are wrong (so correct), but that doesn't matter
         "#FFF":
+            ""
         "#FFFFFF":
+            ""
         "hsl(255, 23, 4)":
+            ""
         "hsla(1, 45, 34, 2)":
+            ""
         "rgb(3, 5, 7)":
+            ""
         "rgba(6, 234, 56, 25)":
+            ""
         "hsv(28, 186, 43)":
+            $ web_total += 1
+            ""
         "hsva(89, 43, 23, 4)":
-        #Maybe remove the ones you're uncertain about?
+            $ web_total += 1
+            ""
     raccoon "So I should stick with these other ones instead? Okay..."
-    me "The rest of them should work, yeah."
+    me "The rest of them should work, yeah." # Maybe change this, due to the whole 2 out of 8 doesn't work, yet you only select 1 thing xD

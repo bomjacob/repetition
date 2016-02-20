@@ -184,8 +184,6 @@ label __no_help:
 
 label __postermm_start:
     $ save_name = _("Just helping out a frog.")
-    $ postermm_points = 0
-    $ __postermm_done = {}
 
     froggy neutral_talking "I am glad to hear it, [name]."
     "The mayor showed me inside his house, and we sat down in the living room."
@@ -250,20 +248,20 @@ label __postermm_amazing:
 label __postermm_wrong:
     menu:
         "(select a category)"
-        "The heading" if (not 'heading' in __postermm_done):
-            $ __postermm_done['heading'] = True
+        "The heading" if (not 'heading' in postermm_done):
+            $ postermm_done['heading'] = True
             jump __postermm_heading
-        "The typography" if not 'typography' in __postermm_done:
-            $ __postermm_done['typography'] = True
+        "The typography" if not 'typography' in postermm_done:
+            $ postermm_done['typography'] = True
             jump __postermm_typography
-        "The colours" if not 'colours' in __postermm_done:
-            $ __postermm_done['colours'] = True
+        "The colours" if not 'colours' in postermm_done:
+            $ postermm_done['colours'] = True
             jump __postermm_colours
-        "The text in general" if not 'text' in __postermm_done:
-            $ __postermm_done['text'] = True
+        "The text in general" if not 'text' in postermm_done:
+            $ postermm_done['text'] = True
             jump __postermm_text
-        "AIDA" if not 'aida' in __postermm_done:
-            $ __postermm_done['aida'] = True
+        "AIDA" if not 'aida' in postermm_done:
+            $ postermm_done['aida'] = True
             jump __postermm_aida
         "Nothing, if you fix those errors it's fine." if postermm_points != 0:
             jump __postermm_done

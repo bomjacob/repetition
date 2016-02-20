@@ -14,6 +14,24 @@ init:
     define fox = Character(name="Fox", who_color="#F295CA", image="fox", ctc="ctc_blink", ctc_position="fixed")
     define ghost = Character(name="Ghost of Bad Filmmaking", who_color="#F3F6FB", image="ghost", ctc="ctc_blink", ctc_position="fixed")
     define sloth = Character(name="As of Yet Unnamed Sloth", who_color="#F0AE2E", image="sloth", ctc="ctc_blink", ctc_position="fixed")
+    define raccoon = Character(name="Yen", who_color="#FFF", image="yen", ctc="ctc_blink", ctc_position="fixed")
+
+    # Points for games/quizes and such
+    default postermm_points = 0
+    default postermm_done = {}
+
+    default film_wrongpartridge = 0
+    default film_partridge = 0
+    default film_deadsquirrel = 0
+    default film_squirrel = 0
+    default film_wrongfox = 0
+    default film_fox = 0
+
+    default web_total = 0
+    default code_asked = dict(doctype=False, enter=False, big=False, head=False, css=False)
+    default code_correct = 0
+    default code_asked_i = 0
+
 
 init python:
     import random

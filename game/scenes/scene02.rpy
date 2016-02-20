@@ -144,10 +144,6 @@ label __cafe:
 
     $ save_name = _("Pre-production.")
 
-    $ __wrongpartridge = 0
-    $ __partridge = 0
-    #Preparation for killing people. Yay!
-
     menu:
         partridge "Well, we started out with finding our cast..."
         "Wait!":
@@ -181,7 +177,7 @@ label __cafe:
                                     jump __pre
                                 "That sounds completely fine.":
                                     me "I'm not sure why the ghost is hunting you down, then. This is a stellar example of how to do pre-production!"
-                                    $ __wrongpartridge += 1
+                                    $ film_wrongpartridge += 1
                                     jump __storyboard
 
 
@@ -205,7 +201,7 @@ label __pre:
             jump __bad_pre
 
 label __bad_pre:
-    $ __deadpartridge += 1
+    $ film_wrongpartridge += 1
     partridge "Well, it is certainly not what we did..."
     jump __storyboard
 
@@ -237,7 +233,7 @@ label __storyboard:
             jump __bad_storyboard
 
 label __bad_storyboard:
-    $ __wrongpartridge += 1
+    $ film_wrongpartridge += 1
     partridge sad "Hmm.. You do seem knowledgeable on the subject. I think."
     jump __good_storyboard
 
@@ -259,7 +255,7 @@ label __good_storyboard:
     squirrel "Icefighters? What universe do you live in?!"
     hide squirrel with dissolve
     me "Less talking, more running!"
-    if __wrongpartridge > 0:
+    if film_wrongpartridge > 0:
         jump __rippartridge
     else:
         jump __perspective
@@ -282,7 +278,7 @@ label __rippartridge:
     fox "Come on you two, no time for staring. Unless you want to end up like him."
     hide fox with dissolve
     "Those simple words of \"encouragement\" were enough to get us moving. The ghost cackled evilly as we ran, but made no move to follow us."
-    $ __partridge = 1
+    $ film_partridge = 1
     jump __perspective
 
 label __perspective:
@@ -291,9 +287,6 @@ label __perspective:
     scene town2 palms
     with fade_scene
 
-    $ __deadsquirrel = 0
-    $ __squirrel = 0
-    #moved this here for rollback purposes
     "When we finally stopped running, we were by the ocean. Large palm trees were standing by the sidewalks, giving us a bit of shade from the harsh sun."
     show squirrel hmm with dissolve
     "After regaining my breath, I I looked at the squirrel."
@@ -317,7 +310,7 @@ label __perspective:
             squirrel no "Well, uuh.. How would you do it, then?"
         "That sounds correct.":
             me "Let's move on to the next thing, then."
-            $ __deadsquirrel += 1
+            $ film_deadsquirrel += 1
             jump __camera
 
     menu:
@@ -336,7 +329,7 @@ label __perspective:
             jump __bad_perspective
 
 label __bad_perspective:
-    $ deadsquirrel += 1
+    $ film_deadsquirrel += 1
     squirrel no "W-well, I liked my suggestion just as much!"
     me "Do I look like I care? No. Let's move on!"
     jump __good_perspective
@@ -370,7 +363,7 @@ label __camera:
 
 label __bad_camera:
     squirrel "Not a tanning in there somewhere? No?..."
-    $ __deadsquirrel += 1
+    $ film_deadsquirrel += 1
     jump __good_camera
 
 label __good_camera:
@@ -408,7 +401,7 @@ label __editing:
 label __bad_editing:
     squirrel "So you're saying that (whatever wrong answer we put here) can be used for editing? I had no idea!"
     me "Indeed! Oh, and did you know that in the seventeenth century..."
-    $ __deadsquirrel += 1
+    $ film_deadsquirrel += 1
     jump __ghost
 
 label __good_editing:
@@ -429,7 +422,7 @@ label __ghost:
     fox "No need to tell me twice!"
     hide fox with dissolve
 
-    if __deadsquirrel > 0:
+    if film_deadsquirrel > 0:
         jump __ripsquirrel
     else:
         jump __post
@@ -444,7 +437,7 @@ label __ripsquirrel:
     me "We need to get out of here!"
     "The squirrel still didn't reply, simply staring at the fog, covering the place like a blanket."
     squirrel no "I-I... I'll see you later, guys..."
-    if __partridge==0:
+    if film_partridge==0:
         show partridge no at center, flip with dissolve
         partridge "We need you on this crew! Snap out of it!"
         squirrel "S-sorry..."
@@ -462,7 +455,7 @@ label __ripsquirrel:
     show fox neutral_sceptic at center, flip with dissolve
     fox "We need to get away from here."
     hide fox with dissolve
-    if __partridge==0:
+    if film_partridge==0:
         hide squirrel with dissolve
         "The partridge seemed reluctant to leave, but when the fog swallowed the squirrel whole, and he was no longer in sight, the partridge complied."
         show partridge no at right with dissolve
@@ -480,7 +473,7 @@ label __ripsquirrel:
     "As we ran away, the ghost made no move to follow us."
     hide ghost with dissolve
 
-    $ __squirrel = 1
+    $ film_squirrel = 1
     jump __post
 
 label __post:
@@ -488,9 +481,7 @@ label __post:
     play music "Teller-of-the-Tales"
     scene town2 underpass
     with fade_scene
-    $ __wrongfox = 0
-    $ __fox = 0
-    #Moved here for rollback purposes
+
     "We ended up in a tunnel, still being able to see the sea in the distance."
     "This time, I directed my attention at the fox."
     show fox neutral_normal with dissolve
@@ -525,7 +516,7 @@ label __post:
 label __bad_post:
     fox neutral_sceptic "Really...? I thought we did that in pre."
     me "No, you do it twice. It's doubly important!"
-    $ __wrongfox += 1
+    $ film_wrongfox += 1
     jump __good_post
 
 label __good_post:
@@ -556,7 +547,7 @@ label __pr:
 
 label __bad_pr:
     fox "Oh, you had me worried for a moment. Though I must admit, I've never heard of this before."
-    $ __wrongfox += 1
+    $ film_wrongfox += 1
     jump __good_pr
 
 label __good_pr:
@@ -568,7 +559,7 @@ label __good_pr:
 
     play music "Not-As-It-Seems"
 
-    if __wrongfox > 0:
+    if film_wrongfox > 0:
         jump __ripfox
     else:
         jump __deciding
@@ -578,11 +569,11 @@ label __ripfox:
     "The ghost barely gave us time to react, before he picked up the fox and threw her at a wall. Glaring at me, he spoke."
     ghost meh "I have no qualms with you."
     "As the shape said this, it slowly floated towards the fox who was slumped on the ground."
-    if __squirrel==0:
+    if film_squirrel==0:
         show squirrel no at right with dissolve
         squirrel "L-leave her alone!"
         hide squirrel with dissolve
-    elif __partridge==0:
+    elif film_partridge==0:
         show partridge no at right with dissolve
         partridge "What are you doing to her?!"
         hide partridge with dissolve
@@ -591,20 +582,20 @@ label __ripfox:
     "The ghost simply laughed."
     ghost happy "This one... This one deserves it most of all."
     "The ghost raised its spectral hand, clamping it around the fox's throat."
-    if __partridge==0:
+    if film_partridge==0:
         show partridge no at right with dissolve
         partridge "Please!"
         "The ghost didn't seem to hear him."
         hide partridge with dissolve
     "As the final light of life left the fox's eyes, the ghost turned its attention towards me."
-    $ __fox = 1
+    $ film_fox = 1
     jump __deciding
 
 label __deciding:
 
-    if __fox==0 and __squirrel==0 and __partridge==0:
+    if film_fox==0 and film_squirrel==0 and film_partridge==0:
         jump __everyone_lives
-    elif __fox==1 and __squirrel==1 and __partridge==1:
+    elif film_fox==1 and film_squirrel==1 and film_partridge==1:
         jump __noone_lives
     else:
         jump __someone_lives
@@ -650,7 +641,7 @@ label __someone_lives:
     ghost meh "I have observed you! And I have decided that you too are a sinner!"
     "The ghost seemed to grin evilly."
     ghost "It is time to get rid of the remaining pests..."
-    if __squirrel==1 and __partridge==0:
+    if film_squirrel==1 and film_partridge==0:
         show partridge no at right
         partridge "No!"
         show partridge sad
@@ -680,7 +671,7 @@ label __someone_lives:
         me "No, it's okay. I'm starting to like this fresh air. It's weird."
         sloth "Okay... I will... Clean up after this mess. I wish you a good journey."
         me "Thank you!"
-        if __fox==0:
+        if film_fox==0:
             "... And with that, I waved goodbye to the partridge, the sloth and the fox, and continued my journey."
         else:
             "... And with that, I waved goodbye to the partridge and the sloth, and continued my journey."
