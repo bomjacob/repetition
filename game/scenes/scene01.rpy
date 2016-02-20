@@ -205,7 +205,7 @@ label __postermm_start:
 
     show overlay shitty_poster
 
-    play music ["ASOBEAT-BGM9-2", "ASOBEAT-BGM9-10"]
+    play music ["ASOBEAT-BGM9-2", "ASOBEAT-BGM9-10"] fadein 5
 
     froggy "So what do you think?"
 

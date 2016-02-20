@@ -83,6 +83,7 @@ label __cafe:
             squirrel happy "That’s what I thought too. See, people? This is definitely the right cho-.."
 
     $ save_name = _("Who's there?")
+    play music "On-the-Cool-Side"
     "The lights suddenly flickered off, as the front doors flew open, a gust of wind circling around the room before dying out.{w} A few seconds later, the lights flickered back on."
     fox neutral_sceptic "I thought you hired proper electricians for this job!"
     partridge sad "I-.. I did, I swear! I’m not sure what that-.."
@@ -127,8 +128,10 @@ label __cafe:
     partridge sad "We should probably go somewhere else."
     "We waited a few more moments before the fire department arrived, before going to a nearby playground."
 
+    play music "Investigations"
     scene town2 playground
     with fade_scene
+
     show partridge sad at right
     partridge "We can sit here."
     "I nodded at him, and we all took place around the playground."
@@ -145,8 +148,6 @@ label __cafe:
     $ __partridge = 0
     #Preparation for killing people. Yay!
 
-    # I'm not sure if I'm doing this right, but hey, I'm trying
-    #I'm not sure this is what you want for this part :/ Like do you wanna go to the "go on" part even if you answer wait? It's kinda hard to decode without /any/ tabs/leading spaces in your text.
     menu:
         partridge "Well, we started out with finding our cast..."
         "Wait!":

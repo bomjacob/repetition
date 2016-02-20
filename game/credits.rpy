@@ -52,7 +52,7 @@ init python:
                 'www.newgrounds.com/audio/listen/668009',
                 '2 and 10 on BGM 9 by ASOBEAT',
                 'Various BGM from pianosdauge.org/BGM/list.html',
-                '\nImpending Boom, First Call, Unity, Not As It Seems, Twisted, Oppressive-Gloom, Arcadia, Water Prelude, Teller of the Tales, Take a Chance, To the Ends, Volatile Reaction and Looping String, Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 3.0 License\nhttp://creativecommons.org/licenses/by/3.0/'
+                '\nImpending Boom, First Call, Unity, Not As It Seems, On the Cool Side, Investigations, Spy Glass, Twisted, Oppressive-Gloom, Arcadia, Water Prelude, Teller of the Tales, Take a Chance, To the Ends, Volatile Reaction and Looping String, Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 3.0 License\nhttp://creativecommons.org/licenses/by/3.0/'
             )),
             (_('Other'), (
                 '{size=-5}Letter:{/size}\nwww.flickr.com/photos/playingwithpsp/2546732435',
