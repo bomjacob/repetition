@@ -608,7 +608,7 @@ label __stay:
 
     scene black
     with fade
-    $ renpy.music.play("sound/music/To-the-Ends", if_changed=True)
+    $ renpy.music.play("To-the-Ends", if_changed=True)
     centered "{size=+10}Next morning{/size}"
     scene mansion bedroom
     with fade
@@ -691,7 +691,7 @@ label __not_quite:
     centered "{size=+10}One hour later...{/size}"
     scene town square dark
     with fade
-    show froggy with dissolve
+    show froggy talking with dissolve
 
     froggy talking "... And that, my dear citizens, was all I had to say. Are there any questions?"
     hide froggy
