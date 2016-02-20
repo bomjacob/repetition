@@ -172,7 +172,7 @@ label __no_help:
 
     show wolves normal at right with dissolve
 
-    extend "Out of the bush appeared five large, black wolves, snarling menacingly, with their teeth bared, and their eyes fixed on me."
+    extend "Out of the bush appeared three large, grey wolves, snarling menacingly, with their teeth bared, and their eyes fixed on me."
     me "E-... Easy now... I'm sure we can work this out, yes...?"
     "My plea was answered by a sharp bark from the foremost wolf, followed up by barks from the four others behind it. {w}I was about to turn around and make a run for it, when the wolves finally decided to jump at me."
     me "B-... Blood?... Is this... My blood?..."
