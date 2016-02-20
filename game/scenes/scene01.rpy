@@ -93,12 +93,7 @@ label __back_home:
     show cubey cubey at left:
         yoffset -50
         zoom 0.3
-        1.0
-        linear 0.3 zoom 0.35
-        1.0
-        linear 0.3 zoom 0.40
-        1.0
-        linear 0.3 zoom 0.45
+        easein_cubic 20 zoom 0.75
     "The cube seemed to move towards me, getting ever so slightly closer, every time I blinked."
 
     "The companion cube was getting awfully close now. A hollow noise resounded as my back hit the wall."
