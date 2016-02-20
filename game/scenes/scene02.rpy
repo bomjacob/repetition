@@ -245,6 +245,7 @@ label __good_storyboard:
     "We were suddenly interrupted by an evil cackle. A ghotly voice came from behind us."
     show ghost appear at left
     ghost "There you are..."
+    play music "Day-of-Chaos"
     scene town2 frosty_playground
     with dissolve
     show ghost happy at left
@@ -286,6 +287,7 @@ label __rippartridge:
 
 label __perspective:
     $ save_name = _("Perspectives.")
+    play music "Carefree"
     scene town2 palms
     with fade_scene
 
@@ -416,6 +418,7 @@ label __good_editing:
     jump __ghost
 
 label __ghost:
+    play music "Water-Prelude"
     scene town2 foggy_palms
     with dissolve
     "Before I could say anymore, a thick fog started rolling in from the seas."
@@ -426,13 +429,14 @@ label __ghost:
     fox "No need to tell me twice!"
     hide fox with dissolve
 
-    if __deadsquirrel >0:
+    if __deadsquirrel > 0:
         jump __ripsquirrel
     else:
         jump __post
 
 label __ripsquirrel:
     $ save_name = _("RIP squirrel.")
+    play music "Volatile-Reaction" fadein 5
     "As we ran, I suddenly noticed that the squirrel wasn't following us."
     show squirrel hmm at right with dissolve
     me "Come on, squirrel!"
@@ -481,6 +485,7 @@ label __ripsquirrel:
 
 label __post:
     $ save_name = _("Post production")
+    play music "Teller-of-the-Tales"
     scene town2 underpass
     with fade_scene
     $ __wrongfox = 0
@@ -561,6 +566,8 @@ label __good_pr:
     ghost "I have returned, sinners!"
     "It poked its head out of the ceiling before floating down to eye-level."
 
+    play music "Not-As-It-Seems"
+
     if __wrongfox > 0:
         jump __ripfox
     else:
@@ -604,6 +611,7 @@ label __deciding:
 
 label __noone_lives:
     $ save_name = _("Uhmm.. that dragon looks mad.")
+    play music "Oppressive-Gloom"
     ghost "I have done all I came to do. At first, I considered whether you were sinful, too. But I have gotten my vengeance for now. I have other, more important places to be."
     "I looked at the discarded body of the fox."
     me "What do I do now..."
@@ -637,6 +645,7 @@ label __noone_lives:
 
 label __someone_lives:
     $ save_name = _("I ain't afaid a no ghost.")
+    play music "Day-of-Chaos"
     "The ghost stared me in the eyes."
     ghost meh "I have observed you! And I have decided that you too are a sinner!"
     "The ghost seemed to grin evilly."
@@ -700,6 +709,7 @@ label __someone_lives:
 
 label __everyone_lives:
     $ save_name = _("Convincing a ghost.")
+    play music "BGM002"
     me "Who are you calling sinners? Haven't you seen that these people have learnt from their mistakes? I'm sure they'll produce a fantastic movie now, if only you let them!"
     "The ghostly being seemed to ponder over this for a while."
     ghost "Are you absolutely sure that you will not commit a crime of this scale against mankind again?"
