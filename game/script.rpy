@@ -24,7 +24,7 @@ init python:
         lengths = [4, 3, 3]
         for i in range(lengths[version]):
             renpy.show('overlay dead ' + str(version) + ' ' + str(i))
-            renpy.sound.play('sound/fx/blood_drip.ogg')
+            renpy.sound.play('blood_drip')
             renpy.with_statement(trans=shake)
             renpy.pause((5-i) / 3)
 

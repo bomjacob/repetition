@@ -1,6 +1,6 @@
 label scene02:
     $ save_name = _("Driving with a sloth.")
-    play music "sound/music/Twisted.ogg"
+    play music "Twisted"
     scene dusty_road
     with fade_scene
     "I walked along a dusty asphalt road."
@@ -55,6 +55,7 @@ label scene02:
 
 label __cafe:
     $ save_name = _("Film crew?")
+    play music "Spy-Glass"
     scene town2 cafe
     with fade_scene
     show fox talking_normal at center with dissolve

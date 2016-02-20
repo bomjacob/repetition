@@ -184,11 +184,11 @@ init -1 python hide:
 
     ## A sample sound that can be played to check the sound volume.
 
-    config.sample_sound = "sound/fx/click.ogg"
+    config.sample_sound = "click"
 
     ## Music that is played while the user is at the main menu.
 
-    config.main_menu_music = "sound/music/KK--Love-Song.ogg"
+    config.main_menu_music = "KK--Love-Song"
 
 
     #########################################
@@ -280,6 +280,9 @@ init -1 python hide:
         s = s.replace('...', u'\u2026') # ellipsis
         return s
     config.replace_text = replace_text
+
+    renpy.music.register_channel('music', mixer='music', loop=True, file_prefix="sound/music/", file_suffix=".ogg", tight=True)
+    renpy.music.register_channel('sound', mixer='sfx', loop=False, file_prefix="sound/fx/", file_suffix=".ogg", tight=True)
 
     #########################################
     ## This is the name of the directory where the game's data is
