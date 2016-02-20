@@ -152,19 +152,19 @@ label __dragons_exist:
         show lilly sad with dissolve
         "As I turned around, I was greeted by a familiar sight."
         me "Lilly! What are you doing here?"
-        lilly "I... Was looking for you."
-        me "Oh?... What's wrong?"
-        lilly "A warning for you, [name]. Shortly after you left, a dragon attacked our town. It called itself \"Magenta\", and it claimed to be looking for you..."
-        me "Me? Why would a dragon be looking for me?"
-        lilly "Of that, I am not aware. I traveled away from my town with the hopes of warning you in time. I pray that this dragon does not get its claws on you."
-        me "Hopefully it won't. Thank you for the warning, though."
-        "Lilly lowered her head."
+        lilly "I was looking for... Groceries for the master."
+        me "All the way out here?"
+        lilly "The master was looking for some... Specific wares that are not easy to come by. I decided to look for good crime novels since I'm here anyways. It is the only way of keeping boredom at bay, that I have found to be pleasurable."
+        me "Oh? Well, it is nice to see that you are doing well."
+        lilly "Likewise, [name]. Now, if you would excuse me, I still have errands to run for the master."
+        me "Thanks for coming by."
         lilly "It was my pleasure."
         hide lilly with dissolve
         "With this, the crane walked away, leaving us behind."
         show yen talking with dissolve
-        raccoon "Did that lady just mention dragons?"
-        me "I think she did. But we shouldn't talk about that now. We have other things to do!"
+        raccoon "Who was that lady?"
+        me "She's just a person I met earlier in my travels. But we shouldn't talk about that now. We have other things to do!"
+        raccoon "Yeah!"
     else:
         show yen talking with dissolve
     me "So why don't you tell me a bit about your assignment?"
