@@ -174,7 +174,11 @@ label __dragons_exist:
 label __code:
     raccoon "Okay... Then, uhhmm, I have this code that I wrote up that I wanted to get to work, but it didn't really work..."
     me "Could you show it to me?"
-    jump __code_show
+    show overlay bad_html:
+        xalign 0.5
+        yalign 0.5
+    raccoon "Sure!"
+    hide overlay
     me "Hmm... You're on the right track, but there are a few things you might want to fix..."
     
     while True:
