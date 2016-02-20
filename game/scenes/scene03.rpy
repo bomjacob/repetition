@@ -246,11 +246,18 @@ label __colours:
     menu:
         "How are links made in HTML?"
         "The a tag.":
+            $ web_total += 1
+            ""
         "The l tag.":
+            ""
         "The link tag.":
+            ""
         "The anchor tag.":
+            ""
         "The p tag.":
+            ""
         "The pointer tag.":
+            ""
     raccoon "Okay, that was all I needed I think. Thank you, sirmissperson!"
     me "It's okay, I'm happy to help. Oh, and I have a name."
     raccoon "What would that be?"
@@ -261,7 +268,7 @@ label __colours:
     me "Sure."
 
     scene school hallway
-    "While NAME was talking with her teacher, I looked at a bulletin board."
+    "While Yen was talking with her teacher, I looked at a bulletin board."
     "A poster with the title \"Dragons are real!\" was hanging there, probably from an earlier assignment. It looked a bit like a PSA."
     "The little raccoon hopped back towards me, apparently done with talking with her teacher."
     me "How long have you been running this campaign?"
@@ -274,7 +281,7 @@ label __toowrong:
     "A loud \"thump\" could be heard, almost as if something had landed on the roof."
     raccoon "We should go investigate!"
     me "I'm really not sure that's a wise id-..."
-    "NAME grabbed my shirt and dragged me along, leaving me little room for objection."
+    "Yen grabbed my shirt and dragged me along, leaving me little room for objection."
     scene school roof
     "As soon as we rushed out the door, we were greeted by two bright eyes, staring at us intently."
     show magenta talking at right
@@ -288,7 +295,7 @@ label __toowrong:
     unknown "You think that YOU, a little MIDGET can command me around, the mighty MAGENTA?"
     magenta annoyed_talking "DIE, mortal!"
     show magenta annoyed
-    "The dragon, who had dubbed herself \"Magenta\", lowered her clawed hand, piercing the chest of NAME with a sharp claw.{w} The raccoon gurgled, depserately trying to breathe, but instead she found blood spilling out from her mouth."
+    "The dragon, who had dubbed herself \"Magenta\", lowered her clawed hand, piercing the chest of Yen with a sharp claw.{w} The raccoon gurgled, depserately trying to breathe, but instead she found blood spilling out from her mouth."
     "She looked to me with a desperate look in her eyes, trying to say something... But no intelligible sounds escaped her mouth."
     me "Y-you... You monster! What did she do to-"
     magenta annoyed_talking "SILENCE, mortal! You lesser races have NO RIGHT to speak to me! I do AS I PLEASE."
@@ -304,7 +311,7 @@ label __toowrong:
     show magenta annoyed
     "Magenta looked around at the city, several armored cars encroaching on her position."
     magenta annoyed_talking "I should probably get out of here."
-    "With that said, Magenta spread her large bat-like wings and took off, leaving behind the bodies of NAME and [name]."
+    "With that said, Magenta spread her large bat-like wings and took off, leaving behind the bodies of Yen and [name]."
     jump you_dead
 
 label __semicorrect:
