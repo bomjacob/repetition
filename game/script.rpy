@@ -72,7 +72,7 @@ label start:
 
 label tutorial_ask:
     menu:
-        "Would you like to play the tutorial? It is recommeded, if you have never played a visual novel before."
+        "Would you like to play the tutorial? It is recommended, if you have never played a visual novel before."
     
         "Yes, a tutorial sounds good.":
             jump tutorial
@@ -115,9 +115,9 @@ label naming:
 label tutorial:
     $ save_name = _("Tutorial")
     "Hello! Welcome to this Virtual Novel. What is a virtual novel, you may ask?\n{image=tutorial_ctc}"
-    "Well, according to wikipedia:\nA visual novel is an interactive game, featuring mostly static graphics, most often using anime-style art or occasionally live-action stills (and sometimes video footage). As the name might suggest, they resemble mixed-media novels.\nRead more: {a=https://en.wikipedia.org/wiki/Visual_novel}en.wikipedia.org/wiki/Visual_novel{/a}\n{image=tutorial_ctc}"
+    "Well, according to Wikipedia:\nA visual novel is an interactive game, featuring mostly static graphics, most often using anime-style art or occasionally live-action stills (and sometimes video footage). As the name might suggest, they resemble mixed-media novels.\nRead more: {a=https://en.wikipedia.org/wiki/Visual_novel}en.wikipedia.org/wiki/Visual_novel{/a}\n{image=tutorial_ctc}"
 
-    "Controls are quite simple. LEFT CLICK is used to advance dialouges. If, when all text is displayed, {image=ctc_small} is shown, it will advance to next page and remove all current text. If not, more text will appear on the screen, once you click again. If you're ever in doubt which button to press, it is probably LEFT CLICK."
+    "Controls are quite simple. LEFT CLICK is used to advance dialogues. If, when all text is displayed, {image=ctc_small} is shown, it will advance to next page and remove all current text. If not, more text will appear on the screen, once you click again. If you're ever in doubt which button to press, it is probably LEFT CLICK."
     "LEFT CLICK is also used to select options in menus.{w} Try it now!{nw}"
     menu:
         "LEFT CLICK is also used to select options in menus. Try it now!{fast}\nDo you understand everything so far?"
@@ -130,10 +130,10 @@ label tutorial:
 
 label tutorial_part_2:
     "Then let's promptly continue."
-    "Press RIGHT CLICK or ESC anytime while in-game, to acess the game-menu. From here you can save (the default), load, quit, or open the help document."
+    "Press RIGHT CLICK or ESC anytime while in-game, to access the game-menu. From here you can save (the default), load, quit, or open the help document."
     if renpy.in_rollback():
         jump tutorial_part_3
-    "In the game-menu you will also find the game's prefrences. From there you can switch between fullscreen and windowed mode, change volume levels, change text speed and much much more."
+    "In the game-menu you will also find the game's preferences. From there you can switch between fullscreen and windowed mode, change volume levels, change text speed and much much more."
     if renpy.in_rollback():
         jump tutorial_part_3
     "This game uses a powerful engine known as Ren'Py. Ren'Py comes with a special mechanic called \"{i}rollback{/i}\" which allows to player to go \"back in time\" in terms of the game. PGUP or mousewheel up will go back in time, while PGDN or mousewheel down will go forward, if you've already gone backwards. Try it now!"

@@ -6,7 +6,7 @@ label scene02:
     "I walked along a dusty asphalt road."
     "..."
     "Was that a car I could hear in the distance?"
-    "I looked around to orient myself. True enough, a red car was about to drive by. I raised a thumb, in the hopes that the driver was kind enough to pick up a stray soul." #Can you say true enough? Isn't it sure enough?
+    "I looked around to orient myself. Sure enough, a red car was about to drive by. I raised a thumb, in the hopes that the driver was kind enough to pick up a stray soul."
     "The car didn't seem to slow down at all. {w}I had almost lost hope."
     "Then the driver stopped."
     show sloth neutral with dissolve
@@ -389,7 +389,7 @@ label __editing:
         "Okay, I'll give you this one.":
             squirrel "What do you mean, \"give me this one\"?"
             me "Uhh, don't worry about it."
-            "The squirrel seemed skeptical."
+            "The squirrel seemed sceptical."
             jump __ghost
 
     menu:

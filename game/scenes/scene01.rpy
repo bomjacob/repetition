@@ -24,7 +24,7 @@ label scene01:
     $ renpy.pause(5)
     "And in their absence, he has cared for me in his mountaintop home. He has taught me everything I know.{w} While his house might seem out of the way at first, it is actually a technological heaven.{w} He specialises in a subject known as \“Communication and IT\”."
 
-    "He really is an amazing person!{cps=1}...{/cps} Or should I say \“was\”.."
+    "He really is an amazing person!{cps=1}...{/cps} Or should I say {i}was{/i}..."
 
     hide book with dissolve
     centered "{size=+10}This is where my story begins.{/size}"
@@ -51,7 +51,7 @@ label scene01:
     play sound "flashback"
     scene sensei_room_flashback
     with flash
-    sensei "With the power of communication/IT we can do {i}everything!{/i}" #Maybe add some art here...
+    sensei "With the power of communication/IT, we can do {i}everything!{/i}" #Maybe add some art here...
     scene sensei_room
     with flash
 
@@ -137,7 +137,7 @@ label __adventure:
     froggy talking "I am called Froggy! I am the mayor of this small town."
     froggy "Being a small town as this is, I can't say that we have any hotels or the likes. Sorry to disappoint you."
     me "No, it's okay. I suppose I should be on my way, then?"
-    froggy "W-wait a second! Actually, there is something I could use a second opinion on. Would you mind staying for a bit, helping out a mayor in need?"
+    froggy "W-wait a second! Actually, I could use a second opinion on something. Would you mind staying for a bit, helping out a mayor in need?"
 
     menu:
         "Help Mayor Froggy?"
@@ -474,7 +474,7 @@ label __beforespeech:
     "As the door creaked, I turned my head to see the mayor walk out of his secretary's office with a large stack of posters."
     froggy talking "Minion! Take half, and follow me!"
     hide froggy with dissolve
-    "As he loaded half the stack of posters onto me, I watched him kick the door open and walk off. I wanted to facepalm, had I not been holding a large stack of posters. Also, when did he decide that I'm his minion?! You can't just decide that on your own!"
+    "As he loaded half the stack of posters onto me, I watched him kick the door open and walk off. I wanted to face palm, had I not been holding a large stack of posters. Also, when did he decide that I'm his minion?! You can't just decide that on your own!"
     me "Oh, well... Doesn't look like I have a say in the matter."
     "I hurried after the mayor, that didn't even look back to check whether I was following or not."
 
@@ -560,7 +560,7 @@ label __stay:
     froggy talking "A room should be ready for you now. Follow me!"
     hide froggy with dissolve
     scene mansion hallway_night with fade_scene
-    "I wordlessly followed the mayor as we walked up some winding stairs, and unto the second floor. Walking past several closed doors, he finally stopped."
+    "I wordlessly followed the mayor as we walked up some winding stairs, and onto the second floor. Walking past several closed doors, he finally stopped."
     scene mansion bedroom with fade_scene
     show froggy not_talking with dissolve
     froggy talking "This will be your room. If you need anything, my secretary is at the end of the hallway."
@@ -778,7 +778,7 @@ label __dragon_eat:
     "Magenta raised a clawed hand, effortlessly picking me up from the ground. My attempts in getting out of her grasp only resulted in her tightening her grip. She then raised her other hand, now resting on her hind legs, and placed her thumb and forefinger on each side of my head."
     magenta annoyed_talking "Goodnight. Ant."
     show magenta annoyed
-    "The enourmous pressure on my head was overwhelming, as it felt like my eyes would pop out. She slowly pressed harder. I didn't even realise that I was screaming."
+    "The enormous pressure on my head was overwhelming, as it felt like my eyes would pop out. She slowly pressed harder. I didn't even realise that I was screaming."
     $ die(0)
     "Magenta licked the remaining blood of her fingers, as she threw my headless body to the side."
     magenta annoyed_talking "I had expected more excitement from chasing this one. Oh, well. Time to find some other place to wreak havoc."
