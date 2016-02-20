@@ -43,19 +43,19 @@ init python:
         (_('Lead Handyman'), ('Nick Zhu',)),
         (_('Assets'), (
             (_('Background'), (
-                'mugenjohncel on lemmesoft.renai.us',
-                'hellohello.dousetsu.com/free_material.html'
+                _('mugenjohncel on lemmesoft.renai.us'),
+                _('hellohello.dousetsu.com/free_material.html')
             )),
             (_('Sound and Music'), (
-                'Various SFX from www.freesound.org',
-                'www.newgrounds.com/audio/listen/665861',
-                'www.newgrounds.com/audio/listen/668009',
-                '2 and 10 on BGM 9 by ASOBEAT',
-                'Various BGM from pianosdauge.org/BGM/list.html',
-                '\nImpending Boom, First Call, Unity, Not As It Seems, On the Cool Side, Investigations, Spy Glass, Twisted, Oppressive-Gloom, Arcadia, Water Prelude, Teller of the Tales, Take a Chance, To the Ends, Volatile Reaction and Looping String, Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 3.0 License\nhttp://creativecommons.org/licenses/by/3.0/'
+                _('Various SFX from www.freesound.org'),
+                _('www.newgrounds.com/audio/listen/665861'),
+                _('www.newgrounds.com/audio/listen/668009'),
+                _('2 and 10 on BGM 9 by ASOBEAT'),
+                _('Various BGM from pianosdauge.org/BGM/list.html'),
+                _('\nImpending Boom, First Call, Unity, Not As It Seems, On the Cool Side, Investigations, Spy Glass, Twisted, Oppressive-Gloom, Arcadia, Water Prelude, Teller of the Tales, Take a Chance, To the Ends, Volatile Reaction and Looping String, Kevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 3.0 License\nhttp://creativecommons.org/licenses/by/3.0/')
             )),
             (_('Other'), (
-                '{size=-5}Letter:{/size}\nwww.flickr.com/photos/playingwithpsp/2546732435',
+                _('{size=-5}Letter:{/size}\nwww.flickr.com/photos/playingwithpsp/2546732435'),
             ))
         )),
         (_('Engine'), ("\n".join(str.split(renpy.version())),))
