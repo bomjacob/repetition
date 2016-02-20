@@ -1,4 +1,3 @@
-​
 label scene03:
     scene school bike
     "I looked up at the many tall buildings. This would be my final stop before the capital. For a moment I wondered why I was going to the capital in the first place. But then I remembered that my sensei once had said in a drunken haze, that it was where my parents grew up. So I wanted to see this capital for myself."
