@@ -673,7 +673,7 @@ label __someone_lives:
         me "Thank you mister sloth!"
         sloth "I have a name, you know..."
         "I smiled sheepishly at the sloth. I had totally forgotten his name."
-        sloth "At any rate, I'm sorry I got you into this mess, traveler."
+        sloth "At any rate, I'm sorry I got you into this mess, traveller."
         me "You can repay me by showing me the way north! I'm going to the capital, after all."
         sloth "Are you sure you would not like me to drive you there?"
         me "No, it's okay. I'm starting to like this fresh air. It's weird."
