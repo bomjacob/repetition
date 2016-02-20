@@ -136,4 +136,67 @@ label __totallyinteresting:
     jump __dragons_exist
 
 label __dragons_exist:
-    "Stuff happens."
+    "We went to the library, and found an out-of-the-way table to sit by."
+    me "So why don't you tell me a bit about your assignment?"
+    "She found her tablet again, and showed me the current version of the website."
+    raccoon "I was wondering a bit about the layout... It's about webdesign, after all... How do you make a good layout?"
+    me "Well, a good layout should be..."
+    menu:
+        "How should the layout be?"
+        "Simple, not too cluttered.":
+            raccoon "That makes sense..."
+        "Do as google. Almost nothing but empty space!":
+            raccoon "But... Where will I put all of my content?"
+        "Try to fit as much as possible in one page.":
+            raccoon "Won't it be difficult then to find what I'm looking for?..."
+    raccoon "Okay, I think I know what I should be doing now... So how do I make people notice my website? I want to spread the word!"
+    me "Have you heard about \"SEO\"?"
+    "NAME shook her head."
+    raccoon "Nope. What is it?"
+    menu:
+        me "Well, \"SEO\" stands for..."
+        "Search Engine Optimists":
+            raccoon "Everyone loves an optimist!"
+        "Search Engine Orbiting":
+            raccoon "Isn't orbiting a space thing?"
+        "Search Engine Optimization":
+            raccoon "So what does that mean?"
+            me "It means that you put some tags on your website that helps people find it."
+        "Surviving Electronically Online":
+            raccoon "Surviving is good."
+        "Surviving Electronically On-time":
+            raccoon "Surviving is good."
+    raccoon "So... That actually works?"
+    me "Yeah! I'm sure people will notice your website in no time."
+    raccoon "Okay... Then, uhhmm, I have this code that I wrote up that I wanted to get to work, but it didn't really work..."
+    me "Could you show it to me?"
+    raccoon "Sure!"
+    show overlay bad_html:
+    xalign 0.5
+    yalign 0.5
+    me "Hmm... You're on the right track, but there are a few things you might want to fix..."
+    hide overlay
+    menu:
+        "What {i}three{/i} things need to be changed to make a functional website?"
+        "It needs a <!DOCTYPE html>":
+        "It needs a return (as in ENTER) after <body>":
+        "Big is not a html tag.":
+        "Head should be before body.":
+        "It needs CSS (styling) to work.":
+        #you handle this damnit
+    raccoon "Oh... Uhh, okay... I don't know much about this stuff, so thanks."
+    me "It's okay! Now then, have you thought about styling?"
+    raccoon "Well, I have these colours that I wrote down when we had colour theory... I think I sort of get it, but maybe it would be a good idea to let you look through them..."
+    menu:
+        "Which of these colours is not a valid colour?"
+        "#FFF":
+        "#FFFFFF":
+        "hsl(255, 23, 4)":
+        "hsla(1, 45, 34, 2)":
+        "rgb(3, 5, 7)":
+        "rgba(6, 234, 56, 25)":
+        "hsv(28, 186, 43)":
+        "hsva(89, 43, 23, 4)":
+        #Maybe remove the ones you're uncertain about?
+    raccoon "So I should stick with these other ones instead? Okay..."
+    me "The rest of them should work, yeah."
