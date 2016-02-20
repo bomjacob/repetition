@@ -276,15 +276,15 @@ label __colours:
     me "Well, I can see that you have worked with tags. To refer to another website, you just need to use the proper tag, which is..."
     menu:
         "How are links made in HTML?"
-        "The a tag.":
-            $ web_total += 1
-            raccoon "But how does that make sense?"
-            me "Don't ask me, it just does."
         "The l tag.":
             me "See, it stands for \"link\"! It's smart."
             raccoon "I don't remember it being {i}that{/i} straightforward."
         "The link tag.":
             raccoon "Aren't tags usually shorter?..."
+        "The a tag.":
+            $ web_total += 1
+            raccoon "But how does that make sense?"
+            me "Don't ask me, it just does."
         "The anchor tag.":
             raccoon "But I don't want to anchor anything..."
         "The p tag.":

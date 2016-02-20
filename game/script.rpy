@@ -12,7 +12,7 @@ init:
     define squirrel = Character(name="Squirrel", who_color="#B89067", image="squirrel", ctc="ctc_blink", ctc_position="fixed")
     define partridge = Character(name="Partridge", who_color="#A43023", image="partridge", ctc="ctc_blink", ctc_position="fixed")
     define fox = Character(name="Fox", who_color="#F295CA", image="fox", ctc="ctc_blink", ctc_position="fixed")
-    define ghost = Character(name="Ghost of Bad Filmmaking", who_color="#F3F6FB", image="ghost", ctc="ctc_blink", ctc_position="fixed")
+    define ghost = Character(name="Ghost of Bad Film Making", who_color="#F3F6FB", image="ghost", ctc="ctc_blink", ctc_position="fixed")
     define sloth = Character(name="As of Yet Unnamed Sloth", who_color="#F0AE2E", image="sloth", ctc="ctc_blink", ctc_position="fixed")
     define raccoon = Character(name="Yen", who_color="#FFF", image="yen", ctc="ctc_blink", ctc_position="fixed")
 
