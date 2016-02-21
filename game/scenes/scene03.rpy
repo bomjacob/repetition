@@ -271,7 +271,7 @@ label __colours:
     me "It's okay! Now then, have you thought about styling?"
     raccoon "Well, I have these colours that I wrote down when we had colour theory... I think I sort of get it, but maybe it would be a good idea to let you look through them..."
     menu:
-        "Which of these colours is not a valid colour?" #Can you add some dialogue? And yeah two are wrong (so correct), but that doesn't matter
+        "Which of these colours is not a valid colour?"
         "#FFF":
             raccoon "Oh... I thought that was allowed to be used here..."
         "#FFFFFF":
@@ -291,7 +291,7 @@ label __colours:
             $ web_total += 1
             raccoon "This was one of the ones I was unsure about, too... I just added it as a precaution."
     raccoon "So I should stick with these other ones instead? Okay..."
-    me "The rest of them should work, yeah." # Maybe change this, due to the whole 2 out of 8 doesn't work, yet you only select 1 thing xD
+    me "The rest of them should work, yeah."
 
     $ save_name = _("Links")
 
