@@ -1,0 +1,2 @@
+*.rpy linguist-language=renpy
+game/ui/fonts/* linguist-vendored
