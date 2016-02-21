@@ -60,10 +60,6 @@ label scene04:
             "Many to none"if not comm_asked['manynone']:
                 magenta "... And?"
                 $ comm_asked['manynone'] = True
-            "Many to one"if not comm_asked['manyone']:
-                magenta "... And?"
-                $ comm_asked['manyone'] = True
-                $ comm_correct += 1
             "One to everyone"if not comm_asked['oneeveryone']:
                 magenta "... And?"
                 $ comm_asked['oneeveryone'] = True
