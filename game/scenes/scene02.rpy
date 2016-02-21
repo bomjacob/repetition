@@ -12,11 +12,13 @@ label scene02:
     "Then the driver stopped."
     show sloth neutral with dissolve
     "The driver was a sloth, wearing a sheriff's badge. He looked expectantly at me."
-    sloth talking "So? Are you going to hop in, or what?"
+    show sloth talking
+    unknown "So? Are you going to hop in, or what?"
     "Barely believing my luck, I nodded voicelessly, and opened the door to get in. Starting the car again, the sloth began speaking to me."
+    sloth "The name's Jeremy, by the way."
 
     menu:
-        sloth "What's a person like you doing around these parts then?"
+        sloth "So what's a person like you doing around these parts?"
         "I'm just passing by":
             sloth "Oh? Well, in that case, we're nearing the city where I live, Pollyhoot city. If you would like, I could tell you about some points of interest?"
             me "Sure! I might as well, since I have nothing better to do."
@@ -31,12 +33,12 @@ label scene02:
 
             scene town2 red_houses
             with fade_scene
-            show sloth neutral with fade
+            show sloth neutral with dissolve
             "About twenty minutes later, we arrived at a set of red wooden houses."
             sloth talking "This is where they film! Go to the second hut on the right, and they should be in there."
             me "Thank you for the ride, sir sloth."
-            sloth "Please, call me NAME."
-            me "Okay, NAME. I hope I can repay the favour sometime."
+            sloth "The name's Jeremy, remember?"
+            me "Okay, Jeremy. I hope I can repay the favour sometime."
             sloth "Don't worry about it! Though if you do get time, I'm at the police station."
             "I exited the car and waved goodbye to the sloth sheriff."
             hide sloth with dissolve
