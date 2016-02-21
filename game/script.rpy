@@ -46,6 +46,8 @@ init python:
     def die(version=0):
         renpy.music.stop(fadeout=2)
         lengths = [4, 3, 3]
+        if version == -1:
+            version = random.randint(0,len(lengths)-1)
         for i in range(lengths[version]):
             renpy.show('overlay dead ' + str(version) + ' ' + str(i))
             renpy.sound.play('blood_drip')
