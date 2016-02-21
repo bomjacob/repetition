@@ -157,63 +157,63 @@ label __round8:
     magenta "Trick question. That is mostly subjective, since the thing you base your judgement on is most likely bias."
     magenta "Well... Let's have one final question. I have made this one very difficult. Night impossible, some might say.{w} You will answer correctly through sheer luck, or I will prove that the outside intervention truly is impossible to fight."
     
-    evil = EvilClass()
-    correct_asnwer = renpy.random.radint(0,12)
+    $ evil = EvilClass()
+    $ correct_asnwer = renpy.random.radint(0,12)
     while True:
         menu:
             magenta "What... Was I going to name my child that never hatched?"
             "Terror" if not 'terror' in evil.asked:
                 if correct_answer == 0:
                     jump __youwin
-                evil.asked['terror'] = True
+                $ evil.asked['terror'] = True
             "Purple" if not 'purple' in evil.asked:
                 if correct_answer == 1:
                     jump __youwin
-                evil.asked['purple'] = True
+                $ evil.asked['purple'] = True
             "Menace" if not 'menace' in evil.asked:
                 if correct_answer == 2:
                     jump __youwin
-                evil.asked['menace'] = True
+                $ evil.asked['menace'] = True
             "Cyan" if not 'cyan' in evil.asked:
                 if correct_answer == 3:
                     jump __youwin
-                evil.asked['cyan'] = True
+                $ evil.asked['cyan'] = True
             "Deathwing" if not 'deathwing' in evil.asked:
                 if correct_answer == 4:
                     jump __youwin
-                evil.asked['deathwing'] = True
+                $ evil.asked['deathwing'] = True
             "Mint" if not 'mint' in evil.asked:
                 if correct_answer == 5:
                     jump __youwin
-                evil.asked['mint'] = True
+                $ evil.asked['mint'] = True
             "Banana" if not 'banana' in evil.asked:
                 if correct_answer == 6:
                     jump __youwin
-                evil.asked['banana'] = True
+                $ evil.asked['banana'] = True
             "Skywalker" if not 'skywalker' in evil.asked:
                 if correct_answer == 7:
                     jump __youwin
-                evil.asked['skywalker'] = True
+                $ evil.asked['skywalker'] = True
             "Yellow" if not 'yellow' in evil.asked:
                 if correct_answer == 8:
                     jump __youwin
-                evil.asked['yellow'] = True
+                $ evil.asked['yellow'] = True
             "Saphira" if not 'saphira' in evil.asked:
                 if correct_answer == 9:
                     jump __youwin
-                evil.asked['saphira'] = True
+                $ evil.asked['saphira'] = True
             "Onyx" if not 'onyx' in evil.asked:
                 if correct_answer == 10:
                     jump __youwin
-                evil.asked['onyx'] = True
+                $ evil.asked['onyx'] = True
             "Alduin" if not 'alduin' in evil.asked:
                 if correct_answer == 11:
                     jump __youwin
-                evil.asked['alduin'] = True
+                $ evil.asked['alduin'] = True
             "Fey" if not 'fey' in evil.asked:
                 if correct_answer == 12:
                     jump __youwin
-                evil.asked['fey'] = True
+                $ evil.asked['fey'] = True
         jump __ripme
 
 label __youwin:
