@@ -81,7 +81,7 @@ init:
         pause 5.0
         Text(_("Left Click to continue."))
 
-    image ghost appear:
+    image ghost appear full:
         on show:
             "img/characters/ghost/0.png"
             pause 0.2
@@ -91,21 +91,42 @@ init:
             pause 0.2
             "img/characters/ghost/4.png"
             pause 0.2
-
-    image ghost appear full:
-        contains "ghost appear"
         "img/characters/ghost/full.png"
 
     image ghost appear meh:
-        contains "ghost appear"
+        on show:
+            "img/characters/ghost/0.png"
+            pause 0.2
+            "img/characters/ghost/1.png"
+            pause 0.2
+            "img/characters/ghost/3.png"
+            pause 0.2
+            "img/characters/ghost/4.png"
+            pause 0.2
         "img/characters/ghost/meh.png"
 
     image ghost appear happy:
-        contains "ghost appear"
+        on show:
+            "img/characters/ghost/0.png"
+            pause 0.2
+            "img/characters/ghost/1.png"
+            pause 0.2
+            "img/characters/ghost/3.png"
+            pause 0.2
+            "img/characters/ghost/4.png"
+            pause 0.2
         "img/characters/ghost/happy.png"
 
     image ghost appear fire:
-        contains "ghost appear"
+        on show:
+            "img/characters/ghost/0.png"
+            pause 0.2
+            "img/characters/ghost/1.png"
+            pause 0.2
+            "img/characters/ghost/3.png"
+            pause 0.2
+            "img/characters/ghost/4.png"
+            pause 0.2
         "img/characters/ghost/fire.png"
 
     transform flip:
