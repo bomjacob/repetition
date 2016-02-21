@@ -69,7 +69,7 @@ label scene04:
             "One to one"if not comm_asked['oneone']:
                 $ comm_asked['oneone'] = True
                 $ comm_correct += 1
-        
+
         if comm_asked['manymany'] and comm_asked['onemany'] and comm_asked['oneone']:
             $ comm_total += (comm_asked_i - comm_correct)
             if comm_total > 0:
@@ -156,7 +156,7 @@ label __round8:
     magenta "Well... Let's have one final question. I have made this one very difficult. Night impossible, some might say.{w} You will answer correctly through sheer luck, or I will prove that the outside intervention truly is impossible to fight."
     
     $ evil = EvilClass()
-    $ correct_asnwer = renpy.random.radint(0,12)
+    $ correct_answer = renpy.random.radint(0,12)
     while True:
         menu:
             magenta "What... Was I going to name my child that never hatched?"
