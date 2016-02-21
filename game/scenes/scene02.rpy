@@ -1,9 +1,10 @@
 label scene02:
+    $ renpy.pause(2)
     $ save_name = _("A cool sloth")
     play music "Twisted"
     scene dusty_road
     with fade_scene
-    "I walked along a dusty asphalt road."
+    "I walked along a dusty dirt road."
     "..."
     "Was that a car I could hear in the distance?"
     "I looked around to orient myself. Sure enough, a red car was about to drive by. I raised a thumb, in the hopes that the driver was kind enough to pick up a stray soul."
@@ -11,11 +12,13 @@ label scene02:
     "Then the driver stopped."
     show sloth neutral with dissolve
     "The driver was a sloth, wearing a sheriff's badge. He looked expectantly at me."
-    sloth talking "So? Are you going to hop in, or what?"
+    show sloth talking
+    unknown "So? Are you going to hop in, or what?"
     "Barely believing my luck, I nodded voicelessly, and opened the door to get in. Starting the car again, the sloth began speaking to me."
+    sloth "The name's Jeremy, by the way."
 
     menu:
-        sloth "What's a person like you doing around these parts then?"
+        sloth "So what's a person like you doing around these parts?"
         "I'm just passing by":
             sloth "Oh? Well, in that case, we're nearing the city where I live, Pollyhoot city. If you would like, I could tell you about some points of interest?"
             me "Sure! I might as well, since I have nothing better to do."
@@ -30,12 +33,12 @@ label scene02:
 
             scene town2 red_houses
             with fade_scene
-            show sloth neutral with fade
+            show sloth neutral with dissolve
             "About twenty minutes later, we arrived at a set of red wooden houses."
             sloth talking "This is where they film! Go to the second hut on the right, and they should be in there."
             me "Thank you for the ride, sir sloth."
-            sloth "Please, call me NAME."
-            me "Okay, NAME. I hope I can repay the favour sometime."
+            sloth "The name's Jeremy, remember?"
+            me "Okay, Jeremy. I hope I can repay the favour sometime."
             sloth "Don't worry about it! Though if you do get time, I'm at the police station."
             "I exited the car and waved goodbye to the sloth sheriff."
             hide sloth with dissolve
@@ -214,7 +217,7 @@ label __storyboard:
     partridge neutral "I would've shown it to you, but our storyboard was too large to carry around."
     me "It sounds like you're planned your story very well, then?"
     partridge sad "We have? I was just talking about the large sign we have, saying \"Story\". What are you talking about?"
-    me "Sign? What exactly do you think a storyboard it?"
+    me "Sign? What exactly do you think a storyboard is?"
     partridge neutral "Exactly what it sounds like! A board that says \"story\"!"
 
     #It's funny and all, but doesn't the perosn say above that they wanted a visual representation of their story so they created a storyboard?
