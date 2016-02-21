@@ -585,17 +585,19 @@ label __stay:
             "I clenched my fist, looking at the door resolutely. Don't try to sneak around? I wondered what secrets the mayor could be hiding."
             scene mansion hallway_night with door_trans
             "Approaching the door carefully, I turned the doorknob and pushed the door ajar, just enough to stick my head out. The lights in the hallway were off, but the moonlight streaming through the windows was more than enough to illuminate the place."
-            "Seeing as there was no one around, I opened the door a bit more, and sneaked my way across the hallway. Standing in front of the door across from mine, I tried to turn the doorknob. {w}The door was locked."
+            "Seeing as there was no one around, I opened the door a bit more, and sneaked my way along the hallway. Standing in front of the door next to mine, I tried to turn the doorknob. {w}The door was locked."
             "Walking along to the next door, I tried my luck here too. {w}This one was locked as well."
             "As I reached the third door, I noticed a peculiar smell. Almost like... Something rotten. I reached for the door when a sharp cough startled me."
             unknown "What do you think you're doing?"
             "I wearily turned my head towards the speaker."
             me "Uhm... I was just looking for the restroom."
             "A crane came into view."
-            show lilly sad
+            show lilly sad with dissolve
             unknown "Oh, really? I suppose you wouldn't mind me showing you back to your room?"
             "I sighed dejectedly. I couldn't really refuse and still play innocent."
             "The crane opened the door to my room, and I reluctantly stepped inside."
+            scene mansion bedroom with fade_scene
+            show lilly sad
             unknown "I believe I haven't introduced myself..."
             lilly "You may refer to me as Lilly. I excuse for the rules my master has imposed on you, but I must ask that you comply. These rules exist for a reason. Can I assume that you will refrain from such actions in the future?"
             "I wanted to ask her about the locked rooms and the weird smell, but something told me that it would be best not to."
@@ -615,7 +617,7 @@ label __stay:
     scene mansion bedroom
     with fade
 
-    "I opened my eyes to see sunlight streaming through the windows."
+    "I slowly regained consciousness."
     me "Sensei?..."
     "Opening my eyes, I saw an unfamiliar ceiling."
     me "Oh... That's right... I'm at the mayor's place."
@@ -678,7 +680,7 @@ label __too_sucessful:
 
 label __not_quite:
     $ save_name = _("Goodbye Froggy")
-    scene town square people
+    scene town square people with fade_scene
     "A small crowd was gathered in the town square. Fewer than I would have liked, but still better than none. In fact, I should have been surprised that any turned up at all, since we only just hung up posters the day before. The mayor cleared his throat, and started his speech."
     froggy talking "Greetings! I am glad to see you, dedicated citizens, that care about our environment."
     hide froggy with dissolve
