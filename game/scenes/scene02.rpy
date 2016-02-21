@@ -102,17 +102,16 @@ label __cafe:
     hide partridge with dissolve
     hide fox with dissolve
     hide squirrel with dissolve
-    show ghost appear
+    show ghost appear full
     "A ghostly laugh went through the walls, seeming to come from all directions. A small light flickered in mid-air. {w}The light flickered again, growing a bit larger. It seemed to rotate around itself, swallowing itself, growing larger and larger until it formed a ghastly shape."
-    show ghost full
     ghost "I have seen your sin! This terrible crime of a movie! I am in disgust!"
     "The ghost seemed to cry out of a strange mix between rage and sadness, the luminescent tears disappearing without a trace as soon as they touched the ground below."
-    ghost fire "I give you this warning! If you do not fix your terrible excuse for a film, this crime against humanity, you will be punished! Nothing less than death will suffice! Now, flee! Tremble in terror and repent! I am a merciful evil!"
+    ghost full "I give you this warning! If you do not fix your terrible excuse for a film, this crime against humanity, you will be punished! Nothing less than death will suffice! Now, flee! Tremble in terror and repent! I am a merciful evil!"
     "The ghost snapped what looked like its fingers, making a small spark appear. The small spark jumped around, hopping from the ghostly shape to the floor, and around the furniture. Everywhere it touched, burst into flames."
 
     scene town2 burning_cafe
     with dissolve
-    show ghost fire
+    show ghost full
 
     "I, who was standing at the entrance, quickly realised what was happening."
     me "Hurry up, guys! If you stay like this, you'll get charred to ash!"
@@ -245,12 +244,12 @@ label __bad_storyboard:
 
 label __good_storyboard:
     "We were suddenly interrupted by an evil cackle. A ghostly voice came from behind us."
-    show ghost appear at left
+    show ghost appear full at left
     ghost "There you are..."
     play music "Day-of-Chaos"
     scene town2 frosty_playground
     with dissolve
-    show ghost happy at left
+    show ghost full at left
     show partridge sad at right
     "A chill ran down my spine, as the air suddenly seemed colder. The playground suddenly started freezing from one end to the other."
     ghost "Flee, flee, flee in horror!"
@@ -423,8 +422,8 @@ label __ghost:
     scene town2 foggy_palms
     with dissolve
     "Before I could say anymore, a thick fog started rolling in from the seas."
-    show ghost appear at left
-    ghost happy "Did someone say \"terrible film making\"?"
+    show ghost appear full at left
+    ghost full "Did someone say \"terrible film making\"?"
     me "Oh no, not again! Let's dash, guys!"
     show fox neutral_sceptic at right with dissolve
     fox "No need to tell me twice!"
@@ -560,8 +559,8 @@ label __bad_pr:
 
 label __good_pr:
     "The voice we had started to anticipate, returned from above."
-    show ghost appear
-    show ghost happy
+    hide fox with dissolve
+    show ghost appear full
     ghost "I have returned, sinners!"
     "It poked its head out of the ceiling before floating down to eye-level."
 
@@ -588,7 +587,7 @@ label __ripfox:
     else:
         me "S-stop! Don't leave me here alone!"
     "The ghost simply laughed."
-    ghost happy "This one... This one deserves it most of all."
+    ghost full "This one... This one deserves it most of all."
     "The ghost raised its spectral hand, clamping it around the fox's throat."
     if film_partridge==0:
         show partridge no at right with dissolve
@@ -728,14 +727,14 @@ label __everyone_lives:
     fox "That was the last straw. I'm done working with you people!"
     "The fox threw her parasol on the floor, walking away with clenched fists."
     hide fox with dissolve
-    show squirrel at left, flip with dissolve
+    show squirrel talking at flip, left with dissolve
     squirrel talking "That sure was something."
     partridge neutral "Stranger, I believe we have never asked for your name?"
     me "I'm [name]! Just passing by."
     partridge hi "Whatever your reason for being here is, we are forever in your debt."
     squirrel happy "Indeed! Now, does anyone feel like calling for a police officer?"
     scene black with fade_scene
-    centered "A moment later..."
+    centered "{size=+10}A moment later...{/size}"
     scene town2 underpass with fade_scene
     me "Oh, hello, mister sloth!"
     sloth "I have a name, you know..."
