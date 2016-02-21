@@ -592,10 +592,12 @@ label __stay:
             "I wearily turned my head towards the speaker."
             me "Uhm... I was just looking for the restroom."
             "A crane came into view."
-            show lilly sad
+            show lilly sad with dissolve
             unknown "Oh, really? I suppose you wouldn't mind me showing you back to your room?"
             "I sighed dejectedly. I couldn't really refuse and still play innocent."
             "The crane opened the door to my room, and I reluctantly stepped inside."
+            scene mansion bedroom with fade_scene
+            show lilly sad
             unknown "I believe I haven't introduced myself..."
             lilly "You may refer to me as Lilly. I excuse for the rules my master has imposed on you, but I must ask that you comply. These rules exist for a reason. Can I assume that you will refrain from such actions in the future?"
             "I wanted to ask her about the locked rooms and the weird smell, but something told me that it would be best not to."
@@ -615,7 +617,7 @@ label __stay:
     scene mansion bedroom
     with fade
 
-    "I opened my eyes to see sunlight streaming through the windows."
+    "I slowly regained consciousness."
     me "Sensei?..."
     "Opening my eyes, I saw an unfamiliar ceiling."
     me "Oh... That's right... I'm at the mayor's place."
