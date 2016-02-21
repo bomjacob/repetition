@@ -21,31 +21,33 @@ label scene04:
     show magenta annoyed
     "I still understood nothing of what the dragon, who had named itself \"Magenta\" said."
     magenta annoyed_talking "But the fact remains that I am the villain in this thing. And you, [name], need to die. I was very close to just killing you outright... But I thought you needed to know why you must die."
-    magenta "It has been my wish to kill you for a long time... Many years, in fact. If only that damnable sensei of yours hadn't kept me away. Oh, do imagine my glee when he showed up at my doorstep. \"Only one of you can live, and I want to save [name]\"...... I believe that he said. Foolish old man."
+    magenta "It has been my wish to kill you for a long time... Many years, in fact. If only that damnable sensei of yours hadn't kept me away. Oh, do imagine my glee when he showed up at my doorstep. \"Only one of you can live, and I want to save [name]\"...... I believe that's what he said. Foolish old man."
     show magenta annoyed
     me "Y-you... Killed..."
     magenta annoyed_talking "Indeed I did, now get over it. I'm not done."
+    show magenta annoyed
     "I found it difficult to speak. A deep-lying rage had buried itself in my throat, clouding my mind as the dragon continued speaking."
-    magenta "I was not always the villain. Those would be your pare-"
+    magenta annoyed_talking "I was not always the villain. Those would be your pare-"
     me "LIES!"
     "Magenta chuckled at me, but not because she was amused."
-    magenta "You have not yet heard my side of the story, yet you do not hesitate to shout lies and deceit as soon as something does not fit your perfect little fantasy.{w} The fact remains, that your parents walked up my mountain... Through this door... And smashed my eggs."
+    magenta "You have not heard my side of the story, yet you do not hesitate to shout lies and deceit as soon as something does not fit your perfect little fantasy.{w} The fact remains, that your parents walked up my mountain... Through this door... And smashed my egg."
     show magenta annoyed
     me "I-..."
     magenta annoyed_talking "Now then, I fully believe in an eye for an eye. And nothing less than your life will satisfy me."
     show magenta annoyed
-    me "You... Killed my parents... Killed my sensei... And that was not enough to quell your rage?"
+    me "You... Killed my parents... Killed my sensei... And that was not enough for you?"
     "Magenta smirked grimly."
-    magenta "You do not understand the heart of a dragon...{w} But I have realised something. No matter how much I kill you, it does not matter. You have someone on your time to whom time is not an obstacle. You can choose no wrong."
+    magenta "You do not understand the heart of a dragon...{w} But I have realised something. No matter how much I kill you, it does not matter. You have someone on your side to whom time is not an issue. You can choose no wrong."
     "The dragon slumped together on the floor."
-    magenta "I was going to let you fight me. But what is the point?... No matter what I do, I cannot hurt the player. If I cannot hurt the player, the piece will never die.{w} And it is with this realisation... That I challenge you to a last duel of wits. After all, this game cannot end without a boss battle. I will play the part of boss. Come!"
-    show magenta annoyed
-    "I picked myself off the floor, wiping the tears that had managed to find their way down my cheeks."
-    me "I will not... Forgive you.. Never!"
+    magenta "I was going to let you fight me. But what is the point?... No matter what I do, I cannot hurt the player. If I cannot hurt the player, the piece will never die..."
+    magenta "But on the other hand... I guess this is what the player wants. {w}It is with this realisation that I challenge you to a last duel of wits. After all, this game cannot end without a boss battle. I will play the part of boss. Come!"
 
     play music "Broken-Reality"
 
-    magenta talking "I do not need your forgiveness. Now, then... A battle of wits..."
+    show magenta annoyed
+    "I picked myself off the floor, wiping the tears that had managed to find their way down my cheeks."
+    me "I will not... Forgive you... Never!"
+    magenta talking "I do not need your forgiveness. Now, then... A battle of wits... First question!"
     while True:
         $ comm_asked_i += 1
         menu:
@@ -85,14 +87,14 @@ label __ripme:
     magenta "Wrong."
     "Magenta hit me with a clawed finger, instantly piercing through my chest, killing me without mercy."
     $ die(1)
-    magenta "Yet you have not lost yet. The only way you can lose is if you grow bored. In that scenario, it is my victory."
+    magenta "Yet you have not lost yet. The only way you can lose is if you grow bored. In that scenario, and none others, it is my victory."
     jump you_dead
 
 label __round2:
     magenta "So the challenger survives the first question. Very well. Next question."
     menu:
         magenta "What is \"noise\" when speaking about spreading a message?"
-        "Noise is like music; you use it to make people notice your advertisements.":
+        "Noise is like music; you use it to make people like your advertisements.":
             jump __ripme
         "Noise is outside influence that distracts people from your advertisement.":
             jump __round3
@@ -110,7 +112,7 @@ label __round3:
             jump __round4
 
 label __round4:
-    magenta "Round three! Fight."
+    magenta "Round four! Fight."
     menu:
         magenta "What does the colour \"purple\" symbolise?"
         "Stability, loyalty and tranquility.":
@@ -239,3 +241,4 @@ label __youwin:
     centered "{size=+10}I have since realised what Magenta meant by her words... I believe that a word of gratitude is in order.{/size}"
     centered "{size=+10}Game Over{/size}"
     centered "{size=+10}Thanks for playing{/size}"
+    jump credits
