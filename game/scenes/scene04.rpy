@@ -80,10 +80,10 @@ label scene04:
                 $ comm_correct += 1
         if comm_asked['manymany'] and comm_asked['manyone'] and comm_asked['onemany'] and comm_asked['oneone']:
             $ comm_total += (comm_asked_i - comm_correct)
-        if comm_total > 0:
-            jump __ripme
-        else:
-            jump __round2
+            if comm_total > 0:
+                jump __ripme
+            else:
+                jump __round2
 
 label __ripme:
     magenta "Wrong."
