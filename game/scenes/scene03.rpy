@@ -435,5 +435,4 @@ label __allcorrect:
     scene black
     with fade_scene
     centered "{size=+10}End of Chapter 3.{/size}"
-    centered "{size=+10}... To be continued...{/size}"
     #jump scene04
