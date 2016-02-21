@@ -360,12 +360,12 @@ label __camera:
         "Moving, angling and zooming":
             jump __bad_camera
         "Tilting, panning and zooming":
-            jump __bad_camera
+            squirrel ".. Alright, I admit you might know a thing or two."
+            jump __good_camera
         "Panning, focusing and moving":
             jump __bad_camera
         "Panning, tilting and moving":
-            squirrel ".. Alright, I admit you might know a thing or two."
-            jump __good_camera
+            jump __bad_camera
 
 label __bad_camera:
     squirrel "Not a tanning in there somewhere? No?..."
