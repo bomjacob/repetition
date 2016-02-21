@@ -64,7 +64,7 @@ label __cafe:
     show fox talking_normal at center with dissolve
     show partridge neutral at right with dissolve
     show squirrel neutral at left, flip with dissolve
-    "As I opened the saloon-like doors, I was greeted by a place furnished like a restaurant. A partridge, a fox and a squirrel (and possibly more) seemed to be arguing about something."
+    "As I opened the saloon-like doors, I was greeted by a place furnished like a restaurant. A partridge, a fox and a squirrel seemed to be arguing about something."
     partridge no "No, it should definitely be cut like this! That adds the most suspense!"
     fox neutral_sceptic "No, this it should be cut like this instead. This shows me from the best angle!"
     squirrel no "My professional opinion states that it should be cut like this, for the best dramatic effect!"

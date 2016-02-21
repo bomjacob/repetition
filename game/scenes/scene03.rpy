@@ -156,7 +156,7 @@ label __totallyinteresting:
     jump __dragons_exist
 
 label __dragons_exist:
-    play music "Carefree" #Meh
+    play music "Jellyfish-in-Space"
     scene library with fade_scene
     "In the library, we found an out-of-the-way table to sit by."
     if has_met_lilly:
@@ -315,6 +315,9 @@ label __colours:
     me "Well, let's find a place to publish it, then."
     raccoon talking2 "Can we go back to my school? I want to show it to my teacher."
     me "Sure."
+
+    play music "Invariance"
+
     scene school hallway with fade_scene
     "While Yen was talking with her teacher, I looked at a bulletin board."
     "A poster with the title \"Dragons are real!\" was hanging there, probably from an earlier assignment. It looked a bit like a PSA."
@@ -324,7 +327,6 @@ label __colours:
     raccoon talking2 "Uhh... For a while, I suppose."
     me "So a lot of people here know about dragons?"
     raccoon talking "Uh-huh. Not a lot of people believe me, though..."
-    
 
     if web_total >= 3:
         jump __allcorrect
@@ -339,6 +341,7 @@ label __toowrong:
     me "I'm really not sure that's a wise id-..."
     "Yen grabbed my shirt and dragged me along, leaving me little room for objection."
     scene school roof with fade_scene
+    play music "Oppressive-Gloom"
     "As soon as we rushed out the door, we were greeted by two bright eyes, staring at us intently."
     show magenta talking at right
     unknown "Greetings. WORMS. I had thought that getting this far would be FAR more difficult. But once again, the mortal races PROVE THEIR INCOMPETENCE."
@@ -373,6 +376,7 @@ label __toowrong:
     jump you_dead
 
 label __semicorrect:
+    play sound "alarm"
     "A loud alarm suddenly rung through the city."
     me "Wha-what is that?"
     raccoon talking2 "It's the alarm! Something big is coming... Could it be?"
@@ -397,6 +401,7 @@ label __semicorrect:
     #jump scene04
 
 label __allcorrect:
+    play sound "alarm"
     "A loud alarm suddenly rung through the city."
     me "Wha-what is that?"
     raccoon talking2 "It's the alarm! Something big is coming... Could it be?"
