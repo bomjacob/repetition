@@ -1,5 +1,5 @@
 label scene03:
-    $ save_name = _("")
+    $ save_name = _("Yen")
     play music "The-Forest-and-the-Trees"
     scene school bike
     with fade_scene
@@ -44,6 +44,7 @@ label __busy:
     jump you_dead
 
 label __helpher:
+    $ save_name = _("Web design??")
     me "Sure. What do you need help with?"
     "I assumed that it wasn't going to be anything substantial. Maybe she lost a football in a tree or something. {w}She gave me a toothy smile and held up a tablet."
     raccoon talking "I need some help with my school assignment about web design! My parents care a lot about my grades, and they can get {i}very{/i} mad."
@@ -56,6 +57,7 @@ label __helpher:
     "We went through a side-entrance to the school building, and up a flight of stairs, before we came to a brightly lit corridor. Several students were wandering around, talking to each other. {w}Some seemed to send me weary glances, probably because I didn't look like anyone belonging to this school"
     "A shadow drew my attention on the far end of the hallway. As soon as I looked at it, however, it disappeared."
 
+    $ save_name = _("Dragons??")
     play music "Kawai-Kitsune"
     scene school roof with fade_scene
     show yen talking with dissolve
@@ -156,6 +158,7 @@ label __totallyinteresting:
     jump __dragons_exist
 
 label __dragons_exist:
+    $ save_name = _("Of cause dragons exist")
     play music "Jellyfish-in-Space"
     scene library with fade_scene
     "In the library, we found an out-of-the-way table to sit by."
@@ -192,6 +195,7 @@ label __dragons_exist:
         "Try to fit as much as possible in one page.":
             raccoon "Won't it be difficult then to find what I'm looking for?..."
     raccoon happy "Okay, I think I know what I should be doing now... So how do I make people notice my website? I want to spread the word!"
+    $ save_name = _("Surviving Electronically On-time??")
     me "Have you heard about \"SEO\"?"
     "Yen shook her head."
     raccoon talking "Nope. What is it?"
@@ -214,6 +218,7 @@ label __dragons_exist:
     jump __code
 
 label __code:
+    $ save_name = _("HTML")
     raccoon sad "Okay... Then, uhhmm, I have this code that I wrote up that I wanted to get to work, but it didn't really work..."
     me "Could you show it to me?"
     show overlay bad_html:
@@ -222,7 +227,6 @@ label __code:
     raccoon "Sure!"
     hide overlay
     me "Hmm... You're on the right track, but there are a few things you might want to fix..."
-    
     while True:
         $ code_asked_i += 1
         menu:
@@ -262,6 +266,7 @@ label __code_show:
     $ renpy.rollback(force=True, checkpoints=2)
 
 label __colours:
+    $ save_name = _("PINK! It's a colour!")
     raccoon talking "Oh... Uhh, okay... I don't know much about this stuff, so thanks."
     me "It's okay! Now then, have you thought about styling?"
     raccoon "Well, I have these colours that I wrote down when we had colour theory... I think I sort of get it, but maybe it would be a good idea to let you look through them..."
@@ -288,6 +293,8 @@ label __colours:
     raccoon "So I should stick with these other ones instead? Okay..."
     me "The rest of them should work, yeah." # Maybe change this, due to the whole 2 out of 8 doesn't work, yet you only select 1 thing xD
 
+    $ save_name = _("Links")
+
     raccoon "So, uhhm, my last question is... I have this friend who draws really cool dragons, and I want to link to her website, but how do I link to stuff?"
     me "Well, I can see that you have worked with tags. To refer to another website, you just need to use the proper tag, which is..."
     menu:
@@ -302,7 +309,9 @@ label __colours:
             raccoon "But how does that make sense?"
             me "Don't ask me, it just does."
         "The anchor tag.":
-            raccoon "But I don't want to anchor anything..."
+            $ web_total += 1
+            raccoon "But how does that make sense?"
+            me "Don't ask me, it just does."
         "The p tag.":
             raccoon "I thought \"p\" was the classical symbol for \"parking space\"..."
         "The pointer tag.":
@@ -336,6 +345,7 @@ label __colours:
         jump __toowrong
 
 label __toowrong:
+    $ save_name = _("Is it friendly?")
     "A loud \"thump\" could be heard, almost as if something had landed on the roof."
     raccoon talking2 "We should go investigate!"
     me "I'm really not sure that's a wise id-..."
@@ -376,6 +386,7 @@ label __toowrong:
     jump you_dead
 
 label __semicorrect:
+    $ save_name = _("What's that horrible sound")
     play sound "alarm"
     "A loud alarm suddenly rung through the city."
     me "Wha-what is that?"
@@ -401,6 +412,7 @@ label __semicorrect:
     #jump scene04
 
 label __allcorrect:
+    $ save_name = _("What's that horrible sound")
     play sound "alarm"
     "A loud alarm suddenly rung through the city."
     me "Wha-what is that?"

@@ -183,7 +183,7 @@ label __no_help:
     
 
 label __postermm_start:
-    $ save_name = _("Just helping out a frog.")
+    $ save_name = _("Just helping out a frog")
 
     froggy neutral_talking "I am glad to hear it, [name]."
     "The mayor showed me inside his house, and we sat down in the living room."
@@ -218,7 +218,7 @@ label __postermm_start:
 
 
 label __postermm_amazing:
-    $ save_name = _("That poster really was amazing.")
+    $ save_name = _("That poster really was amazing")
     me "It looks fantastic! That has to be the best promotional poster I've ever seen!"
     froggy neutral_talking "Really? You think so? I suppose I should print a couple of thousand posters then, and hang them about. Thanks for the help!"
     show froggy neutral
@@ -270,7 +270,7 @@ label __postermm_wrong:
 
 
 label __postermm_shit:
-    $ save_name = _("Non-constructive criticism.")
+    $ save_name = _("Non-constructive criticism")
     froggy "The mayor's eye spasmed a bit, as he stared at me with malice."
     froggy murderous_talking "You... What? How dare you say that to me, the mighty mayor?!"
     show froggy murderous
@@ -448,7 +448,7 @@ label __postermm_show:
     $ renpy.rollback(force=True, checkpoints=2)
 
 label __beforespeech:
-    $ save_name = _("Helping the frog... again.")
+    $ save_name = _("Helping the frog... again...")
     froggy talking "Now that that has been sorted out.. Phew, that really was a day's work or two! You've really saved me, [name]."
     show froggy neutral
     me "No, no, it's okay. Like I said, my sensei taught me to always help those in need."
@@ -542,7 +542,7 @@ label __beforespeech:
                 jump __wolfsquad
                 return
 label __stay:
-    $ save_name = _("Froggys mansion.")
+    $ save_name = _("Froggys mansion")
     "The mayor nodded, seeming pleased with himself."
     froggy neutral_talking "Very well! We have a spare room or two. I will ask my secretary to prepare one of them."
     show froggy neutral
@@ -640,7 +640,7 @@ label __stay:
         jump __not_quite
 
 label __wolfsquad:
-    $ save_name = _("Whatever could be hiding in the creepy forest.")
+    $ save_name = _("Whatever could be hiding in the creepy forest...?")
     froggy neutral_talking "Really? What a shame. I would have liked to have you stay for another day. But if you insist... I suppose I have to let you go."
     "I nodded, and went out the front door. The street lights were on, making it easier to navigate. It wouldn't be that easy once I got to the forest though. But I had stayed in one place long enough, and it was time to move on."
 
