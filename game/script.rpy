@@ -33,7 +33,8 @@ init:
     default code_correct = 0
     default code_asked_i = 0
 
-    default comm_asked = dict(onemany=False, oneone=False, manymany=False, manyone=False, everyoneeveryone=False, manyfew=False, oneeveryone=False)
+    default comm_total = 0
+    default comm_asked = dict(onemany=False, manynone=False, manyfew=False, oneeveryone=False, oneone=False, manymany=False, manyone=False, everyoneeveryone=False)
     default comm_correct = 0
     default comm_asked_i = 0
 
