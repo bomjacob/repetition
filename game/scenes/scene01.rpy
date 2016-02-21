@@ -585,7 +585,7 @@ label __stay:
             "I clenched my fist, looking at the door resolutely. Don't try to sneak around? I wondered what secrets the mayor could be hiding."
             scene mansion hallway_night with door_trans
             "Approaching the door carefully, I turned the doorknob and pushed the door ajar, just enough to stick my head out. The lights in the hallway were off, but the moonlight streaming through the windows was more than enough to illuminate the place."
-            "Seeing as there was no one around, I opened the door a bit more, and sneaked my way across the hallway. Standing in front of the door across from mine, I tried to turn the doorknob. {w}The door was locked."
+            "Seeing as there was no one around, I opened the door a bit more, and sneaked my way along the hallway. Standing in front of the door next to mine, I tried to turn the doorknob. {w}The door was locked."
             "Walking along to the next door, I tried my luck here too. {w}This one was locked as well."
             "As I reached the third door, I noticed a peculiar smell. Almost like... Something rotten. I reached for the door when a sharp cough startled me."
             unknown "What do you think you're doing?"
