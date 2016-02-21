@@ -93,19 +93,19 @@ init:
             pause 0.2
 
     image ghost appear full:
-        contains ghost appear
+        contains "ghost appear"
         "img/characters/ghost/full.png"
 
     image ghost appear meh:
-        contains ghost appear
+        contains "ghost appear"
         "img/characters/ghost/meh.png"
 
     image ghost appear happy:
-        contains ghost appear
+        contains "ghost appear"
         "img/characters/ghost/happy.png"
 
     image ghost appear fire:
-        contains ghost appear
+        contains "ghost appear"
         "img/characters/ghost/fire.png"
 
     transform flip:
