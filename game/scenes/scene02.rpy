@@ -1,9 +1,10 @@
 label scene02:
+    $ renpy.pause(2)
     $ save_name = _("A cool sloth")
     play music "Twisted"
     scene dusty_road
     with fade_scene
-    "I walked along a dusty asphalt road."
+    "I walked along a dusty dirt road."
     "..."
     "Was that a car I could hear in the distance?"
     "I looked around to orient myself. Sure enough, a red car was about to drive by. I raised a thumb, in the hopes that the driver was kind enough to pick up a stray soul."
