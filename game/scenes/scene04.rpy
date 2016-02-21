@@ -79,7 +79,7 @@ label scene04:
         if comm_total >0:
             jump __ripme
         else:
-            jump __nextround
+            jump __round2
 
 label __ripme:
     magenta "Wrong."
@@ -88,7 +88,154 @@ label __ripme:
     magenta "Yet you have not lost yet. The only way you can lose is if you grow bored. In that scenario, it is my victory."
     jump you_dead
 
-label __nextround:
+label __round2:
     magenta "So the challenger survives the first question. Very well. Next question."
     menu:
-        
+        magenta "What is \"noise\" when speaking about spreading a message?"
+        "Noise is like music; you use it to make people notice your advertisements.":
+            jump __ripme
+        "Noise is outside influence that distracts people from your advertisement.":
+            jump __round3
+        "Noise is annoying sound that helps attract attention to your advertisement.":
+            jump __ripme
+label __round3:
+    magenta "And you survived the second question too! I'm impressed."
+    menu:
+        magenta "Which of these is {i}not{/i} model for audience analysis?"
+        "Minerva":
+            jump __ripme
+        "Gallup":
+            jump __ripme
+        "AIDA":
+            jump __round4
+
+label __round4:
+    magenta "Round three! Fight."
+    menu:
+        magenta "What does the colour \"purple\" symbolise?"
+        "Stability, loyalty and tranquility.":
+            jump __ripme
+        "Healing, harmony and safety.":
+            jump __ripme
+        "Royalty, luxury and wisdom.":
+            jump __round5
+
+label __round5:
+    magenta "You're doing well. Let's see if that lucky streak of yours continues."
+    menu:
+        magenta "What kind of font is most desirable for websites?"
+        "Sans serif.":
+            jump __round6
+        "Serif.":
+            jump __ripme
+
+label __round6:
+    magenta "That one was easy."
+    menu:
+        magenta "Which of these terms describes something that appeals to the feelings and emotions of the audience?"
+        "Logos":
+            jump __ripme
+        "Ethos":
+            jump __ripme
+        "Pathos":
+            jump __round7
+
+label __round7:
+    magenta "Oh? That one was a bit harder. Let's see..."
+    menu:
+        magenta "Which of these is the worst search engine?"
+        "Google":
+            jump __round8
+        "Ask":
+            jump __round8
+        "Bing":
+            jump __round8
+        "Yahoo!":
+            jump __round8
+
+label __round8:
+    magenta "Trick question. That is mostly subjective, since the thing you base your judgement on is most likely bias."
+    magenta "Well... Let's have one final question. I have made this one very difficult. Night impossible, some might say.{w} You will answer correctly through sheer luck, or I will prove that the outside intervention truly is impossible to fight."
+    
+    evil = EvilClass()
+    correct_asnwer = renpy.random.radint(0,12)
+    while True:
+        menu:
+            magenta "What... Was I going to name my child that never hatched?"
+            "Terror" if not 'terror' in evil.asked:
+                if correct_answer == 0:
+                    jump __youwin
+                evil.asked['terror'] = True
+            "Purple" if not 'purple' in evil.asked:
+                if correct_answer == 1:
+                    jump __youwin
+                evil.asked['purple'] = True
+            "Menace" if not 'menace' in evil.asked:
+                if correct_answer == 2:
+                    jump __youwin
+                evil.asked['menace'] = True
+            "Cyan" if not 'cyan' in evil.asked:
+                if correct_answer == 3:
+                    jump __youwin
+                evil.asked['cyan'] = True
+            "Deathwing" if not 'deathwing' in evil.asked:
+                if correct_answer == 4:
+                    jump __youwin
+                evil.asked['deathwing'] = True
+            "Mint" if not 'mint' in evil.asked:
+                if correct_answer == 5:
+                    jump __youwin
+                evil.asked['mint'] = True
+            "Banana" if not 'banana' in evil.asked:
+                if correct_answer == 6:
+                    jump __youwin
+                evil.asked['banana'] = True
+            "Skywalker" if not 'skywalker' in evil.asked:
+                if correct_answer == 7:
+                    jump __youwin
+                evil.asked['skywalker'] = True
+            "Yellow" if not 'yellow' in evil.asked:
+                if correct_answer == 8:
+                    jump __youwin
+                evil.asked['yellow'] = True
+            "Saphira" if not 'saphira' in evil.asked:
+                if correct_answer == 9:
+                    jump __youwin
+                evil.asked['saphira'] = True
+            "Onyx" if not 'onyx' in evil.asked:
+                if correct_answer == 10:
+                    jump __youwin
+                evil.asked['onyx'] = True
+            "Alduin" if not 'alduin' in evil.asked:
+                if correct_answer == 11:
+                    jump __youwin
+                evil.asked['alduin'] = True
+            "Fey" if not 'fey' in evil.asked:
+                if correct_answer == 12:
+                    jump __youwin
+                evil.asked['fey'] = True
+        jump __ripme
+
+label __youwin:
+    magenta glance "...."
+    magenta glance_talking "....... {w}I had expected the outside influence to be powerful... But this... Goes beyond my expectations."
+    magenta "Truly... I can never... Win..."
+    magenta "Do what you will with me, mortal. I will not resist."
+    show magenta glance
+    "The dragon curled itself together resting its head in front of me."
+    me "I... Believe that dragons and humans can be friends."
+    magenta glance_talking "Oh?... And you do not only say this because it was the only way to progress?"
+    show magenta neutral
+    me "Promise that you will stop your evil ways... And I will forgive you."
+    "The dragon seemed interested."
+    magenta talking "Very well, mortal... You have my word."
+    scene black with fade_scene
+    $ renpy.pause(2)
+    centered "{size=+10}And thus, I made peace with Magenta.{/size}"
+    centered "{size=+10}This is where my story ends.{/size}"
+    centered "{size=+10}It might not have been especially heroic...{/size}"
+    centered "{size=+10}But it somehow ended well nonetheless.{/size}"
+    centered "{size=+10}A thanks to you, the player, for sticking with me all this time.{/size}"
+    centered "{size=+10}I have since realised what Magenta meant by her words... I believe that a word of gratitude is in order.{/size}"
+    centered "{size=+10}Game Over{/size}"
+    centered "{size=+10}Thanks for playing{/size}"
