@@ -284,6 +284,8 @@ init -1 python hide:
     renpy.music.register_channel('music', mixer='music', loop=True, file_prefix="sound/music/", file_suffix=".ogg", tight=True)
     renpy.music.register_channel('sound', mixer='sfx', loop=False, file_prefix="sound/fx/", file_suffix=".ogg", tight=True)
 
+    config.hard_rollback_limit = 1000
+
     #########################################
     ## This is the name of the directory where the game's data is
     ## stored. (It needs to be set early, before any other init code
