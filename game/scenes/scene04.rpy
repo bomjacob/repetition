@@ -1,11 +1,12 @@
 label scene04:
     scene black
+    play music "Oppressive-Gloom"
     $ renpy.pause(2)
     "I felt a hard surface beneath me."
     "Sitting up caused a sudden vertigo, making me want to fall over and lie down again."
     me "Where... Am I?"
     "I opened my eyes slowly."
-    scene chapel
+    scene chapel with dissolve
     "A dimly lit room greeted me. Torches flickered on the walls, and the ceiling was too far up to see without straining my neck. A large throne was placed at the end of the extravagant room."
     unknown "So you finally woke up."
     me "Huh?"
@@ -41,6 +42,9 @@ label scene04:
     show magenta annoyed
     "I picked myself off the floor, wiping the tears that had managed to find their way down my cheeks."
     me "I will not... Forgive you.. Never!"
+
+    play music "Broken-Reality"
+
     magenta talking "I do not need your forgiveness. Now, then... A battle of wits..."
     while True:
         $ comm_asked_i += 1
