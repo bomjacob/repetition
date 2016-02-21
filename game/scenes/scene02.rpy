@@ -1,5 +1,5 @@
 label scene02:
-    $ save_name = _("Driving with a sloth.")
+    $ save_name = _("A cool sloth")
     play music "Twisted"
     scene dusty_road
     with fade_scene
@@ -64,7 +64,7 @@ label __cafe:
     show fox talking_normal at center with dissolve
     show partridge neutral at right with dissolve
     show squirrel neutral at left, flip with dissolve
-    "As I opened the saloon-like doors, I was greeted by a place furnished like a restaurant. A partridge, a fox and a squirrel (and possibly more) seemed to be arguing about something."
+    "As I opened the saloon-like doors, I was greeted by a place furnished like a restaurant. A partridge, a fox and a squirrel seemed to be arguing about something."
     partridge no "No, it should definitely be cut like this! That adds the most suspense!"
     fox neutral_sceptic "No, this it should be cut like this instead. This shows me from the best angle!"
     squirrel no "My professional opinion states that it should be cut like this, for the best dramatic effect!"
@@ -145,7 +145,7 @@ label __cafe:
     me "Yeah? So what did your pre-production consist of?"
     hide squirrel with dissolve
 
-    $ save_name = _("Pre-production.")
+    $ save_name = _("Pre-production")
 
     menu:
         partridge "Well, we started out with finding our cast..."
@@ -209,7 +209,7 @@ label __bad_pre:
     jump __storyboard
 
 label __storyboard:
-    $ save_name = _("Storyboarding.")
+    $ save_name = _("Storyboarding")
     me "And now that we're on the subject of pre-production, why don't we talk about your storyboard?"
     partridge neutral "I would've shown it to you, but our storyboard was too large to carry around."
     me "It sounds like you're planned your story very well, then?"
@@ -264,7 +264,7 @@ label __good_storyboard:
         jump __perspective
 
 label __rippartridge:
-    $ save_name = _("RIP partridge.")
+    $ save_name = _("RIP partridge")
     "As we ran, I noticed that only the fox and squirrel were next to me."
     me "Partridge? Anyone know where the partridge went?"
     "I slowed down, and looked back at the playground. {w}"
@@ -285,7 +285,7 @@ label __rippartridge:
     jump __perspective
 
 label __perspective:
-    $ save_name = _("Perspectives.")
+    $ save_name = _("Perspectives")
     play music "Carefree"
     scene town2 palms
     with fade_scene
@@ -341,7 +341,7 @@ label __good_perspective:
     jump __camera
 
 label __camera:
-    $ save_name = _("Camera movements.")
+    $ save_name = _("Camera movements")
     me "What kind of camera movements did you use?"
     squirrel no "We used, uhmm, tanning at one point."
     me "I've never heard of a camera movement called \"tanning\"."
@@ -433,7 +433,7 @@ label __ghost:
         jump __post
 
 label __ripsquirrel:
-    $ save_name = _("RIP squirrel.")
+    $ save_name = _("RIP squirrel")
     play music "Volatile-Reaction" fadein 5
     "As we ran, I suddenly noticed that the squirrel wasn't following us."
     show squirrel hmm at right with dissolve
@@ -570,7 +570,7 @@ label __good_pr:
         jump __deciding
 
 label __ripfox:
-    $ save_name = _("RIP foxy.")
+    $ save_name = _("RIP foxy")
     "The ghost barely gave us time to react, before he picked up the fox and threw her at a wall. Glaring at me, he spoke."
     ghost meh "I have no qualms with you."
     "As the shape said this, it slowly floated towards the fox who was slumped on the ground."
@@ -606,7 +606,7 @@ label __deciding:
         jump __someone_lives
 
 label __noone_lives:
-    $ save_name = _("Uhmm.. that dragon looks mad.")
+    $ save_name = _("Uhmm.. that dragon looks mad")
     play music "Oppressive-Gloom"
     ghost "I have done all I came to do. At first, I considered whether you were sinful, too. But I have gotten my vengeance for now. I have other, more important places to be."
     "I looked at the discarded body of the fox."
@@ -640,7 +640,7 @@ label __noone_lives:
     "Magenta flapped her large bat-like wings and took off, leaving a charred tunnel and two corpses behind."
 
 label __someone_lives:
-    $ save_name = _("I ain't afraid a no ghost.")
+    $ save_name = _("I ain't afraid a no ghost")
     play music "Day-of-Chaos"
     "The ghost stared me in the eyes."
     ghost meh "I have observed you! And I have decided that you too are a sinner!"
@@ -707,7 +707,7 @@ label __someone_lives:
 
 
 label __everyone_lives:
-    $ save_name = _("Convincing a ghost.")
+    $ save_name = _("Convincing a ghost")
     play music "BGM002"
     me "Who are you calling sinners? Haven't you seen that these people have learnt from their mistakes? I'm sure they'll produce a fantastic movie now, if only you let them!"
     "The ghostly being seemed to ponder over this for a while."
