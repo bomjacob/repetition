@@ -76,7 +76,7 @@ label scene04:
                 magenta "... And?"
                 $ comm_asked['oneone'] = True
                 $ comm_correct += 1
-        if comm_asked['manymany'] and comm_asked['manyone'] and comm_asked['onemany'] and comm_asked['oneone']:
+        if comm_asked['manymany'] and comm_asked['onemany'] and comm_asked['oneone']:
             $ comm_total += (comm_asked_i - comm_correct)
             if comm_total > 0:
                 jump __ripme
