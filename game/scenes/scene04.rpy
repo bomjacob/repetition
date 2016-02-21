@@ -53,35 +53,31 @@ label scene04:
         menu:
             magenta "What are the four ways of communicating?"
             "Many to few"if not comm_asked['manyfew']:
-                magenta "... And?"
                 $ comm_asked['manyfew'] = True
             "Many to many" if not comm_asked['manymany']:
-                magenta "... And?"
                 $ comm_asked['manymany'] = True
                 $ comm_correct += 1
             "Many to none"if not comm_asked['manynone']:
-                magenta "... And?"
                 $ comm_asked['manynone'] = True
             "One to everyone"if not comm_asked['oneeveryone']:
-                magenta "... And?"
                 $ comm_asked['oneeveryone'] = True
             "One to many"if not comm_asked['onemany']:
-                magenta "... And?"
                 $ comm_asked['onemany'] = True
                 $ comm_correct += 1
             "Everyone to everyone"if not comm_asked['everyoneeveryone']:
-                magenta "... And?"
                 $ comm_asked['everyoneeveryone'] = True
             "One to one"if not comm_asked['oneone']:
-                magenta "... And?"
                 $ comm_asked['oneone'] = True
                 $ comm_correct += 1
+        
         if comm_asked['manymany'] and comm_asked['onemany'] and comm_asked['oneone']:
             $ comm_total += (comm_asked_i - comm_correct)
             if comm_total > 0:
                 jump __ripme
             else:
                 jump __round2
+        else:
+            magenta "... And?"
 
 label __ripme:
     magenta "Wrong."
