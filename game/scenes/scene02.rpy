@@ -217,7 +217,7 @@ label __storyboard:
     partridge neutral "I would've shown it to you, but our storyboard was too large to carry around."
     me "It sounds like you're planned your story very well, then?"
     partridge sad "We have? I was just talking about the large sign we have, saying \"Story\". What are you talking about?"
-    me "Sign? What exactly do you think a storyboard it?"
+    me "Sign? What exactly do you think a storyboard is?"
     partridge neutral "Exactly what it sounds like! A board that says \"story\"!"
 
     #It's funny and all, but doesn't the perosn say above that they wanted a visual representation of their story so they created a storyboard?
