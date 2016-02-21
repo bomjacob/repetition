@@ -1,4 +1,5 @@
 label scene03:
+    $ save_name = _("")
     play music "The-Forest-and-the-Trees"
     scene school bike
     with fade_scene
