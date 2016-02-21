@@ -33,6 +33,10 @@ init:
     default code_correct = 0
     default code_asked_i = 0
 
+    default comm_asked = dict(onemany=False, oneone=False, manymany=False, manyone=False)
+    default comm_correct = 0
+    default comm_asked_i = 0
+
 
 init python:
     import random
