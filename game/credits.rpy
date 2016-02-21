@@ -1,5 +1,6 @@
 # Based on http://lemmasoft.renai.us/forums/viewtopic.php?f=51&t=22481
 label credits(frommenu=False):
+    $ renpy.music.play("KK--Love-Song", if_changed=True)
     if not frommenu:
         if persistent.credits_seen is None:
             $ persistent.credits_seen = False
