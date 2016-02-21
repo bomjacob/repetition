@@ -156,7 +156,7 @@ label __round8:
     magenta "Well... Let's have one final question. I have made this one very difficult. Night impossible, some might say.{w} You will answer correctly through sheer luck, or I will prove that the outside intervention truly is impossible to fight."
     
     $ evil = EvilClass()
-    $ correct_answer = renpy.random.radint(0,12)
+    $ correct_answer = renpy.random.randint(0,12)
     while True:
         menu:
             magenta "What... Was I going to name my child that never hatched?"

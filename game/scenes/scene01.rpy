@@ -132,6 +132,8 @@ label __adventure:
 
     froggy "Greetings!{w} Salutations!{w} Might I ask who you are, and what you are doing here?"
 
+    stop sound #In case you're auto forwarding
+
     me "Uh... Yeah... Hi. My name is [name]! I'm really just passing by, though I would like to know if you have any places to stay?"
     froggy "I am glad to make your acquaintance, [name]!"
     froggy talking "I am called Froggy! I am the mayor of this small town."
