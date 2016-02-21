@@ -38,14 +38,14 @@ init:
     default comm_correct = 0
     default comm_asked_i = 0
 
-    class EvilClass(NoRollback):
-        def __init__(self):
-                self.asked = {}
-
 
 init python:
     import random
     import os
+
+    class EvilClass(NoRollback):
+        def __init__(self):
+                self.asked = {}
     
     def die(version=0):
         renpy.music.stop(fadeout=2)
