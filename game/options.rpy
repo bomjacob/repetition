@@ -24,7 +24,7 @@ init -1 python hide:
     # These control the name and version of the game, that are reported
     # with tracebacks and other debugging logs.
     config.name = "repetition"
-    config.version = "0.1.1"
+    config.version = "1.0.0"
 
     ## This controls the title of the window, when Ren'Py is
     ## running in a window.
