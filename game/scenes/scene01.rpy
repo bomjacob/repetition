@@ -680,7 +680,7 @@ label __too_sucessful:
 
 label __not_quite:
     $ save_name = _("Goodbye Froggy")
-    scene town square people
+    scene town square people with fade_scene
     "A small crowd was gathered in the town square. Fewer than I would have liked, but still better than none. In fact, I should have been surprised that any turned up at all, since we only just hung up posters the day before. The mayor cleared his throat, and started his speech."
     froggy talking "Greetings! I am glad to see you, dedicated citizens, that care about our environment."
     hide froggy with dissolve
