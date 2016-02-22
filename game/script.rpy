@@ -38,6 +38,8 @@ init:
     default comm_correct = 0
     default comm_asked_i = 0
 
+    default evil = EvilClass()
+
 
 init python:
     import random

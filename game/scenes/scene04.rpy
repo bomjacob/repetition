@@ -152,11 +152,10 @@ label __round7:
             jump __round8
 
 label __round8:
+    $ correct_answer = renpy.random.randint(0,12)
     magenta "Trick question. That is mostly subjective, since the thing you base your judgement on is most likely bias."
     magenta "Well... Let's have one final question. I have made this one very difficult. Night impossible, some might say.{w} You will answer correctly through sheer luck, or I will prove that the outside intervention truly is impossible to fight."
     
-    $ evil = EvilClass()
-    $ correct_answer = renpy.random.randint(0,12)
     while True:
         menu:
             magenta "What... Was I going to name my child that never hatched?"
