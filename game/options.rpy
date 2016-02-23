@@ -13,7 +13,7 @@ init -1 python hide:
     ## set to False before the game is released, so the user can't
     ## cheat using developer tools.
 
-    config.developer = True
+    config.developer = False
     config.log = "debuglog.txt"
 
     ## These control the width and height of the screen.
@@ -25,6 +25,9 @@ init -1 python hide:
     # with tracebacks and other debugging logs.
     config.name = "repetition"
     config.version = "1.2.0"
+
+    config.windows_icon = "icon.png"
+    config.window_icon = "iconmac.png"
 
     ## This controls the title of the window, when Ren'Py is
     ## running in a window.
