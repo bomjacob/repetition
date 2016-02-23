@@ -143,10 +143,10 @@ label __adventure:
 
     menu:
         "Help Mayor Froggy?"
-        "No":
-            jump __no_help
         "Yes":
             jump __postermm_start
+        "No":
+            jump __no_help
 
 label __no_help:
     $ save_name = _("Why would I help a frog??")
@@ -265,7 +265,7 @@ label __postermm_wrong:
         "AIDA" if not 'aida' in postermm_done:
             $ postermm_done['aida'] = True
             jump __postermm_aida
-        "Nothing, if you fix those errors it's fine." if postermm_points != 0:
+        "No, if you fix those errors it's fine." if postermm_points != 0:
             jump __postermm_done
         "Let me see the poster again please.":
             jump __postermm_show
@@ -381,17 +381,8 @@ label __postermm_aida:
     jump __postermm_back
 
 label __postermm_back:
-    "Anything else wrong with this poster?"
-
-    menu:
-        "Yes":
-            froggy "What else is wrong with it then?"
-            jump __postermm_wrong
-        "No, it's fine now":
-            froggy "Let's take a look at it, then..."
-            jump __postermm_done
-        "Let me see the poster again please.":
-            jump __postermm_show
+    froggy "Is there anything else wrong with the poster?"
+    jump __postermm_wrong
 
 label __postermm_done:    
     if postermm_points <= 2:
